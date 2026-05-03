@@ -9,7 +9,7 @@
       var match = window.location.pathname.match(/^\/invite\/([^/?#]+)/);
       if (!match) return;
       var token = decodeURIComponent(match[1]);
-      var url = '/?inviteToken=' + encodeURIComponent(token);
+      var url = '/invite/?inviteToken=' + encodeURIComponent(token);
       window.location.replace(url);
     })();
   </script>
