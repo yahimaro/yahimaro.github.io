@@ -117,6 +117,68 @@
       color: var(--muted);
     }
 
+    /* ── INVITE ── */
+    .invite-panel {
+      display: none;
+      padding: 24px;
+      background: var(--cream);
+    }
+    .invite-panel.active {
+      display: block;
+    }
+    .invite-card {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+    .invite-card h2 {
+      color: var(--dark);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      line-height: 1.25;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+    .invite-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .invite-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: #fff;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    .invite-help {
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
     /* ── FEATURES ── */
     .features {
       padding: 80px 24px;
@@ -276,6 +338,50 @@
       .nav-links { display: none; }
     }
   </style>
+  <script>
+    (function () {
+      var APP_STORE_URL = 'https://apps.apple.com/jp/app/homestocker/id6762469486';
+
+      function getInviteToken() {
+        var params = new URLSearchParams(window.location.search);
+        var queryToken = params.get('inviteToken');
+        if (queryToken) return queryToken.trim();
+
+        var match = window.location.pathname.match(/^\/invite\/([^/?#]+)/);
+        if (match) return decodeURIComponent(match[1]).trim();
+
+        return '';
+      }
+
+      function openApp(appUrl) {
+        window.location.href = appUrl;
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        var token = getInviteToken();
+        if (!token) return;
+
+        var panel = document.getElementById('invite-panel');
+        var openButton = document.getElementById('invite-open-app');
+        var storeButton = document.getElementById('invite-open-store');
+        var customSchemeUrl = 'stocker://invite/' + encodeURIComponent(token);
+
+        if (panel) panel.classList.add('active');
+        if (openButton) {
+          openButton.href = customSchemeUrl;
+          openButton.addEventListener('click', function (event) {
+            event.preventDefault();
+            openApp(customSchemeUrl);
+          });
+        }
+        if (storeButton) storeButton.href = APP_STORE_URL;
+
+        setTimeout(function () {
+          openApp(customSchemeUrl);
+        }, 600);
+      });
+    })();
+  </script>
 </head>
 <body>
 
@@ -289,6 +395,19 @@
       <li><a href="/privacy">プライバシー</a></li>
     </ul>
   </nav>
+
+  <!-- INVITE FALLBACK -->
+  <section class="invite-panel" id="invite-panel">
+    <div class="invite-card">
+      <h2>Stocker の家族グループに招待されています</h2>
+      <p>アプリが自動で開かない場合は、下のボタンから参加画面を開いてください。</p>
+      <div class="invite-actions">
+        <a class="btn-primary" id="invite-open-app" href="#">Stockerで開く</a>
+        <a class="btn-secondary" id="invite-open-store" href="https://apps.apple.com/jp/app/homestocker/id6762469486">アプリを入手</a>
+      </div>
+      <p class="invite-help">アプリが入っている端末では参加画面へ移動します。未インストールの場合はApp Storeからインストールしてください。</p>
+    </div>
+  </section>
 
   <!-- HERO -->
   <section class="hero">
