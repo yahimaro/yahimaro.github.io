@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stocker（ストッカー）- 在庫管理・買い物リスト・価格比較で節約できるアプリ</title>
-  <meta name="description" content="Stocker（ストッカー）は、日用品や食品の在庫管理、買い物リスト、価格記録、賞味期限通知をまとめて使える節約買い物アプリです。バーコード登録や家族共有にも対応。iPhoneで無料ダウンロード。">
+  <meta name="description" content="Stocker（ストッカー）は、日用品や食品の在庫管理、買い物リスト、価格記録、賞味期限通知をまとめて使える節約買い物アプリです。バーコード登録、単価比較、家族共有にも対応。iPhoneで無料ダウンロード。">
   <meta name="keywords" content="Stocker,ストッカー,在庫管理アプリ,買い物リストアプリ,価格比較,価格記録,節約アプリ,家計管理,日用品,賞味期限管理,バーコードスキャン">
   <link rel="canonical" href="https://yahimaro.com/">
   <meta property="og:type" content="website">
@@ -88,6 +88,22 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "無料プランで利用できます。ストック件数、買い物リスト、価格履歴など一部機能には制限があります。広告非表示や無制限利用向けの有料プランもあります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どんな商品を管理できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "食品、調味料、洗剤、紙用品、衛生用品など、家庭で買い置きする日用品や消耗品の管理に使えます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "家計簿アプリとの違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stockerは支出全体の記録よりも、在庫、買い物リスト、商品ごとの価格履歴に集中したアプリです。買い忘れ、買いすぎ、価格の見落としを減らすことを目的にしています。"
         }
       }
     ]
@@ -306,29 +322,42 @@
     .intro-grid,
     .detail-grid,
     .usecase-grid,
+    .workflow-grid,
+    .trust-grid,
     .plan-grid,
     .faq-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
     .intro-section,
     .details,
     .usecases,
+    .workflow,
+    .comparison,
+    .trust,
     .plans,
     .faq,
     .seo-copy {
       padding: 72px 24px;
     }
     .intro-section,
+    .workflow,
     .plans {
       background: #fff8ed;
     }
     .details,
+    .comparison,
     .faq {
       background: var(--cream);
     }
     .usecases,
+    .trust,
     .seo-copy {
       background: var(--surface);
     }
@@ -337,6 +366,8 @@
       margin: 0 auto;
     }
     .info-card,
+    .step-card,
+    .comparison-card,
     .plan-card,
     .faq-item,
     .copy-block {
@@ -353,7 +384,29 @@
       border-color: #CFDCEB;
       background: #F8FBFF;
     }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .comparison-card.good {
+      border-color: #D8E7D0;
+      background: #FBFEF8;
+    }
+    .comparison-card.careful {
+      border-color: #E9D5C0;
+      background: #FFF9F1;
+    }
     .info-card h3,
+    .step-card h3,
+    .comparison-card h3,
     .plan-card h3,
     .faq-item h3,
     .copy-block h3 {
@@ -364,6 +417,8 @@
       font-weight: 900;
     }
     .info-card p,
+    .step-card p,
+    .comparison-card p,
     .plan-card p,
     .faq-item p,
     .copy-block p {
@@ -371,6 +426,14 @@
       font-size: 0.95rem;
       line-height: 1.8;
     }
+    .comparison-card ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+    .comparison-card li { margin-bottom: 4px; }
     .plan-card ul {
       margin-top: 12px;
       padding-left: 18px;
@@ -515,13 +578,19 @@
       .intro-grid,
       .detail-grid,
       .usecase-grid,
+      .workflow-grid,
+      .trust-grid,
       .plan-grid,
-      .faq-grid {
+      .faq-grid,
+      .comparison-grid {
         grid-template-columns: 1fr;
       }
       .intro-section,
       .details,
       .usecases,
+      .workflow,
+      .comparison,
+      .trust,
       .plans,
       .faq,
       .seo-copy {
@@ -590,6 +659,7 @@
     <ul class="nav-links">
       <li><a href="#features">機能</a></li>
       <li><a href="#details">詳細</a></li>
+      <li><a href="#workflow">使い方</a></li>
       <li><a href="#plans">料金</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#screenshots">スクリーンショット</a></li>
@@ -737,6 +807,31 @@
     </div>
   </section>
 
+  <!-- WORKFLOW -->
+  <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+    <div class="section-inner">
+      <p class="section-label">HOW TO USE</p>
+      <h2 class="section-title" id="workflow-title">買い物の前・最中・あとまで、同じ流れで管理</h2>
+      <div class="workflow-grid">
+        <article class="step-card">
+          <span class="step-number">1</span>
+          <h3>家にあるものを登録する</h3>
+          <p>よく買う食品や日用品をストックに登録します。バーコードスキャンから始めれば、商品登録の手間を減らせます。</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">2</span>
+          <h3>足りないものを買い物リストへ</h3>
+          <p>在庫が少ないもの、次に買いたいものをリスト化。スーパーやドラッグストアでチェックしながら買い物できます。</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">3</span>
+          <h3>価格と期限を残して次回に活かす</h3>
+          <p>購入価格、店舗、賞味期限を記録。次の買い物で安い店を選んだり、期限が近いものから使ったりできます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- DETAILS -->
   <section class="details" id="details" aria-labelledby="details-title">
     <div class="section-inner">
@@ -771,6 +866,34 @@
     </div>
   </section>
 
+  <!-- COMPARISON -->
+  <section class="comparison" id="comparison" aria-labelledby="comparison-title">
+    <div class="section-inner">
+      <p class="section-label">WHY STOCKER</p>
+      <h2 class="section-title" id="comparison-title">メモや表計算より、買い物に合わせて使いやすい</h2>
+      <div class="comparison-grid">
+        <article class="comparison-card careful">
+          <h3>メモ・写真・表計算で管理すると</h3>
+          <ul>
+            <li>在庫数、価格、期限が別々になりやすい</li>
+            <li>買い物中に確認しづらい</li>
+            <li>家族と共有しても更新漏れが起きやすい</li>
+            <li>過去の価格を商品ごとに探しにくい</li>
+          </ul>
+        </article>
+        <article class="comparison-card good">
+          <h3>Stockerなら</h3>
+          <ul>
+            <li>在庫、買い物リスト、価格履歴を同じアプリで管理</li>
+            <li>買い物中に必要なものをチェックできる</li>
+            <li>家族グループで同じストック情報を見られる</li>
+            <li>商品ごとの価格と店舗を残して比較できる</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- USE CASES -->
   <section class="usecases" id="usecases" aria-labelledby="usecases-title">
     <div class="section-inner">
@@ -788,6 +911,28 @@
         <article class="info-card">
           <h3>家族で買い物を分担したい</h3>
           <p>買い物リストやストック情報を共有すれば、誰が買っても家庭内の在庫状況を合わせやすくなります。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust" id="trust" aria-labelledby="trust-title">
+    <div class="section-inner">
+      <p class="section-label">SAFE & SIMPLE</p>
+      <h2 class="section-title" id="trust-title">毎日使うための、わかりやすさと安心感</h2>
+      <div class="trust-grid">
+        <article class="info-card">
+          <h3>カメラはバーコード読み取りに使用</h3>
+          <p>バーコードスキャン時にカメラを使用します。読み取りは商品登録の入力補助のためで、登録内容は自分で確認・編集できます。</p>
+        </article>
+        <article class="info-card">
+          <h3>アカウントでデータを同期</h3>
+          <p>ログインして使うことで、ストックや買い物リストをクラウド上で管理できます。機種変更時にもデータを引き継ぎやすくなります。</p>
+        </article>
+        <article class="info-card">
+          <h3>困ったときはサポートへ</h3>
+          <p>よくある質問やお問い合わせフォームを用意しています。不具合報告や改善要望も受け付けています。</p>
         </article>
       </div>
     </div>
@@ -850,6 +995,18 @@
         <article class="faq-item">
           <h3>無料で使えますか？</h3>
           <p>無料プランで利用できます。より多くのストックや価格履歴を管理したい場合は、個人プラン・家族プランを選べます。</p>
+        </article>
+        <article class="faq-item">
+          <h3>どんな商品を管理できますか？</h3>
+          <p>食品、調味料、洗剤、紙用品、衛生用品など、家庭で買い置きする日用品や消耗品の管理に使えます。</p>
+        </article>
+        <article class="faq-item">
+          <h3>家計簿アプリとの違いは何ですか？</h3>
+          <p>Stockerは支出全体の記録よりも、在庫、買い物リスト、商品ごとの価格履歴に集中しています。買い物前後の判断を助けるアプリです。</p>
+        </article>
+        <article class="faq-item">
+          <h3>価格比較はどう使いますか？</h3>
+          <p>購入時に店舗と価格を残しておくと、次回同じ商品を買うときに過去価格を見返せます。単価計算もできるので容量違いの商品も比べやすくなります。</p>
         </article>
       </div>
     </div>
