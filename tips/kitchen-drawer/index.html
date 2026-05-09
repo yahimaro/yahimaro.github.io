@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>我が家の使い方：キッチンの引き出し1つから始める在庫管理 — Stocker</title>
-  <meta name="description" content="Stockerの使い方を我が家のキッチン右下の引き出しを例に紹介。バーコード登録、賞味期限の確認、過剰在庫の発見、バーコードがない商品のズボ管管理まで、実際の流れで解説します。">
+  <title>我が家の使い方：キッチンの引き出しからゆるく始める在庫管理 — Stocker</title>
+  <meta name="description" content="Stockerを我が家で使い始めたときの話。キッチンの引き出しを片づけながら、バーコード登録、賞味期限の確認、過剰在庫の発見、バーコードがない商品のズボ管管理まで紹介します。">
   <link rel="canonical" href="https://yahimaro.com/tips/kitchen-drawer/">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Stocker">
-  <meta property="og:title" content="我が家の使い方：キッチンの引き出し1つから始める在庫管理 — Stocker">
-  <meta property="og:description" content="一気に全部ではなく、まず1か所。キッチンの引き出しを例に、Stockerで在庫管理を始める流れを紹介します。">
+  <meta property="og:title" content="我が家の使い方：キッチンの引き出しからゆるく始める在庫管理 — Stocker">
+  <meta property="og:description" content="一気に全部ではなく、まず1か所。キッチンの引き出しを片づけながらStockerを使ってみた話です。">
   <meta property="og:url" content="https://yahimaro.com/tips/kitchen-drawer/">
   <meta property="og:image" content="https://yahimaro.com/images/tips/kitchen-drawer-before.jpeg">
   <meta name="twitter:card" content="summary_large_image">
@@ -17,8 +17,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "我が家の使い方：キッチンの引き出し1つから始める在庫管理",
-    "description": "Stockerの使い方を我が家のキッチン右下の引き出しを例に紹介します。",
+    "headline": "我が家の使い方：キッチンの引き出しからゆるく始める在庫管理",
+    "description": "Stockerを我が家で使い始めたときの話。キッチンの引き出しを片づけながら在庫管理してみました。",
     "image": "https://yahimaro.com/images/tips/kitchen-drawer-before.jpeg",
     "datePublished": "2026-05-09",
     "dateModified": "2026-05-09",
@@ -76,7 +76,7 @@
     .hero-inner,
     main,
     .footer-inner {
-      max-width: 920px;
+      max-width: 900px;
       margin: 0 auto;
     }
     .label {
@@ -98,12 +98,22 @@
       font-size: clamp(1rem, 2.4vw, 1.18rem);
       max-width: 760px;
     }
-    .hero-photo {
-      margin-top: 32px;
+    .article-photo,
+    .hero-photo,
+    .screen-shot {
+      margin: 28px auto 0;
       border-radius: 8px;
       overflow: hidden;
       background: var(--surface);
       border: 1px solid var(--border);
+    }
+    .hero-photo { max-width: 620px; }
+    .article-photo { max-width: 560px; }
+    .article-photo.small { max-width: 420px; }
+    .screen-shot {
+      max-width: 360px;
+      border-radius: 18px;
+      box-shadow: 0 16px 36px rgba(133, 79, 11, 0.12);
     }
     img {
       display: block;
@@ -198,6 +208,10 @@
       .photo-grid { grid-template-columns: 1fr; }
       .wide { grid-column: auto; }
       section { margin-bottom: 18px; }
+      .hero-photo,
+      .article-photo,
+      .article-photo.small,
+      .screen-shot { max-width: 100%; }
     }
   </style>
 </head>
@@ -210,29 +224,33 @@
   <header class="hero">
     <div class="hero-inner">
       <p class="label">REAL USE</p>
-      <h1>在庫管理は、家じゅう全部ではなく「引き出し1つ」からでいい</h1>
-      <p class="lead">Stockerをどう使い始めるか。我が家では、キッチン右下の引き出しだけを対象にしました。小さく始めても、買いすぎ・期限切れ・管理しにくい商品の見える化には十分効果があります。</p>
+      <h1>在庫管理は、家じゅう全部じゃなくて「引き出し1つ」からでいい</h1>
+      <p class="lead">Stockerを入れたものの、いきなり家中の在庫を登録するのはさすがに大変。なので我が家では、まずキッチン右下の引き出しを開けて「ここだけやってみよう」くらいの気持ちで始めました。</p>
       <figure class="hero-photo">
         <img src="/images/tips/kitchen-lower-right-drawer.jpeg" alt="キッチン右下の引き出しの外観" width="1179" height="884">
-        <figcaption>まずはこの右下の引き出しだけ。範囲を小さく決めると、在庫管理を始めるハードルが下がります。</figcaption>
+        <figcaption>最初に選んだのは、キッチンの右下の引き出し。ここだけなら、週末のちょっとした片づけ感覚で始められます。</figcaption>
       </figure>
     </div>
   </header>
 
   <main>
     <section>
-      <h2>最初のコツは、管理場所を広げすぎないこと</h2>
-      <p>食品、日用品、洗剤、紙類まで一気に登録しようとすると、どうしても面倒になります。だから最初は、よく使う場所を1つだけ選ぶのがおすすめです。</p>
-      <p>我が家では、キッチンの右下の引き出しから始めました。ここには乾麺、調味料、缶詰、粉ものなどが混ざっていて、開けるたびに「たぶん何かあるけど、何があるかはわからない」という状態でした。</p>
-      <figure class="hero-photo">
+      <h2>まずは、気になっている場所を1つだけ</h2>
+      <p>食品も日用品も洗剤も、全部まとめて管理しようとすると、それだけで気が重くなります。続けるためには、最初からがんばりすぎないのが大事だと思っています。</p>
+      <p>我が家で選んだのは、キッチン右下の引き出し。乾麺、調味料、缶詰、粉ものが入り混じっていて、開けるたびに「何か入ってるけど、何があるかはよくわからない」場所でした。</p>
+      <figure class="article-photo">
         <img src="/images/tips/kitchen-drawer-before.jpeg" alt="食品や調味料がたくさん入ったキッチンの引き出し" width="1180" height="1572">
-        <figcaption>登録前の引き出し。奥や下にあるものほど存在を忘れやすく、同じものをまた買いやすくなります。</figcaption>
+        <figcaption>登録前の引き出し。奥や下にあるものほど忘れやすく、同じものをまた買いがちです。</figcaption>
       </figure>
     </section>
 
     <section>
-      <h2>全部出して、1つずつスキャンする</h2>
-      <p>やったことは単純です。引き出しの中身をいったん全部出して、バーコードがあるものはStockerでスキャンして登録しました。</p>
+      <h2>中身を全部出して、バーコードをピッ</h2>
+      <p>やったことはとても単純です。引き出しの中身をいったん全部出して、バーコードがあるものはStockerでスキャン。商品名が出てきたら確認して登録していきます。</p>
+      <figure class="screen-shot">
+        <img src="/images/tips/app-barcode-auto-fill.png" alt="バーコードスキャン後に商品名候補が表示されたStockerの商品登録画面" width="1179" height="2556">
+        <figcaption>バーコードから候補が見つかると、商品名入力の手間がかなり減ります。</figcaption>
+      </figure>
       <div class="point-grid">
         <div class="point">
           <strong>約7割</strong>
@@ -240,75 +258,87 @@
         </div>
         <div class="point">
           <strong>約3割</strong>
-          <span>手動入力が必要でした。商品データベースはまだまだ充実させたいところです。</span>
+          <span>手動入力が必要でした。ここは、商品データベースをもっと育てたいところです。</span>
         </div>
       </div>
-      <p>それでも、ゼロから全項目を入力するよりかなり楽です。登録作業そのものよりも、手に取って確認することで「これはまだある」「これは期限が近い」と気づけるのが大きな効果でした。</p>
+      <p>もちろん全部が自動で埋まるわけではありません。それでも、ゼロから入力するよりはだいぶ楽でした。何より、1つずつ手に取るので「これ、まだあったんだ」と気づけるのが大きいです。</p>
     </section>
 
     <section>
-      <h2>見える化すると、買いすぎがすぐ見つかる</h2>
-      <p>整理してすぐに出てきたのが、そうめん4袋。完全に過剰在庫でした。家にあることを忘れて、安いときにまた買っていたのだと思います。</p>
-      <figure class="hero-photo">
+      <h2>さっそく出てきた、そうめん4袋</h2>
+      <p>片づけてすぐに出てきたのが、そうめん4袋。完全に買いすぎです。たぶん、家にあることを忘れて「安いし買っておこう」を何回かやっています。</p>
+      <figure class="article-photo">
         <img src="/images/tips/excess-somen-stock.jpeg" alt="引き出しから見つかったそうめん4袋" width="1179" height="884">
-        <figcaption>同じ種類の商品が複数出てくると、在庫を見ずに買っていたことがよくわかります。</figcaption>
+        <figcaption>そうめん4袋。こういう「なぜか増えているもの」が、家の中にはよくあります。</figcaption>
       </figure>
-      <p>Stockerに登録しておけば、買い物前に在庫数を見られます。特に乾麺や缶詰のように日持ちする商品は、ストックがある安心感の一方で、気づかないうちに増えやすい商品です。</p>
+      <p>Stockerに入れておけば、買い物前に在庫数を見られます。乾麺や缶詰のように日持ちするものは便利ですが、見えないところにしまうと増えやすい。そこを見えるようにするだけでも、次の買い物が変わります。</p>
+      <figure class="screen-shot">
+        <img src="/images/tips/app-stock-list-by-location.png" alt="キッチン右下引出しの在庫を一覧表示しているStockerの画面" width="1179" height="2556">
+        <figcaption>場所を「キッチン右下引出し」に絞ると、この場所にあるものだけを確認できます。</figcaption>
+      </figure>
     </section>
 
     <section>
-      <h2>期限切れも、片づけ中に発見できる</h2>
-      <p>そばも1袋見つかりましたが、賞味期限は2026年3月。整理したのは2026年5月なので、すでに期限を過ぎていました。</p>
+      <h2>そして、期限切れのそばも発見</h2>
+      <p>そばも1袋出てきました。パッケージを見ると、賞味期限は2026年3月。整理したのは2026年5月なので、すでに期限を過ぎていました。</p>
       <div class="photo-grid">
-        <figure>
+        <figure class="article-photo small">
           <img src="/images/tips/soba-package.jpeg" alt="引き出しから見つかったそばの商品パッケージ" width="1180" height="1890">
-          <figcaption>発見したそば。奥に入ったままだと、存在ごと忘れがちです。</figcaption>
+          <figcaption>奥から出てきたそば。存在ごと忘れていました。</figcaption>
         </figure>
-        <figure>
+        <figure class="article-photo small">
           <img src="/images/tips/soba-expiration-2026-03.jpeg" alt="賞味期限2026年3月と記載されたそばのパッケージ" width="1182" height="1494">
-          <figcaption>賞味期限は2026年3月。2026年5月時点では期限切れでした。</figcaption>
+          <figcaption>賞味期限は2026年3月。2026年5月時点では期限切れ。</figcaption>
         </figure>
       </div>
-      <p>在庫管理は「今いくつあるか」だけではなく、「いつまでに使うべきか」を思い出せることが大事です。期限を登録しておくと、買い足す前に使うべきものへ意識を向けられます。</p>
+      <p>在庫管理は「いま何個あるか」だけではなく、「いつまでに食べたいか」を思い出せることも大事です。期限を入れておくと、一覧でも期限切れに気づけます。</p>
+      <figure class="screen-shot">
+        <img src="/images/tips/app-stock-adjustment.png" alt="干しそばの在庫数と賞味期限を確認しながら在庫を増減するStockerの画面" width="1179" height="2556">
+        <figcaption>在庫を使ったら「消費」で数を減らします。期限も一緒に残せるので、あとから見返しやすいです。</figcaption>
+      </figure>
     </section>
 
     <section class="note">
-      <h2>バーコードがないものは、ズボ管でざっくり管理</h2>
-      <p>基本はバーコードをスキャンして、商品登録や在庫の増減を行います。ただし、家庭の在庫にはバーコードがないものもあります。今回だと、シーチキン缶がその例でした。</p>
-      <figure class="hero-photo">
+      <h2>バーコードがないものは、ズボ管でざっくり</h2>
+      <p>基本はバーコードをスキャンして登録します。ただ、家にあるものは全部きれいにバーコード管理できるわけではありません。今回だと、シーチキン缶がその例でした。</p>
+      <figure class="article-photo small">
         <img src="/images/tips/no-barcode-canned-tuna.jpeg" alt="バーコードがないシーチキン缶" width="1176" height="1556">
-        <figcaption>バーコードで商品単位に管理しづらいものは、ズボ管でまとめて扱えます。</figcaption>
+        <figcaption>バーコードで商品単位に管理しづらいものもあります。</figcaption>
       </figure>
-      <h3>ズボ管は「細かい商品名」より「小カテゴリ」で見る管理</h3>
-      <p>ズボ管では、バーコード管理できないものや、商品名まで厳密に分けなくてもよいものを小カテゴリで管理できます。例えば、いろいろな種類の醤油をひとまとめにして「醤油」として管理するような使い方です。</p>
-      <p>ブランドや商品に強いこだわりがなく、その時々でお得なものを買う家庭では、このざっくりした管理がかなり実用的です。細かくしすぎないから、続けやすくなります。</p>
+      <h3>ズボ管は、商品名にこだわりすぎない管理</h3>
+      <p>ズボ管では、バーコード管理できないものや、商品名まで細かく分けなくてもよいものを、小カテゴリでまとめて管理できます。例えば、いろいろな種類の醤油をひとまとめにして「醤油」として見るような使い方です。</p>
+      <p>ブランドにこだわらず、その時々でお得なものを買う家庭では、このざっくり感がちょうどいいです。細かくしすぎないから、続けやすい。ここはかなり現実的な使い方だと思います。</p>
+      <figure class="screen-shot">
+        <img src="/images/tips/app-zubokan-stock-list.png" alt="シーチキンなどをズボ管カテゴリで一覧表示しているStockerの画面" width="1179" height="2556">
+        <figcaption>シーチキンのようにまとめて見たいものは、ズボ管で在庫数を管理できます。</figcaption>
+      </figure>
     </section>
 
     <section>
-      <h2>この使い方でわかった、Stockerの役割</h2>
+      <h2>やってみてよかったこと</h2>
       <div class="point-grid">
         <div class="point">
           <strong>買いすぎに気づける</strong>
           <span>そうめん4袋のような重複ストックを、買う前に確認できます。</span>
         </div>
         <div class="point">
-          <strong>期限切れを減らせる</strong>
-          <span>奥に眠っている食品も、期限と一緒に登録しておけば使うきっかけになります。</span>
+          <strong>期限切れに気づける</strong>
+          <span>奥に眠っている食品も、期限と一緒に登録しておけば思い出しやすくなります。</span>
         </div>
         <div class="point">
-          <strong>登録の負担を減らせる</strong>
-          <span>バーコードで入力を補助し、難しいものはズボ管でざっくり管理できます。</span>
+          <strong>登録が思ったより軽い</strong>
+          <span>バーコードで入力を補助でき、難しいものはズボ管でざっくり管理できます。</span>
         </div>
         <div class="point">
           <strong>場所ごとに増やせる</strong>
-          <span>引き出し1つから始めて、慣れたら冷蔵庫、洗面台、日用品棚へ広げられます。</span>
+          <span>引き出し1つから始めて、慣れたら冷蔵庫や日用品棚へ広げられます。</span>
         </div>
       </div>
     </section>
 
     <section class="cta">
       <h2>まずは、家の中の1か所だけ</h2>
-      <p>完璧に管理しようとしなくて大丈夫です。よく使う引き出しや棚を1つ選んで、そこからStockerを試してみてください。</p>
+      <p>完璧に管理しようとしなくて大丈夫です。よく開ける引き出しや棚を1つ選んで、そこからStockerを試してみてください。</p>
       <a class="btn" href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App StoreでStockerを見る</a>
     </section>
   </main>
