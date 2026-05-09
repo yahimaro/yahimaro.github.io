@@ -74,8 +74,7 @@
       padding: 72px 20px 40px;
     }
     .hero-inner,
-    main,
-    .footer-inner {
+    main {
       max-width: 900px;
       margin: 0 auto;
     }
@@ -217,11 +216,19 @@
     }
     footer {
       background: var(--dark);
-      color: rgba(255,255,255,0.72);
-      padding: 28px 20px;
-      font-size: 0.86rem;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.8rem;
     }
-    footer a { color: #fff; margin-right: 16px; text-decoration: none; }
+    footer a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+    }
+    footer a:hover { color: #fff; }
+    .footer-links { margin-bottom: 12px; }
     @media (max-width: 720px) {
       nav { padding: 0 16px; }
       .point-grid,
@@ -376,12 +383,15 @@
   </main>
 
   <footer>
-    <div class="footer-inner">
+    <div class="footer-links">
       <a href="/">トップ</a>
+      <a href="/privacy">プライバシーポリシー</a>
+      <a href="/terms">利用規約</a>
+      <a href="/tokushoho">特定商取引法</a>
       <a href="/support">サポート</a>
-      <a href="/privacy">プライバシー</a>
-      <span>&copy; 2026 yahimaro. All rights reserved.</span>
+      <a href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App Store</a>
     </div>
+    <p>&copy; 2026 Yahimaro Apps. All rights reserved.</p>
   </footer>
 </body>
 </html>
