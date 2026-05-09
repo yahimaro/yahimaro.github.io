@@ -125,7 +125,13 @@
       color: var(--muted);
       font-size: 0.86rem;
       padding: 10px 12px 12px;
-      background: var(--surface);
+      background: #FFF9F1;
+      border-top: 1px solid var(--border);
+    }
+    .screen-shot figcaption {
+      background: #FFF3E0;
+      color: #5F4529;
+      border-top: 1px solid #E5CDA8;
     }
     main { padding: 48px 20px 72px; }
     section {
@@ -155,6 +161,20 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 16px;
       margin-top: 20px;
+    }
+    .soba-grid {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: start;
+    }
+    .soba-photo {
+      max-width: 320px;
+    }
+    .soba-photo img {
+      height: 360px;
+      object-fit: contain;
+      background: #FFF9F1;
     }
     .point {
       border-left: 4px solid var(--primary);
@@ -212,6 +232,7 @@
       .article-photo,
       .article-photo.small,
       .screen-shot { max-width: 100%; }
+      .soba-photo img { height: 320px; }
     }
   </style>
 </head>
@@ -239,7 +260,7 @@
       <p>食品も日用品も洗剤も、全部まとめて管理しようとすると、それだけで気が重くなります。続けるためには、最初からがんばりすぎないのが大事だと思っています。</p>
       <p>我が家で選んだのは、キッチン右下の引き出し。乾麺、調味料、缶詰、粉ものが入り混じっていて、開けるたびに「何か入ってるけど、何があるかはよくわからない」場所でした。</p>
       <figure class="article-photo">
-        <img src="/images/tips/kitchen-drawer-before.jpeg" alt="食品や調味料がたくさん入ったキッチンの引き出し" width="1180" height="1572">
+        <img src="/images/tips/kitchen-drawer-before.jpeg" alt="食品や調味料がたくさん入ったキッチンの引き出し" width="1572" height="1180">
         <figcaption>登録前の引き出し。奥や下にあるものほど忘れやすく、同じものをまた買いがちです。</figcaption>
       </figure>
     </section>
@@ -273,25 +294,29 @@
       </figure>
       <p>Stockerに入れておけば、買い物前に在庫数を見られます。乾麺や缶詰のように日持ちするものは便利ですが、見えないところにしまうと増えやすい。そこを見えるようにするだけでも、次の買い物が変わります。</p>
       <figure class="screen-shot">
-        <img src="/images/tips/app-stock-list-by-location.png" alt="キッチン右下引出しの在庫を一覧表示しているStockerの画面" width="1179" height="2556">
-        <figcaption>場所を「キッチン右下引出し」に絞ると、この場所にあるものだけを確認できます。</figcaption>
+        <img src="/images/tips/app-somen-stock-list.png" alt="そうめんの在庫数を一覧で確認しているStockerの画面" width="1179" height="2556">
+        <figcaption>一覧で見ると、そうめんがまだ残っていることが買い物前にわかります。</figcaption>
       </figure>
     </section>
 
     <section>
       <h2>そして、期限切れのそばも発見</h2>
       <p>そばも1袋出てきました。パッケージを見ると、賞味期限は2026年3月。整理したのは2026年5月なので、すでに期限を過ぎていました。</p>
-      <div class="photo-grid">
-        <figure class="article-photo small">
+      <div class="photo-grid soba-grid">
+        <figure class="article-photo small soba-photo">
           <img src="/images/tips/soba-package.jpeg" alt="引き出しから見つかったそばの商品パッケージ" width="1180" height="1890">
           <figcaption>奥から出てきたそば。存在ごと忘れていました。</figcaption>
         </figure>
-        <figure class="article-photo small">
+        <figure class="article-photo small soba-photo">
           <img src="/images/tips/soba-expiration-2026-03.jpeg" alt="賞味期限2026年3月と記載されたそばのパッケージ" width="1182" height="1494">
           <figcaption>賞味期限は2026年3月。2026年5月時点では期限切れ。</figcaption>
         </figure>
       </div>
       <p>在庫管理は「いま何個あるか」だけではなく、「いつまでに食べたいか」を思い出せることも大事です。期限を入れておくと、一覧でも期限切れに気づけます。</p>
+      <figure class="screen-shot">
+        <img src="/images/tips/app-stock-list-by-location.png" alt="キッチン右下引出しの在庫一覧で干しそばが期限切れ表示になっているStockerの画面" width="1179" height="2556">
+        <figcaption>場所を絞って見ると、期限切れになっているものも一覧で気づけます。</figcaption>
+      </figure>
       <figure class="screen-shot">
         <img src="/images/tips/app-stock-adjustment.png" alt="干しそばの在庫数と賞味期限を確認しながら在庫を増減するStockerの画面" width="1179" height="2556">
         <figcaption>在庫を使ったら「消費」で数を減らします。期限も一緒に残せるので、あとから見返しやすいです。</figcaption>
@@ -307,7 +332,7 @@
       </figure>
       <h3>ズボ管は、商品名にこだわりすぎない管理</h3>
       <p>ズボ管では、バーコード管理できないものや、商品名まで細かく分けなくてもよいものを、小カテゴリでまとめて管理できます。例えば、いろいろな種類の醤油をひとまとめにして「醤油」として見るような使い方です。</p>
-      <p>ブランドにこだわらず、その時々でお得なものを買う家庭では、このざっくり感がちょうどいいです。細かくしすぎないから、続けやすい。ここはかなり現実的な使い方だと思います。</p>
+      <p>ブランドにこだわらず、その時々でお得なものを買うジャンルなら、このざっくり感がちょうどいいです。細かくしすぎないから、続けやすい。ここはかなり現実的な使い方だと思います。</p>
       <figure class="screen-shot">
         <img src="/images/tips/app-zubokan-stock-list.png" alt="シーチキンなどをズボ管カテゴリで一覧表示しているStockerの画面" width="1179" height="2556">
         <figcaption>シーチキンのようにまとめて見たいものは、ズボ管で在庫数を管理できます。</figcaption>
