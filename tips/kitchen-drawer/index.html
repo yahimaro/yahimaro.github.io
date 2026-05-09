@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我が家の使い方：キッチンの引き出し1つから始める在庫管理 — Stocker</title>
+  <meta name="description" content="Stockerの使い方を我が家のキッチン右下の引き出しを例に紹介。バーコード登録、賞味期限の確認、過剰在庫の発見、バーコードがない商品のズボ管管理まで、実際の流れで解説します。">
+  <link rel="canonical" href="https://yahimaro.com/tips/kitchen-drawer/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Stocker">
+  <meta property="og:title" content="我が家の使い方：キッチンの引き出し1つから始める在庫管理 — Stocker">
+  <meta property="og:description" content="一気に全部ではなく、まず1か所。キッチンの引き出しを例に、Stockerで在庫管理を始める流れを紹介します。">
+  <meta property="og:url" content="https://yahimaro.com/tips/kitchen-drawer/">
+  <meta property="og:image" content="https://yahimaro.com/images/tips/kitchen-drawer-before.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "我が家の使い方：キッチンの引き出し1つから始める在庫管理",
+    "description": "Stockerの使い方を我が家のキッチン右下の引き出しを例に紹介します。",
+    "image": "https://yahimaro.com/images/tips/kitchen-drawer-before.jpeg",
+    "datePublished": "2026-05-09",
+    "dateModified": "2026-05-09",
+    "author": {
+      "@type": "Organization",
+      "name": "yahimaro"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "yahimaro"
+    },
+    "mainEntityOfPage": "https://yahimaro.com/tips/kitchen-drawer/",
+    "inLanguage": "ja"
+  }
+  </script>
+  <style>
+    :root {
+      --primary: #EF9F27;
+      --dark: #854F0B;
+      --amber: #BA7517;
+      --cream: #FEF3E2;
+      --surface: #FFFFFF;
+      --border: #E8D5B5;
+      --text: #1A1A1A;
+      --muted: #6B6B6B;
+      --green: #6D9F35;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.85;
+    }
+    a { color: var(--primary); font-weight: 800; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+      padding: 0 24px;
+      background: rgba(254, 243, 226, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .logo { color: var(--dark); font-weight: 900; text-decoration: none; }
+    .nav-link { color: var(--muted); font-size: 0.9rem; text-decoration: none; }
+    .hero {
+      background: #fff8ed;
+      padding: 72px 20px 40px;
+    }
+    .hero-inner,
+    main,
+    .footer-inner {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .label {
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+    }
+    h1 {
+      color: var(--dark);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+    .lead {
+      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.18rem);
+      max-width: 760px;
+    }
+    .hero-photo {
+      margin-top: 32px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    figure { margin: 0; }
+    figcaption {
+      color: var(--muted);
+      font-size: 0.86rem;
+      padding: 10px 12px 12px;
+      background: var(--surface);
+    }
+    main { padding: 48px 20px 72px; }
+    section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: clamp(22px, 4vw, 36px);
+      margin-bottom: 24px;
+    }
+    h2 {
+      color: var(--dark);
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      line-height: 1.32;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+    h3 {
+      color: var(--dark);
+      font-size: 1.08rem;
+      line-height: 1.45;
+      margin: 20px 0 8px;
+    }
+    p + p { margin-top: 12px; }
+    .point-grid,
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .point {
+      border-left: 4px solid var(--primary);
+      background: #FFF9F1;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .point strong {
+      display: block;
+      color: var(--dark);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .point span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .wide { grid-column: 1 / -1; }
+    .note {
+      background: #FBFEF8;
+      border-color: #D8E7D0;
+    }
+    .note h2 { color: #557F27; }
+    .cta {
+      text-align: center;
+      background: #fff8ed;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      min-height: 46px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 900;
+    }
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.72);
+      padding: 28px 20px;
+      font-size: 0.86rem;
+    }
+    footer a { color: #fff; margin-right: 16px; text-decoration: none; }
+    @media (max-width: 720px) {
+      nav { padding: 0 16px; }
+      .point-grid,
+      .photo-grid { grid-template-columns: 1fr; }
+      .wide { grid-column: auto; }
+      section { margin-bottom: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">Stocker</a>
+    <a class="nav-link" href="/">トップへ戻る</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="label">REAL USE</p>
+      <h1>在庫管理は、家じゅう全部ではなく「引き出し1つ」からでいい</h1>
+      <p class="lead">Stockerをどう使い始めるか。我が家では、キッチン右下の引き出しだけを対象にしました。小さく始めても、買いすぎ・期限切れ・管理しにくい商品の見える化には十分効果があります。</p>
+      <figure class="hero-photo">
+        <img src="/images/tips/kitchen-lower-right-drawer.jpeg" alt="キッチン右下の引き出しの外観" width="1179" height="884">
+        <figcaption>まずはこの右下の引き出しだけ。範囲を小さく決めると、在庫管理を始めるハードルが下がります。</figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>最初のコツは、管理場所を広げすぎないこと</h2>
+      <p>食品、日用品、洗剤、紙類まで一気に登録しようとすると、どうしても面倒になります。だから最初は、よく使う場所を1つだけ選ぶのがおすすめです。</p>
+      <p>我が家では、キッチンの右下の引き出しから始めました。ここには乾麺、調味料、缶詰、粉ものなどが混ざっていて、開けるたびに「たぶん何かあるけど、何があるかはわからない」という状態でした。</p>
+      <figure class="hero-photo">
+        <img src="/images/tips/kitchen-drawer-before.jpeg" alt="食品や調味料がたくさん入ったキッチンの引き出し" width="1180" height="1572">
+        <figcaption>登録前の引き出し。奥や下にあるものほど存在を忘れやすく、同じものをまた買いやすくなります。</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>全部出して、1つずつスキャンする</h2>
+      <p>やったことは単純です。引き出しの中身をいったん全部出して、バーコードがあるものはStockerでスキャンして登録しました。</p>
+      <div class="point-grid">
+        <div class="point">
+          <strong>約7割</strong>
+          <span>バーコードから商品名などを自動入力できました。</span>
+        </div>
+        <div class="point">
+          <strong>約3割</strong>
+          <span>手動入力が必要でした。商品データベースはまだまだ充実させたいところです。</span>
+        </div>
+      </div>
+      <p>それでも、ゼロから全項目を入力するよりかなり楽です。登録作業そのものよりも、手に取って確認することで「これはまだある」「これは期限が近い」と気づけるのが大きな効果でした。</p>
+    </section>
+
+    <section>
+      <h2>見える化すると、買いすぎがすぐ見つかる</h2>
+      <p>整理してすぐに出てきたのが、そうめん4袋。完全に過剰在庫でした。家にあることを忘れて、安いときにまた買っていたのだと思います。</p>
+      <figure class="hero-photo">
+        <img src="/images/tips/excess-somen-stock.jpeg" alt="引き出しから見つかったそうめん4袋" width="1179" height="884">
+        <figcaption>同じ種類の商品が複数出てくると、在庫を見ずに買っていたことがよくわかります。</figcaption>
+      </figure>
+      <p>Stockerに登録しておけば、買い物前に在庫数を見られます。特に乾麺や缶詰のように日持ちする商品は、ストックがある安心感の一方で、気づかないうちに増えやすい商品です。</p>
+    </section>
+
+    <section>
+      <h2>期限切れも、片づけ中に発見できる</h2>
+      <p>そばも1袋見つかりましたが、賞味期限は2026年3月。整理したのは2026年5月なので、すでに期限を過ぎていました。</p>
+      <div class="photo-grid">
+        <figure>
+          <img src="/images/tips/soba-package.jpeg" alt="引き出しから見つかったそばの商品パッケージ" width="1180" height="1890">
+          <figcaption>発見したそば。奥に入ったままだと、存在ごと忘れがちです。</figcaption>
+        </figure>
+        <figure>
+          <img src="/images/tips/soba-expiration-2026-03.jpeg" alt="賞味期限2026年3月と記載されたそばのパッケージ" width="1182" height="1494">
+          <figcaption>賞味期限は2026年3月。2026年5月時点では期限切れでした。</figcaption>
+        </figure>
+      </div>
+      <p>在庫管理は「今いくつあるか」だけではなく、「いつまでに使うべきか」を思い出せることが大事です。期限を登録しておくと、買い足す前に使うべきものへ意識を向けられます。</p>
+    </section>
+
+    <section class="note">
+      <h2>バーコードがないものは、ズボ管でざっくり管理</h2>
+      <p>基本はバーコードをスキャンして、商品登録や在庫の増減を行います。ただし、家庭の在庫にはバーコードがないものもあります。今回だと、シーチキン缶がその例でした。</p>
+      <figure class="hero-photo">
+        <img src="/images/tips/no-barcode-canned-tuna.jpeg" alt="バーコードがないシーチキン缶" width="1176" height="1556">
+        <figcaption>バーコードで商品単位に管理しづらいものは、ズボ管でまとめて扱えます。</figcaption>
+      </figure>
+      <h3>ズボ管は「細かい商品名」より「小カテゴリ」で見る管理</h3>
+      <p>ズボ管では、バーコード管理できないものや、商品名まで厳密に分けなくてもよいものを小カテゴリで管理できます。例えば、いろいろな種類の醤油をひとまとめにして「醤油」として管理するような使い方です。</p>
+      <p>ブランドや商品に強いこだわりがなく、その時々でお得なものを買う家庭では、このざっくりした管理がかなり実用的です。細かくしすぎないから、続けやすくなります。</p>
+    </section>
+
+    <section>
+      <h2>この使い方でわかった、Stockerの役割</h2>
+      <div class="point-grid">
+        <div class="point">
+          <strong>買いすぎに気づける</strong>
+          <span>そうめん4袋のような重複ストックを、買う前に確認できます。</span>
+        </div>
+        <div class="point">
+          <strong>期限切れを減らせる</strong>
+          <span>奥に眠っている食品も、期限と一緒に登録しておけば使うきっかけになります。</span>
+        </div>
+        <div class="point">
+          <strong>登録の負担を減らせる</strong>
+          <span>バーコードで入力を補助し、難しいものはズボ管でざっくり管理できます。</span>
+        </div>
+        <div class="point">
+          <strong>場所ごとに増やせる</strong>
+          <span>引き出し1つから始めて、慣れたら冷蔵庫、洗面台、日用品棚へ広げられます。</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>まずは、家の中の1か所だけ</h2>
+      <p>完璧に管理しようとしなくて大丈夫です。よく使う引き出しや棚を1つ選んで、そこからStockerを試してみてください。</p>
+      <a class="btn" href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App StoreでStockerを見る</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/">トップ</a>
+      <a href="/support">サポート</a>
+      <a href="/privacy">プライバシー</a>
+      <span>&copy; 2026 yahimaro. All rights reserved.</span>
+    </div>
+  </footer>
+</body>
+</html>
