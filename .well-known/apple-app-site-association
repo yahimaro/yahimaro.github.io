@@ -5,7 +5,9 @@
       {
         "appID": "JN8DDDJX9G.com.yahimaro.stocker.app",
         "paths": [
-          "*"
+          "/invite",
+          "/invite/",
+          "/invite/*"
         ]
       }
     ]
