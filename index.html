@@ -23,180 +23,157 @@
     "@type": "Organization",
     "name": "Yahimaro Apps",
     "url": "https://yahimaro.com/",
-    "sameAs": [
-      "https://yahimaro.com/",
-      "https://yahimaro.com/stocker-biz/"
-    ]
+    "sameAs": ["https://yahimaro.com/", "https://yahimaro.com/stocker-biz/"]
   }
   </script>
   <style>
     :root {
-      --bg:        #0f1623;
-      --surface:   #182030;
-      --border:    rgba(255,255,255,0.10);
-      --border-hi: rgba(255,255,255,0.20);
-      --text:      #f0f4ff;
-      --muted:     rgba(210,220,255,0.55);
-      --amber:     #f59e0b;
-      --amber-lt:  #fbbf24;
-      --blue:      #2278d8;
-      --blue-lt:   #60a5fa;
+      --white:      #ffffff;
+      --bg:         #f5f7ff;
+      --bg2:        #eef1fb;
+      --text:       #1a1f36;
+      --muted:      #6b7280;
+      --border:     #e2e6f0;
+      --amber:      #f59e0b;
+      --amber-pale: #fff8e6;
+      --amber-dark: #b45309;
+      --blue:       #2563eb;
+      --blue-pale:  #eff6ff;
+      --blue-dark:  #1d4ed8;
+      --green:      #059669;
+      --shadow-sm:  0 1px 4px rgba(30,40,80,0.07);
+      --shadow-md:  0 4px 20px rgba(30,40,80,0.10);
+      --shadow-lg:  0 12px 48px rgba(30,40,80,0.13);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      min-height: 100vh;
       font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif;
-      background: var(--bg);
+      background: var(--white);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ── NAV ── */
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
       z-index: 50;
-      height: 56px;
+      height: 60px;
       padding: 0 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: rgba(255,255,255,0.92);
       border-bottom: 1px solid var(--border);
-      background: rgba(15,22,35,0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
     .brand {
       display: flex;
       align-items: center;
-      gap: 9px;
+      gap: 10px;
       text-decoration: none;
       color: var(--text);
     }
     .brand-mark {
-      width: 26px;
-      height: 26px;
-      border-radius: 7px;
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
       background: linear-gradient(135deg, var(--amber) 0%, var(--blue) 100%);
       display: grid;
       place-items: center;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 900;
       color: #fff;
-      letter-spacing: 0;
       flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.25);
     }
     .brand-name {
-      font-size: 0.88rem;
+      font-size: 0.95rem;
       font-weight: 800;
       letter-spacing: -0.01em;
+      color: var(--text);
     }
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
-    .nav-pill {
+    .nav-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      height: 34px;
-      padding: 0 14px;
+      height: 36px;
+      padding: 0 16px;
       border-radius: 999px;
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-decoration: none;
-      border: 1px solid var(--border);
+      border: 1.5px solid var(--border);
       color: var(--muted);
-      transition: border-color 0.15s, color 0.15s;
+      background: var(--white);
+      transition: all 0.15s;
     }
-    .nav-pill:hover { border-color: var(--border-hi); color: var(--text); }
-    .nav-pill-dot {
-      width: 6px;
-      height: 6px;
+    .nav-btn:hover { border-color: var(--blue); color: var(--blue); }
+    .nav-btn-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 120px 24px 80px;
+      padding: 80px 24px 72px;
       text-align: center;
+      background:
+        radial-gradient(ellipse 70% 60% at 20% 40%, rgba(245,158,11,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(37,99,235,0.10) 0%, transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
       position: relative;
       overflow: hidden;
     }
-    /* subtle grid overlay */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 64px 64px;
-      mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 30%, transparent 100%);
-      pointer-events: none;
-    }
-    /* glow blobs */
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 500px;
-      background:
-        radial-gradient(ellipse at 30% 50%, rgba(245,158,11,0.22) 0%, transparent 55%),
-        radial-gradient(ellipse at 70% 50%, rgba(34,120,216,0.22) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .hero-content { position: relative; z-index: 1; }
-    .hero-eyebrow {
+    .hero-label {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      height: 28px;
-      padding: 0 12px;
+      height: 30px;
+      padding: 0 14px;
       border-radius: 999px;
-      border: 1px solid var(--border-hi);
-      font-size: 0.72rem;
-      font-weight: 700;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      font-size: 0.74rem;
+      font-weight: 800;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
     }
-    .hero-eyebrow-dot {
-      width: 5px;
-      height: 5px;
+    .hero-label-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      background: var(--amber);
+      background: linear-gradient(135deg, var(--amber), var(--blue));
     }
-    .hero-title {
-      font-size: clamp(2.8rem, 8vw, 6rem);
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
       font-weight: 900;
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 20px;
     }
-    .hero-title .line-amber { color: var(--amber-lt); }
-    .hero-title .line-blue  { color: var(--blue-lt); }
+    .hero h1 .hi-amber { color: var(--amber); }
+    .hero h1 .hi-blue  { color: var(--blue); }
     .hero-lead {
       font-size: clamp(1rem, 2vw, 1.15rem);
       color: var(--muted);
-      max-width: 480px;
-      margin: 0 auto 44px;
-      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
     }
     .hero-cta {
       display: flex;
@@ -207,161 +184,168 @@
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      height: 46px;
-      padding: 0 22px;
-      border-radius: 10px;
-      font-size: 0.88rem;
+      gap: 8px;
+      height: 48px;
+      padding: 0 24px;
+      border-radius: 12px;
+      font-size: 0.92rem;
       font-weight: 700;
       text-decoration: none;
-      transition: opacity 0.15s, transform 0.15s;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
     }
-    .btn:hover { opacity: 0.85; transform: translateY(-1px); }
-    .btn-amber { background: var(--amber); color: #0a0a0a; }
-    .btn-blue  { background: var(--blue);  color: #fff; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--muted);
-      border: 1px solid var(--border-hi);
+    .btn:hover { transform: translateY(-2px); }
+    .btn-amber {
+      background: var(--amber);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(245,158,11,0.35);
     }
-    .btn-ghost:hover { color: var(--text); }
+    .btn-amber:hover { box-shadow: 0 8px 28px rgba(245,158,11,0.45); }
+    .btn-blue {
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(37,99,235,0.3);
+    }
+    .btn-blue:hover { box-shadow: 0 8px 28px rgba(37,99,235,0.4); }
+    .btn-outline {
+      background: var(--white);
+      color: var(--text);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-outline:hover { border-color: var(--blue); color: var(--blue); box-shadow: var(--shadow-md); }
 
-    /* ── SCROLL INDICATOR ── */
-    .scroll-hint {
-      position: absolute;
-      bottom: 36px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      z-index: 1;
-      animation: fadeup 2.4s ease infinite;
-    }
-    .scroll-hint svg { opacity: 0.5; }
-    @keyframes fadeup {
-      0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
-      50%       { opacity: 1;   transform: translateX(-50%) translateY(4px); }
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 32px;
     }
 
     /* ── PRODUCTS ── */
     .products {
-      padding: 0 24px 120px;
+      padding: 72px 24px 96px;
+      background: var(--bg);
     }
-    .products-inner {
-      max-width: 1080px;
+    .products-label {
+      text-align: center;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .products-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 48px;
+    }
+    .cards {
+      max-width: 1040px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 20px;
     }
-
     .card {
-      border-radius: 16px;
-      border: 1px solid var(--border);
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
       overflow: hidden;
-      background: var(--surface);
+      box-shadow: var(--shadow-md);
       display: flex;
       flex-direction: column;
-      transition: border-color 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .card:hover { border-color: var(--border-hi); }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
-    /* media area */
+    /* card media */
     .card-media {
-      height: 280px;
+      height: 260px;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
     }
-    /* stocker: iphone mockup */
     .card-media.stocker {
-      background: linear-gradient(160deg, #2a1800 0%, #3d2600 100%);
+      background: linear-gradient(160deg, #fff3d0 0%, #ffe8a0 100%);
       display: flex;
       align-items: flex-end;
       justify-content: center;
-      padding-bottom: 0;
     }
     .phone-row {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       align-items: flex-end;
-      padding: 0 20px;
+      padding: 0 16px;
     }
     .phone-shell {
       background: #1c1c1e;
-      border-radius: 22px;
-      padding: 6px;
-      box-shadow: 0 20px 48px rgba(0,0,0,0.5);
+      border-radius: 20px;
+      padding: 5px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
       flex-shrink: 0;
     }
     .phone-shell img {
       display: block;
-      border-radius: 17px;
+      border-radius: 16px;
       object-fit: cover;
     }
-    .phone-shell.lg { width: 100px; }
-    .phone-shell.lg img { width: 100px; height: 216px; }
-    .phone-shell.sm { width: 84px; margin-bottom: 16px; }
-    .phone-shell.sm img { width: 84px; height: 182px; }
+    .phone-shell.lg { width: 96px; }
+    .phone-shell.lg img { width: 96px; height: 208px; }
+    .phone-shell.sm { width: 80px; margin-bottom: 14px; }
+    .phone-shell.sm img { width: 80px; height: 173px; }
 
-    /* biz: dark dashboard */
     .card-media.biz {
-      background: linear-gradient(150deg, #0e1e3a 0%, #163060 60%, #0e2246 100%);
+      background: linear-gradient(150deg, #dbeafe 0%, #bfdbfe 100%);
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .dash {
-      width: min(88%, 300px);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px;
+      width: min(86%, 290px);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
       overflow: hidden;
-      backdrop-filter: blur(4px);
     }
     .dash-header {
       padding: 12px 16px;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       gap: 8px;
+      background: var(--blue-pale);
     }
     .dash-header-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--blue-lt);
-      box-shadow: 0 0 8px rgba(59,130,246,0.6);
+      background: var(--blue);
     }
     .dash-header-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.6);
-      letter-spacing: 0.06em;
+      font-size: 0.73rem;
+      font-weight: 800;
+      color: var(--blue-dark);
+      letter-spacing: 0.04em;
     }
-    .dash-rows {
-      padding: 8px 0;
-    }
+    .dash-rows { padding: 4px 0; }
     .dash-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 10px 16px;
-      font-size: 0.82rem;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.83rem;
+      border-bottom: 1px solid var(--border);
     }
     .dash-row:last-child { border-bottom: none; }
-    .dash-row-label { color: rgba(255,255,255,0.55); font-weight: 600; }
-    .dash-row-val { font-weight: 800; color: rgba(255,255,255,0.9); }
-    .dash-row-val.ok  { color: #34d399; }
-    .dash-row-val.warn { color: #fbbf24; }
+    .dash-row-label { color: var(--muted); font-weight: 600; }
+    .dash-row-val { font-weight: 800; color: var(--text); }
+    .dash-row-val.ok   { color: var(--green); }
+    .dash-row-val.warn { color: var(--amber-dark); }
 
     /* card body */
     .card-body {
@@ -371,16 +355,16 @@
       flex: 1;
     }
     .card-kicker {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-    .kicker-amber { color: var(--amber); }
-    .kicker-blue  { color: var(--blue-lt); }
+    .kicker-amber { color: var(--amber-dark); }
+    .kicker-blue  { color: var(--blue); }
     .card-title {
-      font-size: 2rem;
+      font-size: 1.9rem;
       font-weight: 900;
       letter-spacing: -0.03em;
       line-height: 1.1;
@@ -389,24 +373,24 @@
     .card-desc {
       font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 24px;
+      line-height: 1.85;
+      margin-bottom: 22px;
       flex: 1;
     }
-    .card-tags {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-bottom: 24px;
     }
     .tag {
-      display: inline-block;
-      padding: 3px 10px;
+      padding: 3px 11px;
       border-radius: 999px;
-      border: 1px solid var(--border-hi);
+      border: 1.5px solid var(--border);
       font-size: 0.75rem;
       font-weight: 700;
       color: var(--muted);
+      background: var(--bg);
     }
     .card-actions {
       display: flex;
@@ -416,13 +400,14 @@
 
     /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--border);
       padding: 28px 32px;
+      border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
+      background: var(--white);
     }
     .footer-brand {
       display: flex;
@@ -434,13 +419,13 @@
       font-weight: 700;
     }
     .footer-brand-mark {
-      width: 20px;
-      height: 20px;
-      border-radius: 5px;
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
       background: linear-gradient(135deg, var(--amber) 0%, var(--blue) 100%);
       display: grid;
       place-items: center;
-      font-size: 0.62rem;
+      font-size: 0.65rem;
       font-weight: 900;
       color: #fff;
     }
@@ -450,19 +435,19 @@
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 720px) {
-      .products-inner { grid-template-columns: 1fr; }
-      .hero-title { letter-spacing: -0.03em; }
-      nav { padding: 0 20px; }
-      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+    @media (max-width: 700px) {
+      .cards { grid-template-columns: 1fr; }
+      nav { padding: 0 18px; }
+      footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
+      .products { padding: 56px 16px 72px; }
     }
-    @media (max-width: 480px) {
-      .nav-right .nav-pill:first-child { display: none; }
-      .card-media { height: 220px; }
-      .phone-shell.lg { width: 82px; }
-      .phone-shell.lg img { width: 82px; height: 177px; }
-      .phone-shell.sm { width: 68px; }
-      .phone-shell.sm img { width: 68px; height: 147px; }
+    @media (max-width: 460px) {
+      .nav-btn:first-child { display: none; }
+      .card-media { height: 210px; }
+      .phone-shell.lg { width: 80px; }
+      .phone-shell.lg img { width: 80px; height: 173px; }
+      .phone-shell.sm { width: 66px; }
+      .phone-shell.sm img { width: 66px; height: 143px; }
     }
   </style>
 </head>
@@ -475,12 +460,12 @@
       <span class="brand-name">Yahimaro Apps</span>
     </a>
     <div class="nav-right">
-      <a class="nav-pill" href="/">
-        <span class="nav-pill-dot" style="background:var(--amber);"></span>
+      <a class="nav-btn" href="/stocker/">
+        <span class="nav-btn-dot" style="background:var(--amber);"></span>
         Stocker
       </a>
-      <a class="nav-pill" href="/stocker-biz/">
-        <span class="nav-pill-dot" style="background:var(--blue-lt);"></span>
+      <a class="nav-btn" href="/stocker-biz/">
+        <span class="nav-btn-dot" style="background:var(--blue);"></span>
         Stocker Biz
       </a>
     </div>
@@ -488,53 +473,57 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">
-        <span class="hero-eyebrow-dot"></span>
-        Yahimaro Apps
-      </p>
-      <h1 class="hero-title">
-        <span class="line-amber">在庫管理を、</span><br>
-        <span class="line-blue">もっとシンプルに。</span>
-      </h1>
-      <p class="hero-lead">
-        家庭の買い物から、チームの発注管理まで。<br>
-        2 つの Stocker で、あなたの在庫課題を解決します。
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-amber" href="#products">製品を見る</a>
-        <a class="btn btn-ghost" href="/stocker-biz/">Stocker Biz（法人向け）</a>
-      </div>
-    </div>
-    <div class="scroll-hint" aria-hidden="true">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <p class="hero-label">
+      <span class="hero-label-dot"></span>
+      Yahimaro Apps
+    </p>
+    <h1>
+      暮らしと仕事の在庫を、<br>
+      <span class="hi-amber">かんたん</span>に<span class="hi-blue">スマート</span>に。
+    </h1>
+    <p class="hero-lead">
+      家庭の買い物管理から、チームの在庫・発注管理まで。<br>
+      目的に合わせて選べる 2 つのアプリを提供しています。
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-amber" href="/stocker/">
+        Stocker を見る
+      </a>
+      <a class="btn btn-blue" href="/stocker-biz/">
+        Stocker Biz を見る
+      </a>
     </div>
   </section>
 
+  <hr class="divider">
+
   <!-- PRODUCTS -->
-  <section class="products" id="products">
-    <div class="products-inner">
+  <section class="products">
+    <p class="products-label">Products</p>
+    <h2 class="products-title">用途に合わせて選べる 2 つの Stocker</h2>
+
+    <div class="cards">
 
       <!-- Stocker -->
       <article class="card">
         <div class="card-media stocker">
           <div class="phone-row">
             <div class="phone-shell sm">
-              <img src="/images/screen-1.png" alt="Stocker スクリーンショット 1">
+              <img src="/images/screen-1.png" alt="Stocker スクリーンショット">
             </div>
             <div class="phone-shell lg">
-              <img src="/images/v1.5.0_1_1242_2688.png" alt="Stocker スクリーンショット 2">
+              <img src="/images/v1.5.0_1_1242_2688.png" alt="Stocker スクリーンショット">
             </div>
             <div class="phone-shell sm">
-              <img src="/images/v1.5.0_2_1242_2688.png" alt="Stocker スクリーンショット 3">
+              <img src="/images/v1.5.0_2_1242_2688.png" alt="Stocker スクリーンショット">
             </div>
           </div>
         </div>
         <div class="card-body">
           <p class="card-kicker kicker-amber">For Personal &amp; Family</p>
-          <h2 class="card-title">Stocker</h2>
+          <h3 class="card-title">Stocker</h3>
           <p class="card-desc">食品・日用品の在庫管理、買い物リスト、価格記録、賞味期限通知をひとつにまとめた節約買い物アプリ。バーコードスキャンや家族共有にも対応。</p>
-          <div class="card-tags">
+          <div class="tags">
             <span class="tag">iOS</span>
             <span class="tag">バーコードスキャン</span>
             <span class="tag">買い物リスト</span>
@@ -543,7 +532,7 @@
           </div>
           <div class="card-actions">
             <a class="btn btn-amber" href="/stocker/">詳細を見る</a>
-            <a class="btn btn-ghost" href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App Store</a>
+            <a class="btn btn-outline" href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App Store</a>
           </div>
         </div>
       </article>
@@ -578,9 +567,9 @@
         </div>
         <div class="card-body">
           <p class="card-kicker kicker-blue">For Business &amp; Team</p>
-          <h2 class="card-title">Stocker Biz</h2>
+          <h3 class="card-title">Stocker Biz</h3>
           <p class="card-desc">中小企業・小売店向けのクラウド在庫管理サービス。バーコードスキャン、発注依頼フロー、CSV移行、権限管理をチームで。現在開発中。</p>
-          <div class="card-tags">
+          <div class="tags">
             <span class="tag">Web + App</span>
             <span class="tag">発注管理</span>
             <span class="tag">権限管理</span>
