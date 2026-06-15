@@ -31,16 +31,16 @@
   </script>
   <style>
     :root {
-      --bg:        #09090b;
-      --surface:   #111113;
-      --border:    rgba(255,255,255,0.08);
-      --border-hi: rgba(255,255,255,0.14);
-      --text:      #fafafa;
-      --muted:     rgba(255,255,255,0.45);
+      --bg:        #0f1623;
+      --surface:   #182030;
+      --border:    rgba(255,255,255,0.10);
+      --border-hi: rgba(255,255,255,0.20);
+      --text:      #f0f4ff;
+      --muted:     rgba(210,220,255,0.55);
       --amber:     #f59e0b;
       --amber-lt:  #fbbf24;
-      --blue:      #1d6fce;
-      --blue-lt:   #3b82f6;
+      --blue:      #2278d8;
+      --blue-lt:   #60a5fa;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -66,7 +66,7 @@
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
-      background: rgba(9,9,11,0.85);
+      background: rgba(15,22,35,0.88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
@@ -156,8 +156,8 @@
       width: 900px;
       height: 500px;
       background:
-        radial-gradient(ellipse at 30% 50%, rgba(245,158,11,0.12) 0%, transparent 55%),
-        radial-gradient(ellipse at 70% 50%, rgba(29,111,206,0.12) 0%, transparent 55%);
+        radial-gradient(ellipse at 30% 50%, rgba(245,158,11,0.22) 0%, transparent 55%),
+        radial-gradient(ellipse at 70% 50%, rgba(34,120,216,0.22) 0%, transparent 55%);
       pointer-events: none;
     }
     .hero-content { position: relative; z-index: 1; }
@@ -282,7 +282,7 @@
     }
     /* stocker: iphone mockup */
     .card-media.stocker {
-      background: linear-gradient(160deg, #1a0e00 0%, #2d1a00 100%);
+      background: linear-gradient(160deg, #2a1800 0%, #3d2600 100%);
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -313,7 +313,7 @@
 
     /* biz: dark dashboard */
     .card-media.biz {
-      background: linear-gradient(150deg, #050d1a 0%, #0c1e3a 60%, #0a1828 100%);
+      background: linear-gradient(150deg, #0e1e3a 0%, #163060 60%, #0e2246 100%);
       display: flex;
       align-items: center;
       justify-content: center;
