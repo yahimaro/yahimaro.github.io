@@ -78,10 +78,17 @@
       color: var(--text);
     }
     .brand-logo {
-      width: 116px;
-      height: 34px;
+      width: 30px;
+      height: 24px;
       object-fit: contain;
       display: block;
+    }
+    .brand-text {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      white-space: nowrap;
     }
     .nav-right {
       display: flex;
@@ -391,25 +398,10 @@
       border-top: 1px solid var(--border);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
       background: var(--white);
-    }
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.82rem;
-      font-weight: 700;
-    }
-    .footer-brand-logo {
-      width: 96px;
-      height: 28px;
-      object-fit: contain;
-      display: block;
     }
     .footer-copy {
       font-size: 0.78rem;
@@ -425,7 +417,7 @@
     }
     @media (max-width: 460px) {
       .nav-btn:first-child { display: none; }
-      .brand-logo { width: 104px; }
+      .brand-text { font-size: 0.88rem; }
       .card-media { height: 210px; }
       .phone-shell.lg { width: 80px; }
       .phone-shell.lg img { width: 80px; height: 173px; }
@@ -439,7 +431,8 @@
   <!-- NAV -->
   <nav>
     <a class="brand" href="/">
-      <img class="brand-logo" src="/images/logo-cropped.png" alt="Yahimaro Apps">
+      <img class="brand-logo" src="/images/logo-mark.png" alt="" aria-hidden="true">
+      <span class="brand-text">Yahimaro Apps</span>
     </a>
     <div class="nav-right">
       <a class="nav-btn" href="/stocker/">
@@ -570,9 +563,6 @@
 
   <!-- FOOTER -->
   <footer>
-    <a class="footer-brand" href="/">
-      <img class="footer-brand-logo" src="/images/logo-cropped.png" alt="Yahimaro Apps">
-    </a>
     <p class="footer-copy">&copy; 2026 Yahimaro Apps. All rights reserved.</p>
   </footer>
 
