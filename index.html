@@ -12,11 +12,11 @@
   <meta property="og:title" content="Yahimaro Apps - Stocker / Stocker Biz">
   <meta property="og:description" content="家庭の買い物管理から、チームの在庫管理まで。Stocker と Stocker Biz を案内する Yahimaro Apps 公式サイトです。">
   <meta property="og:url" content="https://yahimaro.com/">
-  <meta property="og:image" content="https://yahimaro.com/images/logo.png">
+  <meta property="og:image" content="https://yahimaro.com/images/logo-cropped.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Yahimaro Apps - Stocker / Stocker Biz">
   <meta name="twitter:description" content="家庭の買い物管理から、チームの在庫管理まで。Yahimaro Apps 公式サイト。">
-  <meta name="twitter:image" content="https://yahimaro.com/images/logo.png">
+  <meta name="twitter:image" content="https://yahimaro.com/images/logo-cropped.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,8 +78,8 @@
       color: var(--text);
     }
     .brand-logo {
-      width: 150px;
-      height: 42px;
+      width: 116px;
+      height: 34px;
       object-fit: contain;
       display: block;
     }
@@ -138,14 +138,6 @@
       color: var(--muted);
       margin-bottom: 28px;
       box-shadow: var(--shadow-sm);
-    }
-    .hero-logo {
-      width: min(260px, 62vw);
-      aspect-ratio: 1;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto 22px;
-      border-radius: 18px;
     }
     .hero-label-dot {
       width: 6px;
@@ -307,23 +299,6 @@
       box-shadow: var(--shadow-lg);
       overflow: hidden;
     }
-    .biz-card-stack {
-      width: min(86%, 290px);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-    .biz-card-icon {
-      width: 86px;
-      height: 86px;
-      border-radius: 20px;
-      object-fit: cover;
-      box-shadow: var(--shadow-md);
-    }
-    .biz-card-stack .dash {
-      width: 100%;
-    }
     .dash-header {
       padding: 12px 16px;
       border-bottom: 1px solid var(--border);
@@ -431,8 +406,8 @@
       font-weight: 700;
     }
     .footer-brand-logo {
-      width: 118px;
-      height: 34px;
+      width: 96px;
+      height: 28px;
       object-fit: contain;
       display: block;
     }
@@ -450,7 +425,7 @@
     }
     @media (max-width: 460px) {
       .nav-btn:first-child { display: none; }
-      .brand-logo { width: 128px; }
+      .brand-logo { width: 104px; }
       .card-media { height: 210px; }
       .phone-shell.lg { width: 80px; }
       .phone-shell.lg img { width: 80px; height: 173px; }
@@ -464,7 +439,7 @@
   <!-- NAV -->
   <nav>
     <a class="brand" href="/">
-      <img class="brand-logo" src="/images/logo.png" alt="Yahimaro Apps">
+      <img class="brand-logo" src="/images/logo-cropped.png" alt="Yahimaro Apps">
     </a>
     <div class="nav-right">
       <a class="nav-btn" href="/stocker/">
@@ -480,7 +455,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img class="hero-logo" src="/images/logo.png" alt="Yahimaro Apps">
     <p class="hero-label">
       <span class="hero-label-dot"></span>
       Yahimaro Apps
@@ -549,30 +523,27 @@
       <!-- Stocker Biz -->
       <article class="card">
         <div class="card-media biz">
-          <div class="biz-card-stack">
-            <img class="biz-card-icon" src="/images/stocker-biz_icon.png" alt="Stocker Biz アイコン">
-            <div class="dash">
-              <div class="dash-header">
-                <div class="dash-header-dot"></div>
-                <span class="dash-header-label">Stocker Biz — ダッシュボード</span>
+          <div class="dash">
+            <div class="dash-header">
+              <div class="dash-header-dot"></div>
+              <span class="dash-header-label">Stocker Biz — ダッシュボード</span>
+            </div>
+            <div class="dash-rows">
+              <div class="dash-row">
+                <span class="dash-row-label">在庫ステータス</span>
+                <span class="dash-row-val ok">正常</span>
               </div>
-              <div class="dash-rows">
-                <div class="dash-row">
-                  <span class="dash-row-label">在庫ステータス</span>
-                  <span class="dash-row-val ok">正常</span>
-                </div>
-                <div class="dash-row">
-                  <span class="dash-row-label">発注依頼</span>
-                  <span class="dash-row-val warn">3 件</span>
-                </div>
-                <div class="dash-row">
-                  <span class="dash-row-label">管理品目</span>
-                  <span class="dash-row-val">248 点</span>
-                </div>
-                <div class="dash-row">
-                  <span class="dash-row-label">チームメンバー</span>
-                  <span class="dash-row-val">8 名</span>
-                </div>
+              <div class="dash-row">
+                <span class="dash-row-label">発注依頼</span>
+                <span class="dash-row-val warn">3 件</span>
+              </div>
+              <div class="dash-row">
+                <span class="dash-row-label">管理品目</span>
+                <span class="dash-row-val">248 点</span>
+              </div>
+              <div class="dash-row">
+                <span class="dash-row-label">チームメンバー</span>
+                <span class="dash-row-val">8 名</span>
               </div>
             </div>
           </div>
@@ -600,7 +571,7 @@
   <!-- FOOTER -->
   <footer>
     <a class="footer-brand" href="/">
-      <img class="footer-brand-logo" src="/images/logo.png" alt="Yahimaro Apps">
+      <img class="footer-brand-logo" src="/images/logo-cropped.png" alt="Yahimaro Apps">
     </a>
     <p class="footer-copy">&copy; 2026 Yahimaro Apps. All rights reserved.</p>
   </footer>
