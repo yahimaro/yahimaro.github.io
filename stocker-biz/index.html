@@ -10,13 +10,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Stocker Biz">
   <meta property="og:title" content="Stocker Biz - 中小企業向け在庫管理・発注漏れ防止クラウドサービス">
-  <meta property="og:description" content="バーコードスキャン・発注依頼・権限管理をひとつに。チームで使える在庫管理 SaaS、準備中。">
+  <meta property="og:description" content="バーコードスキャン・発注依頼・権限管理をひとつに。チームで使える在庫管理サービス、準備中。">
   <meta property="og:url" content="https://yahimaro.com/stocker-biz/">
-  <meta property="og:image" content="https://yahimaro.com/stocker-biz/images/og-image.png">
+  <meta property="og:image" content="https://yahimaro.com/images/stocker-biz_icon.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Stocker Biz - 中小企業向け在庫管理・発注漏れ防止クラウドサービス">
-  <meta name="twitter:description" content="バーコードスキャン・発注依頼・権限管理をひとつに。チームで使える在庫管理 SaaS、準備中。">
-  <meta name="twitter:image" content="https://yahimaro.com/stocker-biz/images/og-image.png">
+  <meta name="twitter:description" content="バーコードスキャン・発注依頼・権限管理をひとつに。チームで使える在庫管理サービス、準備中。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/stocker-biz_icon.png">
 
   <style>
     :root {
@@ -62,23 +62,12 @@
       text-decoration: none;
     }
     .nav-logo-mark {
-      width: 28px;
-      height: 28px;
-      background: var(--accent);
-      border-radius: 7px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       flex-shrink: 0;
-    }
-    .nav-logo-mark svg {
-      width: 16px;
-      height: 16px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      display: block;
+      object-fit: cover;
     }
     .nav-logo-text {
       font-size: 1rem;
@@ -152,6 +141,17 @@
       border-radius: 999px;
       margin-bottom: 28px;
       letter-spacing: 0.1em;
+    }
+    .hero-app-icon {
+      width: 104px;
+      height: 104px;
+      border-radius: 24px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+      box-shadow: 0 20px 52px rgba(0,0,0,0.24);
+      position: relative;
+      z-index: 1;
     }
     .hero-coming::before {
       content: '';
@@ -791,22 +791,11 @@
       text-decoration: none;
     }
     .footer-logo-mark {
-      width: 24px;
-      height: 24px;
-      background: var(--accent);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .footer-logo-mark svg {
-      width: 13px;
-      height: 13px;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      display: block;
+      object-fit: cover;
     }
     .footer-logo-text {
       font-size: 0.9rem;
@@ -838,12 +827,7 @@
   <!-- NAV -->
   <nav>
     <a href="/stocker-biz/" class="nav-logo">
-      <!-- ロゴ画像がある場合は下記 img に差し替え:
-           <img src="/stocker-biz/images/logo.svg" alt="Stocker Biz" height="28">
-      -->
-      <div class="nav-logo-mark">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
-      </div>
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
       <span class="nav-logo-text">Stocker <span>Biz</span></span>
     </a>
     <ul class="nav-links">
@@ -857,9 +841,10 @@
 
   <!-- HERO -->
   <div class="hero">
+    <img class="hero-app-icon" src="/images/stocker-biz_icon.png" alt="Stocker Biz アイコン">
     <div class="hero-coming">準備中</div>
     <h1>在庫管理と発注漏れを<br><em>ひとつのツール</em>で解決</h1>
-    <p class="hero-sub">中小企業・小売店向けのクラウド在庫管理サービス。<br>バーコードスキャン・発注依頼・権限管理をチームで使える SaaS です。</p>
+    <p class="hero-sub">中小企業・小売店向けのクラウド在庫管理サービス。<br>バーコードスキャン・発注依頼・権限管理をチームで使えます。</p>
     <div class="hero-cta">
       <a href="#plans" class="btn-primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -910,13 +895,13 @@
         </div>
         <div class="problem-card">
           <div class="problem-icon">👤</div>
-          <h3>誰が発注すればいいか不明確</h3>
+          <h3>誰がどこに発注すればいいか不明確</h3>
           <p>担当が属人化していて、休みや退職のたびにフロー全体が止まってしまう。</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">📱</div>
-          <h3>現場からリアルタイム更新できない</h3>
-          <p>パソコンがない現場では、スマホから数量を更新できる手段がない。</p>
+          <h3>在庫管理していても数が合わない</h3>
+          <p>在庫を使ってもリアルタイムに更新できないから、在庫更新を忘れてしまい在庫管理をしていても数が合わなくなる。</p>
         </div>
         <div class="problem-card">
           <div class="problem-icon">🔒</div>
@@ -944,8 +929,8 @@
             <h3>バーコードで<br>素早く在庫を更新</h3>
             <p>スマホカメラでバーコードをスキャンするだけで品目を特定。数量の増減・棚卸・入荷処理をその場で記録できます。</p>
             <ul class="feature-bullets">
-              <li>QR / バーコード両対応</li>
-              <li>バーコードラベルの PDF 印刷</li>
+              <li>スマホアプリでバーコードを読み取る</li>
+              <li>バーコードラベルの PDF 出力機能搭載</li>
               <li>操作履歴はすべて自動記録</li>
             </ul>
           </div>
@@ -988,7 +973,7 @@
             <ul class="feature-bullets">
               <li>ロールベースの権限制御</li>
               <li>メール招待で簡単メンバー追加</li>
-              <li>ユーザーの無効化・再有効化</li>
+              <li>発注担当者を部署、品目毎に自在設定可能</li>
             </ul>
           </div>
           <div class="feature-visual">
@@ -1191,7 +1176,7 @@
         <details>
           <summary>複数拠点・倉庫に対応していますか？</summary>
           <div class="faq-answer">
-            はい。拠点・部署・保管場所の 3 階層で組織構造を管理できます。Standard プランで拠点 3 つ、Business プランで拠点 10 つまで設定できます。
+            はい。拠点・部署・保管場所の 3 階層で組織構造を管理できます。Standard プランで3 拠点、Business プランで10 拠点まで設定できます。
           </div>
         </details>
         <details>
@@ -1226,9 +1211,7 @@
   <footer>
     <div class="footer-inner">
       <a href="/stocker-biz/" class="footer-logo">
-        <div class="footer-logo-mark">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2"/></svg>
-        </div>
+        <img class="footer-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
         <span class="footer-logo-text">Stocker Biz</span>
       </a>
       <div class="footer-links">

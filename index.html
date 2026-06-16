@@ -12,11 +12,11 @@
   <meta property="og:title" content="Yahimaro Apps - Stocker / Stocker Biz">
   <meta property="og:description" content="家庭の買い物管理から、チームの在庫管理まで。Stocker と Stocker Biz を案内する Yahimaro Apps 公式サイトです。">
   <meta property="og:url" content="https://yahimaro.com/">
-  <meta property="og:image" content="https://yahimaro.com/images/screen-1.png">
+  <meta property="og:image" content="https://yahimaro.com/images/logo.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Yahimaro Apps - Stocker / Stocker Biz">
   <meta name="twitter:description" content="家庭の買い物管理から、チームの在庫管理まで。Yahimaro Apps 公式サイト。">
-  <meta name="twitter:image" content="https://yahimaro.com/images/screen-1.png">
+  <meta name="twitter:image" content="https://yahimaro.com/images/logo.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,24 +77,11 @@
       text-decoration: none;
       color: var(--text);
     }
-    .brand-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: linear-gradient(135deg, var(--amber) 0%, var(--blue) 100%);
-      display: grid;
-      place-items: center;
-      font-size: 0.85rem;
-      font-weight: 900;
-      color: #fff;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(37,99,235,0.25);
-    }
-    .brand-name {
-      font-size: 0.95rem;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      color: var(--text);
+    .brand-logo {
+      width: 150px;
+      height: 42px;
+      object-fit: contain;
+      display: block;
     }
     .nav-right {
       display: flex;
@@ -151,6 +138,14 @@
       color: var(--muted);
       margin-bottom: 28px;
       box-shadow: var(--shadow-sm);
+    }
+    .hero-logo {
+      width: min(260px, 62vw);
+      aspect-ratio: 1;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 22px;
+      border-radius: 18px;
     }
     .hero-label-dot {
       width: 6px;
@@ -312,6 +307,23 @@
       box-shadow: var(--shadow-lg);
       overflow: hidden;
     }
+    .biz-card-stack {
+      width: min(86%, 290px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .biz-card-icon {
+      width: 86px;
+      height: 86px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: var(--shadow-md);
+    }
+    .biz-card-stack .dash {
+      width: 100%;
+    }
     .dash-header {
       padding: 12px 16px;
       border-bottom: 1px solid var(--border);
@@ -418,16 +430,11 @@
       font-size: 0.82rem;
       font-weight: 700;
     }
-    .footer-brand-mark {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
-      background: linear-gradient(135deg, var(--amber) 0%, var(--blue) 100%);
-      display: grid;
-      place-items: center;
-      font-size: 0.65rem;
-      font-weight: 900;
-      color: #fff;
+    .footer-brand-logo {
+      width: 118px;
+      height: 34px;
+      object-fit: contain;
+      display: block;
     }
     .footer-copy {
       font-size: 0.78rem;
@@ -443,6 +450,7 @@
     }
     @media (max-width: 460px) {
       .nav-btn:first-child { display: none; }
+      .brand-logo { width: 128px; }
       .card-media { height: 210px; }
       .phone-shell.lg { width: 80px; }
       .phone-shell.lg img { width: 80px; height: 173px; }
@@ -456,7 +464,7 @@
   <!-- NAV -->
   <nav>
     <a class="brand" href="/">
-      <span class="brand-name">Yahimaro Apps</span>
+      <img class="brand-logo" src="/images/logo.png" alt="Yahimaro Apps">
     </a>
     <div class="nav-right">
       <a class="nav-btn" href="/stocker/">
@@ -472,6 +480,7 @@
 
   <!-- HERO -->
   <section class="hero">
+    <img class="hero-logo" src="/images/logo.png" alt="Yahimaro Apps">
     <p class="hero-label">
       <span class="hero-label-dot"></span>
       Yahimaro Apps
@@ -540,27 +549,30 @@
       <!-- Stocker Biz -->
       <article class="card">
         <div class="card-media biz">
-          <div class="dash">
-            <div class="dash-header">
-              <div class="dash-header-dot"></div>
-              <span class="dash-header-label">Stocker Biz — ダッシュボード</span>
-            </div>
-            <div class="dash-rows">
-              <div class="dash-row">
-                <span class="dash-row-label">在庫ステータス</span>
-                <span class="dash-row-val ok">正常</span>
+          <div class="biz-card-stack">
+            <img class="biz-card-icon" src="/images/stocker-biz_icon.png" alt="Stocker Biz アイコン">
+            <div class="dash">
+              <div class="dash-header">
+                <div class="dash-header-dot"></div>
+                <span class="dash-header-label">Stocker Biz — ダッシュボード</span>
               </div>
-              <div class="dash-row">
-                <span class="dash-row-label">発注依頼</span>
-                <span class="dash-row-val warn">3 件</span>
-              </div>
-              <div class="dash-row">
-                <span class="dash-row-label">管理品目</span>
-                <span class="dash-row-val">248 点</span>
-              </div>
-              <div class="dash-row">
-                <span class="dash-row-label">チームメンバー</span>
-                <span class="dash-row-val">8 名</span>
+              <div class="dash-rows">
+                <div class="dash-row">
+                  <span class="dash-row-label">在庫ステータス</span>
+                  <span class="dash-row-val ok">正常</span>
+                </div>
+                <div class="dash-row">
+                  <span class="dash-row-label">発注依頼</span>
+                  <span class="dash-row-val warn">3 件</span>
+                </div>
+                <div class="dash-row">
+                  <span class="dash-row-label">管理品目</span>
+                  <span class="dash-row-val">248 点</span>
+                </div>
+                <div class="dash-row">
+                  <span class="dash-row-label">チームメンバー</span>
+                  <span class="dash-row-val">8 名</span>
+                </div>
               </div>
             </div>
           </div>
@@ -587,7 +599,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <a class="footer-brand" href="/">Yahimaro Apps</a>
+    <a class="footer-brand" href="/">
+      <img class="footer-brand-logo" src="/images/logo.png" alt="Yahimaro Apps">
+    </a>
     <p class="footer-copy">&copy; 2026 Yahimaro Apps. All rights reserved.</p>
   </footer>
 
