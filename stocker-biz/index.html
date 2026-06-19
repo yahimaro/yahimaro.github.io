@@ -505,92 +505,6 @@
       }
     }
 
-    /* ── SCREENSHOTS ── */
-    .screenshots {
-      background: var(--bg-dark);
-      padding: 72px 0;
-      overflow: hidden;
-    }
-    .screenshots-header {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 0 24px;
-    }
-    .screenshots-header .section-label { color: var(--accent-lt); }
-    .screenshots-header .section-title { color: #fff; }
-    .screenshots-header .section-desc {
-      color: rgba(255,255,255,0.45);
-      margin: 0 auto;
-    }
-    .screenshots-scroll {
-      display: flex;
-      gap: 20px;
-      padding: 0 40px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.2) transparent;
-      cursor: grab;
-    }
-    .screenshots-scroll:active { cursor: grabbing; }
-    .screenshots-scroll::-webkit-scrollbar { height: 4px; }
-    .screenshots-scroll::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.2);
-      border-radius: 2px;
-    }
-    /* ── placeholder screens ── */
-    .screen-placeholder {
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: 260px;
-      aspect-ratio: 16/10;
-      background: linear-gradient(145deg, #112240, #1a3a5c);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.25);
-      font-size: 0.78rem;
-      gap: 8px;
-    }
-    .screen-placeholder svg {
-      width: 32px;
-      height: 32px;
-      opacity: 0.3;
-    }
-    /* ── real screenshots ── */
-    .screen-shot {
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: 320px;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .screen-img {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-      object-fit: cover;
-      object-position: top;
-      aspect-ratio: 16/10;
-      background: #0a1628;
-    }
-    .screen-shot figcaption {
-      text-align: center;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.8rem;
-    }
-    @media (max-width: 640px) {
-      .screen-placeholder { width: 220px; }
-      .screen-shot { width: 260px; }
-    }
-
     /* ── PLAN ── */
     .plans {
       background: var(--surface);
@@ -1067,41 +981,6 @@
     </div>
   </section>
 
-  <!-- SCREENSHOTS (placeholder strip) -->
-  <section class="screenshots" id="screenshots">
-    <div class="screenshots-header">
-      <p class="section-label">スクリーンショット</p>
-      <h2 class="section-title">シンプルで使いやすい UI</h2>
-      <p class="section-desc">Web ブラウザとスマホアプリ（iOS / Android）の両方で動作します。</p>
-    </div>
-    <div class="screenshots-scroll" id="screenshotsScroll">
-      <figure class="screen-shot">
-        <img src="images/screen-1.png" class="screen-img" alt="ホーム画面">
-        <figcaption>ホーム画面</figcaption>
-      </figure>
-      <figure class="screen-shot">
-        <img src="images/screen-2.png" class="screen-img" alt="在庫一覧">
-        <figcaption>在庫一覧</figcaption>
-      </figure>
-      <figure class="screen-shot">
-        <img src="images/screen-3.png" class="screen-img" alt="在庫詳細・操作">
-        <figcaption>在庫詳細・操作</figcaption>
-      </figure>
-      <figure class="screen-shot">
-        <img src="images/screen-4.png" class="screen-img" alt="発注状況">
-        <figcaption>発注状況</figcaption>
-      </figure>
-      <figure class="screen-shot">
-        <img src="images/screen-5.png" class="screen-img" alt="拠点・部署・保管場所設定">
-        <figcaption>拠点・部署設定</figcaption>
-      </figure>
-      <figure class="screen-shot">
-        <img src="images/screen-6.png" class="screen-img" alt="ラベル印刷">
-        <figcaption>ラベル印刷</figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- HOW IT WORKS -->
   <section class="howitworks" id="howitworks">
     <div class="section-inner">
@@ -1296,26 +1175,6 @@
     </div>
   </footer>
 
-  <script>
-    /* ── スクロールドラッグ ── */
-    const scroll = document.getElementById('screenshotsScroll');
-    if (scroll) {
-      let isDown = false, startX, scrollLeft;
-      scroll.addEventListener('mousedown', e => {
-        isDown = true;
-        startX = e.pageX - scroll.offsetLeft;
-        scrollLeft = scroll.scrollLeft;
-      });
-      document.addEventListener('mouseup', () => { isDown = false; });
-      scroll.addEventListener('mouseleave', () => { isDown = false; });
-      scroll.addEventListener('mousemove', e => {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.pageX - scroll.offsetLeft;
-        scroll.scrollLeft = scrollLeft - (x - startX) * 1.2;
-      });
-    }
-  </script>
 
 </body>
 </html>
