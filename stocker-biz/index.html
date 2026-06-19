@@ -462,39 +462,19 @@
       background: var(--accent);
     }
     .feature-visual {
-      background: linear-gradient(135deg, #0d2240 0%, #1a3a5c 100%);
+      background: #ffffff;
       border-radius: 16px;
-      aspect-ratio: 4/3;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(13,34,64,0.25);
+      box-shadow: 0 20px 60px rgba(13,34,64,0.15);
     }
-    /* placeholder SVG illustration inside each feature visual */
-    .feature-visual-inner {
-      text-align: center;
-      color: rgba(255,255,255,0.35);
-      font-size: 0.8rem;
-      padding: 24px;
-    }
-    .feature-visual-inner svg {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 10px;
-      opacity: 0.5;
-    }
-    /* when a real screenshot is available, replace the visual like:
-       <div class="feature-visual">
-         <img src="../stocker-biz/images/screen-feature-1.png" alt="...">
-       </div>
-    */
     .feature-visual img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
+      height: auto;
+      display: block;
       border-radius: 16px;
     }
     @media (max-width: 780px) {
