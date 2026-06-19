@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お問い合わせ｜Stocker Biz（ストッカービズ）</title>
+  <meta name="description" content="Stocker Biz（ストッカービズ）へのお問い合わせ・β版トライアルのお申し込みはこちらから。">
+  <link rel="canonical" href="https://yahimaro.com/stocker-biz/contact.html">
+
+  <style>
+    :root {
+      --primary:   #1e3a5f;
+      --accent:    #1d6fce;
+      --accent-lt: #2d84e8;
+      --surface:   #ffffff;
+      --bg:        #f0f4f9;
+      --bg-dark:   #0d1f35;
+      --border:    #c8d8eb;
+      --text:      #0f1f2e;
+      --muted:     #5a7080;
+      --green:     #16a34a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14, 31, 53, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      height: 56px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo-mark {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      display: block;
+      object-fit: cover;
+    }
+    .nav-logo-text {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .nav-logo-text span { color: var(--accent-lt); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #f59e0b;
+      background: rgba(217,119,6,0.15);
+      border: 1px solid rgba(217,119,6,0.35);
+      padding: 2px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.06em;
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: linear-gradient(160deg, #0b1a2e 0%, #0d2240 55%, #102d52 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* BETA BANNER */
+    .beta-banner {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .beta-banner-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .beta-point {
+      text-align: center;
+      padding: 16px 12px;
+      background: var(--bg);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .beta-point-icon {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+    .beta-point-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .beta-point-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    @media (max-width: 560px) {
+      .beta-banner-inner { grid-template-columns: 1fr; }
+    }
+
+    /* FORM SECTION */
+    .form-section {
+      padding: 56px 24px 80px;
+    }
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(13,34,64,0.08);
+    }
+    .form-wrap h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .form-wrap .form-lead {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    label .required {
+      color: #dc2626;
+      margin-left: 4px;
+      font-size: 0.78rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: #fff;
+      font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      outline: none;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(29,111,206,0.12);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) {
+      .form-row { grid-template-columns: 1fr; }
+      .form-wrap { padding: 28px 20px; }
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 8px;
+      font-family: inherit;
+    }
+    .submit-btn:hover {
+      background: var(--accent-lt);
+      transform: translateY(-1px);
+    }
+    .submit-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .form-privacy {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+    .form-privacy a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .form-privacy a:hover { text-decoration: underline; }
+
+    /* SUCCESS */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .form-success-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .form-success h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .form-success p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+    .form-success a {
+      display: inline-block;
+      margin-top: 24px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-dark);
+      padding: 40px 24px;
+    }
+    .footer-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .footer-logo-mark {
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      display: block;
+      object-fit: cover;
+    }
+    .footer-logo-text {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-copy {
+      width: 100%;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.22);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><span class="nav-badge">β版募集中</span></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>お問い合わせ</h1>
+    <p>β版トライアルのお申し込み・ご質問はこちらから</p>
+  </div>
+
+  <!-- BETA BANNER -->
+  <div class="beta-banner">
+    <div class="beta-banner-inner">
+      <div class="beta-point">
+        <div class="beta-point-icon">🚀</div>
+        <div class="beta-point-title">2025年7月 β版リリース予定</div>
+        <div class="beta-point-desc">先行してご利用いただける企業様を募集しています</div>
+      </div>
+      <div class="beta-point">
+        <div class="beta-point-icon">¥0</div>
+        <div class="beta-point-title">β版は費用なし</div>
+        <div class="beta-point-desc">β版期間中は一切費用がかかりません</div>
+      </div>
+      <div class="beta-point">
+        <div class="beta-point-icon">🎁</div>
+        <div class="beta-point-title">正式リリース後も1年間無償</div>
+        <div class="beta-point-desc">β版参加企業様は正式リリース後も1年間無償でご利用いただけます</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="form-section">
+    <div class="form-wrap">
+      <h2>お問い合わせフォーム</h2>
+      <p class="form-lead">
+        β版トライアルのお申し込み、機能に関するご質問、導入のご相談など、お気軽にお送りください。<br>
+        通常2〜3営業日以内にご返信いたします。
+      </p>
+
+      <form id="contactForm" action="https://formspree.io/f/mykarkpz" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">会社名<span class="required">*</span></label>
+            <input type="text" id="company" name="company" required placeholder="株式会社〇〇">
+          </div>
+          <div class="form-group">
+            <label for="name">お名前<span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="山田 太郎">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">メールアドレス<span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="your@example.com">
+        </div>
+        <div class="form-group">
+          <label for="tel">電話番号（任意）</label>
+          <input type="tel" id="tel" name="tel" placeholder="03-0000-0000">
+        </div>
+        <div class="form-group">
+          <label for="inquiry_type">お問い合わせ種別<span class="required">*</span></label>
+          <select id="inquiry_type" name="inquiry_type" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="beta">β版トライアルへの参加申し込み</option>
+            <option value="feature">機能・仕様について</option>
+            <option value="pricing">料金について</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="employees">従業員数（目安）</label>
+          <select id="employees" name="employees">
+            <option value="" disabled selected>選択してください（任意）</option>
+            <option value="1-9">1〜9名</option>
+            <option value="10-29">10〜29名</option>
+            <option value="30-99">30〜99名</option>
+            <option value="100+">100名以上</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">お問い合わせ内容<span class="required">*</span></label>
+          <textarea id="message" name="message" required placeholder="ご質問・ご要望・導入のご相談など、お気軽にご記入ください。"></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="【Stocker Biz】お問い合わせ">
+        <input type="text" name="_gotcha" style="display:none">
+
+        <button type="submit" class="submit-btn" id="submitBtn">送信する</button>
+        <p class="form-privacy">
+          送信いただいた内容は <a href="privacy.html">プライバシーポリシー</a> に基づき適切に管理します。
+        </p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✅</div>
+        <h3>送信が完了しました</h3>
+        <p>
+          お問い合わせありがとうございます。<br>
+          通常2〜3営業日以内にご返信いたします。<br>
+          しばらくお待ちください。
+        </p>
+        <a href="/stocker-biz/">← トップページに戻る</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo">
+        <img class="footer-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+        <span class="footer-logo-text">Stocker Biz</span>
+      </a>
+      <div class="footer-links">
+        <a href="/">Yahimaro Apps</a>
+        <a href="/stocker/">Stocker</a>
+        <a href="/stocker-biz/">トップ</a>
+        <a href="/stocker-biz/privacy.html">プライバシーポリシー</a>
+        <a href="/stocker-biz/tokushoho.html">特定商取引法に基づく表記</a>
+        <a href="/stocker-biz/contact.html">お問い合わせ</a>
+      </div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const success = document.getElementById('formSuccess');
+    const btn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      btn.disabled = true;
+      btn.textContent = '送信中...';
+
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = '送信する';
+        alert('送信に失敗しました。時間をおいて再度お試しいただくか、support@yahimaro.com までご連絡ください。');
+      }
+    });
+  </script>
+
+</body>
+</html>
