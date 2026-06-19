@@ -494,6 +494,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top center;
       border-radius: 16px;
     }
     @media (max-width: 780px) {
@@ -560,18 +561,34 @@
       height: 32px;
       opacity: 0.3;
     }
-    /* when real screenshots are ready, swap placeholders for <img> tags:
-       <img src="../stocker-biz/images/screen-1.png" class="screen-img" alt="..."> */
-    .screen-img {
+    /* ── real screenshots ── */
+    .screen-shot {
       scroll-snap-align: start;
       flex-shrink: 0;
-      width: 260px;
+      width: 320px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .screen-img {
+      width: 100%;
       border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 12px 40px rgba(0,0,0,0.4);
       object-fit: cover;
+      object-position: top;
+      aspect-ratio: 16/10;
+      background: #0a1628;
+    }
+    .screen-shot figcaption {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
     }
     @media (max-width: 640px) {
       .screen-placeholder { width: 220px; }
+      .screen-shot { width: 260px; }
     }
 
     /* ── PLAN ── */
@@ -991,11 +1008,7 @@
             </ul>
           </div>
           <div class="feature-visual">
-            <!-- スクリーンショット差し替え: <img src="images/screen-barcode.png" alt="バーコードスキャン画面"> -->
-            <div class="feature-visual-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h.01M14 18h.01M18 14h.01M18 18h.01M14 14v4h4v-4z" stroke-width="1"/></svg>
-              スクリーンショット準備中
-            </div>
+            <img src="images/screen-barcode.png" alt="バーコードラベル印刷画面">
           </div>
         </div>
 
@@ -1012,11 +1025,7 @@
             </ul>
           </div>
           <div class="feature-visual">
-            <!-- スクリーンショット差し替え: <img src="images/screen-order.png" alt="発注依頼画面"> -->
-            <div class="feature-visual-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-              スクリーンショット準備中
-            </div>
+            <img src="images/screen-order.png" alt="発注状況画面">
           </div>
         </div>
 
@@ -1033,11 +1042,7 @@
             </ul>
           </div>
           <div class="feature-visual">
-            <!-- スクリーンショット差し替え: <img src="images/screen-users.png" alt="ユーザー管理画面"> -->
-            <div class="feature-visual-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              スクリーンショット準備中
-            </div>
+            <img src="images/screen-users.png" alt="ユーザー管理画面">
           </div>
         </div>
 
@@ -1054,11 +1059,7 @@
             </ul>
           </div>
           <div class="feature-visual">
-            <!-- スクリーンショット差し替え: <img src="images/screen-csv.png" alt="CSVインポート画面"> -->
-            <div class="feature-visual-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              スクリーンショット準備中
-            </div>
+            <img src="images/screen-csv.png" alt="CSVインポート画面">
           </div>
         </div>
 
@@ -1074,32 +1075,30 @@
       <p class="section-desc">Web ブラウザとスマホアプリ（iOS / Android）の両方で動作します。</p>
     </div>
     <div class="screenshots-scroll" id="screenshotsScroll">
-      <!-- スクリーンショットが揃ったら下記の screen-placeholder を
-           <img src="images/screen-N.png" class="screen-img" alt="画面説明"> に差し替えてください -->
-      <div class="screen-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-        ホーム画面
-      </div>
-      <div class="screen-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-        在庫一覧
-      </div>
-      <div class="screen-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-        在庫詳細・操作
-      </div>
-      <div class="screen-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-        発注依頼一覧
-      </div>
-      <div class="screen-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-        モバイルアプリ
-      </div>
-      <div class="screen-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
-        ラベル印刷
-      </div>
+      <figure class="screen-shot">
+        <img src="images/screen-1.png" class="screen-img" alt="ホーム画面">
+        <figcaption>ホーム画面</figcaption>
+      </figure>
+      <figure class="screen-shot">
+        <img src="images/screen-2.png" class="screen-img" alt="在庫一覧">
+        <figcaption>在庫一覧</figcaption>
+      </figure>
+      <figure class="screen-shot">
+        <img src="images/screen-3.png" class="screen-img" alt="在庫詳細・操作">
+        <figcaption>在庫詳細・操作</figcaption>
+      </figure>
+      <figure class="screen-shot">
+        <img src="images/screen-4.png" class="screen-img" alt="発注状況">
+        <figcaption>発注状況</figcaption>
+      </figure>
+      <figure class="screen-shot">
+        <img src="images/screen-5.png" class="screen-img" alt="拠点・部署・保管場所設定">
+        <figcaption>拠点・部署設定</figcaption>
+      </figure>
+      <figure class="screen-shot">
+        <img src="images/screen-6.png" class="screen-img" alt="ラベル印刷">
+        <figcaption>ラベル印刷</figcaption>
+      </figure>
     </div>
   </section>
 
