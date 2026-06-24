@@ -461,6 +461,19 @@
       border-radius: 50%;
       background: var(--accent);
     }
+    .feature-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.15s, color 0.15s;
+    }
+    .feature-link:hover { color: var(--accent-lt); gap: 10px; }
+    .feature-link svg { flex-shrink: 0; }
     .feature-visual {
       background: #ffffff;
       border-radius: 16px;
@@ -901,6 +914,9 @@
               <li>バーコードラベルの PDF 出力機能搭載</li>
               <li>操作履歴はすべて自動記録</li>
             </ul>
+            <a href="/features/barcode-inventory/" class="feature-link">バーコード在庫管理を詳しく見る
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
           <div class="feature-visual">
             <img src="images/screen-barcode.png" alt="バーコードラベル印刷画面">
@@ -918,6 +934,9 @@
               <li>複数の発注通知受信者を設定可能</li>
               <li>発注依頼の一覧・ステータス管理</li>
             </ul>
+            <a href="/features/reorder-alert/" class="feature-link">発注漏れ防止を詳しく見る
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
           <div class="feature-visual">
             <img src="images/screen-order.png" alt="発注状況画面">
