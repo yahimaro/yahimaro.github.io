@@ -135,6 +135,13 @@
     .section-head { text-align: center; margin-bottom: 52px; }
     .section-head .section-desc { margin: 0 auto; }
 
+    /* ── FEATURE SPLIT ── */
+    .feature-item { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .feature-text p { font-size: 0.97rem; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+    .feature-visual { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(13,34,64,0.15); }
+    .feature-visual img { width: 100%; height: auto; display: block; border-radius: 16px; }
+    @media (max-width: 780px) { .feature-item { grid-template-columns: 1fr; gap: 32px; } }
+
     /* ── CARD GRID ── */
     .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -282,12 +289,17 @@
 
   <!-- Stocker Bizでできること -->
   <section class="bg">
-    <div class="section-inner narrow">
+    <div class="section-inner">
       <div class="section-head">
         <p class="section-label">解決策</p>
         <h2 class="section-title">Stocker Biz でできること</h2>
         <p class="section-desc">在庫更新を現場で完結させ、発注のタイミングを仕組みで知らせることで、消耗品・備品管理の負担を減らします。</p>
       </div>
+      <div class="feature-item">
+        <div class="feature-visual">
+          <img src="/stocker-biz/images/screen-order.png" alt="Stocker Biz の在庫・発注管理画面">
+        </div>
+        <div class="feature-text">
       <ul class="bullets">
         <li><strong>スマホから在庫を更新</strong>できます。使った分・補充した分をその場で記録できるため、後でまとめて入力する必要がありません。</li>
         <li><strong>発注点を下回ると通知</strong>します。最小在庫数を設定しておけば、担当者へ自動でお知らせし、買い忘れを防ぎます。</li>
@@ -295,6 +307,8 @@
         <li><strong>発注担当を明確化</strong>できます。品目・部署ごとに発注担当を設定し、「誰が頼むか」をはっきりさせられます。</li>
         <li><strong>操作履歴が残ります。</strong>いつ・誰が・何を更新したかを記録し、在庫の動きを後から確認できます。</li>
       </ul>
+        </div>
+      </div>
     </div>
   </section>
 

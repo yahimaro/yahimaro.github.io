@@ -135,6 +135,14 @@
     .section-head { text-align: center; margin-bottom: 52px; }
     .section-head .section-desc { margin: 0 auto; }
 
+    /* ── FEATURE SPLIT ── */
+    .feature-item { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .feature-text h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 900; color: var(--primary); line-height: 1.25; margin-bottom: 14px; letter-spacing: -0.02em; }
+    .feature-text p { font-size: 0.97rem; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+    .feature-visual { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(13,34,64,0.15); }
+    .feature-visual img { width: 100%; height: auto; display: block; border-radius: 16px; }
+    @media (max-width: 780px) { .feature-item { grid-template-columns: 1fr; gap: 32px; } }
+
     /* ── CARD GRID ── */
     .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -280,19 +288,26 @@
 
   <!-- Stocker Bizでできる発注漏れ防止 -->
   <section class="bg">
-    <div class="section-inner narrow">
+    <div class="section-inner">
       <div class="section-head">
         <p class="section-label">解決策</p>
         <h2 class="section-title">Stocker Biz でできる発注漏れ防止</h2>
         <p class="section-desc">在庫数のしきい値管理と通知、発注状況の見える化を組み合わせて、属人化に頼らない発注の仕組みをつくります。</p>
       </div>
-      <ul class="bullets">
-        <li><strong>最小在庫数・発注点を品目ごとに設定</strong>できます。品目の重要度や入荷リードタイムに合わせて、発注すべき残数の基準を決められます。</li>
-        <li><strong>在庫が基準を下回ると自動で検知</strong>し、発注担当者へメールで通知します。担当者が在庫表を見にいかなくても、必要なタイミングで気づける仕組みです。</li>
-        <li><strong>発注依頼を一覧で管理</strong>できます。今どの品目が発注を必要としているか、誰が対応中かをチームで共有できます。</li>
-        <li><strong>発注担当者を部署・品目ごとに設定</strong>できるため、「この品目は誰が発注するか」を明確にし、属人化を防げます。</li>
-        <li><strong>操作履歴・通知履歴が残ります。</strong>いつ・誰が・何を発注したかを後から確認でき、対応の抜け漏れを振り返れます。</li>
-      </ul>
+      <div class="feature-item">
+        <div class="feature-visual">
+          <img src="/stocker-biz/images/screen-order.png" alt="Stocker Biz の発注状況管理画面">
+        </div>
+        <div class="feature-text">
+          <ul class="bullets">
+            <li><strong>最小在庫数・発注点を品目ごとに設定</strong>できます。品目の重要度や入荷リードタイムに合わせて、発注すべき残数の基準を決められます。</li>
+            <li><strong>在庫が基準を下回ると自動で検知</strong>し、発注担当者へメールで通知します。担当者が在庫表を見にいかなくても、必要なタイミングで気づける仕組みです。</li>
+            <li><strong>発注依頼を一覧で管理</strong>できます。今どの品目が発注を必要としているか、誰が対応中かをチームで共有できます。</li>
+            <li><strong>発注担当者を部署・品目ごとに設定</strong>できるため、「この品目は誰が発注するか」を明確にし、属人化を防げます。</li>
+            <li><strong>操作履歴・通知履歴が残ります。</strong>いつ・誰が・何を発注したかを後から確認でき、対応の抜け漏れを振り返れます。</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
