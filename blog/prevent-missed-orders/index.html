@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>発注漏れを防ぐには？中小企業で起きやすい原因と対策を解説</title>
+  <meta name="description" content="発注漏れは、担当者の曖昧さ、紙やExcelでの管理、在庫数の見落とし、発注点未設定などが原因で起こります。中小企業で発注漏れを防ぐための具体策と、在庫管理システム化すべきポイントを解説します。">
+  <meta name="keywords" content="発注漏れ 防止,発注漏れ 対策,在庫切れ 防止,消耗品 発注漏れ,備品 発注漏れ">
+  <link rel="canonical" href="https://yahimaro.com/blog/prevent-missed-orders/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Stocker Biz">
+  <meta property="og:title" content="発注漏れを防ぐには？中小企業で起きやすい原因と対策を解説">
+  <meta property="og:description" content="発注漏れの原因と、中小企業で発注漏れを防ぐための具体策、在庫管理システム化すべきポイントを解説します。">
+  <meta property="og:url" content="https://yahimaro.com/blog/prevent-missed-orders/">
+  <meta property="og:image" content="https://yahimaro.com/images/stocker-biz_icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="発注漏れを防ぐには？中小企業で起きやすい原因と対策を解説">
+  <meta name="twitter:description" content="発注漏れの原因と、中小企業で発注漏れを防ぐための具体策を解説します。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/stocker-biz_icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "発注漏れを防ぐには？中小企業で起きやすい原因と対策",
+    "description": "発注漏れは、担当者の曖昧さ、紙やExcelでの管理、在庫数の見落とし、発注点未設定などが原因で起こります。中小企業で発注漏れを防ぐための具体策と、在庫管理システム化すべきポイントを解説します。",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yahimaro.com/blog/prevent-missed-orders/" },
+    "image": "https://yahimaro.com/images/stocker-biz_icon.png",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "Stocker Biz" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/stocker-biz_icon.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
+      { "@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://yahimaro.com/blog/prevent-missed-orders/" },
+      { "@type": "ListItem", "position": 3, "name": "発注漏れを防ぐには？", "item": "https://yahimaro.com/blog/prevent-missed-orders/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary:   #1e3a5f;
+      --accent:    #1d6fce;
+      --accent-lt: #2d84e8;
+      --surface:   #ffffff;
+      --bg:        #f0f4f9;
+      --bg-dark:   #0d1f35;
+      --border:    #c8d8eb;
+      --text:      #0f1f2e;
+      --muted:     #5a7080;
+      --green:     #16a34a;
+      --coming:    #d97706;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(14, 31, 53, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 56px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; display: block; object-fit: cover; }
+    .nav-logo-text { font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-logo-text span { color: var(--accent-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: rgba(255,255,255,0.65); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-badge { font-size: 0.7rem; font-weight: 700; color: var(--coming); background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.35); padding: 2px 10px; border-radius: 999px; letter-spacing: 0.06em; }
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .breadcrumb-inner { max-width: 1080px; margin: 0 auto; padding: 12px 24px; font-size: 0.78rem; color: var(--muted); }
+    .breadcrumb-inner a { color: var(--muted); text-decoration: none; }
+    .breadcrumb-inner a:hover { color: var(--accent); }
+    .breadcrumb-inner span { color: var(--primary); font-weight: 600; }
+    .breadcrumb-sep { margin: 0 8px; color: var(--border); }
+
+    /* ── ARTICLE ── */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 72px; }
+    .article-tag { display: inline-block; background: rgba(29,111,206,0.1); color: var(--accent); font-size: 0.72rem; font-weight: 700; padding: 4px 13px; border-radius: 999px; margin-bottom: 18px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .article-wrap h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; color: var(--primary); line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .article-lead { font-size: 1.02rem; color: var(--muted); line-height: 1.9; margin-bottom: 8px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+
+    .article-body h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 900; color: var(--primary); line-height: 1.35; letter-spacing: -0.01em; margin: 48px 0 16px; padding-top: 8px; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 30px 0 10px; }
+    .article-body p { font-size: 1rem; color: #2b3f50; line-height: 1.95; margin-bottom: 18px; }
+    .article-body ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 8px 0 22px; }
+    .article-body ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.98rem; color: #2b3f50; line-height: 1.8; }
+    .article-body ul li::before { content: ''; flex-shrink: 0; margin-top: 9px; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .article-body strong { color: var(--primary); font-weight: 700; }
+
+    /* in-article callout */
+    .callout { background: #f1f6fc; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 22px 24px; margin: 30px 0; }
+    .callout-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+    .callout p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin-bottom: 0; }
+    .callout a { font-weight: 700; }
+
+    .toc { background: #f8fafd; border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin: 8px 0 36px; }
+    .toc h2 { font-size: 0.9rem; font-weight: 800; color: var(--primary); margin: 0 0 12px; padding: 0; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { font-size: 0.92rem; color: var(--muted); margin-bottom: 7px; line-height: 1.6; }
+    .toc a { color: var(--muted); text-decoration: none; }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── RELATED LINKS ── */
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; }
+    .section-title { font-size: clamp(1.4rem, 3.2vw, 1.9rem); font-weight: 900; color: var(--primary); line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .related { background: var(--bg); border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .related-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .related-card .rc-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+    .related-card .rc-title { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-top: 6px; }
+    .related-card .rc-desc { font-size: 0.85rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    @media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+
+    /* ── CTA SECTION ── */
+    .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%); padding: 72px 24px; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 700; transition: background 0.2s, transform 0.2s; box-shadow: 0 8px 28px rgba(29,111,206,0.4); }
+    .btn-primary:hover { background: var(--accent-lt); transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg-dark); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-mark { width: 22px; height: 22px; border-radius: 5px; display: block; object-fit: cover; }
+    .footer-logo-text { font-size: 0.9rem; font-weight: 800; color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><span class="nav-badge">β版募集中</span></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/stocker-biz/">Stocker Biz</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>ブログ</span>
+      <span class="breadcrumb-sep">/</span>
+      <span>発注漏れを防ぐには？</span>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <article class="article-wrap">
+    <span class="article-tag">発注管理</span>
+    <h1>発注漏れを防ぐには？中小企業で起きやすい原因と対策</h1>
+    <p class="article-lead">発注漏れは、担当者の曖昧さや紙・Excelでの管理、在庫数の見落とし、発注点が決まっていないことなど、いくつもの要因が重なって起こります。本記事では、中小企業の現場で発注漏れが起きやすい理由を整理し、防ぐための具体策と、在庫管理をシステム化すべきポイントを解説します。</p>
+
+    <div class="toc">
+      <h2>この記事の内容</h2>
+      <ol>
+        <li><a href="#intro">発注漏れは中小企業で起きやすい</a></li>
+        <li><a href="#causes">発注漏れが起きる主な原因</a></li>
+        <li><a href="#measures">発注漏れを防ぐための対策</a></li>
+        <li><a href="#excel-limit">Excelや紙管理の限界</a></li>
+        <li><a href="#system">システム化するなら必要な機能</a></li>
+        <li><a href="#stockerbiz">Stocker Biz でできること</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </div>
+
+    <div class="article-body">
+      <h2 id="intro">発注漏れは中小企業で起きやすい</h2>
+      <p>発注漏れは、必要な品物の発注を忘れたり、タイミングを逃したりして、在庫が切れてしまう状態を指します。担当者の人数が限られ、業務を兼任しがちな中小企業ほど起きやすい問題です。</p>
+      <p>特に、消耗品・備品・補修部品といった「売り物ではないが、なくなると業務が止まる」品目で起きやすい傾向があります。売上に直結する商品と違い、普段は意識されにくいため、気づいたときには在庫切れ、ということが少なくありません。発注漏れは一見すると小さなミスに見えますが、生産停止や業務の手戻りにつながると、その影響は決して小さくありません。</p>
+
+      <h2 id="causes">発注漏れが起きる主な原因</h2>
+      <p>発注漏れは、特定の誰かの不注意というより、管理の仕組みが整っていないことから生まれます。主な原因を見ていきましょう。</p>
+      <h3>担当者が決まっていない</h3>
+      <p>「気づいた人が発注する」という運用では、誰も気づかなければ発注されません。担当が曖昧なまま、休みや退職、繁忙期が重なると、フローが止まってしまいます。</p>
+      <h3>紙やExcelの在庫表が更新されていない</h3>
+      <p>在庫表があっても、現場で使うたびに更新されなければ、記載されている数と実在庫がずれていきます。古い情報をもとに判断すると、発注のタイミングを誤ります。</p>
+      <h3>現場と管理者で在庫数の認識が違う</h3>
+      <p>現場は「まだある」と思い、管理者は「もう頼んだはず」と思う——といった認識のずれが、発注の抜けや二重発注を招きます。</p>
+      <h3>発注点・最小在庫数が決まっていない</h3>
+      <p>「いくつになったら発注するか」という基準が品目ごとに決まっていないと、判断が人によってばらつき、対応が後手に回ります。</p>
+      <h3>発注済みかどうか分からない</h3>
+      <p>すでに誰かが発注したのか確認できないと、二重に頼んだり、逆に「誰かが頼んだはず」という思い込みで漏れたりします。</p>
+
+      <h2 id="measures">発注漏れを防ぐための対策</h2>
+      <p>原因がはっきりすれば、対策も見えてきます。まずは仕組みづくりから着手するのが効果的です。</p>
+      <ul>
+        <li><strong>発注担当者を明確にする:</strong> 品目や部署ごとに「誰が発注するか」を決め、担当の不在時にも引き継げる状態にします。</li>
+        <li><strong>発注点を決める:</strong> 品目ごとに最小在庫数や発注点を設定し、判断の基準をそろえます。入荷までのリードタイムを考慮して余裕を持たせるのがポイントです。</li>
+        <li><strong>在庫数をリアルタイムに更新する:</strong> 使ったその場で在庫を更新できる仕組みにし、帳簿と実数のずれを抑えます。</li>
+        <li><strong>発注状況を見える化する:</strong> 発注依頼・発注済み・入荷済みといった状態をチームで共有し、二重発注や抜けを防ぎます。</li>
+        <li><strong>操作履歴を残す:</strong> いつ・誰が・何を発注したかを記録し、後から振り返れるようにします。</li>
+      </ul>
+
+      <h2 id="excel-limit">Excelや紙管理の限界</h2>
+      <p>多くの中小企業が、最初はExcelや紙の在庫表で管理を始めます。手軽でコストもかからない一方、運用が増えてくると限界が見えてきます。</p>
+      <p>Excelは複数人での同時編集に弱く、どれが最新ファイルか分からなくなりがちです。紙の在庫表は現場で更新されにくく、結局は誰かがまとめて転記することになり、その過程で漏れやミスが生まれます。発注点を下回っても自動では気づけないため、結局は人の確認に頼ることになり、発注漏れの根本的な解決には至りません。</p>
+      <div class="callout">
+        <div class="callout-label">関連記事</div>
+        <p>Excel管理の課題をより詳しく知りたい方は、<a href="/blog/excel-inventory-limit/">Excel在庫管理の限界とは？システム化すべきタイミング</a>もあわせてご覧ください。</p>
+      </div>
+
+      <h2 id="system">システム化するなら必要な機能</h2>
+      <p>発注漏れを仕組みで防ぐなら、在庫管理システムの導入が選択肢になります。発注漏れ対策の観点では、次のような機能があると効果的です。</p>
+      <ul>
+        <li><strong>バーコードによる在庫更新:</strong> 現場で素早く在庫数を更新でき、更新漏れを減らせます。</li>
+        <li><strong>最小在庫数アラート:</strong> 在庫が基準を下回ったら自動で検知します。</li>
+        <li><strong>発注依頼の通知:</strong> 発注担当者へ自動でお知らせし、気づける状態をつくります。</li>
+        <li><strong>発注状況の管理:</strong> 発注依頼・発注済みのステータスをチームで共有します。</li>
+        <li><strong>入荷処理:</strong> 届いた品物を在庫に反映し、一連の流れを完結させます。</li>
+        <li><strong>操作履歴:</strong> 誰が何をしたかを記録し、対応の抜けを振り返れます。</li>
+      </ul>
+
+      <h2 id="stockerbiz">Stocker Biz でできること</h2>
+      <p>Stocker Biz は、こうした発注漏れ対策に必要な機能をひとつにまとめたクラウド在庫管理システムです。最小在庫数を下回った品目を検知して発注担当者へ通知し、発注依頼から入荷までの状況をチームで共有できます。</p>
+      <p>スマホでバーコードを読み取って在庫を更新できるため、現場での更新漏れも抑えられます。発注担当を品目・部署ごとに設定できるので、「誰が発注するか」が曖昧になりがちな課題にも対応できます。売り込みというより、これまで人の注意力に頼っていた部分を、仕組みで補うイメージです。</p>
+      <div class="callout">
+        <div class="callout-label">機能ページ</div>
+        <p>発注漏れ防止の仕組みは、<a href="/features/reorder-alert/">発注漏れを防ぐ在庫管理システム</a>のページで詳しく紹介しています。消耗品・備品の管理については<a href="/use-cases/consumables-inventory/">消耗品・備品の在庫管理</a>もご覧ください。</p>
+      </div>
+
+      <h2 id="summary">まとめ</h2>
+      <p>発注漏れは、担当の曖昧さ・在庫表の更新漏れ・発注点の未設定・発注状況の不透明さといった要因が重なって起こります。防ぐには、発注担当と発注点を明確にし、在庫数をリアルタイムに更新して、発注状況を見える化することが大切です。</p>
+      <p>品目数が増え、複数人で管理するようになると、Excelや紙では限界が見えてきます。発注漏れが繰り返し起きるようになったら、在庫管理システムによる仕組み化を検討するタイミングかもしれません。</p>
+    </div>
+  </article>
+
+  <!-- RELATED LINKS -->
+  <section class="related">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">関連ページ</p>
+        <h2 class="section-title">あわせて読みたい</h2>
+      </div>
+      <div class="related-grid">
+        <a class="related-card" href="/features/reorder-alert/">
+          <span class="rc-label">機能</span>
+          <div class="rc-title">発注漏れ防止</div>
+          <p class="rc-desc">最小在庫数を下回ると発注依頼を通知。在庫切れを防ぎます。</p>
+        </a>
+        <a class="related-card" href="/features/barcode-inventory/">
+          <span class="rc-label">機能</span>
+          <div class="rc-title">バーコード在庫管理</div>
+          <p class="rc-desc">スマホでバーコードを読み取り、在庫数をその場で更新します。</p>
+        </a>
+        <a class="related-card" href="/use-cases/consumables-inventory/">
+          <span class="rc-label">活用例</span>
+          <div class="rc-title">消耗品・備品の在庫管理</div>
+          <p class="rc-desc">発注漏れが起きやすい消耗品・備品の管理を効率化します。</p>
+        </a>
+        <a class="related-card" href="/stocker-biz/">
+          <span class="rc-label">サービス</span>
+          <div class="rc-title">Stocker Biz トップ</div>
+          <p class="rc-desc">在庫管理・発注管理をひとつにしたクラウドサービスの全体像。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <h2>Stocker Biz で発注漏れを防ぐ</h2>
+    <p>消耗品・備品・補修部品の在庫管理を、スマホと Web で効率化できます。</p>
+    <div class="cta-buttons">
+      <a href="/stocker-biz/" class="btn-primary">Stocker Biz を見る</a>
+      <a href="/stocker-biz/contact.html" class="btn-outline">お問い合わせ</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo">
+        <img class="footer-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+        <span class="footer-logo-text">Stocker Biz</span>
+      </a>
+      <div class="footer-links">
+        <a href="/">Yahimaro Apps</a>
+        <a href="/stocker-biz/">トップ</a>
+        <a href="/features/reorder-alert/">発注漏れ防止</a>
+        <a href="/features/barcode-inventory/">バーコード在庫管理</a>
+        <a href="/stocker-biz/terms.html">利用規約</a>
+        <a href="/stocker-biz/privacy.html">プライバシーポリシー</a>
+        <a href="/stocker-biz/contact.html">お問い合わせ</a>
+      </div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
