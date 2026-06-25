@@ -67,6 +67,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://yahimaro.com/use-cases/office-supplies/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yahimaro.com/use-cases/manufacturing-parts/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yahimaro.com/blog/reorder-point/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://yahimaro.com/stocker-biz/privacy.html</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>yearly</changefreq>
