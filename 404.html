@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="/images/logo-mark.png">
   <link rel="apple-touch-icon" href="/images/logo-mark.png">
-  <title>Stocker 招待リンク</title>
+  <meta name="robots" content="noindex, follow">
+  <title>ページが見つかりません — Yahimaro Apps</title>
+  <meta name="description" content="お探しのページは見つかりませんでした。Yahimaro Apps のトップページや各サービスからお探しください。">
   <script>
     (function () {
       var match = window.location.pathname.match(/^\/invite\/([^/?#]+)/);
@@ -51,15 +53,34 @@
     a {
       color: #BA7517;
       font-weight: 700;
+      text-decoration: none;
     }
+    a:hover { text-decoration: underline; }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .links a {
+      padding: 10px 16px;
+      border: 1px solid #E8D5B5;
+      border-radius: 10px;
+      background: #FFFBF3;
+    }
+    .links a:hover { background: #FEF3E2; text-decoration: none; }
   </style>
 </head>
 <body>
   <main>
     <section>
       <h1>ページが見つかりません</h1>
-      <p>招待リンクを開いている場合は、自動で案内ページへ移動します。</p>
-      <a href="/">Stocker のトップへ戻る</a>
+      <p>お探しのページは移動または削除された可能性があります。<br>招待リンクを開いている場合は、自動で案内ページへ移動します。</p>
+      <nav class="links">
+        <a href="/">Yahimaro Apps トップ</a>
+        <a href="/stocker/">Stocker（個人・家庭向け）</a>
+        <a href="/stocker-biz/">Stocker Biz（法人・チーム向け）</a>
+      </nav>
     </section>
   </main>
 </body>

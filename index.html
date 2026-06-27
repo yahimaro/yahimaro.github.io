@@ -22,10 +22,24 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Yahimaro Apps",
-    "url": "https://yahimaro.com/",
-    "sameAs": ["https://yahimaro.com/", "https://yahimaro.com/stocker-biz/"]
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://yahimaro.com/#organization",
+        "name": "Yahimaro Apps",
+        "url": "https://yahimaro.com/",
+        "logo": "https://yahimaro.com/images/logo-mark.png",
+        "sameAs": ["https://yahimaro.com/stocker/", "https://yahimaro.com/stocker-biz/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://yahimaro.com/#website",
+        "name": "Yahimaro Apps",
+        "url": "https://yahimaro.com/",
+        "inLanguage": "ja",
+        "publisher": { "@id": "https://yahimaro.com/#organization" }
+      }
+    ]
   }
   </script>
   <style>
@@ -446,6 +460,49 @@
       flex-shrink: 0;
     }
 
+    /* ── RESOURCES ── */
+    .resources {
+      padding: 72px 24px 88px;
+      background: var(--white);
+    }
+    .res-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+    .res-col-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: var(--blue);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--border);
+    }
+    .res-link {
+      display: block;
+      padding: 11px 14px;
+      margin-bottom: 8px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      border: 1.5px solid transparent;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .res-link:hover {
+      background: var(--bg);
+      border-color: var(--border);
+      color: var(--blue-dark);
+    }
+    @media (max-width: 700px) {
+      .res-grid { grid-template-columns: 1fr; gap: 24px; }
+      .resources { padding: 56px 16px 64px; }
+    }
+
     /* ── FOOTER ── */
     footer {
       padding: 28px 32px;
@@ -618,6 +675,37 @@
           <p class="card-note">登録不要・その場でデモ環境に入れます</p>
         </div>
       </article>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- RESOURCES / 記事ハブ -->
+  <section class="resources">
+    <p class="products-label">Guides &amp; Use Cases</p>
+    <h2 class="products-title">在庫管理のお役立ち記事・活用例</h2>
+    <div class="res-grid">
+
+      <div class="res-col">
+        <h3 class="res-col-title">機能で選ぶ</h3>
+        <a class="res-link" href="/features/reorder-alert/">発注漏れを防ぐ最小在庫アラート</a>
+        <a class="res-link" href="/features/barcode-inventory/">バーコードでスマホ在庫管理</a>
+      </div>
+
+      <div class="res-col">
+        <h3 class="res-col-title">業種・用途で選ぶ</h3>
+        <a class="res-link" href="/use-cases/manufacturing-parts/">製造業の補修部品・消耗品管理</a>
+        <a class="res-link" href="/use-cases/office-supplies/">総務の備品・事務用品管理</a>
+        <a class="res-link" href="/use-cases/consumables-inventory/">消耗品・備品の在庫管理</a>
+      </div>
+
+      <div class="res-col">
+        <h3 class="res-col-title">知識・コラム</h3>
+        <a class="res-link" href="/blog/prevent-missed-orders/">発注漏れを防ぐには？原因と対策</a>
+        <a class="res-link" href="/blog/reorder-point/">発注点とは？決め方・計算方法</a>
+        <a class="res-link" href="/blog/excel-inventory-limit/">Excel在庫管理の限界と脱却の目安</a>
+      </div>
 
     </div>
   </section>
