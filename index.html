@@ -210,6 +210,42 @@
     }
     .btn-outline:hover { border-color: var(--blue); color: var(--blue); box-shadow: var(--shadow-md); }
 
+    /* ── HERO DEMO LINK ── */
+    .hero-demo {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 28px;
+      padding: 9px 18px;
+      border-radius: 999px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    }
+    .hero-demo:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-1px);
+    }
+    .hero-demo-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(5,150,105,0.15);
+      flex-shrink: 0;
+    }
+    .hero-demo-arrow { color: var(--blue); transition: transform 0.15s; }
+    .hero-demo:hover .hero-demo-arrow { transform: translateX(3px); }
+    @media (max-width: 460px) {
+      .hero-demo { font-size: 0.78rem; padding: 8px 14px; }
+    }
+
     /* ── DIVIDER ── */
     .divider {
       border: none;
@@ -393,6 +429,22 @@
       gap: 10px;
       flex-wrap: wrap;
     }
+    .card-note {
+      font-size: 0.74rem;
+      color: var(--muted);
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-note::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      flex-shrink: 0;
+    }
 
     /* ── FOOTER ── */
     footer {
@@ -470,6 +522,11 @@
         Stocker Biz を見る
       </a>
     </div>
+    <a class="hero-demo" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">
+      <span class="hero-demo-dot"></span>
+      Stocker Biz は登録不要のデモを今すぐ体験できます
+      <span class="hero-demo-arrow">→</span>
+    </a>
   </section>
 
   <hr class="divider">
@@ -555,8 +612,10 @@
             <span class="tag">初期費用0円</span>
           </div>
           <div class="card-actions">
-            <a class="btn btn-blue" href="/stocker-biz/">詳細を見る</a>
+            <a class="btn btn-blue" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">無料で触ってみる</a>
+            <a class="btn btn-outline" href="/stocker-biz/">詳細を見る</a>
           </div>
+          <p class="card-note">登録不要・その場でデモ環境に入れます</p>
         </div>
       </article>
 
