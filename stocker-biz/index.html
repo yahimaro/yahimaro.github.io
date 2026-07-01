@@ -411,6 +411,7 @@
     }
     @media (max-width: 720px) {
       .problem-grid { grid-template-columns: 1fr; }
+      .fit-grid { grid-template-columns: 1fr !important; }
     }
 
     /* ── FEATURES ── */
@@ -1045,6 +1046,45 @@
           <h3>チームを招待</h3>
           <p>メールでメンバーを招待してロールを割り当てれば、すぐにチーム運用が始められます。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIT / 向いている・向いていない -->
+  <section id="fit" style="background:var(--surface);padding:72px 24px;">
+    <div class="section-inner">
+      <div style="text-align:center;margin-bottom:44px;">
+        <p class="section-label">導入前の確認</p>
+        <h2 class="section-title">Stocker Biz が向いている会社・向いていない会社</h2>
+        <p class="section-desc" style="margin:12px auto 0;">できること・できないことを正直にお伝えします。自社に合うかどうかの判断にお役立てください。</p>
+      </div>
+
+      <div class="fit-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:960px;margin:0 auto;">
+
+        <!-- 向いている -->
+        <div style="background:#f4f9f4;border:1px solid #cfe6cf;border-radius:14px;padding:28px;">
+          <p style="font-size:0.9rem;font-weight:800;color:var(--green);margin-bottom:16px;">✅ 向いている会社</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;font-size:0.95rem;line-height:1.7;color:var(--text);">
+            <li>消耗品・補修部品・備品を切らさず管理したい</li>
+            <li>発注漏れ・欠品を防ぎたい中小企業・小売店</li>
+            <li>Excel や紙の管理から、続けられる仕組みに変えたい</li>
+            <li>現場のスマホで在庫を更新し、チームで共有したい</li>
+            <li><strong>在庫・発注管理を、低コストで実現したい</strong>（月額 980 円〜・初期費用なし）</li>
+            <li>まずは必要な機能から、小さく始めたい</li>
+          </ul>
+        </div>
+
+        <!-- 向いていない -->
+        <div style="background:#fbf7f2;border:1px solid #ecdcc7;border-radius:14px;padding:28px;">
+          <p style="font-size:0.9rem;font-weight:800;color:var(--coming);margin-bottom:16px;">⚠️ 向いていない会社（他ツールが適しています）</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;font-size:0.95rem;line-height:1.7;color:var(--text);">
+            <li>販売管理・会計ソフト連携・見積書／発注書の発行まで一体で管理したい</li>
+            <li>ロット管理・賞味期限管理・原価管理が必須</li>
+            <li>ロケーション管理やピッキング最適化など、WMS レベルの倉庫管理が必要</li>
+          </ul>
+          <p style="font-size:0.86rem;color:var(--muted);line-height:1.75;margin-top:18px;">Stocker Biz は「消耗品・備品・補修部品を切らさない」ことに特化しています。上記のような本格的な基幹業務が必要な場合は、専用のシステムをご検討ください。</p>
+        </div>
+
       </div>
     </div>
   </section>
