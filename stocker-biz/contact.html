@@ -436,6 +436,8 @@
           <select id="inquiry_type" name="inquiry_type" required>
             <option value="" disabled selected>選択してください</option>
             <option value="beta">β版トライアルへの参加申し込み</option>
+            <option value="consult">導入・運用の相談</option>
+            <option value="migration">Excel在庫表からの移行相談</option>
             <option value="feature">機能・仕様について</option>
             <option value="pricing">料金について</option>
             <option value="other">その他</option>
@@ -524,6 +526,26 @@
         alert('送信に失敗しました。時間をおいて再度お試しいただくか、support@yahimaro.com までご連絡ください。');
       }
     });
+
+    // CTA からの遷移時に、種別・本文をプリセットする
+    (function presetFromQuery() {
+      const params = new URLSearchParams(location.search);
+      const type = params.get('type');
+      if (!type) return;
+      const presets = {
+        migration: { select: 'migration', text: '現在Excelで在庫管理をしています。Stocker Bizへ移行できるか相談したいです。\n（現在の管理方法・品目数など、差し支えなければご記入ください）' },
+        consult:   { select: 'consult',   text: '自社の在庫・発注の管理方法でStocker Bizが使えるか相談したいです。\n（現在の運用・お困りごとなど、差し支えなければご記入ください）' },
+        parts:     { select: 'consult',   text: '補修部品・消耗品の在庫管理でStocker Bizが使えるか確認したいです。\n（管理したい品目・拠点数など、差し支えなければご記入ください）' },
+        demo:      { select: 'consult',   text: 'デモを見て、発注漏れ防止の運用が自社で使えるか相談したいです。' },
+        beta:      { select: 'beta',      text: '' }
+      };
+      const p = presets[type];
+      if (!p) return;
+      const sel = document.getElementById('inquiry_type');
+      const msg = document.getElementById('message');
+      if (sel && p.select) sel.value = p.select;
+      if (msg && p.text && !msg.value) msg.value = p.text;
+    })();
   </script>
 
 </body>
