@@ -34,13 +34,51 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "製造業の補修部品・消耗品管理",
+    "@type": "Article",
+    "headline": "製造業の補修部品・消耗品管理｜欠品による生産停止を防ぐ",
     "url": "https://yahimaro.com/use-cases/manufacturing-parts/",
-    "description": "製造業・工場向けに、補修部品・スペアパーツ・副資材・工具などの在庫管理を効率化する方法を解説。Stocker Bizなら部品の在庫をスマホで更新し、発注点を下回ると通知して欠品による生産停止を防ぎます。",
+    "description": "製造業・工場向けに、補修部品・スペアパーツ・副資材・工具などの在庫管理を効率化する方法を解説。補修部品の在庫が合わなくなる理由、発注点を決めるべき部品、Excel・紙管理からの移行のヒントまで、現場目線でまとめました。",
     "inLanguage": "ja",
     "isPartOf": { "@type": "WebSite", "name": "Stocker Biz", "url": "https://yahimaro.com/stocker-biz/" },
-    "publisher": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" }
+    "author": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/stocker-biz_icon.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "補修部品の在庫が「必要なときにない」のはなぜですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "よく使う消耗品は現場の目につきやすい一方、あまり使わない補修部品ほど在庫が曖昧になりがちで、いざ設備が止まったときに欠品しています。また、報告を受けても発注を忘れる、記録用のPCやノートが保管場所から離れていて記録し忘れる、といった人依存の運用も原因になります。発注点を決めず感覚で発注していると、無くなってから発注する状態が常態化します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どの部品から発注点を決めればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "欠品すると設備やラインが止まる部品（ベアリング、Vベルト、シール、センサー類など）、入荷まで時間がかかる特注品・取り寄せ品、使用頻度が低く気づいたときには切れている部品から優先して最小在庫数を決めるのが効果的です。すべての部品に一度に手をかける必要はありません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Excelや紙の管理から移行するには何から始めればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "まず「切らすと止まる部品」だけを登録して最小在庫数を設定し、次に「たまに使うのに管理が曖昧な部品」を加えるのがおすすめです。よく使う消耗品は運用に慣れてから広げれば十分です。記録する場所と部品のある場所を近づけ、スマホからその場で在庫を更新できるようにすると、書き忘れが減ります。"
+        }
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -270,8 +308,91 @@
     </div>
   </section>
 
-  <!-- 管理対象の例 -->
+  <!-- 深掘り: 現場で起きること -->
   <section class="surface">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">現場の実態</p>
+        <h2 class="section-title">補修部品の在庫が「必要なときにない」のはなぜか</h2>
+        <p class="section-desc">補修部品や副資材の在庫管理が難しいのは、部品そのものより「使う頻度がバラバラで、記録が続かない」ことに理由があります。現場でよく起きる原因を整理します。</p>
+      </div>
+
+      <div class="prose">
+        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:8px 0 12px;">よく使う部品ほど目につき、たまに使う部品ほど欠品する</h3>
+        <p>日常的に使う消耗品は現場の目につきやすく、発注担当者も自然と気にかけます。一方で、<strong>あまり使わない補修部品ほど「どこに置いたか」「今いくつあるか」が曖昧になりがち</strong>です。そして、こうした部品に限って、いざ設備が止まったときに必要になります。「あると思っていた部品が、実は前回使って切れていた」というのは、補修部品管理でもっとも起きやすい欠品パターンです。</p>
+
+        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:28px 0 12px;">報告は受けていたのに、発注を忘れる</h3>
+        <p>「あれ残りわずかでしたよ」と作業者から報告を受けていたのに、他の業務に紛れて発注を忘れてしまう——これも実際によくあります。<strong>報告が口頭やメモ止まりで、発注のアクションに確実につながっていない</strong>と、担当者の記憶に依存した運用になり、繁忙期や担当者の不在で簡単に漏れます。</p>
+
+        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:28px 0 12px;">記録する場所と、部品の保管場所が離れている</h3>
+        <p>在庫の保管場所と、記録用のパソコンやノートが離れた場所にあると、<strong>「使ったら記録する」が続きません</strong>。部品を取り出して作業に戻る流れの中で、わざわざ記録用のPCまで戻る手間が挟まると、記録忘れが積み重なり、在庫表と実数がずれていきます。台帳上は在庫があるのに、現物は空、という状態はこうして生まれます。</p>
+
+        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:28px 0 12px;">発注点を決めず、感覚で発注している</h3>
+        <p>「そろそろ無くなりそうだから頼む」という感覚頼みの発注では、判断が人によってブレますし、忙しいと後回しになります。結果として<strong>「無くなってから発注する」が常態化</strong>し、リードタイムの間はどうしても欠品します。補修部品は、いつ使うかが読めないからこそ、「この数を下回ったら発注する」という発注点をあらかじめ決めておくことが効きます。発注点を下回ったら通知する仕組みは、<a href="/features/reorder-alert/">発注漏れ防止</a>のページで詳しく説明しています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 発注点を決めるべき部品 / 過剰在庫 -->
+  <section class="bg">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">在庫の考え方</p>
+        <h2 class="section-title">発注点を決めるべき部品・過剰在庫になりやすい部品</h2>
+        <p class="section-desc">すべての部品に手をかけるのは大変です。まずは「切らすと痛い部品」から発注点を決めるのが現実的です。</p>
+      </div>
+      <div class="card-grid two">
+        <div class="card">
+          <div class="card-icon">⚠️</div>
+          <h3>発注点を決めておきたい部品</h3>
+          <p>
+            ・欠品すると設備・ラインが止まる部品（ベアリング、Vベルト、シール、センサー類 など）<br>
+            ・入荷まで時間がかかる部品（特注品・取り寄せ品）<br>
+            ・使用頻度が低く、気づいたときには切れている部品<br>
+            こうした部品は「無くなってから」では間に合いません。最小在庫数を決めておき、下回ったら通知される状態にしておくのが有効です。
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3>過剰在庫になりやすい部品</h3>
+          <p>
+            ・単価が安く「多めに買っておこう」となりがちな消耗品<br>
+            ・まとめ買いで単価は下がるが、使い切る前に滞留する副資材<br>
+            安い部品ほど在庫が膨らみやすく、置き場を圧迫します。在庫数と動きが見えるようにして、実際の消費ペースに合った量に近づけることが、過剰在庫を防ぐ第一歩です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Excel・紙からの移行 -->
+  <section class="surface">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">移行のヒント</p>
+        <h2 class="section-title">Excel・紙の管理から移行するには</h2>
+        <p class="section-desc">多くの現場は、まずExcelやノートで管理を始めます。うまくいかなくなる理由には、共通のパターンがあります。</p>
+      </div>
+      <div class="prose">
+        <p><strong>Excel管理は「続かない・ファイルが乱立する」で行き詰まります。</strong>最初はきちんと運用していても、担当者ごとにファイルをコピーしたり、日付違いのファイルが増えたりして、やがて<strong>どれが最新の運用中ファイルか分からなくなります</strong>。複数人で同時に触れないことも、更新の遅れにつながります。</p>
+        <p><strong>ノート（紙）管理は「書き忘れ」と「見逃し」で漏れます。</strong>作業者が記入を忘れれば在庫はずれますし、管理者がノートの記載を見逃せば発注が漏れます。記録と発注が別々の人・別々の場所に分かれているほど、抜けが起きやすくなります。</p>
+        <p>移行のポイントは、<strong>「記録する場所」と「部品のある場所」を近づけること</strong>です。スマホからその場で在庫を更新できれば、記録のために持ち場を離れる必要がなくなり、書き忘れが減ります。そして<strong>発注点を仕組みに持たせれば</strong>、「報告を受けたのに忘れる」「ノートを見逃す」といった人依存の抜けを、通知でカバーできます。</p>
+      </div>
+
+      <div style="margin-top:36px;background:#f8fafd;border:1px solid var(--border);border-radius:12px;padding:28px;">
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--primary);margin-bottom:14px;">小さく始めるなら、どの品目から？</h3>
+        <ul class="bullets">
+          <li><strong>まずは「切らすと止まる部品」から。</strong>数は絞ってよいので、欠品が痛い補修部品・スペアパーツだけ先に登録し、最小在庫数を設定します。</li>
+          <li><strong>次に「たまに使うのに管理が曖昧な部品」。</strong>目につきにくく欠品しやすい品目を加えると、効果を実感しやすくなります。</li>
+          <li><strong>よく使う消耗品は後からで十分。</strong>目につきやすく欠品しにくいものは、運用に慣れてから広げれば無理がありません。</li>
+        </ul>
+        <p style="margin-top:18px;font-size:0.92rem;color:var(--muted);">全部を一度に登録しようとすると挫折しがちです。「切らすと困る順」に少しずつ広げるのが、定着のコツです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 管理対象の例 -->
+  <section class="bg">
     <div class="section-inner narrow">
       <div class="section-head">
         <p class="section-label">対象品目</p>
@@ -312,7 +433,7 @@
   </section>
 
   <!-- 導入メリット -->
-  <section class="bg">
+  <section class="surface">
     <div class="section-inner">
       <div class="section-head">
         <p class="section-label">導入メリット</p>
@@ -339,7 +460,7 @@
   </section>
 
   <!-- 運用の流れ -->
-  <section class="surface">
+  <section class="bg">
     <div class="section-inner">
       <div class="section-head">
         <p class="section-label">フロー</p>
@@ -406,10 +527,10 @@
   <!-- CTA SECTION -->
   <section class="cta-section">
     <h2>欠品による生産停止を防ぐ</h2>
-    <p>補修部品・副資材・工具の在庫管理を、スマホと Web で効率化できます。</p>
+    <p>補修部品・副資材・工具の在庫管理を、スマホと Web で効率化できます。まずは登録不要のデモで、発注点通知の流れをご確認いただけます。</p>
     <div class="cta-buttons">
-      <a href="/stocker-biz/" class="btn-primary">Stocker Biz を見る</a>
-      <a href="/stocker-biz/contact.html" class="btn-outline">お問い合わせ</a>
+      <a href="https://stockerbiz.yahimaro.com/demo/start" class="btn-primary" target="_blank" rel="noopener">デモを試す</a>
+      <a href="/stocker-biz/contact.html?type=parts" class="btn-outline">補修部品管理で使えるか相談する</a>
     </div>
   </section>
 
