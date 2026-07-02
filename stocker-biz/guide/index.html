@@ -70,7 +70,7 @@
     }
 
     /* ── NAV ── */
-    nav {
+    .site-nav {
       position: sticky; top: 0; z-index: 100;
       background: rgba(14, 31, 53, 0.96);
       backdrop-filter: blur(8px);
@@ -86,7 +86,7 @@
     .nav-links a { font-size: 0.82rem; color: rgba(255,255,255,0.65); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
     .nav-links a:hover { color: #fff; }
     @media (max-width: 640px) {
-      nav { padding: 0 20px; }
+      .site-nav { padding: 0 20px; }
       .nav-links { gap: 16px; }
       .nav-links li:not(:last-child) { display: none; }
     }
@@ -258,7 +258,7 @@
 <body>
 
   <!-- NAV -->
-  <nav>
+  <nav class="site-nav">
     <a href="/stocker-biz/" class="nav-logo">
       <img class="nav-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
       <span class="nav-logo-text">Stocker <span>Biz</span></span>
