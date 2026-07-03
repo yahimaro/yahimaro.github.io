@@ -37,11 +37,12 @@
     "totalTime": "PT30M",
     "step": [
       { "@type": "HowToStep", "position": 1, "name": "アカウントを登録する", "text": "会社名・氏名・メールアドレス・パスワードを入力して登録し、確認メールのリンクからメール認証を完了します。登録すると30日間の無料トライアルが始まります。", "url": "https://yahimaro.com/stocker-biz/guide/#step1" },
-      { "@type": "HowToStep", "position": 2, "name": "拠点・部署・保管場所を登録する", "text": "設定 › 組織 で、拠点 → 部署 → 保管場所 の3階層で自社の組織構造を登録します。", "url": "https://yahimaro.com/stocker-biz/guide/#step2" },
-      { "@type": "HowToStep", "position": 3, "name": "カテゴリを登録する", "text": "設定 › カテゴリ で、大カテゴリ・中カテゴリを登録し、品目を分類できるようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step3" },
-      { "@type": "HowToStep", "position": 4, "name": "品目（在庫枠）を登録する", "text": "在庫枠を手動フォームまたはCSVインポートで登録します。バーコードは登録時に自動発行されます。", "url": "https://yahimaro.com/stocker-biz/guide/#step4" },
+      { "@type": "HowToStep", "position": 2, "name": "拠点・部署・保管場所を登録する", "text": "設定 › 拠点・部署・保管場所 で、拠点 → 部署 → 保管場所 の3階層で自社の組織構造を登録します。", "url": "https://yahimaro.com/stocker-biz/guide/#step2" },
+      { "@type": "HowToStep", "position": 3, "name": "カテゴリを登録する", "text": "設定 › カテゴリ管理 で、大カテゴリ・中カテゴリを登録し、品目を分類できるようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step3" },
+      { "@type": "HowToStep", "position": 4, "name": "管理品目を登録する", "text": "管理品目を手動フォームまたはCSVインポートで登録します。バーコードは登録時に自動発行されます。", "url": "https://yahimaro.com/stocker-biz/guide/#step4" },
       { "@type": "HowToStep", "position": 5, "name": "メンバーを招待する", "text": "設定 › ユーザー管理 から、メールアドレスとロールを指定してメンバーを招待します。", "url": "https://yahimaro.com/stocker-biz/guide/#step5" },
-      { "@type": "HowToStep", "position": 6, "name": "発注担当者・発注点を設定する", "text": "品目ごとの発注点と、発注通知を受け取る担当者を設定し、在庫が発注点を下回ったときに通知が届くようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step6" }
+      { "@type": "HowToStep", "position": 6, "name": "発注担当者・発注点を設定する", "text": "品目ごとの発注点と、発注通知を受け取る担当者を設定し、在庫が発注点を下回ったときに通知が届くようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step6" },
+      { "@type": "HowToStep", "position": 7, "name": "ラベルを印刷して貼り付ける", "text": "ラベル印刷からバーコードラベルのPDFを出力・印刷し、備品や棚に貼り付けます。ラベルを貼ると、スマホアプリでスキャンして在庫の増減操作が簡単になります。", "url": "https://yahimaro.com/stocker-biz/guide/#step7" }
     ]
   }
   </script>
@@ -309,9 +310,10 @@
         <li><a href="#step1">アカウントを登録する（メール認証・トライアル開始）</a></li>
         <li><a href="#step2">拠点・部署・保管場所を登録する</a></li>
         <li><a href="#step3">カテゴリを登録する</a></li>
-        <li><a href="#step4">品目（在庫枠）を登録する ／ CSVで一括登録</a></li>
+        <li><a href="#step4">管理品目を登録する ／ CSVで一括登録</a></li>
         <li><a href="#step5">メンバーを招待して権限を割り当てる</a></li>
         <li><a href="#step6">発注担当者・発注点を設定する</a></li>
+        <li><a href="#step7">ラベルを印刷して貼り付ける</a></li>
         <li><a href="#daily">運用開始 — 日々の在庫操作</a></li>
       </ol>
     </nav>
@@ -378,7 +380,7 @@
       </div>
 
       <ol class="howto">
-        <li><span class="path">設定 › 組織</span> を開きます。</li>
+        <li><span class="path">設定 › 拠点・部署・保管場所</span> を開きます。</li>
         <li>まず<strong>拠点</strong>を追加します（例：本社）。</li>
         <li>その拠点の下に<strong>部署</strong>を追加します（例：総務）。</li>
         <li>さらにその下に<strong>保管場所</strong>を追加します（例：備品棚A）。</li>
@@ -391,7 +393,7 @@
 
       <div class="note">
         <b>ヒント</b>　保管場所は後から追加・移動できます。まずは「よく使う場所」を数か所だけ作り、運用しながら増やしていくのがおすすめです。<br>
-        なお、<b>有効な在庫が残っている保管場所はアーカイブ（削除相当）できません</b>。先に在庫を別の保管場所へ移動してください。
+        なお、<b>有効な在庫が残っている保管場所は削除できません</b>。先に在庫を別の保管場所へ移動してください。
       </div>
     </section>
 
@@ -407,7 +409,7 @@
       <p>品目を分類するための<strong>大カテゴリ・中カテゴリ</strong>を登録します。カテゴリを設定しておくと、在庫一覧での絞り込みや棚卸がぐっと楽になります。</p>
 
       <ol class="howto">
-        <li><span class="path">設定 › カテゴリ</span> を開きます。</li>
+        <li><span class="path">設定 › カテゴリ管理</span> を開きます。</li>
         <li><strong>大カテゴリ</strong>を追加します（例：文房具、消耗品、補修部品）。</li>
         <li>必要に応じて、その下に<strong>中カテゴリ</strong>を追加します（例：文房具 › 筆記用具）。</li>
       </ol>
@@ -426,28 +428,56 @@
     <section class="step" id="step4">
       <div class="step-head">
         <span class="step-badge">4</span>
-        <h2>品目（在庫枠）を登録する</h2>
+        <h2>管理品目を登録する</h2>
       </div>
       <span class="step-tag">在庫登録</span>
-      <p>管理したい品目を「在庫枠」として登録します。登録するとその品目に<strong>バーコードが自動で発行</strong>され、スマホスキャンで在庫を更新できるようになります。登録方法は2通りあります。</p>
+      <p>管理したい品目を「管理品目（在庫枠）」として登録します。登録するとその品目に<strong>バーコードが自動で発行</strong>され、スマホスキャンで在庫を更新できるようになります。登録方法は2通りあります。</p>
 
       <h3 style="font-size:1.02rem;font-weight:800;color:var(--primary);margin:22px 0 10px;">A. 1件ずつ手動で登録する</h3>
       <ol class="howto">
-        <li><span class="path">設定 › 品目追加</span>（在庫枠の新規登録）を開きます。</li>
-        <li>品名・単位・カテゴリ・保管場所・<strong>発注点</strong>などを入力して保存します。</li>
+        <li><span class="path">設定 › 管理品目を追加</span> を開きます。</li>
+        <li>下表の項目を入力して保存します。</li>
         <li>バーコードは保存時に自動発行されます（形式：SB- で始まるコード）。</li>
       </ol>
 
       <figure class="fig">
-        <img src="/stocker-biz/images/manual/04-add-item.png" alt="設定メニューから「管理品目を追加」を開き、品目名・単位・発注点・保管場所・カテゴリなどを入力する在庫枠の新規登録フォーム。" loading="lazy" width="1600" height="1000">
-        <figcaption>設定 › 管理品目を追加。品目名・単位・発注点・保管場所などを入力して登録します。</figcaption>
+        <img src="/stocker-biz/images/manual/04-add-item.png" alt="設定メニューから「管理品目を追加」を開き、品目名・単位・発注点・保管場所・カテゴリなどを入力する管理品目の新規登録フォーム。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › 管理品目を追加。基本情報・保管場所・カテゴリ・購買補助情報を入力して登録します。</figcaption>
       </figure>
 
-      <h3 style="font-size:1.02rem;font-weight:800;color:var(--primary);margin:22px 0 10px;">B. CSVで一括登録する（既存リストからの移行におすすめ）</h3>
+      <p style="font-size:0.92rem;font-weight:700;color:var(--primary);margin:18px 0 6px;">入力項目一覧</p>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>項目</th><th>必須</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td colspan="3" style="background:#f4f8fd;font-weight:700;color:var(--primary);">基本情報</td></tr>
+            <tr><td>品目名</td><td>必須</td><td>管理する品目の名称（例：軍手 M サイズ）。</td></tr>
+            <tr><td>単位</td><td>必須</td><td>数え方の単位（例：箱、本、個）。</td></tr>
+            <tr><td>現在庫数</td><td>必須</td><td>登録時点の在庫数。</td></tr>
+            <tr><td>発注点</td><td>必須</td><td>在庫がこの数を下回ったら発注通知が届く基準値。<strong>0 にすると在庫がゼロになるまで通知されません。</strong></td></tr>
+            <tr><td>推奨発注数</td><td>必須</td><td>発注時の目安数量。発注依頼の初期値として使われます。</td></tr>
+            <tr><td>説明・メモ</td><td>任意</td><td>品目の補足情報。</td></tr>
+            <tr><td colspan="3" style="background:#f4f8fd;font-weight:700;color:var(--primary);">保管場所</td></tr>
+            <tr><td>拠点 / 部署 / 保管場所</td><td>必須</td><td>Step2 で登録した組織から、この品目を置く場所を選択します。</td></tr>
+            <tr><td colspan="3" style="background:#f4f8fd;font-weight:700;color:var(--primary);">カテゴリ（任意）</td></tr>
+            <tr><td>大カテゴリ / 中カテゴリ</td><td>任意</td><td>Step3 で登録したカテゴリで分類します。一覧の絞り込みに使えます。</td></tr>
+            <tr><td colspan="3" style="background:#f4f8fd;font-weight:700;color:var(--primary);">購買補助情報（任意）</td></tr>
+            <tr><td>購入先</td><td>任意</td><td>発注先の仕入先。購入先マスタから選択します。</td></tr>
+            <tr><td>購入先品目コード</td><td>任意</td><td>仕入先側での品番・コード（例：ABC-12345）。</td></tr>
+            <tr><td>型番</td><td>任意</td><td>メーカー型番など（例：XYZ-001）。</td></tr>
+            <tr><td>購買先URL</td><td>任意</td><td>発注ページの URL。発注時にすぐ開けます。</td></tr>
+            <tr><td>発注メモ</td><td>任意</td><td>発注時の注意事項など。</td></tr>
+            <tr><td colspan="3" style="background:#f4f8fd;font-weight:700;color:var(--primary);">発注担当者 上書き設定（任意）</td></tr>
+            <tr><td>発注担当者の上書き</td><td>任意</td><td>この品目だけ、部署の発注担当者とは別の担当者に通知したい場合に指定します（Step6 参照）。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size:1.02rem;font-weight:800;color:var(--primary);margin:28px 0 10px;">B. CSVで一括登録する（既存リストからの移行におすすめ）</h3>
       <ol class="howto">
         <li><span class="path">設定 › CSVインポート</span> を開きます。</li>
         <li><strong>テンプレートをダウンロード</strong>し、Excel などで品目を入力（または既存の在庫表を貼り付け）します。</li>
-        <li>ファイルをアップロードすると<strong>プレビュー</strong>が表示されます。エラーがある行はその場で確認できます。</li>
+        <li>ファイルをアップロードすると<strong>プレビュー</strong>が表示されます。登録予定・スキップ・エラーが行ごとに確認できます。</li>
         <li>内容を確認して<strong>一括登録</strong>を実行します。</li>
       </ol>
 
@@ -455,6 +485,21 @@
         <img src="/stocker-biz/images/manual/05-csv-import.png" alt="CSVインポート画面。テンプレートをダウンロードし、品目を入力したCSVファイルをアップロードして一括登録する手順。" loading="lazy" width="1600" height="1000">
         <figcaption>設定 › CSVインポート。①テンプレートDL → ②入力 → ③ファイル選択の順で一括登録します。</figcaption>
       </figure>
+
+      <div class="note warn">
+        <b>テンプレートの列は、順番・列名・列数を変えないでください。</b>　取り込みは各列を<strong>並び順で読み取ります</strong>。列を入れ替えたり、削除・追加したりすると、データが正しく取り込まれません。テンプレートのヘッダー行はそのまま残し、2 行目以降にデータを入力してください。<br>
+        また、文字コードは <b>UTF-8</b> のみ対応です（テンプレートは Excel で文字化けしない UTF-8 BOM 付きで配布しています）。テンプレートの<strong>見本行（備考が「見本行」の行）</strong>は取り込まれないので、削除しても残してもかまいません。
+      </div>
+
+      <div class="note">
+        <b>プレビューでエラー・スキップが出たときは</b>
+        <ul style="margin:8px 0 0;padding-left:20px;font-size:0.9rem;line-height:1.8;">
+          <li><b>拠点／部署／保管場所が存在しません</b> … 名称が Step2 の登録と<strong>完全一致</strong>していません。表記ゆれ（全角/半角・スペース）を直すか、先に組織を登録してください（保管場所のみ、無い場合は取込時に自動作成されます）。</li>
+          <li><b>必須項目が空／数値が不正</b> … 品目名・拠点名・部署名・保管場所名・現在庫数・発注点は必須です。数量の欄は数値のみで入力してください。</li>
+          <li><b>既存データと重複しています（スキップ）</b> … 同じ「品目名＋拠点＋部署＋保管場所」の品目が既にあります。重複行は登録されずスキップされます（エラーではありません）。</li>
+        </ul>
+        <p style="margin:10px 0 0;font-size:0.9rem;">エラー行を修正して、<strong>もう一度アップロードし直す</strong>だけで再取り込みできます。エラー・スキップ以外の行は正常に登録されます。</p>
+      </div>
 
       <div class="note warn">
         <b>CSVインポートは新規追加専用です。</b>　既存の品目を CSV で上書き・編集することはできません。登録済みの品目を変更したい場合は、各品目の編集画面から行ってください。
@@ -530,6 +575,34 @@
 
     <hr class="sep">
 
+    <!-- STEP 7 -->
+    <section class="step" id="step7">
+      <div class="step-head">
+        <span class="step-badge">7</span>
+        <h2>ラベルを印刷して貼り付ける</h2>
+      </div>
+      <span class="step-tag">運用準備</span>
+      <p>運用を始める前に、バーコードラベルを印刷して<strong>備品や棚に貼り付けておく</strong>ことをおすすめします。ラベルを貼っておくと、日々の在庫操作のときに<strong>スマホアプリでラベルをスキャンするだけ</strong>で対象の品目を呼び出せるため、在庫の増減・棚卸・入荷がぐっと簡単・正確になります。</p>
+
+      <ol class="howto">
+        <li><span class="path">ラベル印刷</span> を開きます。</li>
+        <li>ラベルを付けたい品目（在庫枠）を選択し、表示項目やラベルサイズを設定します。</li>
+        <li><strong>ラベル PDF をダウンロード</strong>して印刷します（A4・複数面付け）。</li>
+        <li>印刷したラベルを、対応する<strong>備品・保管棚・保管場所に貼り付け</strong>ます。</li>
+      </ol>
+
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/08-label-print.png" alt="ラベル印刷画面。在庫枠を選択し、表示項目やラベルサイズを設定して、バーコードラベルのPDF（A4）を出力する。" loading="lazy" width="1600" height="1000">
+        <figcaption>ラベル印刷。品目を選んでバーコードラベルの PDF を出力し、印刷して備品・棚に貼ります（プレビュー付き）。</figcaption>
+      </figure>
+
+      <div class="note">
+        <b>ラベルを貼ると運用がラクになります</b>　棚や備品にラベルが貼ってあれば、現場で「これは何の品目だっけ？」と探す手間がなくなり、スキャン → 数量入力の 2 ステップで在庫を更新できます。
+      </div>
+    </section>
+
+    <hr class="sep">
+
     <!-- DAILY -->
     <section class="step" id="daily">
       <div class="step-head">
@@ -550,12 +623,7 @@
         </table>
       </div>
 
-      <p>スマホアプリで<strong>バーコードをスキャン</strong>すれば、その場で品目を特定して数量を更新できます。操作履歴はすべて自動で記録されます。ラベルが必要な品目は <span class="path">ラベル印刷</span> からバーコードラベルの PDF を出力できます。</p>
-
-      <figure class="fig">
-        <img src="/stocker-biz/images/manual/08-label-print.png" alt="ラベル印刷画面。在庫枠を選択し、表示項目やラベルサイズを設定して、バーコードラベルのPDF（A4）を出力する。" loading="lazy" width="1600" height="1000">
-        <figcaption>ラベル印刷。在庫枠を選んでバーコードラベルの PDF を出力できます（プレビュー付き）。</figcaption>
-      </figure>
+      <p>Step7 で貼ったラベルを<strong>スマホアプリでスキャン</strong>すれば、その場で品目を特定して数量を更新できます。操作履歴はすべて自動で記録されます。</p>
 
       <div class="note">
         <b>在庫がマイナスになっても大丈夫</b>　スキャン漏れや作業ミスで一時的に実在庫とズレても、棚卸であとから補正できる設計です。0以下はすべて「在庫なし」として表示されます。
