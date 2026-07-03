@@ -41,7 +41,7 @@
       { "@type": "HowToStep", "position": 3, "name": "カテゴリを登録する", "text": "設定 › カテゴリ で、大カテゴリ・中カテゴリを登録し、品目を分類できるようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step3" },
       { "@type": "HowToStep", "position": 4, "name": "品目（在庫枠）を登録する", "text": "在庫枠を手動フォームまたはCSVインポートで登録します。バーコードは登録時に自動発行されます。", "url": "https://yahimaro.com/stocker-biz/guide/#step4" },
       { "@type": "HowToStep", "position": 5, "name": "メンバーを招待する", "text": "設定 › ユーザー管理 から、メールアドレスとロールを指定してメンバーを招待します。", "url": "https://yahimaro.com/stocker-biz/guide/#step5" },
-      { "@type": "HowToStep", "position": 6, "name": "発注担当者を設定する", "text": "発注通知を受け取る担当者を設定し、最小在庫数を下回ったときに通知が届くようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step6" }
+      { "@type": "HowToStep", "position": 6, "name": "発注担当者・発注点を設定する", "text": "品目ごとの発注点と、発注通知を受け取る担当者を設定し、在庫が発注点を下回ったときに通知が届くようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step6" }
     ]
   }
   </script>
@@ -202,6 +202,18 @@
       color: var(--muted); font-size: 0.85rem; text-align: center; padding: 24px;
       margin: 18px 0;
     }
+    /* screenshot figure */
+    .fig { margin: 20px 0; }
+    .fig img {
+      width: 100%; height: auto; display: block;
+      border: 1px solid var(--border); border-radius: 12px;
+      background: #fff; box-shadow: 0 10px 30px rgba(13,34,64,0.08);
+    }
+    .fig figcaption {
+      margin-top: 10px; font-size: 0.82rem; color: var(--muted); text-align: center;
+    }
+    /* portrait (mobile) screenshots: constrain width and center */
+    .fig.portrait img { max-width: 420px; margin: 0 auto; }
 
     /* table */
     .tbl { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
@@ -299,7 +311,7 @@
         <li><a href="#step3">カテゴリを登録する</a></li>
         <li><a href="#step4">品目（在庫枠）を登録する ／ CSVで一括登録</a></li>
         <li><a href="#step5">メンバーを招待して権限を割り当てる</a></li>
-        <li><a href="#step6">発注担当者・最小在庫数を設定する</a></li>
+        <li><a href="#step6">発注担当者・発注点を設定する</a></li>
         <li><a href="#daily">運用開始 — 日々の在庫操作</a></li>
       </ol>
     </nav>
@@ -331,7 +343,10 @@
         <li>認証が完了すると <strong>30日間の無料トライアル</strong> が始まり、ホーム画面（ダッシュボード）が表示されます。</li>
       </ol>
 
-      <div class="shot">［スクリーンショット：新規登録フォーム／メール認証待ち画面］</div>
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/01-signup.png" alt="Stocker Biz の新規登録フォーム。会社名・氏名・メールアドレス・パスワードを入力し、トライアルで試すプラン（Mini／Standard／Business）を選択する画面。" loading="lazy" width="1200" height="750">
+        <figcaption>新規登録フォーム。会社名・氏名・メール・パスワードを入力し、試すプランを選びます。</figcaption>
+      </figure>
 
       <div class="note warn">
         <b>確認メールが届かない場合</b>　迷惑メールフォルダをご確認ください。それでも見つからない場合は、ドメイン <b>@yahimaro.com</b> からのメールを受信できるよう設定のうえ、<a href="/stocker-biz/contact.html">お問い合わせ</a>ください。
@@ -369,7 +384,10 @@
         <li>さらにその下に<strong>保管場所</strong>を追加します（例：備品棚A）。</li>
       </ol>
 
-      <div class="shot">［スクリーンショット：設定 › 組織（階層ツリー）］</div>
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/02-organization-setup.png" alt="設定メニューから「拠点・部署・保管場所」を開き、拠点 › 部署 › 保管場所 の3階層を階層ツリーで登録する画面。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › 拠点・部署・保管場所。拠点 › 部署 › 保管場所 の順に階層で登録します。</figcaption>
+      </figure>
 
       <div class="note">
         <b>ヒント</b>　保管場所は後から追加・移動できます。まずは「よく使う場所」を数か所だけ作り、運用しながら増やしていくのがおすすめです。<br>
@@ -394,7 +412,10 @@
         <li>必要に応じて、その下に<strong>中カテゴリ</strong>を追加します（例：文房具 › 筆記用具）。</li>
       </ol>
 
-      <div class="shot">［スクリーンショット：設定 › カテゴリ（階層ツリー）］</div>
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/03-category-management.png" alt="設定メニューから「カテゴリ管理」を開き、大カテゴリ・中カテゴリの2階層で品目を分類する画面。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › カテゴリ管理。大カテゴリ・中カテゴリの2階層で品目を分類できます。</figcaption>
+      </figure>
 
       <p class="muted">カテゴリは後から自由に追加・編集できます。最初はざっくり大カテゴリだけ作っておき、品目が増えてきたら中カテゴリで細分化しても構いません。</p>
     </section>
@@ -413,9 +434,14 @@
       <h3 style="font-size:1.02rem;font-weight:800;color:var(--primary);margin:22px 0 10px;">A. 1件ずつ手動で登録する</h3>
       <ol class="howto">
         <li><span class="path">設定 › 品目追加</span>（在庫枠の新規登録）を開きます。</li>
-        <li>品名・カテゴリ・保管場所・最小在庫数などを入力して保存します。</li>
+        <li>品名・単位・カテゴリ・保管場所・<strong>発注点</strong>などを入力して保存します。</li>
         <li>バーコードは保存時に自動発行されます（形式：SB- で始まるコード）。</li>
       </ol>
+
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/04-add-item.png" alt="設定メニューから「管理品目を追加」を開き、品目名・単位・発注点・保管場所・カテゴリなどを入力する在庫枠の新規登録フォーム。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › 管理品目を追加。品目名・単位・発注点・保管場所などを入力して登録します。</figcaption>
+      </figure>
 
       <h3 style="font-size:1.02rem;font-weight:800;color:var(--primary);margin:22px 0 10px;">B. CSVで一括登録する（既存リストからの移行におすすめ）</h3>
       <ol class="howto">
@@ -425,7 +451,10 @@
         <li>内容を確認して<strong>一括登録</strong>を実行します。</li>
       </ol>
 
-      <div class="shot">［スクリーンショット：CSVインポート（プレビュー画面）］</div>
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/05-csv-import.png" alt="CSVインポート画面。テンプレートをダウンロードし、品目を入力したCSVファイルをアップロードして一括登録する手順。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › CSVインポート。①テンプレートDL → ②入力 → ③ファイル選択の順で一括登録します。</figcaption>
+      </figure>
 
       <div class="note warn">
         <b>CSVインポートは新規追加専用です。</b>　既存の品目を CSV で上書き・編集することはできません。登録済みの品目を変更したい場合は、各品目の編集画面から行ってください。
@@ -461,7 +490,10 @@
         <li>相手に招待メール（有効期限7日）が届きます。リンクからパスワードを設定するとアカウントが有効になります。</li>
       </ol>
 
-      <div class="shot">［スクリーンショット：ユーザー管理（招待）画面］</div>
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/06-user-management.png" alt="ユーザー管理画面。役割（管理者・在庫管理者・一般ユーザー・閲覧のみ）の説明と、メンバー一覧・ロール変更・招待ボタン。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › ユーザー管理。「ユーザーを招待」からメールアドレスとロールを指定して招待します。</figcaption>
+      </figure>
 
       <div class="note">
         <b>招待リンクの有効期限が切れた場合</b>　ユーザー管理画面から招待メールを再送できます。
@@ -474,19 +506,22 @@
     <section class="step" id="step6">
       <div class="step-head">
         <span class="step-badge">6</span>
-        <h2>発注担当者・最小在庫数を設定する</h2>
+        <h2>発注担当者・発注点を設定する</h2>
       </div>
       <span class="step-tag">発注漏れ防止</span>
-      <p>ここが Stocker Biz の要です。品目ごとの<strong>最小在庫数</strong>と、通知を受け取る<strong>発注担当者</strong>を設定すると、在庫が最小在庫数を下回ったときに担当者へメールが自動で届き、発注漏れを防げます。</p>
+      <p>ここが Stocker Biz の要です。品目ごとの<strong>発注点（在庫がこの数を下回ったら発注したい数量）</strong>と、通知を受け取る<strong>発注担当者</strong>を設定すると、在庫が発注点を下回ったときに担当者へメールが自動で届き、発注漏れを防げます。</p>
 
       <ol class="howto">
-        <li>各品目に<strong>最小在庫数</strong>を設定します（Step 4 の登録時、または品目の編集画面から）。</li>
+        <li>各品目に<strong>発注点</strong>を設定します（Step 4 の登録時、または品目の編集画面から）。<span class="muted">※ 発注点を 0 にすると、在庫がゼロになるまで通知されません。</span></li>
         <li>部署などの単位で<strong>発注通知の受信者</strong>を設定します。受信者は<strong>複数人</strong>指定できます。</li>
-        <li>在庫が最小在庫数を下回ると、担当者にメール通知が届き、<span class="path">発注状況</span> 画面に発注依頼が並びます。</li>
+        <li>在庫が発注点を下回ると、担当者にメール通知が届き、<span class="path">発注状況</span> 画面に発注依頼が並びます。</li>
         <li>担当者は発注状況の一覧から、対応状況（発注済みなど）を管理できます。</li>
       </ol>
 
-      <div class="shot">［スクリーンショット：発注状況一覧／発注担当者設定］</div>
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/07-order-assignee-setup.png" alt="発注担当者設定画面。部署ごとに、在庫不足時の発注通知を受け取る担当者を複数人まで選択して設定する。" loading="lazy" width="1600" height="1000">
+        <figcaption>設定 › 発注担当者設定。部署ごとに通知の受信者を複数人まで指定できます。</figcaption>
+      </figure>
 
       <div class="note">
         <b>発注担当者は「ロール」ではなく「通知の受信者設定」です。</b>　役職に関係なく、通知を受け取ってほしい人を複数人まとめて指定できます。担当者が未設定でも先に進めますが、通知が飛ばないため早めの設定をおすすめします。
@@ -517,6 +552,11 @@
 
       <p>スマホアプリで<strong>バーコードをスキャン</strong>すれば、その場で品目を特定して数量を更新できます。操作履歴はすべて自動で記録されます。ラベルが必要な品目は <span class="path">ラベル印刷</span> からバーコードラベルの PDF を出力できます。</p>
 
+      <figure class="fig">
+        <img src="/stocker-biz/images/manual/08-label-print.png" alt="ラベル印刷画面。在庫枠を選択し、表示項目やラベルサイズを設定して、バーコードラベルのPDF（A4）を出力する。" loading="lazy" width="1600" height="1000">
+        <figcaption>ラベル印刷。在庫枠を選んでバーコードラベルの PDF を出力できます（プレビュー付き）。</figcaption>
+      </figure>
+
       <div class="note">
         <b>在庫がマイナスになっても大丈夫</b>　スキャン漏れや作業ミスで一時的に実在庫とズレても、棚卸であとから補正できる設計です。0以下はすべて「在庫なし」として表示されます。
       </div>
@@ -544,7 +584,7 @@
       </a>
       <a href="/features/reorder-alert/">
         <span class="t">発注漏れ防止</span>
-        <p>最小在庫数を下回ると発注依頼を通知。在庫切れを防ぎます。</p>
+        <p>発注点を下回ると発注依頼を通知。在庫切れを防ぎます。</p>
       </a>
       <a href="/stocker-biz/#faq">
         <span class="t">よくある質問（FAQ）</span>
