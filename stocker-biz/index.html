@@ -50,6 +50,51 @@
       "CSVによる在庫データの一括インポート",
       "複数拠点・部署・保管場所の管理"
     ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "JPY",
+      "lowPrice": "980",
+      "highPrice": "9800",
+      "offerCount": "3",
+      "description": "正式版リリース後の月額料金（税別）。Mini 980円／Standard 3,980円／Business 9,800円。β版期間中は初期費用・月額利用料ともに無料で、正式リリース後もβ参加企業は3か月無償。",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Mini",
+          "price": "980",
+          "priceCurrency": "JPY",
+          "description": "小規模事業所向け。拠点1・部署3・管理品目100点・ユーザー10名まで。"
+        },
+        {
+          "@type": "Offer",
+          "name": "Standard",
+          "price": "3980",
+          "priceCurrency": "JPY",
+          "description": "中小企業の標準的な運用向け。拠点3・部署10・管理品目1,000点・ユーザー20名まで。CSVインポート対応。"
+        },
+        {
+          "@type": "Offer",
+          "name": "Business",
+          "price": "9800",
+          "priceCurrency": "JPY",
+          "description": "複数拠点・大規模運用向け。拠点10・部署50・管理品目5,000点・ユーザー100名まで。"
+        }
+      ]
+    },
+    "audience": {
+      "@type": "BusinessAudience",
+      "audienceType": "小売店・卸売・飲食店・製造業などの中小企業・チーム",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "minValue": 3,
+        "maxValue": 100,
+        "unitText": "名"
+      }
+    },
+    "softwareHelp": {
+      "@type": "CreativeWork",
+      "url": "https://yahimaro.com/stocker-biz/guide/"
+    },
     "publisher": {
       "@type": "Organization",
       "name": "Yahimaro Apps",
@@ -109,7 +154,55 @@
         "name": "複数拠点・倉庫に対応した在庫管理ができますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい。拠点・部署・保管場所の3階層で組織構造を管理できます。複数拠点・複数倉庫にまたがる在庫管理に対応しています。"
+          "text": "はい。拠点・部署・保管場所の3階層で組織構造を管理できます。Standardプランで3拠点、Businessプランで10拠点まで設定でき、複数拠点・複数倉庫にまたがる在庫管理に対応しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "β版が終わったら自動で課金されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ。β版期間中、および正式リリース後3か月の無償期間中に、ご同意なく自動で課金されることはありません。有料プランへ移行される場合のみ、改めてプランをお選びいただきお手続きいただきます。継続されない場合はそのまま終了でき、費用は発生しません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "スマホからも使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。Stocker BizはWebブラウザベースのサービスで、パソコンだけでなくスマートフォン・タブレットのブラウザからも利用できます。iPhoneアプリも提供しており、現場でのバーコードスキャンによる在庫更新や発注依頼の確認をその場で行えます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "退会したらデータはどうなりますか？CSVで持ち出せますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在庫データはいつでもCSVで出力でき、退会前にお手元へ保存いただけます。退会・アカウント削除後は、法令上の保存義務がある場合を除き、合理的な期間内に削除します。他サービスへの移行時もCSVでデータを持ち出せます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "セキュリティはどうなっていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通信はTLS（HTTPS）で暗号化し、データベースも暗号化して保存しています。認証にはSupabase Authを使用し、ロールベースの権限制御でアクセス範囲を制限できます。クレジットカード情報は当社サーバーには保存せず、決済はStripeを通じて処理されます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "メンバーごとに権限を分けられますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。管理者・発注処理者・一般・閲覧者の4段階ロールで、メンバーごとにアクセスできる機能・データの範囲を制限できます。「現場担当は在庫更新のみ」「管理者は発注・設定まで」といった運用が可能です。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "解約はいつでもできますか？最低利用期間や解約金はありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "はい。有料プランの場合もサービス内の「プラン管理」画面からいつでも解約できます。最低利用期間や解約金はなく、解約後も当該請求期間の末日までご利用いただけます。"
         }
       }
     ]
@@ -853,6 +946,7 @@
       <li><a href="#features">機能</a></li>
       <li><a href="#plans">料金</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="compare/">比較</a></li>
       <li><a href="guide/">使い方ガイド</a></li>
       <li><a href="#trust">安心・運営</a></li>
       <li><a href="#resources">活用例・記事</a></li>
@@ -1391,6 +1485,10 @@
             <a href="/stocker-biz/guide/" style="display:block;background:#f8fafd;border:1px solid var(--border);border-radius:10px;padding:18px 20px;text-decoration:none;">
               <div style="font-size:0.98rem;font-weight:800;color:var(--primary);">導入セットアップ手順ガイド</div>
               <p style="font-size:0.86rem;color:var(--muted);margin-top:6px;line-height:1.6;">アカウント登録から拠点・カテゴリ設定、品目登録、招待、発注担当者設定まで。始め方をステップごとに解説。</p>
+            </a>
+            <a href="/stocker-biz/compare/" style="display:block;background:#f8fafd;border:1px solid var(--border);border-radius:10px;padding:18px 20px;text-decoration:none;">
+              <div style="font-size:0.98rem;font-weight:800;color:var(--primary);">在庫管理システムの比較・選び方</div>
+              <p style="font-size:0.86rem;color:var(--muted);margin-top:6px;line-height:1.6;">zaico・Tana・ロジクラ・スマレジなどと、料金・機能・向く用途を比較。自社に合うツールの選び方を解説。</p>
             </a>
           </div>
         </div>
