@@ -1,0 +1,84 @@
+name: IndexNow submit
+
+# sitemap.xml が更新された push で、変更された URL を IndexNow へ通知する。
+# GitHub Pages は静的サイトのため、CI からまとめて送信する方式をとる。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sitemap.xml'
+  workflow_dispatch:
+    inputs:
+      all:
+        description: 'sitemap.xml の全 URL を送信する（差分ではなく全件）'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+env:
+  HOST: yahimaro.com
+  KEY: de53f02eb6c04595a93680f895ad367528673aa2491b46f7972eff9bf0f67a00
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2   # 直前コミットとの差分を取るため
+
+      - name: Collect changed URLs
+        id: urls
+        run: |
+          set -euo pipefail
+
+          extract_locs() { grep -oP '(?<=<loc>)[^<]+' "$1" 2>/dev/null || true; }
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.all }}" = "true" ]; then
+            echo "全 URL を送信します"
+            extract_locs sitemap.xml | sort -u > urls.txt
+          else
+            # 直前コミットの sitemap.xml と比較し、新規/変更された <loc> を抽出
+            git show HEAD~1:sitemap.xml > prev.xml 2>/dev/null || : > prev.xml
+            comm -13 <(extract_locs prev.xml | sort -u) <(extract_locs sitemap.xml | sort -u) > urls.txt || true
+          fi
+
+          count=$(wc -l < urls.txt | tr -d ' ')
+          echo "対象 URL 数: $count"
+          cat urls.txt || true
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+
+      - name: Submit to IndexNow
+        if: steps.urls.outputs.count != '0'
+        run: |
+          set -euo pipefail
+
+          # urls.txt を JSON 配列に変換
+          url_json=$(jq -R -s -c 'split("\n") | map(select(length>0))' urls.txt)
+
+          payload=$(jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg keyloc "https://$HOST/$KEY.txt" \
+            --argjson urls "$url_json" \
+            '{host:$host, key:$key, keyLocation:$keyloc, urlList:$urls}')
+
+          echo "送信ペイロード:"
+          echo "$payload"
+
+          http_code=$(curl -sS -o resp.txt -w '%{http_code}' \
+            -X POST 'https://api.indexnow.org/IndexNow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$payload")
+
+          echo "HTTP $http_code"
+          cat resp.txt || true
+
+          # 200/202 は成功。それ以外は失敗扱い。
+          case "$http_code" in
+            200|202) echo "IndexNow 送信成功" ;;
+            *) echo "IndexNow 送信失敗 (HTTP $http_code)"; exit 1 ;;
+          esac
