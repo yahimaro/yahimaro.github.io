@@ -81,6 +81,20 @@
           "price": "9800",
           "priceCurrency": "JPY",
           "description": "複数拠点・大規模運用向け。拠点10・部署50・管理品目5,000点・ユーザー100名まで。"
+        },
+        {
+          "@type": "Offer",
+          "name": "追加オプション：管理品目 +100点",
+          "price": "300",
+          "priceCurrency": "JPY",
+          "description": "Mini・Standardプラン向けの追加オプション。管理品目の上限を100点単位で買い足せます（月額300円・税別）。Businessプランは対象外。"
+        },
+        {
+          "@type": "Offer",
+          "name": "追加オプション：ユーザー +1名",
+          "price": "100",
+          "priceCurrency": "JPY",
+          "description": "Mini・Standardプラン向けの追加オプション。ユーザー数の上限を1名単位で買い足せます（月額100円・税別）。Businessプランは対象外。"
         }
       ]
     },
@@ -158,6 +172,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "はい。拠点・部署・保管場所の3階層で組織構造を管理できます。Standardプランで3拠点、Businessプランで10拠点まで設定でき、複数拠点・複数倉庫にまたがる在庫管理に対応しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "プランの上限を超えたらどうなりますか？品目やユーザーを追加できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mini・Standardプランでは、プランを乗り換えずに追加オプションで枠を買い足せます。管理品目は+100点あたり月額300円（税別）、ユーザーは+1名あたり月額100円（税別）で、必要な分だけ増やせます。Businessプランは基本上限が管理品目5,000点・ユーザー100名と大きいため追加オプションの対象外です。"
         }
       },
       {
@@ -1518,8 +1540,29 @@
         </div>
 
       </div>
+
+      <!-- 追加オプション（アドオン） -->
+      <div
+        style="max-width:720px;margin:28px auto 0;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:22px 26px;">
+        <p style="font-size:0.82rem;font-weight:700;letter-spacing:0.04em;color:var(--accent);margin-bottom:8px;">
+          追加オプション（Mini・Standard プラン向け）</p>
+        <p style="font-size:0.96rem;color:var(--muted);line-height:1.7;margin-bottom:14px;">
+          プランの上限に達しても、必要な分だけ枠を買い足せます。プランを乗り換えずに、管理品目とユーザー数を柔軟に増やせます。</p>
+        <ul
+          style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:0.96rem;line-height:1.6;">
+          <li><strong>管理品目 +100 点</strong> ＝ <strong>300 円 / 月</strong>（税別・100 点単位で追加）</li>
+          <li><strong>ユーザー +1 名</strong> ＝ <strong>100 円 / 月</strong>（税別・1 名単位で追加）</li>
+        </ul>
+        <p style="font-size:0.86rem;color:var(--muted);line-height:1.7;margin-top:12px;">
+          ※ Business プランは基本上限（管理品目 5,000 点・ユーザー 100 名）が大きいため、追加オプションの対象外です。</p>
+      </div>
+
       <p class="plans-footer">
         表示価格は税別・正式版リリース後の料金です。正式版では、選択したプラン相当の機能を30日間無料でお試しいただけます。<strong>β版期間中は上記いずれのプランも無料</strong>でご利用いただけます。</p>
+      <p style="text-align:center;margin-top:18px;">
+        <a href="pricing.html"
+          style="display:inline-flex;align-items:center;gap:6px;color:var(--accent);font-weight:700;text-decoration:none;">料金プランの詳細を見る →</a>
+      </p>
     </div>
   </section>
 
@@ -1536,6 +1579,14 @@
           <div class="faq-answer">
             <strong>初期費用は一切かかりません。</strong>現在 Stocker Biz は β 版をリリース中で、β
             版期間中は月額利用料も無料です。クレジットカードの登録なしでお申し込みいただけ、導入時の初期費用・設定費用もいただきません。β 版にご参加いただいた企業様は、正式リリース後も 3 か月間は無償でご利用いただけます。
+          </div>
+        </details>
+        <details>
+          <summary>プランの上限を超えたら？品目やユーザーを追加できますか？</summary>
+          <div class="faq-answer">
+            Mini・Standard プランでは、プランを乗り換えずに<strong>追加オプション</strong>で枠を買い足せます。<strong>管理品目は +100 点あたり月額 300 円</strong>（税別）、<strong>ユーザーは
+            +1 名あたり月額 100 円</strong>（税別）で、必要な分だけ増やせます。Business
+            プランは基本上限が管理品目 5,000 点・ユーザー 100 名と大きいため、追加オプションの対象外です。
           </div>
         </details>
         <details>
