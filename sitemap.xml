@@ -37,6 +37,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://yahimaro.com/inspection/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yahimaro.com/inspection/digital-inspection/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yahimaro.com/inspection/what-is-inspection/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yahimaro.com/inspection/inspection-types/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yahimaro.com/inspection/inspection-checklist/</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://yahimaro.com/features/reorder-alert/</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
