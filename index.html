@@ -524,6 +524,86 @@
       .resources { padding: 56px 16px 64px; }
     }
 
+    /* ── INSPECTION GUIDE (別テーマ・ティール) ── */
+    .inspection {
+      padding: 72px 24px 88px;
+      background: linear-gradient(180deg, #f3f8f5 0%, #eaf3ee 100%);
+    }
+    .insp-inner { max-width: 1040px; margin: 0 auto; }
+    .insp-head { text-align: center; margin-bottom: 40px; }
+    .insp-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #0f9d76;
+      background: rgba(15,157,118,0.1);
+      border: 1px solid rgba(15,157,118,0.3);
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    .insp-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 900;
+      letter-spacing: -0.025em;
+      color: #14332e;
+      margin-bottom: 12px;
+    }
+    .insp-lead {
+      font-size: 0.95rem;
+      color: #5a7068;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.85;
+    }
+    .insp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .insp-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      background: var(--white);
+      border: 1.5px solid #c3ddd3;
+      border-radius: 14px;
+      padding: 22px 22px 24px;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+    .insp-card:hover {
+      border-color: #0f9d76;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(12,33,28,0.1);
+    }
+    .insp-card-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0f9d76;
+    }
+    .insp-card-title {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #14332e;
+      line-height: 1.5;
+    }
+    .insp-all { text-align: center; margin-top: 32px; }
+    .insp-all a {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0f9d76;
+      text-decoration: none;
+    }
+    .insp-all a:hover { color: #0c7e5e; text-decoration: underline; }
+    @media (max-width: 700px) {
+      .insp-grid { grid-template-columns: 1fr; gap: 12px; }
+      .inspection { padding: 56px 16px 64px; }
+    }
+
     /* ── FOOTER ── */
     footer {
       padding: 28px 32px;
@@ -731,6 +811,34 @@
 
     </div>
     <p class="res-all"><a href="/blog/">お役立ち記事・活用例の一覧を見る →</a></p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- INSPECTION GUIDE / 新テーマ -->
+  <section class="inspection">
+    <div class="insp-inner">
+      <div class="insp-head">
+        <span class="insp-badge">New Topic ・ サービス準備中</span>
+        <h2 class="insp-title">設備点検について</h2>
+        <p class="insp-lead">紙・Excelでの設備点検を、スマホで完結できるサービスを準備中です。まずは点検の考え方・進め方に関するお役立ち記事を公開しています。</p>
+      </div>
+      <div class="insp-grid">
+        <a class="insp-card" href="/inspection/digital-inspection/">
+          <span class="insp-card-label">記事</span>
+          <span class="insp-card-title">設備点検をデジタル化する5つのメリット</span>
+        </a>
+        <a class="insp-card" href="/inspection/what-is-inspection/">
+          <span class="insp-card-label">記事</span>
+          <span class="insp-card-title">設備点検とは？種類・目的・進め方の基本</span>
+        </a>
+        <a class="insp-card" href="/inspection/inspection-checklist/">
+          <span class="insp-card-label">記事</span>
+          <span class="insp-card-title">設備点検チェックリストの作り方</span>
+        </a>
+      </div>
+      <p class="insp-all"><a href="/inspection/">設備点検ガイドを見る →</a></p>
+    </div>
   </section>
 
   <!-- FOOTER -->
