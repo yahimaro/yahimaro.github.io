@@ -40,7 +40,7 @@
     "image": "https://yahimaro.com/images/stocker-biz_icon.png",
     "inLanguage": "ja",
     "datePublished": "2026-06-24",
-    "dateModified": "2026-07-05",
+    "dateModified": "2026-07-08",
     "author": { "@type": "Organization", "name": "Stocker Biz" },
     "publisher": {
       "@type": "Organization",
@@ -58,6 +58,38 @@
       { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
       { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
       { "@type": "ListItem", "position": 3, "name": "Excel在庫管理の限界とは？", "item": "https://yahimaro.com/blog/excel-inventory-limit/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Excelでの在庫管理には限界がありますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "品目数が少なく担当者が一人のうちはExcelでも十分に管理できますが、扱う品目や関わる人が増えると限界が出てきます。最新ファイルが分からなくなる、複数人の同時編集で壊れる、現場で更新されず在庫数と実在庫がずれる、発注漏れに気づけない、変更履歴が残らない、といった課題が表面化します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Excel在庫管理からシステム・アプリに移行すべきタイミングは？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "品目数が増えて一覧の把握や検索に時間がかかるようになった、複数人で管理して同時編集や版の食い違いが起きる、保管場所が複数になった、発注漏れによる在庫切れが実際に起きた、棚卸のたびに差異の確認や転記の負担が大きい——こうしたサインが出てきたら、在庫管理アプリ・システムへの移行を検討するタイミングです。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Excelの在庫データはそのまま移行できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Stocker BizではCSVインポートで既存のExcel在庫リストを一括登録できるため、Excelからの移行をスムーズに始められます。いきなり全面移行せず、まずは一部の品目から試すこともできます。"
+        }
+      }
     ]
   }
   </script>
@@ -225,6 +257,7 @@
         <li><a href="#sign">システム化を検討すべきサイン</a></li>
         <li><a href="#features">在庫管理アプリ・システムに必要な機能</a></li>
         <li><a href="#migration">Stocker BizでExcel管理から移行するメリット</a></li>
+        <li><a href="#faq">よくある質問</a></li>
         <li><a href="#summary">まとめ</a></li>
       </ol>
     </div>
@@ -299,6 +332,14 @@
         <div class="callout-label">機能を見る</div>
         <p>移行後に使える機能は、<a href="/stocker-biz/#features">Stocker Biz の機能一覧</a>で紹介しています。CSVインポートでの移行についてもこちらをご覧ください。</p>
       </div>
+
+      <h2 id="faq">よくある質問</h2>
+      <h3>Excelでの在庫管理には限界がありますか？</h3>
+      <p>品目数が少なく担当者が一人のうちはExcelでも十分に管理できますが、扱う品目や関わる人が増えると限界が出てきます。最新ファイルが分からなくなる、複数人の同時編集で壊れる、現場で更新されず在庫数と実在庫がずれる、発注漏れに気づけない、変更履歴が残らない、といった課題が表面化します。</p>
+      <h3>Excel在庫管理からシステム・アプリに移行すべきタイミングは？</h3>
+      <p>品目数が増えて一覧の把握や検索に時間がかかるようになった、複数人で管理して同時編集や版の食い違いが起きる、保管場所が複数になった、発注漏れによる在庫切れが実際に起きた、棚卸のたびに差異の確認や転記の負担が大きい——こうしたサインが出てきたら、在庫管理アプリ・システムへの移行を検討するタイミングです。</p>
+      <h3>Excelの在庫データはそのまま移行できますか？</h3>
+      <p>Stocker Biz では<a href="/stocker-biz/#features">CSVインポート</a>で既存のExcel在庫リストを一括登録できるため、Excelからの移行をスムーズに始められます。いきなり全面移行せず、まずは一部の品目から試すこともできます。</p>
 
       <h2 id="summary">まとめ</h2>
       <p>Excel在庫管理は、手軽でコストもかからず、初期には十分に機能します。一方で、品目数や担当者が増え、複数拠点での管理が必要になると、同時編集・更新漏れ・発注漏れ・履歴管理といった面で限界が見えてきます。</p>
