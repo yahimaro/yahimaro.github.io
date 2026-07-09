@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <title>設備点検とは？種類・目的・進め方の基本をわかりやすく解説</title>
-  <meta name="description" content="設備点検とは、設備を安全に・安定して動かし続けるために状態を確認する活動です。日常点検・定期点検・法定点検といった種類、点検の目的、現場での進め方の基本を、これから点検を仕組み化する担当者向けにわかりやすく解説します。">
+  <meta name="description" content="設備点検とは、設備を安全に・安定して動かし続けるために状態を確認する活動です。日常点検・定期点検・法定点検の種類を頻度・見るもの・記録で比較した早見表つきで、点検の目的と現場での進め方の基本を、これから点検を仕組み化する担当者向けにわかりやすく解説します。">
   <link rel="canonical" href="https://yahimaro.com/inspection/what-is-inspection/">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
@@ -40,7 +40,7 @@
     "image": "https://yahimaro.com/images/favicon-192.png",
     "inLanguage": "ja",
     "datePublished": "2026-07-08",
-    "dateModified": "2026-07-08",
+    "dateModified": "2026-07-09",
     "author": { "@type": "Organization", "name": "Yahimaro Apps" },
     "publisher": {
       "@type": "Organization",
@@ -163,6 +163,16 @@
     .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.66em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
     .article-body strong { color: var(--primary); font-weight: 700; }
 
+    /* comparison table */
+    .table-scroll { overflow-x: auto; margin: 24px 0 30px; border: 1px solid var(--border); border-radius: 12px; }
+    .cmp-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 560px; background: var(--surface); }
+    .cmp-table th, .cmp-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.7; }
+    .cmp-table thead th { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.86rem; }
+    .cmp-table thead th:first-child { background: #0c211c; }
+    .cmp-table tbody th { background: #eef6f2; color: var(--primary); font-weight: 700; white-space: nowrap; }
+    .cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: none; }
+    .cmp-table td { color: #2b433c; }
+
     /* in-article callout */
     .callout { background: #eef6f2; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 22px 24px; margin: 30px 0; }
     .callout-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
@@ -282,6 +292,41 @@
       <p>週次・月次・年次など、あらかじめ決めた間隔で行う点検です。日常点検より踏み込んだ項目を確認し、部品の摩耗や消耗品の交換時期などをチェックします。計画的に実施し、結果を記録して劣化の傾向を追うことが重要です。</p>
       <h3>法定点検</h3>
       <p>法令によって実施が義務づけられている点検です。対象設備・頻度・記録の保存が法律で定められており、実施しないと法令違反となる場合があります。自社の設備がどの法令の対象かを把握しておく必要があります。</p>
+
+      <p>3つの点検を、頻度の目安・見るもの・記録の残し方で並べると、違いが一目で分かります。</p>
+      <div class="table-scroll">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th>種類</th>
+              <th>頻度の目安</th>
+              <th>主に見るもの</th>
+              <th>記録の残し方</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>日常点検</th>
+              <td>毎日・始業時ごと</td>
+              <td>異音・振動・漏れ・温度・外観など、五感で分かる範囲</td>
+              <td>簡潔に。高頻度なので負担を軽くする工夫が要る</td>
+            </tr>
+            <tr>
+              <th>定期点検</th>
+              <td>週次・月次・年次など計画的に</td>
+              <td>部品の摩耗、消耗品の交換時期、性能低下など踏み込んだ項目</td>
+              <td>継続的に残し、数値の変化から劣化の傾向を追う</td>
+            </tr>
+            <tr>
+              <th>法定点検</th>
+              <td>法令で定められた周期</td>
+              <td>法令で定められた検査項目（設備の種類ごとに異なる）</td>
+              <td>法令で保存が義務づけられる場合がある</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <div class="callout">
         <div class="callout-label">関連記事</div>
         <p>日常点検・定期点検・法定点検は混同されがちです。それぞれの目的・頻度・記録の違いは、<a href="/inspection/inspection-types/">日常点検・定期点検・法定点検の違い</a>で詳しく解説しています。</p>
