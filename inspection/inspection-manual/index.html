@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY0Q5ZJVQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XY0Q5ZJVQ3');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>設備点検マニュアルの作り方｜構成・手順書・点検基準書のまとめ方</title>
+  <meta name="description" content="設備点検マニュアルの作り方を、盛り込む構成、点検手順書・点検基準書・チェックリストのまとめ方、教育や見直しの進め方まで手順に沿って解説します。属人化を防ぎ、誰が点検しても同じ品質を保つためのマニュアル整備を設備管理の担当者向けにまとめています。">
+  <link rel="canonical" href="https://yahimaro.com/inspection/inspection-manual/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Yahimaro Apps">
+  <meta property="og:title" content="設備点検マニュアルの作り方｜構成・手順書・点検基準書のまとめ方">
+  <meta property="og:description" content="点検手順書・点検基準書・チェックリストをまとめた点検マニュアルの作り方を手順に沿って解説します。">
+  <meta property="og:url" content="https://yahimaro.com/inspection/inspection-manual/">
+  <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="設備点検マニュアルの作り方｜構成・手順書・点検基準書のまとめ方">
+  <meta name="twitter:description" content="点検手順書・点検基準書・チェックリストをまとめた点検マニュアルの作り方を手順に沿って解説します。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "設備点検マニュアルの作り方",
+    "description": "点検手順書・点検基準書・チェックリストをまとめた点検マニュアルの構成と作り方を手順に沿って解説します。",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yahimaro.com/inspection/inspection-manual/" },
+    "image": "https://yahimaro.com/images/favicon-192.png",
+    "inLanguage": "ja",
+    "datePublished": "2026-07-09",
+    "dateModified": "2026-07-09",
+    "author": { "@type": "Organization", "name": "Yahimaro Apps" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/favicon-192.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Yahimaro Apps", "item": "https://yahimaro.com/" },
+      { "@type": "ListItem", "position": 2, "name": "設備点検ガイド", "item": "https://yahimaro.com/inspection/" },
+      { "@type": "ListItem", "position": 3, "name": "設備点検マニュアルの作り方", "item": "https://yahimaro.com/inspection/inspection-manual/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "設備点検マニュアルには何を盛り込めばよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "点検マニュアルには、対象設備の一覧、点検の目的と方針、点検項目と判定基準をまとめた点検基準書、手順を示した点検手順書、現場で使うチェックリスト、記録の残し方、異常時の対応、担当と頻度などを盛り込みます。すべてを一つの分厚い文書にする必要はなく、基準書・手順書・チェックリストといった要素に分けて整理すると、現場で使いやすくなります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "点検手順書と点検基準書の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "点検手順書は「どういう順番で・どうやって点検するか」という作業の流れを示す文書です。点検基準書は「各項目をどの状態なら正常・異常と判断するか」という判定の基準を示す文書です。手順書が動作の道案内、基準書が合否の物差しにあたります。両方をチェックリストと組み合わせることで、誰が点検しても同じ手順・同じ基準で実施できるようになります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "点検マニュアルはどう作り始めればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最初から完璧なマニュアルを目指す必要はありません。まず止まると影響が大きい設備を一つ選び、その設備の点検項目・判定基準・手順・チェックリストをそろえるところから始めます。実際に現場で使いながら、分かりにくい表現や過不足を直し、対象設備を少しずつ広げていくと、無理なく実用的なマニュアルに育ちます。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary:   #14332e;
+      --accent:    #0f9d76;
+      --accent-lt: #14b88a;
+      --surface:   #ffffff;
+      --bg:        #eef4f1;
+      --bg-dark:   #0c211c;
+      --border:    #c3ddd3;
+      --text:      #0e211c;
+      --muted:     #5a7068;
+      --green:     #16a34a;
+      --coming:    #d97706;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: var(--accent); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(12, 33, 28, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 32px; height: 56px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; display: block; object-fit: cover; }
+    .nav-logo-text { font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-logo-text span { color: var(--accent-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: rgba(255,255,255,0.65); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-badge { font-size: 0.7rem; font-weight: 700; color: var(--coming); background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.35); padding: 2px 10px; border-radius: 999px; letter-spacing: 0.06em; }
+    @media (max-width: 640px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 16px; }
+      .nav-links li:not(:last-child) { display: none; }
+    }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .breadcrumb-inner { max-width: 1080px; margin: 0 auto; padding: 12px 24px; font-size: 0.78rem; color: var(--muted); }
+    .breadcrumb-inner a { color: var(--muted); text-decoration: none; }
+    .breadcrumb-inner a:hover { color: var(--accent); }
+    .breadcrumb-inner span { color: var(--primary); font-weight: 600; }
+    .breadcrumb-sep { margin: 0 8px; color: var(--border); }
+
+    /* ── ARTICLE ── */
+    .article-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 72px; }
+    .article-tag { display: inline-block; background: rgba(15,157,118,0.1); color: var(--accent); font-size: 0.72rem; font-weight: 700; padding: 4px 13px; border-radius: 999px; margin-bottom: 18px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .article-wrap h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; color: var(--primary); line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .article-lead { font-size: 1.02rem; color: var(--muted); line-height: 1.9; margin-bottom: 8px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+
+    .article-body h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); font-weight: 900; color: var(--primary); line-height: 1.35; letter-spacing: -0.01em; margin: 48px 0 16px; padding-top: 8px; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 30px 0 10px; }
+    .article-body p { font-size: 1rem; color: #2b433c; line-height: 1.95; margin-bottom: 18px; }
+    .article-body ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 8px 0 22px; }
+    .article-body ul li { position: relative; padding-left: 18px; font-size: 0.98rem; color: #2b433c; line-height: 1.8; }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 0.66em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .article-body strong { color: var(--primary); font-weight: 700; }
+
+    /* numbered step */
+    .step { display: flex; gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .step:last-of-type { border-bottom: none; }
+    .step-num { flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px; background: var(--accent); color: #fff; font-weight: 800; font-size: 1.05rem; display: flex; align-items: center; justify-content: center; }
+    .step-body h3 { margin: 4px 0 8px; }
+    .step-body p { margin-bottom: 0; }
+
+    /* comparison table */
+    .table-scroll { overflow-x: auto; margin: 24px 0 30px; border: 1px solid var(--border); border-radius: 12px; }
+    .cmp-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 520px; background: var(--surface); }
+    .cmp-table th, .cmp-table td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.7; }
+    .cmp-table thead th { background: var(--primary); color: #fff; font-weight: 700; font-size: 0.84rem; }
+    .cmp-table thead th:first-child { background: #0c211c; }
+    .cmp-table tbody th { background: #eef6f2; color: var(--primary); font-weight: 700; white-space: nowrap; }
+    .cmp-table tbody tr:last-child th, .cmp-table tbody tr:last-child td { border-bottom: none; }
+    .cmp-table td { color: #2b433c; }
+
+    /* in-article callout */
+    .callout { background: #eef6f2; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 22px 24px; margin: 30px 0; }
+    .callout-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+    .callout p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin-bottom: 0; }
+    .callout a { font-weight: 700; }
+
+    .toc { background: #f5faf7; border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin: 8px 0 36px; }
+    .toc h2 { font-size: 0.9rem; font-weight: 800; color: var(--primary); margin: 0 0 12px; padding: 0; }
+    .toc ol { margin: 0; padding-left: 20px; }
+    .toc li { font-size: 0.92rem; color: var(--muted); margin-bottom: 7px; line-height: 1.6; }
+    .toc a { color: var(--muted); text-decoration: none; }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── RELATED LINKS ── */
+    section { padding: 64px 24px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; }
+    .section-title { font-size: clamp(1.4rem, 3.2vw, 1.9rem); font-weight: 900; color: var(--primary); line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .section-head { text-align: center; margin-bottom: 40px; }
+    .related { background: var(--bg); border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .related-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .related-card .rc-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+    .related-card .rc-title { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-top: 6px; }
+    .related-card .rc-desc { font-size: 0.85rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    .related-card.soon { opacity: 0.65; pointer-events: none; }
+    .related-card.soon .rc-label { color: var(--coming); }
+    @media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+
+    /* ── CTA SECTION ── */
+    .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #103029 100%); padding: 72px 24px; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 700; transition: background 0.2s, transform 0.2s; box-shadow: 0 8px 28px rgba(15,157,118,0.4); }
+    .btn-primary:hover { background: var(--accent-lt); transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--bg-dark); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-mark { width: 22px; height: 22px; border-radius: 5px; display: block; object-fit: cover; }
+    .footer-logo-text { font-size: 0.9rem; font-weight: 800; color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/inspection/" class="nav-logo">
+      <span class="nav-logo-text">設備点検<span>ガイド</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/inspection/">記事一覧</a></li>
+      <li><a href="/">Yahimaro Apps</a></li>
+      <li><span class="nav-badge">サービス準備中</span></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/">Yahimaro Apps</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/inspection/">設備点検ガイド</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>設備点検マニュアルの作り方</span>
+    </div>
+  </div>
+
+  <!-- ARTICLE -->
+  <article class="article-wrap">
+    <span class="article-tag">設備点検</span>
+    <h1>設備点検マニュアルの作り方</h1>
+    <p class="article-lead">点検を担当者の記憶や勘に頼っていると、見る項目や判断が人によってばらつき、引き継ぎのたびに品質が揺らぎます。点検マニュアルは、点検の目的・項目・判定基準・手順・記録の残し方を一つに束ね、「誰が点検しても同じ品質」を保つための土台です。本記事では、点検マニュアルに盛り込む構成、点検基準書・点検手順書・チェックリストのまとめ方、教育や見直しの進め方までを、設備管理の担当者向けに手順に沿って解説します。</p>
+
+    <div class="toc">
+      <h2>この記事の内容</h2>
+      <ol>
+        <li><a href="#why">なぜ点検マニュアルが必要か</a></li>
+        <li><a href="#structure">点検マニュアルの構成</a></li>
+        <li><a href="#docs">点検基準書・手順書・チェックリストの違い</a></li>
+        <li><a href="#steps">点検マニュアル作成の5ステップ</a></li>
+        <li><a href="#education">教育と定着のさせ方</a></li>
+        <li><a href="#update">見直し・更新の進め方</a></li>
+        <li><a href="#digital">紙・Excelからデジタルへ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </div>
+
+    <div class="article-body">
+      <h2 id="why">なぜ点検マニュアルが必要か</h2>
+      <p>点検を続けていると、ベテランは異常にすぐ気づけても、経験の浅い担当者は同じ変化を見逃す、といったことが起こります。見る項目や判断の基準が頭の中にしかないと、担当が変わるたびに点検の質が揺らぎ、抜けや見落としの原因になります。</p>
+      <p>点検マニュアルは、「何のために・何を・どう見て・どこからが異常で・どう記録するか」を形にすることで、点検の属人化を解消するための道具です。誰が点検しても同じ観点・同じ基準で行えるようになり、引き継ぎや新人教育もしやすくなります。マニュアルがあること自体が、点検を仕組みとして回すための前提になります。</p>
+
+      <h2 id="structure">点検マニュアルの構成</h2>
+      <p>点検マニュアルに決まった様式はありませんが、次のような要素を盛り込むと、現場で迷わず使えるものになります。</p>
+      <ul>
+        <li><strong>目的・方針:</strong> 何のために点検を行うか、対象範囲や基本的な考え方。</li>
+        <li><strong>対象設備の一覧:</strong> どの設備を点検対象とするか。設備ごとに管理番号や設置場所を添えると分かりやすくなります。</li>
+        <li><strong>点検項目と判定基準（点検基準書）:</strong> 各設備で何を見て、どの状態を正常・異常と判断するか。</li>
+        <li><strong>点検の手順（点検手順書）:</strong> どの順番で・どのように点検を進めるか。</li>
+        <li><strong>チェックリスト:</strong> 現場で実際に記入する、項目と判定を並べた記録用紙。</li>
+        <li><strong>頻度と担当:</strong> いつ・誰が点検・確認するか。</li>
+        <li><strong>記録の残し方と保存:</strong> 結果をどの形で残し、どこに・いつまで保存するか。</li>
+        <li><strong>異常時の対応:</strong> 異常を見つけたとき、誰に・どう連絡し、どう対応するか。</li>
+      </ul>
+      <p>これらをすべて一つの分厚い文書にまとめる必要はありません。基準書・手順書・チェックリストといった要素に分けておくと、現場では必要な部分だけを取り出して使えます。</p>
+
+      <h2 id="docs">点検基準書・手順書・チェックリストの違い</h2>
+      <p>マニュアルを構成する3つの文書は、役割が異なります。混同すると内容が重複したり抜けたりするため、違いを押さえておきましょう。</p>
+      <div class="table-scroll">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th>文書</th>
+              <th>役割</th>
+              <th>記載する内容の例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>点検基準書</th>
+              <td>合否の物差し</td>
+              <td>各項目の判定基準・基準値・正常な状態（例：油量はゲージの上限〜下限の範囲内）</td>
+            </tr>
+            <tr>
+              <th>点検手順書</th>
+              <td>作業の道案内</td>
+              <td>点検する順番・使う工具や計器・安全上の注意・確認のしかた</td>
+            </tr>
+            <tr>
+              <th>チェックリスト</th>
+              <td>現場の記録用紙</td>
+              <td>点検項目・確認方法・判定（良/否）・実施日・実施者・気づき</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>点検基準書が「どの状態なら正常か」を決め、点検手順書が「どうやって点検するか」を示し、チェックリストが「実際に点検した結果」を残します。この3つがそろって初めて、誰が点検しても同じ手順・同じ基準で実施し、記録に残せるようになります。</p>
+      <div class="callout">
+        <div class="callout-label">関連記事</div>
+        <p>チェックリストの具体的な作り方（項目の洗い出し・判定基準の決め方・フォーマット）は、<a href="/inspection/inspection-checklist/">設備点検チェックリストの作り方</a>で詳しく解説しています。</p>
+      </div>
+
+      <h2 id="steps">点検マニュアル作成の5ステップ</h2>
+      <p>点検マニュアルは、次の5つのステップで作っていくと、無理なく実用的なものになります。</p>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>目的と対象設備を決める</h3>
+          <p>何のために点検を行うか（安全確保・故障予防・法令遵守など）を整理し、どの設備を対象にするかを決めます。すべてを一度に対象にせず、止まると影響が大きい設備から始めると着手しやすくなります。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>点検項目と判定基準をそろえる（基準書）</h3>
+          <p>各設備で「何を見るか」を洗い出し、「どの状態なら正常・異常か」の基準を決めます。数値で測れる項目は基準値を、目視の項目は正常な状態の写真や見本を用意すると、判断のばらつきを抑えられます。取扱説明書やメーカー推奨の点検箇所も参考にします。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>点検の手順を書き起こす（手順書）</h3>
+          <p>点検する順番、使う工具・計器、安全上の注意、確認のしかたを、実際の動きに沿って書き起こします。写真や図を添えると、経験の浅い担当者でも迷わず進められます。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>チェックリストに落とし込む</h3>
+          <p>項目と判定基準を、現場で記入するチェックリストの形にまとめます。頻度（毎日・月次など）や担当を割り当て、日々の点検の負担が偏らないように整理します。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>試して整える</h3>
+          <p>実際に現場で使ってみて、分かりにくい表現・過不足のある項目・現実に合わない頻度を調整します。最初から完璧を目指さず、運用しながら育てていくことで、現場に合ったマニュアルになります。</p>
+        </div>
+      </div>
+
+      <h2 id="education">教育と定着のさせ方</h2>
+      <p>マニュアルは、作って配っただけでは定着しません。現場で使われて初めて意味を持ちます。定着させるには、次のような工夫が有効です。</p>
+      <ul>
+        <li><strong>実物に沿って教える:</strong> 机上の説明だけでなく、実際の設備の前で手順書・基準書を見ながら一緒に点検し、判断の目を合わせます。</li>
+        <li><strong>用語と基準を統一する:</strong> 「異常」「異音」などの言葉が人によって違う意味にならないよう、正常・異常の見本を共有します。</li>
+        <li><strong>改訂しやすい形にする:</strong> 現場の気づきをすぐ反映できるよう、更新のしやすさを重視します。更新日と版を必ず記しておきます。</li>
+      </ul>
+
+      <h2 id="update">見直し・更新の進め方</h2>
+      <p>設備の入れ替えや故障の経験を通じて、点検すべき項目や基準は少しずつ変わっていきます。点検マニュアルは一度作って終わりではなく、定期的に見直すことで実態に合った状態を保てます。</p>
+      <p>点検記録を振り返ると、見直しのヒントが見つかります。たとえば、いつも「良」しかつかない項目は頻度を下げられるかもしれませんし、故障の予兆を捉えられなかった箇所は項目や基準の追加を検討します。更新した際は、版数と更新日を記し、現場が最新版を使える状態にしておくことが大切です。</p>
+      <div class="callout">
+        <div class="callout-label">ご注意</div>
+        <p>法定点検にあたる項目は、対象設備・頻度・記録方法が法令で定められています。マニュアルを整える際も、該当する項目は必ず該当する法令・基準をご確認のうえ反映してください。3つの点検の違いは<a href="/inspection/inspection-types/">日常点検・定期点検・法定点検の違い</a>で整理しています。</p>
+      </div>
+
+      <h2 id="digital">紙・Excelからデジタルへ</h2>
+      <p>点検マニュアルやチェックリストは、まず紙やExcelで作り始めて問題ありません。ただし運用が定着し、対象設備や点検の量が増えてくると、紙・Excelでは転記の手間・記録漏れ・過去の履歴の探しにくさ、最新版マニュアルの配布といった課題が出てきます。</p>
+      <p>その段階で、同じ基準書・チェックリストをスマホやタブレットのアプリに置き換えると、記録や集計の負担を減らし、最新版を全員がすぐ参照できるようになります。マニュアルの中身（項目・基準・手順）を先に固めておけば、デジタル化はスムーズに進みます。</p>
+      <div class="callout">
+        <div class="callout-label">関連記事</div>
+        <p>紙・Excel点検の課題と、デジタル化で得られるメリットは、<a href="/inspection/digital-inspection/">設備点検をデジタル化する5つのメリット</a>で解説しています。</p>
+      </div>
+
+      <h2 id="faq">よくある質問</h2>
+      <h3>設備点検マニュアルには何を盛り込めばよいですか？</h3>
+      <p>対象設備の一覧、点検の目的と方針、点検項目と判定基準をまとめた点検基準書、手順を示した点検手順書、現場で使うチェックリスト、記録の残し方、異常時の対応、担当と頻度などを盛り込みます。すべてを一つの分厚い文書にする必要はなく、基準書・手順書・チェックリストといった要素に分けて整理すると、現場で使いやすくなります。</p>
+      <h3>点検手順書と点検基準書の違いは何ですか？</h3>
+      <p>点検手順書は「どういう順番で・どうやって点検するか」という作業の流れを示す文書です。点検基準書は「各項目をどの状態なら正常・異常と判断するか」という判定の基準を示す文書です。手順書が動作の道案内、基準書が合否の物差しにあたります。両方をチェックリストと組み合わせることで、誰が点検しても同じ手順・同じ基準で実施できるようになります。</p>
+      <h3>点検マニュアルはどう作り始めればよいですか？</h3>
+      <p>最初から完璧なマニュアルを目指す必要はありません。まず止まると影響が大きい設備を一つ選び、その設備の点検項目・判定基準・手順・チェックリストをそろえるところから始めます。実際に現場で使いながら、分かりにくい表現や過不足を直し、対象設備を少しずつ広げていくと、無理なく実用的なマニュアルに育ちます。</p>
+
+      <h2 id="summary">まとめ</h2>
+      <p>点検マニュアルは、点検の目的・項目・判定基準・手順・記録の残し方を束ね、「誰が点検しても同じ品質」を保つための土台です。点検基準書（合否の物差し）・点検手順書（作業の道案内）・チェックリスト（記録用紙）の3つを組み合わせることで、属人化を防ぎ、引き継ぎや教育をしやすくできます。</p>
+      <p>作り方は、目的と対象設備を決め、基準書・手順書をそろえてチェックリストに落とし込み、現場で試して整える、という流れが基本です。影響の大きい設備から小さく始め、記録を活用しながら見直していくことで、実態に合った点検マニュアルへ育てていけます。</p>
+    </div>
+  </article>
+
+  <!-- RELATED LINKS -->
+  <section class="related">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">関連ページ</p>
+        <h2 class="section-title">あわせて読みたい</h2>
+      </div>
+      <div class="related-grid">
+        <a class="related-card" href="/inspection/inspection-checklist/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">設備点検チェックリストの作り方</div>
+          <p class="rc-desc">点検項目の洗い出し方と判定基準の決め方、運用のコツを解説します。</p>
+        </a>
+        <a class="related-card" href="/inspection/inspection-types/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">日常点検・定期点検・法定点検の違い</div>
+          <p class="rc-desc">よく混同される3つの点検の目的・頻度・記録の違いを整理します。</p>
+        </a>
+        <a class="related-card" href="/inspection/what-is-inspection/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">設備点検とは？種類・目的・進め方</div>
+          <p class="rc-desc">設備点検の目的と進め方の基本を、はじめての方向けに解説します。</p>
+        </a>
+        <a class="related-card" href="/inspection/digital-inspection/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">点検をデジタル化する5つのメリット</div>
+          <p class="rc-desc">紙・Excel点検の課題と、デジタル化で得られるメリットを解説します。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <h2>点検を仕組みで回すサービスを準備中です</h2>
+    <p>紙・Excel の点検記録をスマホで完結できる設備点検サービスを開発中です。まずは設備点検ガイドで、点検の考え方・進め方をご覧ください。</p>
+    <div class="cta-buttons">
+      <a href="/inspection/" class="btn-primary">設備点検ガイドを見る</a>
+      <a href="/" class="btn-outline">Yahimaro Apps</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">
+        <span class="footer-logo-text">Yahimaro Apps</span>
+      </a>
+      <div class="footer-links">
+        <a href="/">Yahimaro Apps</a>
+        <a href="/inspection/">設備点検ガイド</a>
+        <a href="/stocker-biz/">Stocker Biz（在庫管理）</a>
+        <a href="/privacy">プライバシーポリシー</a>
+      </div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
