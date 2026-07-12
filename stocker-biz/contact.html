@@ -9,6 +9,13 @@
     gtag('js', new Date());
     gtag('config', 'G-XY0Q5ZJVQ3');
   </script>
+  <!-- LINEヤフー広告 サイトジェネラルタグ -->
+  <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+  <script>
+    window.yjDataLayer = window.yjDataLayer || [];
+    function ytag() { yjDataLayer.push(arguments); }
+    ytag({ "type": "ycl_cookie", "config": { "ycl_use_non_cookie_storage": true } });
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -518,6 +525,17 @@
       });
 
       if (res.ok) {
+        // LINEヤフー広告 コンバージョン測定（お問い合わせ送信）
+        ytag({
+          "type": "yss_conversion",
+          "config": {
+            "yahoo_conversion_id": "1001406348",
+            "yahoo_conversion_label": "f5abCO35584cEP2GsZ5E",
+            "yahoo_conversion_value": "0"
+          }
+        });
+        gtag('event', 'generate_lead');
+
         form.style.display = 'none';
         success.style.display = 'block';
       } else {
