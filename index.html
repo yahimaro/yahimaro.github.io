@@ -326,88 +326,24 @@
 
     /* card media */
     .card-media {
-      height: 260px;
+      height: 300px;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
     }
     .card-media.stocker {
       background: linear-gradient(160deg, #fff3d0 0%, #ffe8a0 100%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
     }
-    .phone-row {
-      display: flex;
-      gap: 12px;
-      align-items: flex-end;
-      padding: 0 16px;
-    }
-    .phone-shell {
-      background: #1c1c1e;
-      border-radius: 20px;
-      padding: 5px;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-      flex-shrink: 0;
-    }
-    .phone-shell img {
-      display: block;
-      border-radius: 16px;
-      object-fit: cover;
-    }
-    .phone-shell.lg { width: 96px; }
-    .phone-shell.lg img { width: 96px; height: 208px; }
-    .phone-shell.sm { width: 80px; margin-bottom: 14px; }
-    .phone-shell.sm img { width: 80px; height: 173px; }
-
     .card-media.biz {
       background: linear-gradient(150deg, #dbeafe 0%, #bfdbfe 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
-    .dash {
-      width: min(86%, 290px);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
+    .media-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 14px;
     }
-    .dash-header {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue-pale);
-    }
-    .dash-header-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--blue);
-    }
-    .dash-header-label {
-      font-size: 0.73rem;
-      font-weight: 800;
-      color: var(--blue-dark);
-      letter-spacing: 0.04em;
-    }
-    .dash-rows { padding: 4px 0; }
-    .dash-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-      font-size: 0.83rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .dash-row:last-child { border-bottom: none; }
-    .dash-row-label { color: var(--muted); font-weight: 600; }
-    .dash-row-val { font-weight: 800; color: var(--text); }
-    .dash-row-val.ok   { color: var(--green); }
-    .dash-row-val.warn { color: var(--amber-dark); }
 
     /* card body */
     .card-body {
@@ -508,6 +444,8 @@
       text-decoration: none;
       border: 1.5px solid transparent;
       transition: background 0.15s, border-color 0.15s, color 0.15s;
+      word-break: auto-phrase;
+      overflow-wrap: anywhere;
     }
     .res-link:hover {
       background: var(--bg);
@@ -597,6 +535,9 @@
       font-weight: 800;
       color: #14332e;
       line-height: 1.5;
+      /* 日本語を文節単位で折り返す（「…進め方の / 基本」のような孤立を防ぐ） */
+      word-break: auto-phrase;
+      overflow-wrap: anywhere;
     }
     .insp-all { text-align: center; margin-top: 32px; }
     .insp-all a {
@@ -637,11 +578,7 @@
     @media (max-width: 460px) {
       .nav-btn:first-child { display: none; }
       .brand-text { font-size: 0.88rem; }
-      .card-media { height: 210px; }
-      .phone-shell.lg { width: 80px; }
-      .phone-shell.lg img { width: 80px; height: 173px; }
-      .phone-shell.sm { width: 66px; }
-      .phone-shell.sm img { width: 66px; height: 143px; }
+      .card-media { height: 240px; }
     }
   </style>
 </head>
@@ -706,17 +643,7 @@
       <!-- Stocker -->
       <article class="card">
         <div class="card-media stocker">
-          <div class="phone-row">
-            <div class="phone-shell sm">
-              <img src="/images/screen-1.png" alt="Stocker スクリーンショット">
-            </div>
-            <div class="phone-shell lg">
-              <img src="/images/v1.5.0_1_1242_2688.png" alt="Stocker スクリーンショット">
-            </div>
-            <div class="phone-shell sm">
-              <img src="/images/v1.5.0_2_1242_2688.png" alt="Stocker スクリーンショット">
-            </div>
-          </div>
+          <img class="media-img" src="/images/v1.5.0-1-2_mini.png" alt="Stocker のバーコードスキャンで商品情報が自動入力される画面">
         </div>
         <div class="card-body">
           <p class="card-kicker kicker-amber">For Personal &amp; Family</p>
@@ -740,30 +667,7 @@
       <!-- Stocker Biz -->
       <article class="card">
         <div class="card-media biz">
-          <div class="dash">
-            <div class="dash-header">
-              <div class="dash-header-dot"></div>
-              <span class="dash-header-label">Stocker Biz — ダッシュボード</span>
-            </div>
-            <div class="dash-rows">
-              <div class="dash-row">
-                <span class="dash-row-label">在庫ステータス</span>
-                <span class="dash-row-val ok">正常</span>
-              </div>
-              <div class="dash-row">
-                <span class="dash-row-label">発注依頼</span>
-                <span class="dash-row-val warn">3 件</span>
-              </div>
-              <div class="dash-row">
-                <span class="dash-row-label">管理品目</span>
-                <span class="dash-row-val">248 点</span>
-              </div>
-              <div class="dash-row">
-                <span class="dash-row-label">チームメンバー</span>
-                <span class="dash-row-val">8 名</span>
-              </div>
-            </div>
-          </div>
+          <img class="media-img" src="/images/stockerbiz.png" alt="Stocker Biz のダッシュボード画面">
         </div>
         <div class="card-body">
           <p class="card-kicker kicker-blue">For Business &amp; Team</p>

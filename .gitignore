@@ -1,0 +1,9 @@
+# Pinegrow（ビジュアルエディタ）のローカル生成物
+_pgbackup/
+_pginfo/
+pinegrow.json
+.liveui.json
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
