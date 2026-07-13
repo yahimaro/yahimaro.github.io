@@ -66,812 +66,872 @@
   </script>
   <style>
     :root {
-      --white:      #ffffff;
-      --bg:         #f5f7ff;
-      --bg2:        #eef1fb;
-      --text:       #1a1f36;
-      --muted:      #6b7280;
-      --border:     #e2e6f0;
-      --amber:      #f59e0b;
-      --amber-pale: #fff8e6;
-      --amber-dark: #b45309;
-      --blue:       #2563eb;
-      --blue-pale:  #eff6ff;
-      --blue-dark:  #1d4ed8;
-      --green:      #059669;
-      --shadow-sm:  0 1px 4px rgba(30,40,80,0.07);
-      --shadow-md:  0 4px 20px rgba(30,40,80,0.10);
-      --shadow-lg:  0 12px 48px rgba(30,40,80,0.13);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif;
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+      --ink: #081c35;
+      --ink-soft: #17314f;
+      --navy: #06182e;
+      --blue: #087ff5;
+      --blue-dark: #0567ce;
+      --cyan: #08bfc1;
+      --mint: #17c99a;
+      --orange: #f6a51c;
+      --orange-dark: #c87500;
+      --paper: #f5f8fc;
+      --paper-blue: #edf5ff;
+      --white: #fff;
+      --muted: #607086;
+      --line: #dce5ef;
+      --shadow-sm: 0 8px 30px rgba(8, 28, 53, .08);
+      --shadow-lg: 0 32px 90px rgba(8, 28, 53, .16);
+      --radius: 28px;
+      --content: 1180px;
     }
 
-    /* ── NAV ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      height: 60px;
-      padding: 0 32px;
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Inter, "Helvetica Neue", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { color: var(--white); background: var(--blue); }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 1000;
+      padding: 10px 16px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 8px;
+      transform: translateY(-150%);
+      transition: transform .2s;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    /* Navigation */
+    .site-nav {
+      position: fixed;
+      inset: 14px 0 auto;
+      z-index: 100;
+      height: 64px;
+      transition: top .25s;
+    }
+    .site-nav.is-scrolled { top: 8px; }
+    .nav-inner {
+      width: min(calc(100% - 32px), var(--content));
+      height: 100%;
+      margin: auto;
+      padding: 0 9px 0 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(255,255,255,0.92);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      gap: 18px;
+      border: 1px solid rgba(255, 255, 255, .92);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .78);
+      box-shadow: 0 10px 38px rgba(8, 28, 53, .09), inset 0 0 0 1px rgba(220, 229, 239, .45);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      backdrop-filter: blur(20px) saturate(140%);
+      transition: background .25s, box-shadow .25s;
     }
+    .site-nav.is-scrolled .nav-inner { background: rgba(255, 255, 255, .94); box-shadow: 0 12px 38px rgba(8, 28, 53, .13), inset 0 0 0 1px rgba(220, 229, 239, .65); }
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
       text-decoration: none;
-      color: var(--text);
-    }
-    .brand-logo {
-      width: 30px;
-      height: 24px;
-      object-fit: contain;
-      display: block;
-    }
-    .brand-text {
-      font-size: 0.95rem;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      color: var(--text);
+      font-weight: 850;
+      letter-spacing: -.02em;
       white-space: nowrap;
     }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .nav-btn {
+    .brand img { width: 32px; height: 27px; object-fit: contain; }
+    .brand span { font-size: .91rem; }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-link {
+      padding: 9px 12px;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      height: 36px;
-      padding: 0 16px;
+      gap: 7px;
       border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
+      color: var(--ink-soft);
+      font-size: .78rem;
+      font-weight: 750;
       text-decoration: none;
-      border: 1.5px solid var(--border);
-      color: var(--muted);
-      background: var(--white);
-      transition: all 0.15s;
+      transition: color .2s, background .2s;
     }
-    .nav-btn:hover { border-color: var(--blue); color: var(--blue); }
-    .nav-btn-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      flex-shrink: 0;
+    .nav-link:hover { color: var(--blue); background: var(--paper-blue); }
+    .nav-dot { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; }
+    .nav-dot.orange { background: var(--orange); box-shadow: 0 0 0 3px rgba(246, 165, 28, .12); }
+    .nav-dot.blue { background: var(--blue); box-shadow: 0 0 0 3px rgba(8, 127, 245, .11); }
+    .nav-link.primary {
+      min-height: 46px;
+      margin-left: 8px;
+      padding-inline: 17px;
+      color: var(--white);
+      background: var(--ink);
+      box-shadow: 0 8px 22px rgba(8, 28, 53, .16);
     }
+    .nav-link.primary:hover { color: var(--white); background: var(--blue); }
+    .demo-live { width: 7px; height: 7px; border-radius: 50%; background: #39dca4; box-shadow: 0 0 0 4px rgba(57, 220, 164, .15); }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 80px 24px 72px;
-      text-align: center;
-      background:
-        radial-gradient(ellipse 70% 60% at 20% 40%, rgba(245,158,11,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 70% 60% at 80% 40%, rgba(37,99,235,0.10) 0%, transparent 60%),
-        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-label {
+    /* Common */
+    .section { padding: 118px 24px; }
+    .section-inner { width: min(100%, var(--content)); margin: 0 auto; }
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      height: 30px;
-      padding: 0 14px;
-      border-radius: 999px;
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--blue);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .16em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-sm);
     }
-    .hero-label-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--amber), var(--blue));
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.2rem);
+    .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
+    .section-title {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.45rem);
+      line-height: 1.22;
+      letter-spacing: -.045em;
       font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 20px;
+      text-wrap: balance;
     }
-    .hero h1 .hi-amber { color: var(--amber); }
-    .hero h1 .hi-blue  { color: var(--blue); }
-    .hero-lead {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--muted);
-      max-width: 500px;
-      margin: 0 auto 40px;
-      line-height: 1.8;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      height: 48px;
-      padding: 0 24px;
-      border-radius: 12px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-amber {
-      background: var(--amber);
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(245,158,11,0.35);
-    }
-    .btn-amber:hover { box-shadow: 0 8px 28px rgba(245,158,11,0.45); }
-    .btn-blue {
-      background: var(--blue);
-      color: #fff;
-      box-shadow: 0 4px 16px rgba(37,99,235,0.3);
-    }
-    .btn-blue:hover { box-shadow: 0 8px 28px rgba(37,99,235,0.4); }
-    .btn-outline {
-      background: var(--white);
-      color: var(--text);
-      border: 1.5px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-    .btn-outline:hover { border-color: var(--blue); color: var(--blue); box-shadow: var(--shadow-md); }
+    .section-lead { margin: 22px 0 0; color: var(--muted); font-size: 1rem; }
+    .arrow { transition: transform .2s; }
+    a:hover .arrow { transform: translateX(4px); }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
 
-    /* ── HERO DEMO LINK ── */
-    .hero-demo {
+    /* Hero */
+    .hero {
+      min-height: 850px;
+      padding: 148px 24px 100px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(8, 191, 193, .15), transparent 31%),
+        radial-gradient(circle at 12% 70%, rgba(8, 127, 245, .12), transparent 34%),
+        linear-gradient(150deg, #fff 16%, #f4f9ff 61%, #effbf9 100%);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .48;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(8, 28, 53, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8, 28, 53, .045) 1px, transparent 1px);
+      background-size: 54px 54px;
+      -webkit-mask-image: linear-gradient(to right, #000, transparent 62%);
+      mask-image: linear-gradient(to right, #000, transparent 62%);
+    }
+    .hero-glow {
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -180px;
+      bottom: -240px;
+      border-radius: 50%;
+      border: 1px solid rgba(8, 127, 245, .13);
+      box-shadow: 0 0 0 80px rgba(8, 127, 245, .025), 0 0 0 160px rgba(8, 127, 245, .018);
+    }
+    .hero-inner {
+      width: min(100%, var(--content));
+      margin: auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 50px;
+    }
+    .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 9px;
-      margin-top: 28px;
-      padding: 9px 18px;
+      margin-bottom: 25px;
+      padding: 8px 13px;
+      border: 1px solid rgba(8, 127, 245, .17);
       border-radius: 999px;
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text);
-      text-decoration: none;
-      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
-    }
-    .hero-demo:hover {
-      border-color: var(--blue);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-1px);
-    }
-    .hero-demo-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 4px rgba(5,150,105,0.15);
-      flex-shrink: 0;
-    }
-    .hero-demo-arrow { color: var(--blue); transition: transform 0.15s; }
-    .hero-demo:hover .hero-demo-arrow { transform: translateX(3px); }
-    @media (max-width: 460px) {
-      .hero-demo { font-size: 0.78rem; padding: 8px 14px; }
-    }
-
-    /* ── DIVIDER ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 32px;
-    }
-
-    /* ── PRODUCTS ── */
-    .products {
-      padding: 72px 24px 96px;
-      background: var(--bg);
-    }
-    .products-label {
-      text-align: center;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
+      color: var(--blue-dark);
+      background: rgba(255, 255, 255, .72);
+      box-shadow: 0 6px 20px rgba(8, 127, 245, .07);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 10px;
     }
-    .products-title {
-      text-align: center;
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    .pulse {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 0 5px rgba(23, 201, 154, .13);
+    }
+    .hero h1 {
+      max-width: 660px;
+      margin: 0;
+      font-size: clamp(3rem, 5.2vw, 4.7rem);
       font-weight: 900;
-      letter-spacing: -0.025em;
-      color: var(--text);
-      margin-bottom: 48px;
+      line-height: 1.06;
+      letter-spacing: -.065em;
+      text-wrap: balance;
     }
-    .cards {
-      max-width: 1040px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+    .hero h1 .gradient-text {
+      color: transparent;
+      background: linear-gradient(110deg, var(--blue) 0%, var(--cyan) 85%);
+      -webkit-background-clip: text;
+      background-clip: text;
     }
-    .card {
+    .hero-copy {
+      max-width: 560px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(.98rem, 1.5vw, 1.12rem);
+      line-height: 1.9;
+    }
+    .hero-copy strong { color: var(--ink); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .button {
+      min-height: 52px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: var(--ink);
       background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow-sm);
+      font-size: .88rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .2s, border-color .2s, box-shadow .2s, background .2s;
     }
-    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .button:hover { transform: translateY(-2px); border-color: #b9c9db; box-shadow: 0 14px 32px rgba(8, 28, 53, .13); }
+    .button.dark { color: var(--white); background: var(--ink); border-color: var(--ink); }
+    .button.dark:hover { background: var(--blue); border-color: var(--blue); }
+    .button.orange { color: var(--white); background: var(--orange); border-color: var(--orange); }
+    .button.orange:hover { background: #ed9700; border-color: #ed9700; }
+    .hero-note { margin: 22px 0 0; display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: .78rem; }
+    .hero-note::before { content: ""; width: 20px; height: 1px; background: #a9b6c6; }
 
-    /* card media */
-    .card-media {
-      height: 300px;
+    .hero-stage { min-height: 560px; position: relative; }
+    .visual-orbit {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      top: 28px;
+      left: 48%;
+      border: 1px dashed rgba(8, 127, 245, .24);
+      border-radius: 50%;
+      transform: translateX(-50%) rotate(-14deg);
+    }
+    .visual-orbit::before, .visual-orbit::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 6px rgba(8, 191, 193, .12);
+    }
+    .visual-orbit::before { top: 47px; left: 86px; }
+    .visual-orbit::after { right: 24px; bottom: 132px; background: var(--orange); box-shadow: 0 0 0 6px rgba(246, 165, 28, .14); }
+    .visual-card {
+      position: absolute;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .92);
+      border: 1px solid rgba(255, 255, 255, .95);
+      box-shadow: var(--shadow-lg);
+    }
+    .visual-card.personal {
+      width: 284px;
+      top: 0;
+      left: 3%;
+      z-index: 3;
+      border-radius: 30px;
+      transform: rotate(-4deg);
+      animation: float-a 7s ease-in-out infinite;
+    }
+    .visual-card.personal img { width: 100%; display: block; }
+    .visual-card.business {
+      width: min(510px, 82%);
+      right: -5%;
+      bottom: 25px;
+      z-index: 2;
+      padding: 10px;
+      border-radius: 22px;
+      transform: rotate(2deg);
+      animation: float-b 8s ease-in-out infinite;
+    }
+    .visual-card.business img { width: 100%; display: block; border-radius: 13px; }
+    @keyframes float-a { 0%,100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(-10px); } }
+    @keyframes float-b { 0%,100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(1deg) translateY(9px); } }
+
+    /* Intro */
+    .intro { padding: 78px 24px; color: var(--white); background: var(--navy); position: relative; overflow: hidden; }
+    .intro::after {
+      content: "Y";
+      position: absolute;
+      right: -25px;
+      top: -115px;
+      color: rgba(255, 255, 255, .025);
+      font-size: 33rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .intro-inner {
+      width: min(100%, var(--content));
+      margin: auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 90px;
+    }
+    .intro-title { margin: 0; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.35; letter-spacing: -.045em; font-weight: 850; }
+    .intro-title span { color: var(--cyan); }
+    .intro-copy { margin: 0; color: #aabbd0; font-size: .98rem; }
+    .intro-points { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 9px; }
+    .intro-point { padding: 7px 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; color: #dce7f4; font-size: .75rem; font-weight: 700; }
+
+    /* Products */
+    .products { background: var(--paper); }
+    .products-head { max-width: 760px; margin-bottom: 72px; }
+    .product-row {
+      min-height: 620px;
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 72px;
+    }
+    .product-row + .product-row { margin-top: 110px; }
+    .product-row.reverse { grid-template-columns: .92fr 1.08fr; }
+    .product-row.reverse .product-visual { order: 2; }
+    .product-visual {
+      min-height: 550px;
+      display: grid;
+      place-items: center;
       position: relative;
       overflow: hidden;
-      flex-shrink: 0;
+      border-radius: var(--radius);
     }
-    .card-media.stocker {
-      background: linear-gradient(160deg, #fff3d0 0%, #ffe8a0 100%);
+    .product-visual::before { content: ""; position: absolute; inset: 28px; border: 1px solid rgba(255,255,255,.55); border-radius: 20px; }
+    .product-visual.stocker { background: linear-gradient(145deg, #fff3d8, #ffd980); }
+    .product-visual.biz { background: linear-gradient(145deg, #dcecff, #b9d8ff 55%, #c8f2ee); }
+    .product-visual.stocker img {
+      width: min(78%, 430px);
+      position: relative;
+      z-index: 1;
+      border-radius: 24px;
+      box-shadow: 0 28px 70px rgba(118, 68, 0, .2);
+      transform: rotate(-2.2deg);
+      transition: transform .45s ease;
     }
-    .card-media.biz {
-      background: linear-gradient(150deg, #dbeafe 0%, #bfdbfe 100%);
-    }
-    .media-img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 14px;
-    }
-
-    /* card body */
-    .card-body {
-      padding: 28px 28px 32px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .card-kicker {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .kicker-amber { color: var(--amber-dark); }
-    .kicker-blue  { color: var(--blue); }
-    .card-title {
-      font-size: 1.9rem;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-    .card-desc {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.85;
-      margin-bottom: 22px;
-      min-height: 5.55em; /* 3行分そろえる */
-    }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: flex-start;
-      gap: 6px;
-      margin-bottom: 24px;
-      flex: 1;
-    }
-    .tag {
-      padding: 3px 11px;
-      border-radius: 999px;
-      border: 1.5px solid var(--border);
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--muted);
-      background: var(--bg);
-    }
-    .card-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    /* ボタン行を2カード間で同じ高さにそろえる（注記の有無で上下しないように） */
-    .card-note-slot {
-      min-height: 21px;
-      margin-top: 12px;
-    }
-    .card-note-slot .card-note { margin-top: 0; }
-    .card-note {
-      font-size: 0.74rem;
-      color: var(--muted);
-      margin-top: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .card-note::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--green);
-      flex-shrink: 0;
-    }
-
-    /* ── RESOURCES ── */
-    .resources {
-      padding: 72px 24px 88px;
-      background: var(--white);
-    }
-    .res-grid {
-      max-width: 1040px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 32px;
-    }
-    .res-col-title {
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: var(--blue);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1.5px solid var(--border);
-    }
-    .res-link {
-      display: block;
-      padding: 11px 14px;
-      margin-bottom: 8px;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-      text-decoration: none;
-      border: 1.5px solid transparent;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-      word-break: auto-phrase;
-      overflow-wrap: anywhere;
-    }
-    .res-link:hover {
-      background: var(--bg);
-      border-color: var(--border);
-      color: var(--blue-dark);
-    }
-    .res-all {
-      max-width: 1040px;
-      margin: 32px auto 0;
-      text-align: center;
-    }
-    .res-all a {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--blue);
-      text-decoration: none;
-    }
-    .res-all a:hover { color: var(--blue-dark); text-decoration: underline; }
-    @media (max-width: 700px) {
-      .res-grid { grid-template-columns: 1fr; gap: 24px; }
-      .resources { padding: 56px 16px 64px; }
-    }
-
-    /* ── INSPECTION GUIDE (別テーマ・ティール) ── */
-    .inspection {
-      padding: 72px 24px 88px;
-      background: linear-gradient(180deg, #f3f8f5 0%, #eaf3ee 100%);
-    }
-    .insp-inner { max-width: 1040px; margin: 0 auto; }
-    .insp-head { text-align: center; margin-bottom: 40px; }
-    .insp-badge {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: #0f9d76;
-      background: rgba(15,157,118,0.1);
-      border: 1px solid rgba(15,157,118,0.3);
-      padding: 4px 14px;
-      border-radius: 999px;
-      margin-bottom: 16px;
-    }
-    .insp-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-      font-weight: 900;
-      letter-spacing: -0.025em;
-      color: #14332e;
-      margin-bottom: 12px;
-    }
-    .insp-lead {
-      font-size: 0.95rem;
-      color: #5a7068;
-      max-width: 560px;
-      margin: 0 auto;
-      line-height: 1.85;
-    }
-    .insp-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-    .insp-card {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      background: var(--white);
-      border: 1.5px solid #c3ddd3;
+    .product-visual.biz img {
+      width: 88%;
+      position: relative;
+      z-index: 1;
       border-radius: 14px;
-      padding: 22px 22px 24px;
-      text-decoration: none;
-      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 28px 70px rgba(8, 63, 125, .2);
+      transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+      transition: transform .45s ease;
     }
-    .insp-card:hover {
-      border-color: #0f9d76;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(12,33,28,0.1);
-    }
-    .insp-card-label {
-      font-size: 0.7rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #0f9d76;
-    }
-    .insp-card-title {
-      font-size: 0.98rem;
-      font-weight: 800;
-      color: #14332e;
-      line-height: 1.5;
-      /* 日本語を文節単位で折り返す（「…進め方の / 基本」のような孤立を防ぐ） */
-      word-break: auto-phrase;
-      overflow-wrap: anywhere;
-    }
-    .insp-all { text-align: center; margin-top: 32px; }
-    .insp-all a {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #0f9d76;
-      text-decoration: none;
-    }
-    .insp-all a:hover { color: #0c7e5e; text-decoration: underline; }
-    @media (max-width: 700px) {
-      .insp-grid { grid-template-columns: 1fr; gap: 12px; }
-      .inspection { padding: 56px 16px 64px; }
-    }
+    .product-row:hover .product-visual.stocker img { transform: rotate(0) scale(1.015); }
+    .product-row:hover .product-visual.biz img { transform: perspective(1000px) rotateY(0) rotateX(0) scale(1.015); }
+    .product-no { margin: 0 0 22px; color: var(--muted); font-size: .72rem; font-weight: 850; letter-spacing: .15em; }
+    .product-kicker { margin: 0 0 8px; font-size: .75rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    .product-kicker.orange { color: var(--orange-dark); }
+    .product-kicker.blue { color: var(--blue); }
+    .product-name { margin: 0; font-size: clamp(2.8rem, 5vw, 4.6rem); line-height: 1; letter-spacing: -.06em; font-weight: 900; }
+    .product-tagline { margin: 18px 0 0; color: var(--ink-soft); font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.55; font-weight: 800; }
+    .product-desc { margin: 22px 0 0; color: var(--muted); font-size: .94rem; }
+    .benefits { list-style: none; margin: 30px 0 0; padding: 0; display: grid; gap: 12px; }
+    .benefits li { display: flex; align-items: center; gap: 11px; color: var(--ink-soft); font-size: .87rem; font-weight: 700; }
+    .check { width: 22px; height: 22px; flex: 0 0 22px; display: grid; place-items: center; border-radius: 50%; color: var(--blue); background: var(--paper-blue); font-size: .7rem; }
+    .stocker-copy .check { color: var(--orange-dark); background: #fff3d7; }
+    .product-actions { margin-top: 34px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .micro-note { width: 100%; margin: 2px 0 0; color: var(--muted); font-size: .74rem; }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      background: var(--white);
-      padding: 44px 32px 26px;
+    /* Philosophy */
+    .philosophy { padding: 108px 24px; color: var(--white); background: var(--navy); }
+    .philosophy-inner { width: min(100%, var(--content)); margin: auto; }
+    .philosophy-head { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; margin-bottom: 58px; }
+    .philosophy .eyebrow { color: var(--cyan); }
+    .philosophy .section-lead { color: #aabbd0; margin: 0; }
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(255,255,255,.11); border-radius: 22px; overflow: hidden; }
+    .value { min-height: 245px; padding: 34px; position: relative; background: rgba(255,255,255,.025); }
+    .value + .value { border-left: 1px solid rgba(255,255,255,.11); }
+    .value-icon { width: 46px; height: 46px; display: grid; place-items: center; margin-bottom: 34px; border: 1px solid rgba(8,191,193,.28); border-radius: 14px; color: var(--cyan); background: rgba(8,191,193,.08); font-size: 1.15rem; }
+    .value h3 { margin: 0; font-size: 1rem; letter-spacing: -.02em; }
+    .value p { margin: 12px 0 0; color: #91a5bc; font-size: .84rem; }
+    .value-no { position: absolute; right: 24px; top: 23px; color: rgba(255,255,255,.2); font-size: .67rem; font-weight: 800; letter-spacing: .12em; }
+
+    /* Journal */
+    .journal { background: var(--white); }
+    .journal-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 54px; }
+    .text-link { color: var(--blue); font-size: .84rem; font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .text-link:hover { text-decoration: underline; }
+    .journal-grid { display: grid; grid-template-columns: 1.15fr .85fr .85fr; gap: 18px; }
+    .article-card {
+      min-height: 350px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 29px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      color: var(--ink);
+      background: var(--paper);
+      text-decoration: none;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
     }
-    .footer-inner {
-      max-width: 1040px;
-      margin: 0 auto;
+    .article-card:hover { transform: translateY(-5px); border-color: #b9c9db; box-shadow: var(--shadow-sm); }
+    .article-card.featured { color: var(--white); background: var(--ink); border-color: var(--ink); }
+    .article-card::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      top: -70px;
+      right: -55px;
+      border-radius: 50%;
+      border: 1px solid rgba(8,127,245,.17);
+      box-shadow: 0 0 0 35px rgba(8,127,245,.04), 0 0 0 70px rgba(8,127,245,.025);
+    }
+    .article-card.featured::before { border-color: rgba(8,191,193,.28); box-shadow: 0 0 0 35px rgba(8,191,193,.06), 0 0 0 70px rgba(8,191,193,.035); }
+    .article-symbol { position: absolute; top: 31px; left: 29px; font-size: 2rem; font-weight: 300; color: var(--blue); }
+    .featured .article-symbol { color: var(--cyan); }
+    .article-label { position: relative; margin-bottom: 11px; color: var(--blue); font-size: .68rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+    .featured .article-label { color: var(--cyan); }
+    .article-card h3 { position: relative; margin: 0; font-size: 1.15rem; line-height: 1.55; letter-spacing: -.025em; text-wrap: pretty; }
+    .article-card.featured h3 { font-size: 1.45rem; }
+    .article-meta { position: relative; margin-top: 15px; color: var(--muted); font-size: .74rem; }
+    .featured .article-meta { color: #9eb2ca; }
+    .topic-links { margin-top: 20px; padding-top: 24px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 9px; }
+    .topic-link { padding: 7px 12px; border-radius: 999px; color: var(--muted); background: var(--paper); font-size: .76rem; font-weight: 700; text-decoration: none; transition: color .2s, background .2s; }
+    .topic-link:hover { color: var(--blue); background: var(--paper-blue); }
+
+    /* Next project */
+    .next-project { padding: 32px 24px 100px; background: var(--white); }
+    .next-card {
+      width: min(100%, var(--content));
+      min-height: 420px;
+      margin: auto;
+      padding: 68px;
+      position: relative;
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: 1fr .8fr;
+      align-items: center;
+      gap: 60px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 86% 18%, rgba(23,201,154,.25), transparent 32%),
+        linear-gradient(135deg, #092e34, #071d34 65%);
     }
-    .footer-brand {
+    .next-card::after {
+      content: "";
+      position: absolute;
+      width: 370px;
+      height: 370px;
+      right: -40px;
+      bottom: -205px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%;
+      box-shadow: 0 0 0 58px rgba(255,255,255,.025), 0 0 0 116px rgba(255,255,255,.018);
+    }
+    .next-card .eyebrow { color: var(--mint); }
+    .next-card h2 { margin: 0; font-size: clamp(2rem, 4.2vw, 3.5rem); line-height: 1.25; letter-spacing: -.045em; }
+    .next-card p { margin: 20px 0 0; color: #a9c4c7; font-size: .92rem; }
+    .next-links { position: relative; z-index: 1; display: grid; gap: 10px; }
+    .next-link {
+      padding: 16px 18px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      gap: 15px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 13px;
+      color: #dfeeee;
+      background: rgba(255,255,255,.045);
+      font-size: .82rem;
+      font-weight: 750;
       text-decoration: none;
-      margin-bottom: 10px;
+      transition: background .2s, border-color .2s;
     }
-    .footer-brand img { width: 26px; height: 21px; object-fit: contain; }
-    .footer-brand span { font-size: 0.9rem; font-weight: 800; color: var(--text); }
-    .footer-tag {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.75;
-      max-width: 260px;
-    }
-    .footer-h {
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .footer-col a {
-      display: block;
-      font-size: 0.83rem;
-      color: var(--muted);
-      text-decoration: none;
-      padding: 4px 0;
-      transition: color 0.15s;
-    }
-    .footer-col a:hover { color: var(--blue); text-decoration: underline; }
-    .footer-bottom {
-      max-width: 1040px;
-      margin: 32px auto 0;
-      padding-top: 18px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-copy {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-    @media (max-width: 860px) {
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 26px; }
-    }
-    @media (max-width: 520px) {
-      .footer-inner { grid-template-columns: 1fr; gap: 22px; }
-      footer { padding: 34px 18px 22px; }
+    .next-link:hover { background: rgba(255,255,255,.09); border-color: rgba(23,201,154,.45); }
+    .next-all { margin-top: 16px; color: var(--mint); font-size: .8rem; font-weight: 800; text-decoration: none; }
+
+    /* Footer */
+    .site-footer { padding: 72px 24px 28px; border-top: 1px solid var(--line); background: var(--paper); }
+    .footer-inner { width: min(100%, var(--content)); margin: auto; display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 55px; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 17px; font-weight: 850; text-decoration: none; }
+    .footer-brand img { width: 34px; height: 27px; object-fit: contain; }
+    .footer-tag { max-width: 270px; margin: 0; color: var(--muted); font-size: .8rem; }
+    .footer-heading { margin: 0 0 15px; color: var(--ink); font-size: .75rem; font-weight: 850; letter-spacing: .03em; }
+    .footer-col a:not(.footer-brand) { display: block; padding: 5px 0; color: var(--muted); font-size: .78rem; text-decoration: none; }
+    .footer-col a:hover { color: var(--blue); }
+    .footer-bottom { width: min(100%, var(--content)); margin: 50px auto 0; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; color: #8794a5; font-size: .72rem; }
+    .footer-bottom p { margin: 0; }
+
+    @media (max-width: 1000px) {
+      .hero { min-height: auto; padding-top: 130px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+      .hero-copy { max-width: 640px; }
+      .hero-stage { width: min(100%, 700px); margin: auto; }
+      .intro-inner { gap: 55px; }
+      .product-row, .product-row.reverse { grid-template-columns: 1fr 1fr; gap: 45px; }
+      .product-visual { min-height: 500px; }
+      .journal-grid { grid-template-columns: 1fr 1fr; }
+      .article-card.featured { grid-row: span 2; min-height: 718px; }
+      .footer-inner { grid-template-columns: 1.2fr 1fr 1fr; }
+      .footer-col:last-child { grid-column: 2; }
     }
 
-    /* ── RESPONSIVE ── */
-    /* 2カラムのままカードが細くなる帯。Stocker側の3ボタンが折り返して
-       ボタン行の高さが左右でズレるので、パディングを詰めて1行に収める。 */
-    @media (min-width: 701px) and (max-width: 1000px) {
-      .card-actions { gap: 8px; }
-      .card-actions .btn { padding: 0 14px; font-size: 0.84rem; }
+    @media (max-width: 760px) {
+      .site-nav { inset: 10px 0 auto; height: 58px; }
+      .site-nav.is-scrolled { top: 6px; }
+      .nav-inner { width: calc(100% - 20px); padding: 0 6px 0 13px; border-radius: 16px; }
+      .brand span { display: none; }
+      .brand img { width: 31px; }
+      .nav-link:not(.primary) { display: none; }
+      .nav-link.primary { min-height: 44px; margin: 0; padding: 9px 15px; font-size: .75rem; }
+      .section { padding: 82px 18px; }
+      .hero { padding: 112px 18px 72px; }
+      .hero h1 { font-size: clamp(2.7rem, 12vw, 4rem); }
+      .hero h1 br { display: none; }
+      .hero-copy br { display: none; }
+      .hero-stage { min-height: 480px; }
+      .visual-orbit { width: 410px; height: 410px; }
+      .visual-card.personal { width: 230px; left: 0; }
+      .visual-card.business { width: 82%; right: -4%; bottom: 24px; }
+      .intro { padding: 68px 18px; }
+      .intro-inner { grid-template-columns: 1fr; gap: 26px; }
+      .intro-title { font-size: 2.3rem; }
+      .products-head { margin-bottom: 54px; }
+      .product-row, .product-row.reverse { grid-template-columns: 1fr; gap: 38px; }
+      .product-row.reverse .product-visual { order: 0; }
+      .product-row + .product-row { margin-top: 92px; }
+      .product-visual { min-height: 480px; }
+      .product-copy { padding: 0 3px; }
+      .philosophy { padding: 82px 18px; }
+      .philosophy-head { grid-template-columns: 1fr; gap: 25px; }
+      .value-grid { grid-template-columns: 1fr; }
+      .value + .value { border-left: 0; border-top: 1px solid rgba(255,255,255,.11); }
+      .value { min-height: auto; }
+      .journal-head { align-items: start; flex-direction: column; }
+      .journal-grid { grid-template-columns: 1fr; }
+      .article-card, .article-card.featured { min-height: 330px; grid-row: auto; }
+      .next-project { padding: 16px 18px 72px; }
+      .next-card { padding: 44px 28px; grid-template-columns: 1fr; gap: 38px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 36px 25px; }
+      .footer-col:last-child { grid-column: auto; }
     }
-    @media (min-width: 701px) and (max-width: 880px) {
-      .card-actions { gap: 6px; }
-      .card-actions .btn { padding: 0 10px; font-size: 0.78rem; }
+
+    @media (max-width: 480px) {
+      .hero-actions .button { width: 100%; }
+      .hero-stage { min-height: 400px; margin-top: -8px; }
+      .visual-card.personal { width: 190px; }
+      .visual-card.business { width: 86%; bottom: 30px; padding: 6px; }
+      .visual-orbit { width: 330px; height: 330px; top: 28px; }
+      .product-visual { min-height: 390px; border-radius: 22px; }
+      .product-visual.stocker img { width: 76%; }
+      .product-visual.biz img { width: 94%; }
+      .product-actions .button { width: 100%; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 5px; }
     }
-    @media (max-width: 700px) {
-      .cards { grid-template-columns: 1fr; }
-      nav { padding: 0 18px; }
-      .products { padding: 56px 16px 72px; }
-    }
-    @media (max-width: 460px) {
-      /* 以前は Stocker ボタンごと非表示にしていたが、
-         製品2つはナビに残したいので詰めて収める */
-      .brand-text { font-size: 0.88rem; }
-      .card-media { height: 240px; }
-      nav { padding: 0 12px; }
-      .nav-btn { padding: 0 11px; font-size: 0.76rem; }
-      .nav-right { gap: 6px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
-  <!-- NAV -->
-  <nav>
-    <a class="brand" href="/">
-      <img class="brand-logo" src="/images/logo-mark.png" alt="" aria-hidden="true">
-      <span class="brand-text">Yahimaro Apps</span>
-    </a>
-    <div class="nav-right">
-      <a class="nav-btn" href="/stocker/">
-        <span class="nav-btn-dot" style="background:var(--amber);"></span>
-        Stocker
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="/" aria-label="Yahimaro Apps トップ">
+        <img src="/images/logo-mark.png" alt="">
+        <span>Yahimaro Apps</span>
       </a>
-      <a class="nav-btn" href="/stocker-biz/">
-        <span class="nav-btn-dot" style="background:var(--blue);"></span>
-        Stocker Biz
-      </a>
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <a class="nav-link" href="/stocker/"><span class="nav-dot orange"></span>Stocker</a>
+        <a class="nav-link" href="/stocker-biz/"><span class="nav-dot blue"></span>Stocker Biz</a>
+        <a class="nav-link" href="/blog/">お役立ち記事</a>
+        <a class="nav-link" href="/inspection/">設備点検</a>
+        <a class="nav-link primary" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener"><span class="demo-live"></span>無料デモ <span class="arrow">→</span></a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <p class="hero-label">
-      <span class="hero-label-dot"></span>
-      Yahimaro Apps
-    </p>
-    <h1>
-      暮らしと仕事の在庫を、<br>
-      <span class="hi-amber">かんたん</span>に<span class="hi-blue">スマート</span>に。
-    </h1>
-    <p class="hero-lead">
-      個人の買い物管理アプリ <strong>Stocker</strong> と、<br>
-      チーム向け在庫管理サービス <strong>Stocker Biz</strong> を提供しています。
-    </p>
-    <div class="hero-cta">
-      <a class="btn btn-amber" href="/stocker/">
-        Stocker を見る
-      </a>
-      <a class="btn btn-blue" href="/stocker-biz/">
-        Stocker Biz を見る
-      </a>
-    </div>
-    <a class="hero-demo" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">
-      <span class="hero-demo-dot"></span>
-      Stocker Biz は登録不要のデモを今すぐ体験できます
-      <span class="hero-demo-arrow">→</span>
-    </a>
-  </section>
-
-  <hr class="divider">
-
-  <!-- PRODUCTS -->
-  <section class="products">
-    <p class="products-label">Products</p>
-    <h2 class="products-title">Yahimaro Apps のプロダクト</h2>
-
-    <div class="cards">
-
-      <!-- Stocker -->
-      <article class="card">
-        <div class="card-media stocker">
-          <img class="media-img" src="/images/v1.5.0-1-2_mini.png" alt="Stocker のバーコードスキャンで商品情報が自動入力される画面">
+  <main id="main">
+    <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="pulse"></span> Inventory, made simple</div>
+          <h1>現場の面倒を、<br><span class="gradient-text">シンプルに。</span></h1>
+          <p class="hero-copy">
+            <strong>Yahimaro Apps</strong>は、現場目線で考えた、<br>
+            低コストでシンプルな改善ツールを開発しています。<br>
+            家庭の在庫管理から、チームの発注・設備点検まで。<br>
+            必要な機能を、無理なく使い続けられるかたちで届けます。
+          </p>
+          <div class="hero-actions">
+            <a class="button orange" href="/stocker/">家庭向け Stocker <span class="arrow">→</span></a>
+            <a class="button dark" href="/stocker-biz/">法人向け Stocker Biz <span class="arrow">→</span></a>
+          </div>
+          <p class="hero-note">どちらも iOS・Android に対応</p>
         </div>
-        <div class="card-body">
-          <p class="card-kicker kicker-amber">For Personal &amp; Family</p>
-          <h3 class="card-title">Stocker</h3>
-          <p class="card-desc">食品・日用品の在庫管理、買い物リスト、価格記録、賞味期限通知をひとつにまとめた節約買い物アプリ。バーコードスキャンや家族共有にも対応。</p>
-          <div class="tags">
-            <span class="tag">iOS / Android</span>
-            <span class="tag">バーコードスキャン</span>
-            <span class="tag">買い物リスト</span>
-            <span class="tag">家族共有</span>
-            <span class="tag">価格比較</span>
-          </div>
-          <div class="card-actions">
-            <a class="btn btn-amber" href="/stocker/">詳細を見る</a>
-            <a class="btn btn-outline" href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App Store</a>
-            <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.yahimaro.stocker.app&hl=ja" target="_blank" rel="noopener">Google Play</a>
-          </div>
-          <div class="card-note-slot" aria-hidden="true"></div>
-        </div>
-      </article>
 
-      <!-- Stocker Biz -->
-      <article class="card">
-        <div class="card-media biz">
-          <img class="media-img" src="/images/stockerbiz.png" alt="Stocker Biz のダッシュボード画面">
-        </div>
-        <div class="card-body">
-          <p class="card-kicker kicker-blue">For Business &amp; Team</p>
-          <h3 class="card-title">Stocker Biz</h3>
-          <p class="card-desc">中小企業・小売店向けのクラウド在庫管理サービス。バーコードスキャン、発注依頼フロー、CSV移行、権限管理をチームで。β版リリース中・初期費用無料。</p>
-          <div class="tags">
-            <span class="tag">発注管理</span>
-            <span class="tag">権限管理</span>
-            <span class="tag">CSVインポート</span>
-            <span class="tag">β版リリース中</span>
-            <span class="tag">初期費用0円</span>
+        <div class="hero-stage" aria-label="StockerとStocker Bizの画面イメージ">
+          <div class="visual-orbit" aria-hidden="true"></div>
+          <div class="visual-card personal">
+            <img src="/images/v1.5.0-1-2_mini.png" alt="Stockerのバーコード在庫管理画面">
           </div>
-          <div class="card-actions">
-            <a class="btn btn-blue" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">無料で触ってみる</a>
-            <a class="btn btn-outline" href="/stocker-biz/">詳細を見る</a>
-          </div>
-          <div class="card-note-slot">
-            <p class="card-note">登録不要・その場でデモ環境に入れます</p>
+          <div class="visual-card business">
+            <img src="/images/stockerbiz.png" alt="Stocker Bizの在庫ダッシュボード">
           </div>
         </div>
-      </article>
-
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- RESOURCES / 記事ハブ -->
-  <section class="resources">
-    <p class="products-label">Guides &amp; Use Cases</p>
-    <h2 class="products-title">在庫管理のお役立ち記事・活用例</h2>
-    <div class="res-grid">
-
-      <div class="res-col">
-        <h3 class="res-col-title">機能で選ぶ</h3>
-        <a class="res-link" href="/features/reorder-alert/">発注漏れを防ぐ最小在庫アラート</a>
-        <a class="res-link" href="/features/barcode-inventory/">バーコードでスマホ在庫管理</a>
       </div>
+    </section>
 
-      <div class="res-col">
-        <h3 class="res-col-title">業種・用途で選ぶ</h3>
-        <a class="res-link" href="/use-cases/manufacturing-parts/">製造業の補修部品・消耗品管理</a>
-        <a class="res-link" href="/use-cases/repair-parts/">設備保全の補修部品・予備品管理</a>
-        <a class="res-link" href="/use-cases/office-supplies/">総務の備品・事務用品管理</a>
-        <a class="res-link" href="/use-cases/consumables-inventory/">消耗品・備品の在庫管理</a>
+    <section class="intro">
+      <div class="intro-inner reveal">
+        <h2 class="intro-title">必要な機能を、<br><span>手の届くかたち</span>で。</h2>
+        <div>
+          <p class="intro-copy">導入しやすい価格、迷わず使えるシンプルな操作、実際の作業に沿った機能。小さなチームや現場でも無理なく始められ、長く使い続けられる道具をつくります。</p>
+          <div class="intro-points" aria-label="Yahimaro Appsの特徴">
+            <span class="intro-point">LOW COST ・ 低コスト</span>
+            <span class="intro-point">SIMPLE ・ シンプル</span>
+            <span class="intro-point">FIELD FIRST ・ 現場目線</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="res-col">
-        <h3 class="res-col-title">知識・コラム</h3>
-        <a class="res-link" href="/blog/prevent-missed-orders/">発注ミス・発注漏れの原因と対策</a>
-        <a class="res-link" href="/blog/reorder-point/">発注点とは？決め方・計算方法</a>
-        <a class="res-link" href="/blog/mro-consumables-management/">MRO・副資材・消耗品の管理</a>
-        <a class="res-link" href="/blog/stocktaking-how-to/">棚卸のやり方・効率化のコツ</a>
-        <a class="res-link" href="/blog/excel-inventory-limit/">Excel在庫管理の限界と脱却の目安</a>
+    <section class="section products" id="products">
+      <div class="section-inner">
+        <div class="products-head reveal">
+          <p class="eyebrow">Our products</p>
+          <h2 class="section-title">ひとりの暮らしから、<br>チームの現場まで。</h2>
+          <p class="section-lead">使う場所と規模に合わせた、2つの在庫管理サービス。</p>
+        </div>
+
+        <article class="product-row reveal">
+          <div class="product-visual stocker">
+            <img src="/images/v1.5.0-1-2_mini.png" alt="スマートフォンで使えるStockerの画面">
+          </div>
+          <div class="product-copy stocker-copy">
+            <p class="product-no">PRODUCT 01</p>
+            <p class="product-kicker orange">For personal &amp; family</p>
+            <h3 class="product-name">Stocker</h3>
+            <p class="product-tagline">買い忘れも、買いすぎも。<br>毎日のストック管理を軽やかに。</p>
+            <p class="product-desc">食品や日用品の在庫、買い物リスト、価格、賞味期限をひとつに。バーコードを読み取るだけで商品情報を自動入力できます。</p>
+            <ul class="benefits">
+              <li><span class="check">✓</span>2万点以上の商品データから自動入力</li>
+              <li><span class="check">✓</span>買い物リスト・価格比較・賞味期限通知</li>
+              <li><span class="check">✓</span>家族とストック状況を共有</li>
+            </ul>
+            <div class="product-actions">
+              <a class="button orange" href="/stocker/">Stockerを詳しく見る <span class="arrow">→</span></a>
+              <a class="button" href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App Store</a>
+              <a class="button" href="https://play.google.com/store/apps/details?id=com.yahimaro.stocker.app&amp;hl=ja" target="_blank" rel="noopener">Google Play</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-row reverse reveal">
+          <div class="product-visual biz">
+            <img src="/images/stockerbiz.png" alt="Stocker Bizの優先対応を表示したダッシュボード">
+          </div>
+          <div class="product-copy">
+            <p class="product-no">PRODUCT 02</p>
+            <p class="product-kicker blue">For business &amp; team</p>
+            <h3 class="product-name">Stocker Biz</h3>
+            <p class="product-tagline">在庫不足を見逃さない。<br>発注までつながるチーム管理。</p>
+            <p class="product-desc">中小企業や店舗向けのクラウド在庫管理。複数拠点・部署の在庫を見える化し、在庫不足の検知から発注担当者への依頼までつなげます。</p>
+            <ul class="benefits">
+              <li><span class="check">✓</span>在庫不足をダッシュボードで優先表示</li>
+              <li><span class="check">✓</span>発注依頼フロー・権限管理・通知</li>
+              <li><span class="check">✓</span>CSV移行とバーコードラベルに対応</li>
+            </ul>
+            <div class="product-actions">
+              <a class="button dark" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">登録不要でデモを試す <span class="arrow">→</span></a>
+              <a class="button" href="/stocker-biz/">詳しく見る</a>
+              <p class="micro-note">クレジットカード不要・その場でデモ環境に入れます</p>
+            </div>
+          </div>
+        </article>
       </div>
+    </section>
 
-    </div>
-    <p class="res-all"><a href="/blog/">お役立ち記事・活用例の一覧を見る →</a></p>
-  </section>
-
-  <hr class="divider">
-
-  <!-- INSPECTION GUIDE / 新テーマ -->
-  <section class="inspection">
-    <div class="insp-inner">
-      <div class="insp-head">
-        <span class="insp-badge">New Topic ・ サービス準備中</span>
-        <h2 class="insp-title">設備点検について</h2>
-        <p class="insp-lead">紙・Excelでの設備点検を、スマホで完結できるサービスを準備中です。まずは点検の考え方・進め方に関するお役立ち記事を公開しています。</p>
+    <section class="philosophy">
+      <div class="philosophy-inner">
+        <div class="philosophy-head reveal">
+          <div>
+            <p class="eyebrow">How we design</p>
+            <h2 class="section-title">使い続けられることを、<br>いちばん大切に。</h2>
+          </div>
+          <p class="section-lead">高機能なだけでは、日々の道具にはなりません。Yahimaro Appsは、使う人の負担を増やさない設計を積み重ねています。</p>
+        </div>
+        <div class="value-grid reveal">
+          <article class="value">
+            <span class="value-no">01</span>
+            <div class="value-icon">◇</div>
+            <h3>迷わせない</h3>
+            <p>必要な機能を、必要な場面に。説明を読まなくても使える画面を目指します。</p>
+          </article>
+          <article class="value">
+            <span class="value-no">02</span>
+            <div class="value-icon">⌁</div>
+            <h3>入力を減らす</h3>
+            <p>バーコードやデータ連携を活用し、繰り返しの入力作業をできるだけ小さくします。</p>
+          </article>
+          <article class="value">
+            <span class="value-no">03</span>
+            <div class="value-icon">◎</div>
+            <h3>次の行動につなげる</h3>
+            <p>情報を並べるだけでなく、買い物や発注など「次にやること」を明確にします。</p>
+          </article>
+        </div>
       </div>
-      <div class="insp-grid">
-        <a class="insp-card" href="/inspection/digital-inspection/">
-          <span class="insp-card-label">記事</span>
-          <span class="insp-card-title">設備点検をデジタル化する5つのメリット</span>
-        </a>
-        <a class="insp-card" href="/inspection/what-is-inspection/">
-          <span class="insp-card-label">記事</span>
-          <span class="insp-card-title">設備点検とは？種類・目的・進め方の基本</span>
-        </a>
-        <a class="insp-card" href="/inspection/inspection-checklist/">
-          <span class="insp-card-label">記事</span>
-          <span class="insp-card-title">設備点検チェックリストの作り方</span>
-        </a>
-      </div>
-      <p class="insp-all"><a href="/inspection/">設備点検ガイドを見る →</a></p>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
+    <section class="section journal">
+      <div class="section-inner">
+        <div class="journal-head reveal">
+          <div>
+            <p class="eyebrow">Guides &amp; ideas</p>
+            <h2 class="section-title">在庫管理を、<br>少しだけ上手に。</h2>
+          </div>
+          <a class="text-link" href="/blog/">すべての記事を見る <span class="arrow">→</span></a>
+        </div>
+        <div class="journal-grid reveal">
+          <a class="article-card featured" href="/blog/prevent-missed-orders/">
+            <span class="article-symbol" aria-hidden="true">↗</span>
+            <span class="article-label">Featured · 発注管理</span>
+            <h3>発注ミス・発注漏れはなぜ起きる？原因と、仕組みで防ぐ方法</h3>
+            <span class="article-meta">業務改善のヒントを読む →</span>
+          </a>
+          <a class="article-card" href="/blog/reorder-point/">
+            <span class="article-symbol" aria-hidden="true">↓</span>
+            <span class="article-label">Basic knowledge</span>
+            <h3>発注点とは？決め方と計算方法をわかりやすく解説</h3>
+            <span class="article-meta">在庫管理の基礎</span>
+          </a>
+          <a class="article-card" href="/use-cases/manufacturing-parts/">
+            <span class="article-symbol" aria-hidden="true">▦</span>
+            <span class="article-label">Use case</span>
+            <h3>製造業の補修部品・消耗品を、無理なく管理するには</h3>
+            <span class="article-meta">業種別の活用例</span>
+          </a>
+        </div>
+        <div class="topic-links reveal" aria-label="その他の記事カテゴリー">
+          <a class="topic-link" href="/features/reorder-alert/">最小在庫アラート</a>
+          <a class="topic-link" href="/features/barcode-inventory/">バーコード在庫管理</a>
+          <a class="topic-link" href="/use-cases/repair-parts/">設備保全・予備品</a>
+          <a class="topic-link" href="/use-cases/office-supplies/">備品・事務用品</a>
+          <a class="topic-link" href="/blog/stocktaking-how-to/">棚卸の効率化</a>
+          <a class="topic-link" href="/blog/excel-inventory-limit/">Excel管理の限界</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="next-project">
+      <div class="next-card reveal">
+        <div>
+          <p class="eyebrow">Next project</p>
+          <h2>紙の点検を、<br>現場で完結する体験へ。</h2>
+          <p>設備点検をスマートフォンで完結できる新しいサービスを準備中です。点検の基本やデジタル化に役立つ情報を先行して公開しています。</p>
+          <a class="next-all" href="/inspection/">設備点検ガイドを見る <span class="arrow">→</span></a>
+        </div>
+        <div class="next-links">
+          <a class="next-link" href="/inspection/digital-inspection/"><span>設備点検をデジタル化する5つのメリット</span><span class="arrow">→</span></a>
+          <a class="next-link" href="/inspection/what-is-inspection/"><span>設備点検とは？種類・目的・進め方の基本</span><span class="arrow">→</span></a>
+          <a class="next-link" href="/inspection/inspection-checklist/"><span>設備点検チェックリストの作り方</span><span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-col">
-        <a class="footer-brand" href="/">
-          <img src="/images/logo-mark.png" alt="" aria-hidden="true">
-          <span>Yahimaro Apps</span>
-        </a>
-        <p class="footer-tag">暮らしと仕事の在庫を、かんたんにスマートに。個人向け・法人向けの在庫管理アプリを開発しています。</p>
+        <a class="footer-brand" href="/"><img src="/images/logo-mark.png" alt=""><span>Yahimaro Apps</span></a>
+        <p class="footer-tag">小さな面倒を、使いやすいアプリで減らす。暮らしと仕事のためのソフトウェアを開発しています。</p>
       </div>
-
       <div class="footer-col">
-        <p class="footer-h">プロダクト</p>
-        <a href="/stocker/">Stocker（個人・家庭向け）</a>
-        <a href="/stocker-biz/">Stocker Biz（法人向け）</a>
-        <a href="/stocker-biz/pricing.html">Stocker Biz の料金</a>
+        <p class="footer-heading">プロダクト</p>
+        <a href="/stocker/">Stocker</a>
+        <a href="/stocker-biz/">Stocker Biz</a>
+        <a href="/stocker-biz/pricing.html">Stocker Bizの料金</a>
         <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">デモを試す</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-heading">コンテンツ</p>
+        <a href="/blog/">お役立ち記事</a>
+        <a href="/features/reorder-alert/">最小在庫アラート</a>
+        <a href="/use-cases/manufacturing-parts/">業種別の活用例</a>
         <a href="/inspection/">設備点検ガイド</a>
       </div>
-
       <div class="footer-col">
-        <p class="footer-h">お役立ち記事</p>
-        <a href="/blog/">記事・活用例の一覧</a>
-        <a href="/blog/prevent-missed-orders/">発注ミス・発注漏れ対策</a>
-        <a href="/blog/reorder-point/">発注点の決め方</a>
-        <a href="/use-cases/manufacturing-parts/">製造業の部品・消耗品管理</a>
-        <a href="/stocker-biz/guide/">Stocker Biz 使い方ガイド</a>
-      </div>
-
-      <div class="footer-col">
-        <p class="footer-h">サポート・規約</p>
-        <a href="/stocker-biz/contact.html">お問い合わせ（法人）</a>
-        <a href="/support.html">サポート（Stocker）</a>
+        <p class="footer-heading">サポート・規約</p>
+        <a href="/stocker-biz/contact.html">法人のお問い合わせ</a>
+        <a href="/support.html">Stockerサポート</a>
         <a href="/privacy.html">プライバシーポリシー</a>
         <a href="/terms.html">利用規約</a>
         <a href="/tokushoho.html">特定商取引法に基づく表記</a>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 Yahimaro Apps. All rights reserved.</p>
+      <p>&copy; 2026 Yahimaro Apps. All rights reserved.</p>
+      <p>Made for simpler days.</p>
     </div>
   </footer>
 
+  <script>
+    const siteNav = document.getElementById('site-nav');
+    const updateNav = () => siteNav.classList.toggle('is-scrolled', window.scrollY > 16);
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    } else {
+      document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    }
+  </script>
 </body>
 </html>
