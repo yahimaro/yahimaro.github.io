@@ -108,8 +108,8 @@
     .post-card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px 24px 22px; text-decoration: none; transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s; }
     .post-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(14,31,53,0.1); }
     .post-card .pc-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
-    .post-card .pc-title { font-size: 1.08rem; font-weight: 800; color: var(--primary); line-height: 1.45; margin-bottom: 10px; }
-    .post-card .pc-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+    .post-card .pc-title { font-size: 1.08rem; font-weight: 800; color: var(--primary); line-height: 1.45; margin-bottom: 10px; word-break: auto-phrase; overflow-wrap: anywhere; }
+    .post-card .pc-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; word-break: auto-phrase; }
     @media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
     .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%); padding: 72px 24px; text-align: center; margin-top: 32px; }
     .cta-section h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; }
@@ -235,6 +235,11 @@
           <span class="pc-label">活用例</span>
           <span class="pc-title">消耗品・備品の在庫管理</span>
           <span class="pc-desc">消耗品・備品・事務用品・補修部品の在庫管理に対応。スマホで在庫を更新し、最小在庫数を下回ると発注依頼を通知します。</span>
+        </a>
+        <a class="post-card" href="/use-cases/repair-parts/">
+          <span class="pc-label">活用例</span>
+          <span class="pc-title">補修部品・スペアパーツの在庫管理</span>
+          <span class="pc-desc">数年動かない予備品ほど、減ったことに誰も気づけません。設備保全の補充漏れを防ぐ在庫管理の仕組みを解説します。</span>
         </a>
       </div>
     </section>

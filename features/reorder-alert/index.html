@@ -69,7 +69,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
-      { "@type": "ListItem", "position": 2, "name": "機能", "item": "https://yahimaro.com/features/reorder-alert/" },
+      { "@type": "ListItem", "position": 2, "name": "機能・活用例", "item": "https://yahimaro.com/blog/" },
       { "@type": "ListItem", "position": 3, "name": "発注漏れ防止", "item": "https://yahimaro.com/features/reorder-alert/" }
     ]
   }
@@ -234,6 +234,9 @@
     .related-card .rc-title { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-top: 6px; }
     .related-card .rc-desc { font-size: 0.85rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
     @media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+    .related-more { margin-top: 26px; text-align: center; }
+    .related-more-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 0.95rem; font-weight: 700; text-decoration: none; }
+    .related-more-link:hover { text-decoration: underline; }
 
     /* ── FAQ ── */
     .faq { background: var(--surface); }
@@ -286,7 +289,7 @@
     <div class="breadcrumb-inner">
       <a href="/stocker-biz/">Stocker Biz</a>
       <span class="breadcrumb-sep">/</span>
-      <a href="/stocker-biz/#features">機能</a>
+      <a href="/blog/">機能・活用例</a>
       <span class="breadcrumb-sep">/</span>
       <span>発注漏れ防止</span>
     </div>
@@ -562,6 +565,11 @@
           <span class="rc-label">記事</span>
           <div class="rc-title">発注点管理とは</div>
           <p class="rc-desc">発注点の意味・計算方法・決め方をわかりやすく解説します。</p>
+        </a>
+      </div>
+      <div class="related-more">
+        <a class="related-more-link" href="/blog/">お役立ち記事・活用例をすべて見る
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
     </div>
