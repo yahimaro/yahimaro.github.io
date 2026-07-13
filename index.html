@@ -45,7 +45,13 @@
         "name": "Yahimaro Apps",
         "url": "https://yahimaro.com/",
         "logo": "https://yahimaro.com/images/logo-mark.png",
-        "sameAs": ["https://yahimaro.com/stocker/", "https://yahimaro.com/stocker-biz/"]
+        "description": "個人向け・中小企業向けの在庫管理アプリを開発しています。",
+        "sameAs": [
+          "https://apps.apple.com/jp/app/homestocker/id6762469486",
+          "https://play.google.com/store/apps/details?id=com.yahimaro.stocker.app",
+          "https://apps.apple.com/jp/app/id6782330516",
+          "https://play.google.com/store/apps/details?id=com.yahimaro.stockerbiz.app"
+        ]
       },
       {
         "@type": "WebSite",
@@ -562,18 +568,63 @@
 
     /* ── FOOTER ── */
     footer {
-      padding: 28px 32px;
       border-top: 1px solid var(--border);
+      background: var(--white);
+      padding: 44px 32px 26px;
+    }
+    .footer-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      background: var(--white);
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    .footer-brand img { width: 26px; height: 21px; object-fit: contain; }
+    .footer-brand span { font-size: 0.9rem; font-weight: 800; color: var(--text); }
+    .footer-tag {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 260px;
+    }
+    .footer-h {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 0.83rem;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--blue); text-decoration: underline; }
+    .footer-bottom {
+      max-width: 1040px;
+      margin: 32px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
     }
     .footer-copy {
       font-size: 0.78rem;
       color: var(--muted);
+    }
+    @media (max-width: 860px) {
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 26px; }
+    }
+    @media (max-width: 520px) {
+      .footer-inner { grid-template-columns: 1fr; gap: 22px; }
+      footer { padding: 34px 18px 22px; }
     }
 
     /* ── RESPONSIVE ── */
@@ -590,13 +641,16 @@
     @media (max-width: 700px) {
       .cards { grid-template-columns: 1fr; }
       nav { padding: 0 18px; }
-      footer { padding: 22px 18px; flex-direction: column; align-items: flex-start; }
       .products { padding: 56px 16px 72px; }
     }
     @media (max-width: 460px) {
-      .nav-btn:first-child { display: none; }
+      /* 以前は Stocker ボタンごと非表示にしていたが、
+         製品2つはナビに残したいので詰めて収める */
       .brand-text { font-size: 0.88rem; }
       .card-media { height: 240px; }
+      nav { padding: 0 12px; }
+      .nav-btn { padding: 0 11px; font-size: 0.76rem; }
+      .nav-right { gap: 6px; }
     }
   </style>
 </head>
@@ -729,15 +783,17 @@
       <div class="res-col">
         <h3 class="res-col-title">業種・用途で選ぶ</h3>
         <a class="res-link" href="/use-cases/manufacturing-parts/">製造業の補修部品・消耗品管理</a>
+        <a class="res-link" href="/use-cases/repair-parts/">設備保全の補修部品・予備品管理</a>
         <a class="res-link" href="/use-cases/office-supplies/">総務の備品・事務用品管理</a>
         <a class="res-link" href="/use-cases/consumables-inventory/">消耗品・備品の在庫管理</a>
       </div>
 
       <div class="res-col">
         <h3 class="res-col-title">知識・コラム</h3>
-        <a class="res-link" href="/blog/stocktaking-how-to/">棚卸のやり方・効率化のコツ</a>
         <a class="res-link" href="/blog/prevent-missed-orders/">発注ミス・発注漏れの原因と対策</a>
         <a class="res-link" href="/blog/reorder-point/">発注点とは？決め方・計算方法</a>
+        <a class="res-link" href="/blog/mro-consumables-management/">MRO・副資材・消耗品の管理</a>
+        <a class="res-link" href="/blog/stocktaking-how-to/">棚卸のやり方・効率化のコツ</a>
         <a class="res-link" href="/blog/excel-inventory-limit/">Excel在庫管理の限界と脱却の目安</a>
       </div>
 
@@ -775,7 +831,46 @@
 
   <!-- FOOTER -->
   <footer>
-    <p class="footer-copy">&copy; 2026 Yahimaro Apps. All rights reserved.</p>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a class="footer-brand" href="/">
+          <img src="/images/logo-mark.png" alt="" aria-hidden="true">
+          <span>Yahimaro Apps</span>
+        </a>
+        <p class="footer-tag">暮らしと仕事の在庫を、かんたんにスマートに。個人向け・法人向けの在庫管理アプリを開発しています。</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-h">プロダクト</p>
+        <a href="/stocker/">Stocker（個人・家庭向け）</a>
+        <a href="/stocker-biz/">Stocker Biz（法人向け）</a>
+        <a href="/stocker-biz/pricing.html">Stocker Biz の料金</a>
+        <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">デモを試す</a>
+        <a href="/inspection/">設備点検ガイド</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-h">お役立ち記事</p>
+        <a href="/blog/">記事・活用例の一覧</a>
+        <a href="/blog/prevent-missed-orders/">発注ミス・発注漏れ対策</a>
+        <a href="/blog/reorder-point/">発注点の決め方</a>
+        <a href="/use-cases/manufacturing-parts/">製造業の部品・消耗品管理</a>
+        <a href="/stocker-biz/guide/">Stocker Biz 使い方ガイド</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-h">サポート・規約</p>
+        <a href="/stocker-biz/contact.html">お問い合わせ（法人）</a>
+        <a href="/support.html">サポート（Stocker）</a>
+        <a href="/privacy.html">プライバシーポリシー</a>
+        <a href="/terms.html">利用規約</a>
+        <a href="/tokushoho.html">特定商取引法に基づく表記</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
   </footer>
 
 </body>
