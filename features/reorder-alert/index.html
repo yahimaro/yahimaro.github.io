@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <title>発注漏れ・発注ミスを防ぐ在庫管理システム｜原因と対策・最小在庫数アラート｜Stocker Biz</title>
-  <meta name="description" content="発注漏れ・発注ミスの原因と対策を解説。Stocker Bizは、最小在庫数を下回った品目を検知し、担当者へ発注依頼を通知できる在庫管理システムです。消耗品・備品・補修部品の発注漏れ・二重発注・数量ミスや在庫切れを防ぎ、発注状況を見える化します。">
+  <meta name="description" content="発注漏れ（発注忘れ）とは何か、なぜ起きるのかを解説。Stocker Bizは発注点を下回った品目を検知して担当者へ通知し、購入先・型番・推奨発注数まで登録できるため、通知を受けたその場で発注できます。消耗品・備品・補修部品の発注漏れ・二重発注・数量ミスを、注意力ではなく仕組みで防ぎます。">
   <link rel="canonical" href="https://yahimaro.com/features/reorder-alert/">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
@@ -43,12 +43,12 @@
     "@type": "Article",
     "headline": "発注漏れ・発注ミスを防ぐ在庫管理システム｜原因と対策・最小在庫数アラート対応",
     "url": "https://yahimaro.com/features/reorder-alert/",
-    "description": "発注漏れ・発注ミスの原因と対策を解説。Stocker Bizは、最小在庫数を下回った品目を検知し、担当者へ発注依頼を通知できる在庫管理システムです。消耗品・備品・補修部品の発注漏れ・二重発注・数量ミスや在庫切れを防ぎ、発注状況を見える化します。",
+    "description": "発注漏れ（発注忘れ）とは何か、なぜ起きるのかを解説。Stocker Bizは発注点を下回った品目を検知して担当者へ通知し、購入先・型番・推奨発注数まで登録できるため、通知を受けたその場で発注できます。消耗品・備品・補修部品の発注漏れ・二重発注・数量ミスを、注意力ではなく仕組みで防ぎます。",
     "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yahimaro.com/features/reorder-alert/" },
     "image": "https://yahimaro.com/images/stocker-biz_icon.png",
     "inLanguage": "ja",
     "datePublished": "2026-06-24",
-    "dateModified": "2026-07-07",
+    "dateModified": "2026-07-13",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Stocker Biz",
@@ -81,8 +81,18 @@
     "mainEntity": [
       {
         "@type": "Question",
+        "name": "発注漏れとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "発注漏れとは、必要な品物の発注を忘れる、または発注のタイミングを逃して在庫が切れてしまうことです。「発注忘れ」とも呼ばれます。発注ミス全体の中の一種で、数量ミス・二重発注・品番違いなどと並びますが、そのなかでもっとも起こりやすく、業務が止まるという意味で影響も大きいのが特徴です。消耗品・備品・補修部品のように、売り物ではないが、なくなると業務が止まる品目で特に起きやすくなります。" }
+      },
+      {
+        "@type": "Question",
         "name": "発注ミスが多いのはなぜですか？主な原因は？",
         "acceptedAnswer": { "@type": "Answer", "text": "発注ミスは一種類ではなく、発注し忘れる「発注漏れ」、頼む数を間違える「数量ミス」、重複して頼む「二重発注」、違う物を頼む「品番・仕様違い」などに分かれます。発注担当が曖昧で気づく仕組みがない、発注済みか共有されていない、品目が正しく登録されていない、といった管理の仕組みの不足が主な原因です。まず自社でどの種類のミスが多いかを切り分けることが対策の第一歩です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "通知が来ても、すぐに発注できません。どうすればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "発注漏れは「気づかなかった」だけでなく「気づいたけれど、すぐ動けなかった」ことからも生まれます。通知を受けてから「どこから買うのか」「型番は何か」「いくつ頼むのか」を調べ直していては、忙しい日には後回しになり、そのまま忘れてしまいます。Stocker Bizでは品目ごとに購入先・型番・先方品番・推奨発注数・購入URL・発注メモを登録しておけるため、通知を受けた担当者が調べ直すことなくそのまま発注に進めます。" }
       },
       {
         "@type": "Question",
@@ -181,6 +191,36 @@
     .prose p { font-size: 0.98rem; color: var(--muted); line-height: 1.95; margin-bottom: 16px; }
     .prose h2 { margin-bottom: 18px; }
     .prose h3 { font-size: 1.05rem; font-weight: 800; color: var(--primary); margin: 24px 0 10px; }
+    .prose strong { color: var(--primary); }
+
+    /* 関連記事への誘導ボックス */
+    .callout-box { background: #f1f6fc; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 22px 24px; margin-top: 30px; }
+    .callout-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+    .callout-box p { font-size: 0.95rem; color: var(--muted); line-height: 1.85; margin: 0; }
+    .callout-box a { font-weight: 700; }
+
+    /* 品目に持たせる発注情報のテーブル */
+    .info-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; font-size: 0.9rem; }
+    .info-table th { background: #f2f6fb; color: var(--primary); font-weight: 800; text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .info-table td { padding: 13px 16px; border-bottom: 1px solid #e5edf5; color: var(--muted); line-height: 1.7; vertical-align: top; }
+    .info-table tr:last-child td { border-bottom: none; }
+    .info-table td strong { color: var(--primary); }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+    /* Before / After 対比 */
+    .ba-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .ba-card { border-radius: 12px; padding: 26px 28px; border: 1px solid var(--border); }
+    .ba-card.before { background: #fdf4f4; border-color: #f0d4d4; }
+    .ba-card.after { background: #f1f8f4; border-color: #cfe7d8; }
+    .ba-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .ba-card.before h3 { color: #b03535; }
+    .ba-card.after h3 { color: #1a7a4a; }
+    .ba-card ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .ba-card li { position: relative; padding-left: 18px; font-size: 0.92rem; color: var(--muted); line-height: 1.75; }
+    .ba-card li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; }
+    .ba-card.before li::before { background: #cf6b6b; }
+    .ba-card.after li::before { background: var(--green); }
+    @media (max-width: 720px) { .ba-grid { grid-template-columns: 1fr; } }
 
     .surface { background: var(--surface); }
     .bg { background: var(--bg); }
@@ -309,8 +349,23 @@
     </div>
   </div>
 
-  <!-- 発注漏れが起きる原因 -->
+  <!-- 発注漏れとは -->
   <section class="surface">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">用語</p>
+        <h2 class="section-title">発注漏れとは</h2>
+      </div>
+      <div class="prose">
+        <p><strong>発注漏れ</strong>とは、必要な品物の発注を忘れる、または発注のタイミングを逃して在庫が切れてしまうことです。<strong>「発注忘れ」</strong>とも呼ばれます。発注そのものを行わなかった、あるいは間に合わなかった結果として欠品する点が特徴です。</p>
+        <p>発注漏れは、発注ミス全体の中の一種です。頼む数を間違える「数量ミス」、重複して頼む「二重発注」、違う物を頼む「品番違い」などと並びますが、<strong>そのなかでもっとも起こりやすく、業務が止まるという意味で影響も大きい</strong>のが発注漏れです。</p>
+        <p>特に、消耗品・備品・補修部品といった<strong>「売り物ではないが、なくなると業務が止まる」品目</strong>で起きやすく、普段は意識されにくいぶん、気づいたときには在庫がゼロ、ということが少なくありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 発注漏れが起きる原因 -->
+  <section class="bg">
     <div class="section-inner">
       <div class="section-head">
         <p class="section-label">課題</p>
@@ -353,7 +408,7 @@
   </section>
 
   <!-- Stocker Bizでできる発注漏れ防止 -->
-  <section class="bg">
+  <section class="surface">
     <div class="section-inner">
       <div class="section-head">
         <p class="section-label">解決策</p>
@@ -377,8 +432,104 @@
     </div>
   </section>
 
-  <!-- 発注依頼から入荷までの流れ -->
+  <!-- 通知を受けたあと、すぐ発注できる -->
+  <section class="bg">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">通知のその先</p>
+        <h2 class="section-title">「通知が来ても、結局すぐ発注できない」を防ぐ</h2>
+        <p class="section-desc">在庫が減ったことに気づけても、そこから「どこに・何を・いくつ頼むか」を調べ直していては、発注はまた後回しになります。発注漏れ対策で見落とされがちなのが、この「通知を受けたあと」の部分です。</p>
+      </div>
+
+      <div class="prose">
+        <p>通知を受け取った担当者が、実際に発注するまでには意外と手間があります。<strong>「この部品、どこから買っていたか」「型番は何番だったか」「1箱に何個入りだったか」</strong>——これらを調べ直すところから始めなければならないなら、忙しい日には「あとでやろう」となり、結局そのまま忘れます。<strong>通知だけを増やしても、発注漏れは止まりません。</strong></p>
+        <p>Stocker Biz では、<strong>品目ごとに「発注に必要な情報」をあらかじめ登録しておけます</strong>。通知を受けた担当者は、調べ直すことなくそのまま発注に進めます。</p>
+      </div>
+
+      <div class="table-scroll" style="margin-top:30px;">
+        <table class="info-table">
+          <thead>
+            <tr>
+              <th style="width:180px;">品目に持たせる情報</th>
+              <th>何のために使うか</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>発注点</strong></td>
+              <td>この数を下回ったら通知する、という基準。品目ごとに設定でき、重要度や入荷までの日数に応じて変えられます。</td>
+            </tr>
+            <tr>
+              <td><strong>推奨発注数</strong></td>
+              <td>「いくつ頼むか」をあらかじめ決めておけます。<strong>その場で数量を考えなくて済むため、頼む数を間違える「数量ミス」を防げます。</strong></td>
+            </tr>
+            <tr>
+              <td><strong>購入先</strong></td>
+              <td>どこから買う品目かを登録。「これ、どこに頼むんだったか」と探す手間がなくなります。</td>
+            </tr>
+            <tr>
+              <td><strong>型番・先方品番</strong></td>
+              <td>自社での呼び名と、仕入先に伝える品番の両方を保持できます。<strong>似た品番の取り違えによる「品番違い」の発注を防ぎます。</strong></td>
+            </tr>
+            <tr>
+              <td><strong>購入URL</strong></td>
+              <td>通販サイトなどで買う品目は、購入ページのリンクをそのまま登録できます。通知から発注までが最短になります。</td>
+            </tr>
+            <tr>
+              <td><strong>発注メモ</strong></td>
+              <td>「1箱10個入り」「金曜締めで翌週納品」など、発注時に思い出したい注意点を残せます。担当者が代わっても引き継げます。</td>
+            </tr>
+            <tr>
+              <td><strong>発注担当者</strong></td>
+              <td>部署単位の担当に加え、<strong>品目ごとに個別の担当者を指定</strong>することもできます。「この部品だけは保全の担当者へ」といった運用ができます。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-box">
+        <div class="callout-label">なぜここまで持たせるのか</div>
+        <p>発注漏れの多くは、「気づかなかった」だけでなく<strong>「気づいたけれど、すぐ動けなかった」</strong>ことから生まれます。通知を受けた瞬間に発注まで終えられる状態にしておくことが、後回しを断ち切るいちばん確実な方法です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入前後の変化 -->
   <section class="surface">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">導入前と導入後</p>
+        <h2 class="section-title">発注の流れがどう変わるか</h2>
+        <p class="section-desc">担当者の記憶に支えられていた発注が、仕組みで回る状態に変わります。</p>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-card before">
+          <h3>導入前：人の記憶に頼る発注</h3>
+          <ul>
+            <li>現場から「そろそろ無くなりそう」と口頭で報告を受ける</li>
+            <li>他の業務に紛れて、報告を受けたこと自体を忘れる</li>
+            <li>思い出しても「どこから買うんだったか」を調べ直す必要があり、また後回しになる</li>
+            <li>使おうとした人が、棚が空なのを見て初めて欠品に気づく</li>
+            <li>担当者が休むと、その品目の発注が止まる</li>
+          </ul>
+        </div>
+        <div class="ba-card after">
+          <h3>導入後：仕組みで回る発注</h3>
+          <ul>
+            <li>在庫を使ったらスマホでその場で更新する</li>
+            <li>発注点を下回った時点で、担当者へ自動で通知が届く</li>
+            <li>購入先・型番・推奨発注数が登録済みなので、調べ直さずそのまま発注できる</li>
+            <li>発注済みのステータスがチームに共有され、二重発注も起きない</li>
+            <li>担当者が不在でも、通知と発注依頼の一覧が残るため引き継げる</li>
+          </ul>
+        </div>
+      </div>
+      <p class="section-desc" style="margin:28px auto 0;text-align:center;">変わったのは担当者の注意力ではありません。<strong>忘れても成立する状態になった</strong>ことが、発注漏れが減る理由です。</p>
+    </div>
+  </section>
+
+  <!-- 発注依頼から入荷までの流れ -->
+  <section class="bg">
     <div class="section-inner">
       <div class="section-head">
         <p class="section-label">フロー</p>
@@ -411,7 +562,7 @@
   </section>
 
   <!-- 対象となる管理品目の例 -->
-  <section class="bg">
+  <section class="surface">
     <div class="section-inner narrow">
       <div class="section-head">
         <p class="section-label">対象品目</p>
@@ -433,7 +584,7 @@
   </section>
 
   <!-- よくある利用シーン -->
-  <section class="surface">
+  <section class="bg">
     <div class="section-inner">
       <div class="section-head">
         <p class="section-label">利用シーン</p>
@@ -460,7 +611,7 @@
   </section>
 
   <!-- 発注ミスの原因と対策 -->
-  <section class="bg" id="order-mistakes">
+  <section class="surface" id="order-mistakes">
     <div class="section-inner narrow">
       <div class="section-head">
         <p class="section-label">原因と対策</p>
@@ -492,10 +643,14 @@
       </div>
 
       <div class="prose">
-        <h3>「発注ミスが多い」と感じたら、まず原因を切り分ける</h3>
-        <p>発注ミスは、上のように「漏れ」「数量」「二重」「品番違い」と種類が分かれ、それぞれ原因も対策も異なります。まとめて「気をつける」で解決しようとすると続かないため、<strong>自社でどの種類のミスが多いのかを切り分ける</strong>ことが最初の一歩です。多くの中小企業では、まず件数の多い「発注漏れ」と「二重発注」から仕組みで潰していくと、体感できる効果が出やすくなります。</p>
         <h3>人の注意力ではなく、仕組みで防ぐ</h3>
-        <p>これらのミスに共通するのは、<strong>「担当者の注意力」に頼るほど、忙しいときや引き継ぎのときに漏れる</strong>という点です。在庫が発注点を下回ったら通知する、発注済みかどうかをチームで共有する、品目を正しく登録して特定しやすくする——こうした仕組みを一つずつ用意することで、発注ミスは「起きにくい」状態に近づきます。<a href="/stocker-biz/">Stocker Biz</a> は、発注点の通知・発注状況の見える化・<a href="/features/barcode-inventory/">バーコードでの品目特定</a>を一つにまとめ、発注ミスを仕組みで減らします。</p>
+        <p>これらのミスに共通するのは、<strong>「担当者の注意力」に頼るほど、忙しいときや引き継ぎのときに漏れる</strong>という点です。人は忙しければ忘れます。それは能力の問題ではなく人間の性質なので、「今度から気をつける」という対策では再発します。</p>
+        <p>在庫が発注点を下回ったら通知する、発注済みかどうかをチームで共有する、品目を正しく登録して特定しやすくする——こうした仕組みを一つずつ用意することで、発注ミスは「起きにくい」状態に近づきます。<strong>Stocker Biz は、この「忘れても成立する状態」をつくるための機能をひとつにまとめています。</strong></p>
+      </div>
+
+      <div class="callout-box">
+        <div class="callout-label">くわしく知りたい方へ</div>
+        <p>発注ミスが起きる原因の掘り下げ、現場でよくある失敗パターン、今日から始められる3ステップの防止策は、<a href="/blog/prevent-missed-orders/">発注ミス・発注漏れの原因と対策</a>の記事で詳しく解説しています。</p>
       </div>
     </div>
   </section>
@@ -509,8 +664,16 @@
       </div>
       <div class="faq-list">
         <details open>
+          <summary>発注漏れとは何ですか？</summary>
+          <div class="faq-a">発注漏れとは、必要な品物の発注を忘れる、または発注のタイミングを逃して在庫が切れてしまうことです。「発注忘れ」とも呼ばれます。発注ミス全体の中の一種で、数量ミス・二重発注・品番違いなどと並びますが、そのなかでもっとも起こりやすく、業務が止まるという意味で影響も大きいのが特徴です。消耗品・備品・補修部品のように、売り物ではないが、なくなると業務が止まる品目で特に起きやすくなります。</div>
+        </details>
+        <details>
           <summary>発注ミスが多いのはなぜですか？主な原因は？</summary>
-          <div class="faq-a">発注ミスは一種類ではなく、発注し忘れる「発注漏れ」、頼む数を間違える「数量ミス」、重複して頼む「二重発注」、違う物を頼む「品番・仕様違い」などに分かれます。発注担当が曖昧で気づく仕組みがない、発注済みか共有されていない、品目が正しく登録されていない、といった管理の仕組みの不足が主な原因です。まず自社でどの種類のミスが多いかを切り分けることが対策の第一歩です。</div>
+          <div class="faq-a">発注ミスは一種類ではなく、発注し忘れる「発注漏れ」、頼む数を間違える「数量ミス」、重複して頼む「二重発注」、違う物を頼む「品番・仕様違い」などに分かれます。発注担当が曖昧で気づく仕組みがない、発注済みか共有されていない、品目が正しく登録されていない、といった管理の仕組みの不足が主な原因です。まず自社でどの種類のミスが多いかを切り分けることが対策の第一歩です。詳しくは<a href="/blog/prevent-missed-orders/">発注ミス・発注漏れの原因と対策</a>で解説しています。</div>
+        </details>
+        <details>
+          <summary>通知が来ても、すぐに発注できません。どうすればよいですか？</summary>
+          <div class="faq-a">発注漏れは「気づかなかった」だけでなく、<strong>「気づいたけれど、すぐ動けなかった」</strong>ことからも生まれます。通知を受けてから「どこから買うのか」「型番は何か」「いくつ頼むのか」を調べ直していては、忙しい日には後回しになり、そのまま忘れてしまいます。Stocker Biz では品目ごとに購入先・型番・先方品番・推奨発注数・購入URL・発注メモを登録しておけるため、通知を受けた担当者が調べ直すことなく、そのまま発注に進めます。</div>
         </details>
         <details>
           <summary>発注漏れ・発注ミスを防ぐにはどうすればよいですか？</summary>
