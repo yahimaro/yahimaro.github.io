@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY0Q5ZJVQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XY0Q5ZJVQ3');
+  </script>
+  <!-- LINEヤフー広告 サイトジェネラルタグ -->
+  <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+  <script>
+    window.yjDataLayer = window.yjDataLayer || [];
+    function ytag() { yjDataLayer.push(arguments); }
+    ytag({ "type": "ycl_cookie", "config": { "ycl_use_non_cookie_storage": true } });
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>補修部品・スペアパーツの在庫管理｜設備保全の予備品を切らさない仕組み｜Stocker Biz</title>
+  <meta name="description" content="設備保全の補修部品・スペアパーツ・予備品の在庫管理を解説。クリティカル度でのランク分け、リードタイムを織り込んだ発注点の決め方、死蔵在庫を増やさずに欠品を防ぐ考え方、交換したら記録する運用の作り方まで。Stocker Bizなら発注点を下回ると自動で通知します。">
+  <link rel="canonical" href="https://yahimaro.com/use-cases/repair-parts/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Stocker Biz">
+  <meta property="og:title" content="補修部品・スペアパーツの在庫管理｜設備保全の予備品を切らさない仕組み｜Stocker Biz">
+  <meta property="og:description" content="クリティカル度でのランク分け、リードタイムを織り込んだ発注点、交換したら記録する運用。設備保全の予備品を切らさない在庫管理の作り方。">
+  <meta property="og:url" content="https://yahimaro.com/use-cases/repair-parts/">
+  <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="補修部品・スペアパーツの在庫管理｜Stocker Biz">
+  <meta name="twitter:description" content="クリティカル度でのランク分け、リードタイムを織り込んだ発注点、交換したら記録する運用。設備保全の予備品を切らさない在庫管理の作り方。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "補修部品・スペアパーツの在庫管理｜設備保全の予備品を切らさない仕組み",
+    "url": "https://yahimaro.com/use-cases/repair-parts/",
+    "description": "設備保全の補修部品・スペアパーツ・予備品の在庫管理を解説。クリティカル度でのランク分け、リードタイムを織り込んだ発注点の決め方、死蔵在庫を増やさずに欠品を防ぐ考え方、交換したら記録する運用の作り方まで、保全現場の目線でまとめました。",
+    "inLanguage": "ja",
+    "datePublished": "2026-07-13",
+    "dateModified": "2026-07-13",
+    "isPartOf": { "@type": "WebSite", "name": "Stocker Biz", "url": "https://yahimaro.com/stocker-biz/" },
+    "author": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/stocker-biz_icon.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "補修部品・スペアパーツは、どれを在庫として持つべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "すべての部品を予備で持つと置き場と費用が膨らみ、使わないまま古くなる死蔵在庫が増えます。「切らしたときの影響」でランクを分けるのが有効です。止まると生産ライン全体が停止する部品をA、単一設備だけ止まる部品をB、代替品ですぐしのげる部品をCとし、AとBを優先して在庫として持ちます。Cは在庫を持たず必要時に発注、という判断でも多くの場合は足ります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "補修部品の発注点はどう計算すればよいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "発注点は「リードタイム中の想定使用量＋安全在庫」で求めます。補修部品は日々均等に減るものではなく、故障時にまとめて使うため、1日あたりの平均消費量ではなく「1回の交換で使う数量」を基準にするのが実務的です。海外調達品や特注品はリードタイムが長いため、切らしてから発注しても間に合いません。発注点は最低でも「1回分の交換数量」を下回らないように設定します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "予備品を使ったのに補充を忘れてしまいます。どうすれば防げますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "故障対応は復旧が最優先になるため、「使った予備品を記録して補充を発注する」は後回しになりがちです。予備品は数年に一度しか使わないものも多く、誰も減ったことに気づけないまま次の故障を迎えます。交換したその場でスマホから在庫を更新でき、発注点を下回ったら自動で担当者に通知される仕組みにしておけば、記憶や善意に頼らずに補充のループが回ります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "予備品を持つと死蔵在庫が増えませんか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "欠品対策と死蔵在庫の削減は対立しているように見えますが、実際には「どの部品にいくつ在庫を持つかを決めていない」ことが両方の原因です。クリティカル度の低い部品まで念のため多めに持つから死蔵が増え、逆に重要な部品の発注点を決めていないから欠品します。ランク分けと発注点を決め、在庫の動きが見える状態にすることで、両方を同時に改善できます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "設備点検と予備品の在庫管理はどう関係しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "交換部品の多くは、日常点検や定期点検で摩耗・劣化に気づくことがきっかけで交換されます。点検で「そろそろ交換」と分かった時点で在庫を確認し、なければ発注できれば、故障による突発停止を待たずに計画的に交換できます。点検の記録と在庫の記録がつながっていないと、点検で異常を見つけても部品がない、という事態が起こります。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
+      { "@type": "ListItem", "position": 2, "name": "活用例", "item": "https://yahimaro.com/use-cases/repair-parts/" },
+      { "@type": "ListItem", "position": 3, "name": "補修部品・スペアパーツの在庫管理", "item": "https://yahimaro.com/use-cases/repair-parts/" }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary:   #1e3a5f;
+      --accent:    #1d6fce;
+      --accent-lt: #2d84e8;
+      --surface:   #ffffff;
+      --bg:        #f0f4f9;
+      --bg-dark:   #0d1f35;
+      --border:    #c8d8eb;
+      --text:      #0f1f2e;
+      --muted:     #5a7080;
+      --green:     #16a34a;
+      --coming:    #d97706;
+      --danger:    #dc2626;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--accent); }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(14, 31, 53, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 56px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; display: block; object-fit: cover; }
+    .nav-logo-text { font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-logo-text span { color: var(--accent-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: rgba(255,255,255,0.65); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-badge { font-size: 0.7rem; font-weight: 700; color: var(--coming); background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.35); padding: 2px 10px; border-radius: 999px; letter-spacing: 0.06em; }
+    @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { gap: 16px; } .nav-links li:not(:last-child) { display: none; } }
+    .breadcrumb { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .breadcrumb-inner { max-width: 1080px; margin: 0 auto; padding: 12px 24px; font-size: 0.78rem; color: var(--muted); }
+    .breadcrumb-inner a { color: var(--muted); text-decoration: none; }
+    .breadcrumb-inner a:hover { color: var(--accent); }
+    .breadcrumb-inner span { color: var(--primary); font-weight: 600; }
+    .breadcrumb-sep { margin: 0 8px; color: var(--border); }
+    .hero { background: linear-gradient(160deg, #0b1a2e 0%, #0d2240 55%, #102d52 100%); padding: 80px 24px 72px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(29,111,206,0.18) 0%, transparent 70%); pointer-events: none; }
+    .hero-tag { display: inline-block; background: rgba(29,111,206,0.18); color: var(--accent-lt); font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 22px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(1.8rem, 5vw, 3.1rem); font-weight: 900; color: #fff; line-height: 1.18; letter-spacing: -0.03em; margin-bottom: 20px; }
+    .hero h1 em { font-style: normal; color: var(--accent-lt); }
+    .hero-sub { font-size: clamp(1rem, 2.2vw, 1.15rem); color: rgba(255,255,255,0.62); max-width: 660px; margin: 0 auto 40px; line-height: 1.8; }
+    .hero-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 700; transition: background 0.2s, transform 0.2s; box-shadow: 0 8px 28px rgba(29,111,206,0.4); }
+    .btn-primary:hover { background: var(--accent-lt); transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    .section-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 10px; text-transform: uppercase; }
+    .section-title { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 900; color: var(--primary); line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 14px; }
+    .section-desc { font-size: 1rem; color: var(--muted); line-height: 1.85; max-width: 660px; }
+    .section-inner { max-width: 1080px; margin: 0 auto; }
+    .section-inner.narrow { max-width: 760px; }
+    section { padding: 76px 24px; }
+    .prose p { font-size: 0.98rem; color: var(--muted); line-height: 1.95; margin-bottom: 16px; }
+    .prose h3 { font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 32px 0 12px; }
+    .prose h3:first-child { margin-top: 8px; }
+    .prose strong { color: var(--primary); }
+    .surface { background: var(--surface); }
+    .bg { background: var(--bg); }
+    .section-head { text-align: center; margin-bottom: 52px; }
+    .section-head .section-desc { margin: 0 auto; }
+    .feature-item { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .feature-text p { font-size: 0.97rem; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+    .feature-visual { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(13,34,64,0.15); }
+    .feature-visual img { width: 100%; height: auto; display: block; border-radius: 16px; }
+    @media (max-width: 780px) { .feature-item { grid-template-columns: 1fr; gap: 32px; } }
+    .card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card { background: #fafbfd; border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .surface .card { background: #f8fafd; }
+    .card-icon { font-size: 1.7rem; margin-bottom: 14px; }
+    .card h3 { font-size: 1rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+    @media (max-width: 720px) { .card-grid, .card-grid.two { grid-template-columns: 1fr; } }
+    .bullets { list-style: none; display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+    .bullets li { position: relative; padding-left: 18px; font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+    .bullets li::before { content: ''; position: absolute; left: 0; top: 0.62em; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+    .bullets li strong { color: var(--primary); font-weight: 700; }
+    .rank-table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; font-size: 0.9rem; }
+    .rank-table th { background: #f2f6fb; color: var(--primary); font-weight: 800; text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+    .rank-table td { padding: 14px 16px; border-bottom: 1px solid #e5edf5; color: var(--muted); line-height: 1.7; vertical-align: top; }
+    .rank-table tr:last-child td { border-bottom: none; }
+    .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 6px; font-weight: 900; font-size: 0.85rem; color: #fff; }
+    .rank-a { background: var(--danger); }
+    .rank-b { background: var(--coming); }
+    .rank-c { background: var(--muted); }
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-note { font-size: 0.85rem; color: var(--muted); margin-top: 14px; line-height: 1.75; }
+    .formula-box { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 26px 28px; margin: 26px 0; }
+    .formula-box .formula { font-size: 1.05rem; font-weight: 800; color: var(--primary); line-height: 1.8; margin-bottom: 14px; }
+    .formula-box p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin: 0; }
+    .callout { background: #f8fafd; border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 36px; }
+    .callout h3 { font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 14px; }
+    .callout p { font-size: 0.92rem; color: var(--muted); line-height: 1.8; }
+    .loop-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+    .step-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+    .step-num { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 900; font-size: 0.9rem; margin-bottom: 14px; }
+    .step-card h3 { font-size: 0.95rem; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+    .step-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+    @media (max-width: 720px) { .loop-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 440px) { .loop-grid { grid-template-columns: 1fr; } }
+    .pills { display: flex; flex-wrap: wrap; gap: 10px; max-width: 760px; }
+    .pill { background: rgba(29,111,206,0.08); border: 1px solid var(--border); color: var(--primary); font-size: 0.85rem; font-weight: 600; padding: 7px 16px; border-radius: 999px; }
+    .pill-group { margin-bottom: 24px; }
+    .pill-group h3 { font-size: 0.92rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; margin-bottom: 14px; }
+    .faq-item h3 { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+    .faq-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.85; }
+    .related { background: var(--bg); }
+    .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .related-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .related-card .rc-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+    .related-card .rc-title { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-top: 6px; }
+    .related-card .rc-desc { font-size: 0.85rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    @media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+    .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%); padding: 76px 24px; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 580px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    footer { background: var(--bg-dark); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-mark { width: 22px; height: 22px; border-radius: 5px; display: block; object-fit: cover; }
+    .footer-logo-text { font-size: 0.9rem; font-weight: 800; color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><span class="nav-badge">β版募集中</span></li>
+    </ul>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/stocker-biz/">Stocker Biz</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>活用例</span>
+      <span class="breadcrumb-sep">/</span>
+      <span>補修部品・スペアパーツの在庫管理</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <span class="hero-tag">活用例</span>
+    <h1><em>補修部品・スペアパーツ</em>の在庫管理</h1>
+    <p class="hero-sub">設備が止まってから「部品がない」と気づくのでは、ダウンタイムが延びるだけです。予備品をどこまで持つかを決め、交換したら記録が残り、減ったら通知が届く。設備保全の在庫管理を、人の記憶に頼らない仕組みにします。</p>
+    <div class="hero-cta">
+      <a href="https://stockerbiz.yahimaro.com/demo/start" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l14 9-14 9V3z"/></svg>
+        デモを試す
+      </a>
+      <a href="/stocker-biz/" class="btn-outline">Stocker Biz を見る</a>
+    </div>
+  </div>
+
+  <!-- なぜ補修部品は難しいか -->
+  <section class="surface">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">保全現場の実態</p>
+        <h2 class="section-title">補修部品の在庫管理が、消耗品より難しい理由</h2>
+        <p class="section-desc">補修部品は「毎日少しずつ減る」ものではありません。数年動かないまま、ある日突然まとまって必要になります。この性質が、通常の在庫管理の考え方をそのまま当てはめられない理由です。</p>
+      </div>
+
+      <div class="prose">
+        <h3>減るタイミングが読めないので、平均消費量が意味を持たない</h3>
+        <p>消耗品なら「1か月に何個使うか」の平均から発注のタイミングを決められます。しかし補修部品は違います。<strong>3年間まったく動かず、故障した日に一気に必要になる</strong>——これが典型です。平均消費量を計算しても「月0.03個」のような数字にしかならず、発注点の根拠になりません。補修部品の在庫は、消費ペースではなく<strong>「切らしたときに何が起きるか」と「届くまでに何日かかるか」で決める</strong>必要があります。</p>
+
+        <h3>使う頻度が低いほど、在庫が曖昧になる</h3>
+        <p>日常的に使う部品は現場の目につきやすく、減れば誰かが気づきます。ところが<strong>あまり使わない補修部品ほど、「どこに置いたか」「今いくつあるか」が曖昧になります</strong>。そして、こうした部品に限っていざ設備が止まったときに必要になる。「あると思っていた部品が、実は前回の故障で使って切れていた」は、保全現場でもっとも起きやすい欠品パターンです。誰も嘘をついていないのに、台帳と現物がずれている。それだけのことで、設備は止まったままになります。</p>
+
+        <h3>復旧が最優先なので、記録が後回しになる</h3>
+        <p>設備が止まっているとき、保全担当者の頭にあるのは「早く直す」ことだけです。棚から部品を取り、交換し、動作を確認し、現場に引き渡す。<strong>この流れのどこにも「在庫を1減らして記録する」は入ってきません</strong>。落ち着いたら書こうと思っていても、次のトラブルが来れば忘れます。悪いのは担当者ではなく、復旧作業と記録作業が分断されている運用のほうです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- クリティカル度でランク分け -->
+  <section class="bg">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">STEP 1</p>
+        <h2 class="section-title">どの部品を予備で持つか：クリティカル度でランク分けする</h2>
+        <p class="section-desc">すべての部品を予備で抱えると、置き場も費用も膨らみ、使われないまま古くなる部品（死蔵在庫）が増えます。「切らしたときの影響」でランクを分け、優先順位をつけるのが現実的です。</p>
+      </div>
+
+      <div class="table-scroll">
+        <table class="rank-table">
+          <thead>
+            <tr>
+              <th style="width:70px;">ランク</th>
+              <th style="width:190px;">切らしたときの影響</th>
+              <th>部品の例</th>
+              <th style="width:180px;">在庫方針</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="rank-badge rank-a">A</span></td>
+              <td>生産ライン全体が停止する。復旧まで工場が動かない。</td>
+              <td>基幹設備のベアリング・モーター部品、ライン制御のセンサー、コンベアの駆動部品、専用の特注部品</td>
+              <td><strong>必ず在庫を持つ。</strong>発注点を設定し、下回ったら即発注。</td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge rank-b">B</span></td>
+              <td>単一の設備だけが止まる。迂回や後工程の調整でしのげる。</td>
+              <td>個別機械のVベルト、シール・パッキン、油圧ホース、汎用センサー、電磁弁</td>
+              <td><strong>原則、在庫を持つ。</strong>リードタイムが短いものは数量を絞る。</td>
+            </tr>
+            <tr>
+              <td><span class="rank-badge rank-c">C</span></td>
+              <td>すぐに代替品が手に入る。止まっても影響が限定的。</td>
+              <td>汎用ボルト・ナット、市販のヒューズ、ホームセンターで買える配線材・工具類</td>
+              <td><strong>在庫を持たない判断も可。</strong>必要時に発注で足りることが多い。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="table-note">
+        ランク分けの軸は「単価」ではなく<strong>「止まったときの損失」</strong>です。数百円のセンサーひとつでラインが止まるなら、それはAランクです。逆に高価でも、代替がきいてすぐ買えるならCで構いません。<strong>まずはAランクの部品だけを洗い出す</strong>ところから始めれば、部品点数が多い現場でも着手できます。
+      </p>
+
+      <div class="callout">
+        <h3>ランク分けは「リードタイム」でも補正する</h3>
+        <p>影響度が同じBランクでも、<strong>海外調達品や特注品は納期が数週間〜数か月かかる</strong>ことがあります。切らしてから発注しても間に合わないため、実質的にAランクとして扱うべきです。「影響度 × リードタイム」の掛け算で優先度を考えると、現実に即したランク分けになります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 発注点の決め方 -->
+  <section class="surface">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">STEP 2</p>
+        <h2 class="section-title">補修部品の発注点をどう決めるか</h2>
+        <p class="section-desc">「この数を下回ったら発注する」という発注点をあらかじめ決めておけば、感覚に頼った発注から抜け出せます。ただし補修部品は、消耗品とは計算の考え方が違います。</p>
+      </div>
+
+      <div class="prose">
+        <h3>消耗品の公式をそのまま使わない</h3>
+        <p>一般的な発注点は「1日あたりの平均使用量 × リードタイム ＋ 安全在庫」で計算します。<a href="/blog/reorder-point/">発注点とは？決め方・計算方法</a>で解説しているとおりです。ところが補修部品は日々均等に減らないため、<strong>この平均使用量が機能しません</strong>。年に1回しか交換しない部品の「1日あたり使用量」を計算しても、実務では使えない数字が出てくるだけです。</p>
+
+        <h3>「1回の交換で使う数量」を基準にする</h3>
+        <p>補修部品で実務的なのは、<strong>平均消費量ではなく「1回の交換で何個使うか」を基準にする</strong>考え方です。Vベルトを1本ずつ交換する設備なら1本、4本セットで交換する設備なら4本。これが「最低限、棚にあってほしい数」の出発点になります。</p>
+
+        <div class="formula-box">
+          <p class="formula">補修部品の発注点 ＝ 1回の交換で使う数量 ＋ リードタイム中に再発する可能性を見込んだ予備</p>
+          <p>たとえば「1回の交換で2個使う」「発注してから届くまで3週間」という部品なら、発注点は最低でも2個。届くまでの3週間に別の設備でも同じ部品が必要になりうるなら、+2個して発注点を4個に置く、という判断になります。<strong>在庫が発注点を下回った時点で発注をかければ、次の故障までに補充が間に合う</strong>という設計です。</p>
+        </div>
+
+        <h3>リードタイムの長い部品ほど、発注点を高く置く</h3>
+        <p>納期3日の汎用部品と、納期2か月の海外調達品では、同じ「切らすと止まる」でも必要な備えがまったく違います。<strong>リードタイムが長いほど、発注点を高く置いて早めに動き出す</strong>必要があります。海外調達品や生産終了品は、そもそも「切らしてから発注する」という選択肢がありません。こうした部品こそ、発注点を仕組みに持たせておく価値が大きいものです。</p>
+
+        <h3>すべての部品に発注点を設定しなくてよい</h3>
+        <p>数千点の部品すべてに発注点を決めようとすると、その作業だけで挫折します。<strong>Aランクの部品だけ、まず発注点を決める</strong>。それだけで、欠品による停止のリスクは大きく下がります。Bランクは運用に慣れてから、Cランクは発注点なしのまま在庫数だけ見える状態にしておく——この段階的な進め方が現実的です。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 死蔵在庫との両立 -->
+  <section class="bg">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">STEP 3</p>
+        <h2 class="section-title">欠品を防ぎながら、死蔵在庫を増やさない</h2>
+        <p class="section-desc">「欠品も減らしたいが、在庫も減らしたい」は、一見すると矛盾した要求です。しかし実際には、両方とも同じ原因から生まれています。</p>
+      </div>
+
+      <div class="card-grid two">
+        <div class="card">
+          <div class="card-icon">🛑</div>
+          <h3>欠品が起きる理由</h3>
+          <p>
+            切らすと止まる部品の<strong>発注点を決めていない</strong>から、無くなってから発注することになる。<br><br>
+            使ったのに<strong>記録されない</strong>から、棚が空になっていることに誰も気づかない。<br><br>
+            <strong>報告が口頭で止まり</strong>、発注のアクションにつながらない。
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📦</div>
+          <h3>死蔵在庫が積み上がる理由</h3>
+          <p>
+            <strong>いくつ持つか決めていない</strong>から、不安で「念のため多めに」買ってしまう。<br><br>
+            重要度の低い部品まで<strong>一律に予備を持つ</strong>から、置き場と費用を圧迫する。<br><br>
+            <strong>在庫の動きが見えない</strong>から、10年動いていない部品にも気づけない。
+          </p>
+        </div>
+      </div>
+
+      <p class="table-note" style="max-width:820px;margin-left:auto;margin-right:auto;text-align:center;">
+        どちらも根っこは同じ、<strong>「どの部品にいくつ在庫を持つかを、決めていない」</strong>ことです。ランク分けと発注点を決め、在庫の動きが記録として残る状態にすれば、欠品と死蔵在庫は同時に減らせます。在庫を減らすことと欠品を防ぐことは、対立しません。
+      </p>
+    </div>
+  </section>
+
+  <!-- 交換したら記録が残る運用 -->
+  <section class="surface">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">STEP 4</p>
+        <h2 class="section-title">「交換したら記録が残る」運用をどう作るか</h2>
+        <p class="section-desc">ランク分けも発注点も、在庫の数が正しく記録されていて初めて機能します。保全現場でこれがいちばん続かない部分です。</p>
+      </div>
+
+      <div class="prose">
+        <h3>記録する場所と、部品の保管場所を近づける</h3>
+        <p>部品棚から遠い事務所のパソコンに在庫表があると、<strong>「使ったら記録する」は続きません</strong>。交換して作業に戻る流れの中で、わざわざ記録用のPCまで戻る手間が挟まれば、そのうち書かなくなります。記録忘れが積み重なり、在庫表と実数がずれていく。台帳上は在庫があるのに現物は空、という状態はこうして生まれます。</p>
+        <p>解決の方向はシンプルで、<strong>部品棚の前で、その場で記録を終わらせられるようにする</strong>ことです。スマホから<a href="/features/barcode-inventory/">バーコードを読み取って在庫を更新</a>できれば、持ち場を離れる必要がありません。復旧作業の流れを止めずに記録が残ります。</p>
+
+        <h3>減ったことに気づくのは、人ではなく仕組みの役割</h3>
+        <p>予備品は数年に一度しか動かないものも多く、<strong>誰も「減ったこと」に気づけません</strong>。だからこそ、気づく役割を人に期待しないほうがいい。在庫が発注点を下回った瞬間に<a href="/features/reorder-alert/">発注担当者へ自動で通知</a>される状態にしておけば、「交換したのに補充を忘れる」という保全現場に特有の抜けは、仕組みの側で塞げます。</p>
+
+        <h3>点検で見つけた劣化を、在庫の確認につなげる</h3>
+        <p>交換部品の多くは、故障してから交換されるのではなく、<strong>日常点検や定期点検で摩耗・劣化に気づいて交換されます</strong>。「そろそろVベルトが交換時期だ」と点検で分かった時点で在庫を確認できれば、部品を手配してから計画的に交換できます。逆に、点検と在庫が別々に管理されていると、点検で異常を見つけたのに部品がない、という事態が起こる。点検の項目や頻度の決め方は<a href="/inspection/checklist-factory/">工場設備の点検チェックリスト例</a>で、点検の種類の整理は<a href="/inspection/inspection-types/">日常点検・定期点検・法定点検の違い</a>で解説しています。</p>
+      </div>
+
+      <div class="callout">
+        <h3>小さく始めるなら、この順番で</h3>
+        <ul class="bullets">
+          <li><strong>まず A ランクの部品だけを登録する。</strong>「切らすとラインが止まる」部品を洗い出し、発注点を設定します。数は絞って構いません。</li>
+          <li><strong>次に、リードタイムの長い部品を加える。</strong>海外調達品・特注品・生産終了品など、切らしてからでは間に合わないものを登録します。</li>
+          <li><strong>汎用品・消耗品は後からで十分。</strong>目につきやすく代替もきくものは、運用が定着してから広げれば無理がありません。</li>
+        </ul>
+        <p style="margin-top:18px;">全部を一度に登録しようとすると、その作業量で挫折します。<strong>「切らすと困る順」に少しずつ広げる</strong>のが、定着させるコツです。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stocker Biz でできること -->
+  <section class="bg">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">解決策</p>
+        <h2 class="section-title">Stocker Biz でできること</h2>
+        <p class="section-desc">予備品の在庫更新を部品棚の前で完結させ、発注のタイミングを仕組みで知らせます。記憶と善意に頼らない補充のループを作ります。</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-visual">
+          <img src="/stocker-biz/images/screen-barcode.png" alt="Stocker Biz のバーコードスキャン画面">
+        </div>
+        <div class="feature-text">
+          <ul class="bullets">
+            <li><strong>部品ごとに発注点（最小在庫数）を設定</strong>できます。A ランクの部品から順に設定していけば、部品点数の多い現場でも段階的に導入できます。</li>
+            <li><strong>下回ったら発注担当者へ通知</strong>します。数年動かない予備品でも、使われて減った瞬間に補充のアクションにつながります。</li>
+            <li><strong>スマホ・バーコードでその場で在庫を更新</strong>できます。交換した直後、部品棚の前で記録を終えられるので、復旧作業の流れを止めません。</li>
+            <li><strong>拠点・ライン・保管場所の3階層で管理</strong>できます。「どの設備の予備品が、どの棚にいくつあるか」を分散したまま把握できます。</li>
+            <li><strong>操作履歴が残ります。</strong>いつ・誰が・どの部品を使ったかが記録されるため、交換履歴の追跡や棚卸の突き合わせに使えます。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 補充のループ -->
+  <section class="surface">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">フロー</p>
+        <h2 class="section-title">交換から補充までを、途切れさせない</h2>
+        <p class="section-desc">保全現場で切れやすいのは、②の「記録」と③の「気づく」です。ここを仕組みに担わせると、ループが回り続けます。</p>
+      </div>
+      <div class="loop-grid">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>予備品を交換</h3>
+          <p>故障対応・点検での劣化発見をきっかけに、棚から部品を取り出して交換します。</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>その場で在庫を更新</h3>
+          <p>部品棚の前でスマホから在庫数を更新。<a href="/features/barcode-inventory/">バーコード読み取り</a>に対応し、事務所に戻る必要がありません。</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>発注点を下回ると通知</h3>
+          <p>設定した最小在庫数を割った時点で、システムが検知して<a href="/features/reorder-alert/">発注担当者へ通知</a>します。</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>発注・入荷して棚が戻る</h3>
+          <p>発注依頼を確認して発注し、届いたら入荷処理。次の故障に備えた状態に戻ります。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 管理対象の例 -->
+  <section class="bg">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">対象品目</p>
+        <h2 class="section-title">管理できる予備品・補修部品の例</h2>
+        <p class="section-desc">設備のスペアパーツから、保全作業で使う副資材まで登録できます。</p>
+      </div>
+      <div class="pill-group">
+        <h3>機械要素・駆動部品</h3>
+        <div class="pills">
+          <span class="pill">ベアリング</span>
+          <span class="pill">Vベルト・チェーン</span>
+          <span class="pill">シール・パッキン</span>
+          <span class="pill">オイルシール</span>
+          <span class="pill">カップリング</span>
+          <span class="pill">モーター部品</span>
+        </div>
+      </div>
+      <div class="pill-group">
+        <h3>電装・制御部品</h3>
+        <div class="pills">
+          <span class="pill">近接センサー</span>
+          <span class="pill">光電センサー</span>
+          <span class="pill">電磁弁</span>
+          <span class="pill">リレー</span>
+          <span class="pill">ヒューズ</span>
+          <span class="pill">配線・端子</span>
+        </div>
+      </div>
+      <div class="pill-group">
+        <h3>油空圧・配管部品</h3>
+        <div class="pills">
+          <span class="pill">エアシリンダ</span>
+          <span class="pill">油圧ホース</span>
+          <span class="pill">継手</span>
+          <span class="pill">フィルター</span>
+          <span class="pill">Oリング</span>
+        </div>
+      </div>
+      <div class="pill-group">
+        <h3>保全作業の副資材</h3>
+        <div class="pills">
+          <span class="pill">潤滑油・グリス</span>
+          <span class="pill">ボルト・ナット</span>
+          <span class="pill">ウエス</span>
+          <span class="pill">シールテープ</span>
+          <span class="pill">接着剤・ロックタイト</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 導入メリット -->
+  <section class="surface">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">導入メリット</p>
+        <h2 class="section-title">設備保全にとってのメリット</h2>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">⏱️</div>
+          <h3>ダウンタイムを短くする</h3>
+          <p>「部品がなくて待つ時間」がなくなれば、復旧に必要なのは交換作業の時間だけになります。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🗂️</div>
+          <h3>死蔵在庫を増やさない</h3>
+          <p>在庫数と動きが記録に残るため、「念のため多めに」の判断から、根拠のある数量に近づけます。</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔍</div>
+          <h3>部品を探す時間を減らす</h3>
+          <p>どの設備の予備品がどの棚にいくつあるかを記録できるため、緊急時に部品を探し回らずに済みます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+
+      <div class="faq-item">
+        <h3>補修部品・スペアパーツは、どれを在庫として持つべきですか？</h3>
+        <p>すべての部品を予備で持つと置き場と費用が膨らみ、使わないまま古くなる死蔵在庫が増えます。「切らしたときの影響」でランクを分けるのが有効です。止まると生産ライン全体が停止する部品を A、単一設備だけ止まる部品を B、代替品ですぐしのげる部品を C とし、A と B を優先して在庫として持ちます。C は在庫を持たず必要時に発注、という判断でも多くの場合は足ります。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>補修部品の発注点はどう計算すればよいですか？</h3>
+        <p>補修部品は日々均等に減らないため、「1日あたりの平均使用量」を基準にした一般的な公式はうまく当てはまりません。実務的なのは<strong>「1回の交換で使う数量」を基準にする</strong>考え方です。これに、リードタイム中に別の設備でも必要になる可能性を見込んだ予備を足して発注点とします。海外調達品や特注品はリードタイムが長いため、発注点を高めに置いて早く動き出す必要があります。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>予備品を使ったのに補充を忘れてしまいます。どうすれば防げますか？</h3>
+        <p>故障対応は復旧が最優先になるため、「使った予備品を記録して補充を発注する」は後回しになりがちです。予備品は数年に一度しか使わないものも多く、誰も減ったことに気づけないまま次の故障を迎えます。<strong>交換したその場でスマホから在庫を更新でき、発注点を下回ったら自動で担当者に通知される</strong>仕組みにしておけば、記憶や善意に頼らずに補充のループが回ります。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>予備品を持つと死蔵在庫が増えませんか？</h3>
+        <p>欠品対策と死蔵在庫の削減は対立しているように見えますが、実際にはどちらも「どの部品にいくつ在庫を持つかを決めていない」ことが原因です。クリティカル度の低い部品まで念のため多めに持つから死蔵が増え、逆に重要な部品の発注点を決めていないから欠品します。ランク分けと発注点を決め、在庫の動きが見える状態にすることで、両方を同時に改善できます。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>設備点検と予備品の在庫管理はどう関係しますか？</h3>
+        <p>交換部品の多くは、日常点検や定期点検で摩耗・劣化に気づくことがきっかけで交換されます。点検で「そろそろ交換」と分かった時点で在庫を確認し、なければ発注できれば、故障による突発停止を待たずに計画的に交換できます。点検の記録と在庫の記録がつながっていないと、点検で異常を見つけても部品がない、という事態が起こります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED LINKS -->
+  <section class="related">
+    <div class="section-inner">
+      <div class="section-head">
+        <p class="section-label">関連ページ</p>
+        <h2 class="section-title">あわせて読みたい</h2>
+      </div>
+      <div class="related-grid">
+        <a class="related-card" href="/use-cases/manufacturing-parts/">
+          <span class="rc-label">活用例</span>
+          <div class="rc-title">製造業の補修部品・消耗品管理</div>
+          <p class="rc-desc">補修部品に加えて副資材・工具・消耗品まで、製造現場全体の在庫管理を解説します。</p>
+        </a>
+        <a class="related-card" href="/blog/reorder-point/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">発注点とは？決め方・計算方法</div>
+          <p class="rc-desc">発注点の基本的な計算式と安全在庫の考え方をわかりやすく解説します。</p>
+        </a>
+        <a class="related-card" href="/features/reorder-alert/">
+          <span class="rc-label">機能</span>
+          <div class="rc-title">発注漏れ防止</div>
+          <p class="rc-desc">最小在庫数を下回ると発注依頼を通知。補充忘れを仕組みで防ぎます。</p>
+        </a>
+        <a class="related-card" href="/features/barcode-inventory/">
+          <span class="rc-label">機能</span>
+          <div class="rc-title">バーコード在庫管理</div>
+          <p class="rc-desc">スマホでバーコードを読み取り、部品棚の前で在庫数を更新します。</p>
+        </a>
+        <a class="related-card" href="/inspection/checklist-factory/">
+          <span class="rc-label">点検ガイド</span>
+          <div class="rc-title">工場設備の点検チェックリスト例</div>
+          <p class="rc-desc">点検項目・頻度・判定基準のサンプル。点検での劣化発見が、部品交換のきっかけになります。</p>
+        </a>
+        <a class="related-card" href="/stocker-biz/">
+          <span class="rc-label">サービス</span>
+          <div class="rc-title">Stocker Biz トップ</div>
+          <p class="rc-desc">在庫管理・発注管理をひとつにしたクラウドサービスの全体像。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <h2>「部品がない」で設備を止めない</h2>
+    <p>予備品の在庫管理を、記憶に頼らない仕組みにできます。まずは登録不要のデモで、発注点通知の流れをご確認ください。</p>
+    <div class="cta-buttons">
+      <a href="https://stockerbiz.yahimaro.com/demo/start" class="btn-primary" target="_blank" rel="noopener">デモを試す</a>
+      <a href="/stocker-biz/contact.html?type=parts" class="btn-outline">予備品管理で使えるか相談する</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo">
+        <img class="footer-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+        <span class="footer-logo-text">Stocker Biz</span>
+      </a>
+      <div class="footer-links">
+        <a href="/">Yahimaro Apps</a>
+        <a href="/stocker-biz/">トップ</a>
+        <a href="/features/reorder-alert/">発注漏れ防止</a>
+        <a href="/features/barcode-inventory/">バーコード在庫管理</a>
+        <a href="/stocker-biz/terms.html">利用規約</a>
+        <a href="/stocker-biz/privacy.html">プライバシーポリシー</a>
+        <a href="/stocker-biz/contact.html">お問い合わせ</a>
+      </div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

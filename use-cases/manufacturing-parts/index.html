@@ -46,7 +46,7 @@
     "description": "製造業・工場向けに、補修部品・スペアパーツ・副資材・工具などの在庫管理を効率化する方法を解説。補修部品の在庫が合わなくなる理由、発注点を決めるべき部品、Excel・紙管理からの移行のヒントまで、現場目線でまとめました。",
     "inLanguage": "ja",
     "datePublished": "2026-06-24",
-    "dateModified": "2026-07-09",
+    "dateModified": "2026-07-13",
     "isPartOf": { "@type": "WebSite", "name": "Stocker Biz", "url": "https://yahimaro.com/stocker-biz/" },
     "author": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" },
     "publisher": {
@@ -84,14 +84,6 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "まず「切らすと止まる部品」だけを登録して最小在庫数を設定し、次に「たまに使うのに管理が曖昧な部品」を加えるのがおすすめです。よく使う消耗品は運用に慣れてから広げれば十分です。記録する場所と部品のある場所を近づけ、スマホからその場で在庫を更新できるようにすると、書き忘れが減ります。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "設備の予備品・スペアパーツはどれを在庫として持つべきですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "すべての部品を予備で持つと死蔵在庫が増えるため、切らしたときの影響でランクを分けるのが有効です。止まると生産ライン全体が停止する部品や、海外調達品・特注品などリードタイムが長い部品を優先して在庫として持ちます。発注点はリードタイムの間の使用量を安全在庫として織り込んで決め、交換したら必ず在庫を記録する運用にすることで、保全現場に特有の欠品を防げます。"
         }
       }
     ]
@@ -387,18 +379,18 @@
       <div class="section-head">
         <p class="section-label">設備保全の予備品</p>
         <h2 class="section-title">設備の予備品・スペアパーツをどう持つか</h2>
-        <p class="section-desc">故障してから交換部品を取り寄せていては、設備が止まっている時間（ダウンタイム）が延びます。予備品は「持ちすぎず、切らさず」のバランスが要です。どの部品を、いくつ持つかの決め方を整理します。</p>
+        <p class="section-desc">故障してから交換部品を取り寄せていては、設備が止まっている時間（ダウンタイム）が延びます。予備品は「持ちすぎず、切らさず」のバランスが要です。</p>
       </div>
 
       <div class="prose">
-        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:8px 0 12px;">クリティカル度でランク分けする（すべてを予備で持たない）</h3>
-        <p>設備に使われる部品をすべて予備で抱えると、置き場も費用も膨らみ、使わないまま古くなる部品（死蔵在庫）が増えます。そこで、<strong>「切らしたときの影響」でランクを分ける</strong>のが有効です。たとえば、止まると生産ライン全体が停止する部品はA、単一設備だけ止まる部品はB、代替品ですぐしのげる部品はC、というように分け、<strong>AとBを優先して在庫として持つ</strong>と決めれば、限られた予算と置き場で効果を最大化できます。C以下は「在庫を持たず、必要時に発注」でも十分な場合が多くあります。</p>
+        <p>設備に使われる部品をすべて予備で抱えると、置き場も費用も膨らみ、使わないまま古くなる部品（死蔵在庫）が増えます。かといって持たなければ、故障のたびに入荷を待つことになります。そこで、<strong>「切らしたときの影響」でランクを分け、影響の大きい部品から優先して在庫を持つ</strong>のが基本的な考え方です。</p>
+        <p>また、補修部品は日々均等に減るものではなく、<strong>故障した日に一気に必要になる</strong>ため、消耗品と同じ発注点の計算式はうまく当てはまりません。海外調達品や特注品のようにリードタイムの長い部品ほど、早めに動き出せる発注点を設定しておく必要があります。</p>
+      </div>
 
-        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:28px 0 12px;">リードタイムを織り込んで発注点を決める</h3>
-        <p>予備品の発注点（この数を下回ったら発注する数量）は、<strong>入荷までにかかる日数＝リードタイムを織り込んで</strong>決めるのがポイントです。海外調達品や特注品はリードタイムが長く、切らしてから発注しても間に合いません。<strong>「リードタイムの間に想定される使用量」を安全在庫として上乗せ</strong>しておけば、発注してから届くまでの間も欠品しにくくなります。発注点の考え方は<a href="/blog/reorder-point/">発注点とは？決め方・計算方法</a>の記事で詳しく解説しています。</p>
-
-        <h3 style="font-size:1.15rem;font-weight:800;color:var(--primary);margin:28px 0 12px;">交換したら必ず記録する運用にする</h3>
-        <p>故障対応は復旧が最優先になるため、<strong>「使った予備品を記録して補充を発注する」が後回しになりがち</strong>です。そのまま忘れられると、次に同じ部品が必要になったときには棚が空。予備品は数年に一度しか使わないものも多く、誰も減ったことに気づけません。交換した瞬間に<a href="/features/barcode-inventory/">スマホから在庫を更新</a>できるようにし、発注点を下回ったら<a href="/features/reorder-alert/">自動で通知</a>される状態にしておけば、「交換したのに補充を忘れる」という保全現場に特有の抜けを防げます。交換部品の多くは、日々の設備点検で摩耗や劣化に気づくことがきっかけになります。点検の項目や頻度の決め方は<a href="/inspection/checklist-factory/">工場設備の点検チェックリスト例</a>で解説しています。</p>
+      <div class="callout" style="margin-top:32px;background:#f8fafd;border:1px solid var(--border);border-radius:12px;padding:28px;">
+        <h3 style="font-size:1.1rem;font-weight:800;color:var(--primary);margin-bottom:12px;">補修部品・スペアパーツの管理を詳しく</h3>
+        <p style="font-size:0.94rem;color:var(--muted);line-height:1.85;margin-bottom:18px;">クリティカル度による A / B / C のランク分け、リードタイムを織り込んだ発注点の決め方、死蔵在庫を増やさずに欠品を防ぐ考え方、交換したら記録が残る運用の作り方は、設備保全に特化した専用ページで詳しく解説しています。</p>
+        <a href="/use-cases/repair-parts/" class="btn-primary" style="box-shadow:none;">補修部品・スペアパーツの在庫管理を見る</a>
       </div>
     </div>
   </section>
@@ -538,6 +530,11 @@
         <h2 class="section-title">あわせて読みたい</h2>
       </div>
       <div class="related-grid">
+        <a class="related-card" href="/use-cases/repair-parts/">
+          <span class="rc-label">活用例</span>
+          <div class="rc-title">補修部品・スペアパーツの在庫管理</div>
+          <p class="rc-desc">設備保全の予備品に特化。ランク分け・発注点・死蔵在庫との両立を解説します。</p>
+        </a>
         <a class="related-card" href="/use-cases/consumables-inventory/">
           <span class="rc-label">活用例</span>
           <div class="rc-title">消耗品・備品の在庫管理</div>
