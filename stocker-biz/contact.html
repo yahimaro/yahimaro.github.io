@@ -23,7 +23,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <title>お問い合わせ｜Stocker Biz（ストッカービズ）</title>
-  <meta name="description" content="Stocker Biz（ストッカービズ）へのお問い合わせ・β版トライアルのお申し込みはこちらから。">
+  <meta name="description" content="Stocker Biz（ストッカービズ）へのお問い合わせ・β版のお申し込みはこちらから。開発者が導入を直接サポートします。">
   <link rel="canonical" href="https://yahimaro.com/stocker-biz/contact.html">
 
   <style>
@@ -365,13 +365,14 @@
       margin-top: 4px;
     }
   </style>
+  <script defer src="/js/stocker-biz-analytics.js"></script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
     <a href="/stocker-biz/" class="nav-logo">
-      <img class="nav-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
       <span class="nav-logo-text">Stocker <span>Biz</span></span>
     </a>
     <ul class="nav-links">
@@ -386,7 +387,7 @@
   <!-- PAGE HEADER -->
   <div class="page-header">
     <h1>お問い合わせ</h1>
-    <p>β版トライアルのお申し込み・ご質問はこちらから</p>
+    <p>β版のお申し込み・ご質問はこちらから</p>
   </div>
 
   <!-- BETA BANNER -->
@@ -413,9 +414,9 @@
   <!-- FORM -->
   <div class="form-section">
     <div class="form-wrap">
-      <h2>お問い合わせフォーム</h2>
+      <h2>β版のお申し込み・お問い合わせ</h2>
       <p class="form-lead">
-        β版トライアルのお申し込み、機能に関するご質問、導入のご相談など、お気軽にお送りください。<br>
+        β版のお申し込みは基本情報だけでも送信できます。詳しいご相談内容は空欄でも構いません。<br>
         通常2〜3営業日以内にご返信いたします。
       </p>
 
@@ -442,7 +443,7 @@
           <label for="inquiry_type">お問い合わせ種別<span class="required">*</span></label>
           <select id="inquiry_type" name="inquiry_type" required>
             <option value="" disabled selected>選択してください</option>
-            <option value="beta">β版トライアルへの参加申し込み</option>
+            <option value="beta">β版への参加申し込み</option>
             <option value="consult">導入・運用の相談</option>
             <option value="migration">Excel在庫表からの移行相談</option>
             <option value="feature">機能・仕様について</option>
@@ -461,8 +462,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="message">お問い合わせ内容<span class="required">*</span></label>
-          <textarea id="message" name="message" required placeholder="ご質問・ご要望・導入のご相談など、お気軽にご記入ください。"></textarea>
+          <label for="message">お問い合わせ内容（任意）</label>
+          <textarea id="message" name="message" placeholder="ご質問・ご要望・現在の管理方法など、差し支えない範囲でご記入ください。"></textarea>
         </div>
 
         <input type="hidden" name="_subject" value="【Stocker Biz】お問い合わせ">
@@ -491,7 +492,7 @@
   <footer>
     <div class="footer-inner">
       <a href="/stocker-biz/" class="footer-logo">
-        <img class="footer-logo-mark" src="/images/stocker-biz_icon.png" alt="" aria-hidden="true">
+        <img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
         <span class="footer-logo-text">Stocker Biz</span>
       </a>
       <div class="footer-links">
@@ -518,27 +519,60 @@
       btn.textContent = '送信中...';
 
       const data = new FormData(form);
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+      const attribution = typeof window.stockerBizAttribution === 'function'
+        ? window.stockerBizAttribution()
+        : {};
+      Object.entries(attribution).forEach(([key, value]) => {
+        if (value) data.append(`attribution_${key}`, value);
       });
 
-      if (res.ok) {
-        // LINEヤフー広告 コンバージョン測定（お問い合わせ送信）
-        ytag({
-          "type": "yss_conversion",
-          "config": {
-            "yahoo_conversion_id": "1001406348",
-            "yahoo_conversion_label": "f5abCO35584cEP2GsZ5E",
-            "yahoo_conversion_value": "0"
-          }
+      const inquiryType = document.getElementById('inquiry_type').value;
+      const analyticsParams = {
+        form_id: 'stocker_biz_contact',
+        inquiry_type: inquiryType,
+        source_path: location.pathname,
+        traffic_source: attribution.utm_source || '',
+        traffic_medium: attribution.utm_medium || '',
+        traffic_campaign: attribution.utm_campaign || '',
+        landing_page: attribution.landing_page || ''
+      };
+      if (typeof window.stockerBizAnalyticsEvent === 'function') {
+        window.stockerBizAnalyticsEvent('form_submit', analyticsParams);
+      }
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
         });
-        gtag('event', 'generate_lead');
+
+        if (!res.ok) throw new Error(`Formspree returned ${res.status}`);
+
+        // LINEヤフー広告 コンバージョン測定（お問い合わせ送信）
+        if (typeof window.ytag === 'function') {
+          window.ytag({
+            "type": "yss_conversion",
+            "config": {
+              "yahoo_conversion_id": "1001406348",
+              "yahoo_conversion_label": "f5abCO35584cEP2GsZ5E",
+              "yahoo_conversion_value": "0"
+            }
+          });
+        }
+        if (typeof window.stockerBizAnalyticsEvent === 'function') {
+          window.stockerBizAnalyticsEvent('generate_lead', analyticsParams);
+        }
 
         form.style.display = 'none';
         success.style.display = 'block';
-      } else {
+      } catch (error) {
+        if (typeof window.stockerBizAnalyticsEvent === 'function') {
+          window.stockerBizAnalyticsEvent('form_error', {
+            ...analyticsParams,
+            error_type: error instanceof Error ? error.message.slice(0, 100) : 'unknown'
+          });
+        }
         btn.disabled = false;
         btn.textContent = '送信する';
         alert('送信に失敗しました。時間をおいて再度お試しいただくか、support@yahimaro.com までご連絡ください。');
