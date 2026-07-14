@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY0Q5ZJVQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XY0Q5ZJVQ3');
+  </script>
+  <!-- LINEヤフー広告 サイトジェネラルタグ -->
+  <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+  <script>
+    window.yjDataLayer = window.yjDataLayer || [];
+    function ytag() { yjDataLayer.push(arguments); }
+    ytag({ "type": "ycl_cookie", "config": { "ycl_use_non_cookie_storage": true } });
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>消耗品の在庫管理方法｜Excel台帳・発注点・棚卸の進め方を解説</title>
+  <meta name="description" content="消耗品の在庫管理を6ステップで解説。Excel台帳に必要な項目、発注点の計算例、入出庫ルール、棚卸の進め方、アプリへ移行すべき目安まで、工場・オフィス・店舗で使える実務的な管理方法を紹介します。">
+  <link rel="canonical" href="https://yahimaro.com/blog/consumables-inventory-method/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Stocker Biz">
+  <meta property="og:title" content="消耗品の在庫管理方法｜Excel台帳・発注点・棚卸の進め方">
+  <meta property="og:description" content="消耗品を切らさず、持ちすぎないための管理方法を、台帳・発注点・更新・棚卸の順に解説します。">
+  <meta property="og:url" content="https://yahimaro.com/blog/consumables-inventory-method/">
+  <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="消耗品の在庫管理方法｜Excel台帳・発注点・棚卸の進め方">
+  <meta name="twitter:description" content="消耗品を切らさず、持ちすぎないための管理方法を6ステップで解説します。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "消耗品の在庫管理方法｜Excel台帳・発注点・棚卸の進め方を解説",
+    "description": "消耗品の在庫管理を6ステップで解説。Excel台帳に必要な項目、発注点の計算例、入出庫ルール、棚卸の進め方、アプリへ移行すべき目安まで紹介します。",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yahimaro.com/blog/consumables-inventory-method/" },
+    "image": "https://yahimaro.com/images/stocker-biz_icon.png",
+    "inLanguage": "ja",
+    "datePublished": "2026-07-14",
+    "dateModified": "2026-07-14",
+    "author": { "@type": "Organization", "name": "Stocker Biz" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/stocker-biz_icon.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
+      { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "消耗品の在庫管理方法", "item": "https://yahimaro.com/blog/consumables-inventory-method/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "消耗品の在庫管理はどのように始めればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "まず管理対象を洗い出し、品名・保管場所・現在庫・発注点・購入先・担当者を台帳にまとめます。次に、使った時点で在庫を更新するルールと、発注点以下になった品目を誰が発注するかを決めます。最初から全品目を対象にせず、欠品すると業務が止まる重要品目から始めると定着しやすくなります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "消耗品の発注点はどう決めますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "基本式は、1日あたりの平均使用量×発注から入荷までの日数＋安全在庫です。例えば1日2個使い、入荷まで5日、安全在庫を10個持つなら、発注点は20個です。使用量の変動や納期遅延が大きい品目は安全在庫を多めに設定し、運用後の実績を見て調整します。" }
+      },
+      {
+        "@type": "Question",
+        "name": "消耗品の在庫管理はExcelでもできますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "品目数と担当者が少なく、保管場所が一か所ならExcelでも始められます。品目や利用者が増え、複数拠点から同時に更新する、更新履歴を残す、発注点以下を自動通知するといった運用が必要になったら、在庫管理アプリやシステムを検討する目安です。" }
+      },
+      {
+        "@type": "Question",
+        "name": "消耗品の棚卸はどのくらいの頻度で行いますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "重要度と使用頻度に応じて変えます。欠品すると業務が止まる品目や使用量の多い品目は毎週または毎月、影響の小さい品目は四半期ごとなど、品目を分けて実施すると効率的です。差異が多い品目は頻度を上げ、原因を記録して更新ルールを見直します。" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --primary:#1e3a5f; --accent:#1d6fce; --accent-lt:#2d84e8; --surface:#fff; --bg:#f0f4f9; --bg-dark:#0d1f35; --border:#c8d8eb; --text:#0f1f2e; --muted:#5a7080; --coming:#d97706; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:"Helvetica Neue","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    a { color:var(--accent); }
+    nav { position:sticky; top:0; z-index:100; background:rgba(14,31,53,.96); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,.08); display:flex; align-items:center; justify-content:space-between; padding:0 32px; height:56px; }
+    .nav-logo,.footer-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .nav-logo-mark { width:24px; height:24px; border-radius:6px; object-fit:cover; }
+    .nav-logo-text { font-size:1rem; font-weight:800; color:#fff; }
+    .nav-logo-text span { color:var(--accent-lt); }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:.82rem; color:rgba(255,255,255,.65); text-decoration:none; font-weight:600; }
+    .nav-links a:hover { color:#fff; }
+    .nav-badge { font-size:.7rem; font-weight:700; color:var(--coming); background:rgba(217,119,6,.15); border:1px solid rgba(217,119,6,.35); padding:2px 10px; border-radius:999px; }
+    .breadcrumb { background:var(--surface); border-bottom:1px solid var(--border); }
+    .breadcrumb-inner { max-width:1080px; margin:0 auto; padding:12px 24px; font-size:.78rem; color:var(--muted); }
+    .breadcrumb-inner a { color:var(--muted); text-decoration:none; }
+    .breadcrumb-inner span { color:var(--primary); font-weight:600; }
+    .breadcrumb-sep { margin:0 8px; color:var(--border); }
+    .article-wrap { max-width:800px; margin:0 auto; padding:56px 24px 72px; }
+    .article-tag { display:inline-block; background:rgba(29,111,206,.1); color:var(--accent); font-size:.72rem; font-weight:700; padding:4px 13px; border-radius:999px; margin-bottom:18px; letter-spacing:.08em; }
+    .article-wrap h1 { font-size:clamp(1.6rem,4vw,2.4rem); font-weight:900; color:var(--primary); line-height:1.3; letter-spacing:-.02em; margin-bottom:16px; }
+    .article-meta { font-size:.78rem; color:var(--muted); margin-bottom:16px; }
+    .article-lead { font-size:1.02rem; color:var(--muted); line-height:1.9; padding-bottom:28px; border-bottom:1px solid var(--border); }
+    .article-body h2 { font-size:clamp(1.3rem,3vw,1.7rem); font-weight:900; color:var(--primary); line-height:1.35; margin:48px 0 16px; padding-top:8px; }
+    .article-body h3 { font-size:1.1rem; font-weight:800; color:var(--primary); margin:30px 0 10px; }
+    .article-body p { font-size:1rem; color:#2b3f50; line-height:1.95; margin-bottom:18px; }
+    .article-body ul,.article-body ol.steps { display:flex; flex-direction:column; gap:12px; margin:8px 0 22px; padding-left:24px; }
+    .article-body li { font-size:.98rem; color:#2b3f50; line-height:1.8; padding-left:4px; }
+    .article-body strong { color:var(--primary); }
+    .callout { background:#f1f6fc; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:10px; padding:22px 24px; margin:30px 0; }
+    .callout-label { font-size:.72rem; font-weight:700; letter-spacing:.1em; color:var(--accent); margin-bottom:8px; }
+    .callout p { font-size:.95rem; color:var(--muted); line-height:1.85; margin:0; }
+    .toc { background:#f8fafd; border:1px solid var(--border); border-radius:12px; padding:22px 26px; margin:30px 0 36px; }
+    .toc h2 { font-size:.9rem; font-weight:800; color:var(--primary); margin-bottom:12px; }
+    .toc ol { padding-left:20px; }
+    .toc li { font-size:.92rem; color:var(--muted); margin-bottom:7px; }
+    .toc a { color:var(--muted); text-decoration:none; }
+    .table-scroll { overflow-x:auto; margin:24px 0 30px; border:1px solid var(--border); border-radius:12px; }
+    table { width:100%; min-width:640px; border-collapse:collapse; background:var(--surface); font-size:.9rem; }
+    th,td { text-align:left; padding:13px 15px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.65; }
+    thead th { background:var(--primary); color:#fff; font-weight:700; }
+    tbody th { background:#edf4fc; color:var(--primary); white-space:nowrap; }
+    tbody tr:last-child th,tbody tr:last-child td { border-bottom:0; }
+    .formula { background:var(--primary); color:#fff; border-radius:12px; padding:24px; margin:24px 0; text-align:center; }
+    .formula strong { color:#fff; font-size:1.08rem; }
+    .author-note { background:#fff; border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin-top:42px; color:var(--muted); font-size:.88rem; line-height:1.8; }
+    section { padding:64px 24px; }
+    .section-inner { max-width:1080px; margin:0 auto; }
+    .section-head { text-align:center; margin-bottom:40px; }
+    .section-label { font-size:.72rem; font-weight:700; letter-spacing:.14em; color:var(--accent); margin-bottom:10px; }
+    .section-title { font-size:clamp(1.4rem,3.2vw,1.9rem); font-weight:900; color:var(--primary); }
+    .related { background:var(--bg); border-top:1px solid var(--border); }
+    .related-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .related-card { display:block; background:#fff; border:1px solid var(--border); border-radius:10px; padding:20px 22px; text-decoration:none; transition:.15s; }
+    .related-card:hover { border-color:var(--accent); transform:translateY(-2px); }
+    .rc-label { font-size:.72rem; font-weight:700; color:var(--accent); }
+    .rc-title { font-size:.98rem; font-weight:800; color:var(--primary); margin-top:6px; }
+    .rc-desc { font-size:.85rem; color:var(--muted); margin-top:6px; line-height:1.6; }
+    .cta-section { background:linear-gradient(135deg,var(--primary),#0d2240); padding:72px 24px; text-align:center; }
+    .cta-section h2 { font-size:clamp(1.6rem,3.5vw,2.3rem); font-weight:900; color:#fff; margin-bottom:14px; }
+    .cta-section p { color:rgba(255,255,255,.65); margin:0 auto 32px; max-width:600px; }
+    .cta-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .btn-primary,.btn-outline { display:inline-flex; align-items:center; border-radius:10px; padding:14px 28px; font-size:.95rem; font-weight:700; text-decoration:none; }
+    .btn-primary { background:var(--accent); color:#fff; box-shadow:0 8px 28px rgba(29,111,206,.4); }
+    .btn-outline { color:rgba(255,255,255,.85); border:1px solid rgba(255,255,255,.3); }
+    footer { background:var(--bg-dark); padding:40px 24px; }
+    .footer-inner { max-width:1080px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; }
+    .footer-logo-mark { width:22px; height:22px; border-radius:5px; object-fit:cover; }
+    .footer-logo-text { font-size:.9rem; font-weight:800; color:rgba(255,255,255,.7); }
+    .footer-links { display:flex; gap:24px; flex-wrap:wrap; }
+    .footer-links a { font-size:.8rem; color:rgba(255,255,255,.45); text-decoration:none; }
+    .footer-copy { width:100%; font-size:.75rem; color:rgba(255,255,255,.22); }
+    @media (max-width:640px) { nav { padding:0 20px; } .nav-links li:not(:last-child) { display:none; } .related-grid { grid-template-columns:1fr; } .article-wrap { padding-top:40px; } }
+  </style>
+  <script defer src="/js/stocker-biz-analytics.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" style="height:auto" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><span class="nav-badge">β版募集中</span></li>
+    </ul>
+  </nav>
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/stocker-biz/">Stocker Biz</a><span class="breadcrumb-sep">/</span>
+      <a href="/blog/">記事</a><span class="breadcrumb-sep">/</span>
+      <span>消耗品の在庫管理方法</span>
+    </div>
+  </div>
+
+  <article class="article-wrap">
+    <span class="article-tag">在庫管理</span>
+    <h1>消耗品の在庫管理方法｜Excel台帳・発注点・棚卸の進め方</h1>
+    <p class="article-meta">公開日：2026年7月14日</p>
+    <p class="article-lead">消耗品は一品あたりの金額が小さくても、切らすと作業が止まり、余分に持てば保管場所と購入費を圧迫します。本記事では、工場・オフィス・店舗で共通して使える消耗品の在庫管理方法を、管理対象の整理、Excel台帳、発注点、日々の更新、棚卸まで順番に解説します。</p>
+
+    <div class="callout">
+      <div class="callout-label">先に結論</div>
+      <p><strong>消耗品の在庫管理では、「何が・どこに・いくつあるか」と「いくつになったら誰が発注するか」を決めます。</strong>重要品目から台帳を作り、使用時に在庫を更新し、発注点以下を担当者へつなぐ運用にすると、欠品と過剰在庫を同時に減らせます。</p>
+    </div>
+
+    <div class="toc">
+      <h2>この記事の内容</h2>
+      <ol>
+        <li><a href="#problems">消耗品管理で起きやすい問題</a></li>
+        <li><a href="#steps">在庫管理を始める6ステップ</a></li>
+        <li><a href="#excel">Excel在庫管理表に必要な項目</a></li>
+        <li><a href="#reorder">発注点の決め方と計算例</a></li>
+        <li><a href="#stocktaking">棚卸の進め方</a></li>
+        <li><a href="#system">アプリ・システムへ移行する目安</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </div>
+
+    <div class="article-body">
+      <h2 id="problems">消耗品の在庫管理で起きやすい問題</h2>
+      <p>消耗品は、コピー用紙や洗剤、手袋、ウエス、切削油、フィルターなど、使うたびに減り、継続的な補充が必要な品目です。製品在庫と比べて単価が低いため管理が後回しになりやすい一方、必要な日に一つ足りないだけで仕事が止まることがあります。</p>
+      <ul>
+        <li><strong>在庫切れ：</strong>残数に気づかず、必要になってから発注する</li>
+        <li><strong>過剰在庫：</strong>発注済みか分からず、複数人が重複して購入する</li>
+        <li><strong>台帳とのずれ：</strong>物を使ってもExcelや紙が更新されない</li>
+        <li><strong>属人化：</strong>購入先や発注時期を一人しか知らない</li>
+        <li><strong>探索時間：</strong>保管場所が分散し、在庫確認だけで時間がかかる</li>
+      </ul>
+      <p>これらは担当者の注意不足ではなく、在庫の更新から発注までのルールがつながっていないことが原因です。</p>
+
+      <h2 id="steps">消耗品の在庫管理を始める6ステップ</h2>
+      <h3>1. 管理対象を重要品目から絞る</h3>
+      <p>最初からすべての消耗品を登録すると、入力作業が増えて運用が止まりやすくなります。まずは「切らすと安全・品質・納期に影響する物」「すぐに代替品を用意できない物」を10～20品目ほど選びます。</p>
+      <h3>2. 品名と保管場所を統一する</h3>
+      <p>同じ物が「作業用手袋」「軍手」「手袋」のように別名で登録されると、二重管理になります。正式な品名と型番を決め、棚・倉庫・フロアなどの保管場所も台帳に記録します。</p>
+      <h3>3. 現物を数えて開始在庫を決める</h3>
+      <p>古い台帳の数字をそのまま使わず、開始時に現物を数えます。未開封箱とバラ品の単位をそろえ、「1箱100枚」を箱と枚のどちらで管理するか決めておくと、後の数量差異を防げます。</p>
+      <h3>4. 品目ごとに発注点を設定する</h3>
+      <p>「そろそろ少ない」という感覚では担当者によって判断が変わります。入荷までに使う数量と安全在庫から、発注を始める基準数量を決めます。計算例は後述します。</p>
+      <h3>5. 更新と発注の担当を決める</h3>
+      <p>在庫を使った人がその場で数量を更新し、発注点以下になったら誰が購入するかを決めます。「気づいた人が頼む」ではなく、品目または部署ごとに担当者と不在時の代理を決めることが重要です。</p>
+      <h3>6. 定期的に棚卸してルールを直す</h3>
+      <p>現物と台帳を照合し、差異があれば数を直すだけでなく原因を記録します。更新忘れ、単位間違い、保管場所の移動など、繰り返す原因を運用ルールへ反映します。</p>
+
+      <h2 id="excel">Excel在庫管理表に必要な項目</h2>
+      <p>品目数と担当者が少ないうちは、Excelでも消耗品管理を始められます。少なくとも次の項目を用意します。</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>項目</th><th>記入例</th><th>目的</th></tr></thead>
+          <tbody>
+            <tr><th>品名</th><td>ニトリル手袋 Mサイズ</td><td>呼び方を統一する</td></tr>
+            <tr><th>型番・JANコード</th><td>ABC-100M</td><td>似た品目の発注間違いを防ぐ</td></tr>
+            <tr><th>分類</th><td>衛生用品</td><td>検索・集計しやすくする</td></tr>
+            <tr><th>保管場所</th><td>第1工場／資材棚A-2</td><td>現物を探す時間を減らす</td></tr>
+            <tr><th>現在庫・単位</th><td>35箱</td><td>箱・個など管理単位を統一する</td></tr>
+            <tr><th>発注点</th><td>20箱</td><td>発注判断を標準化する</td></tr>
+            <tr><th>推奨発注数</th><td>30箱</td><td>数量間違いを減らす</td></tr>
+            <tr><th>購入先・購入URL</th><td>○○商事</td><td>担当者以外でも発注できるようにする</td></tr>
+            <tr><th>発注担当者</th><td>総務／山田</td><td>責任の所在を明確にする</td></tr>
+            <tr><th>更新日・更新者</th><td>2026/7/14／佐藤</td><td>情報の鮮度と変更履歴を確認する</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>在庫表は作ることより、使った直後に更新できる場所へ置くことが重要です。現物は現場、Excelは離れた事務所のPCという配置では更新が続きません。共有ファイルにする場合も、同時編集と更新履歴の扱いを決めておきます。</p>
+      <div class="callout">
+        <div class="callout-label">Excelで続けられる条件</div>
+        <p>品目数が少ない、更新者が1～2人、保管場所が一か所、通知や詳細な操作履歴が不要ならExcelでも運用できます。Excel運用の限界は、<a href="/blog/excel-inventory-limit/">Excel在庫管理の限界とシステム化の目安</a>で詳しく解説しています。</p>
+      </div>
+
+      <h2 id="reorder">消耗品の発注点の決め方と計算例</h2>
+      <p><strong>発注点</strong>は、在庫がいくつまで減ったら発注するかを示す基準です。基本は、発注してから入荷するまでに使う数量へ、使用量の増加や納期遅延に備える安全在庫を加えます。</p>
+      <div class="formula"><strong>発注点 ＝ 1日あたりの平均使用量 × 入荷までの日数 ＋ 安全在庫</strong></div>
+      <p>例えば、ニトリル手袋を1日2箱使用し、発注から入荷まで5日、安全在庫を10箱持つ場合は、次の計算になります。</p>
+      <div class="formula"><strong>2箱 × 5日 ＋ 10箱 ＝ 発注点20箱</strong></div>
+      <p>在庫が20箱以下になった時点で発注すれば、通常の使用量なら入荷までの在庫を確保できます。ただし、使用量や納期は変動するため、一度決めて終わりではありません。欠品や余剰が発生したら、安全在庫と発注数を調整します。詳しい考え方は、<a href="/blog/reorder-point/">発注点の決め方・計算方法</a>も参照してください。</p>
+
+      <h2 id="stocktaking">消耗品の棚卸の進め方</h2>
+      <p>棚卸は、台帳の数字と現物を照合し、日々の更新漏れを発見する作業です。全品目を同じ頻度で数えるのではなく、重要度に応じて分けると負担を抑えられます。</p>
+      <ol class="steps">
+        <li>入出庫を一時停止するか、棚卸中の移動を別に記録する</li>
+        <li>保管場所ごとに担当範囲を分ける</li>
+        <li>箱・個・本など数える単位を確認する</li>
+        <li>先に台帳を見ず、現物の数量を数える</li>
+        <li>差異のある品目を再確認し、原因を記録する</li>
+        <li>台帳を修正し、更新方法や保管場所を見直す</li>
+      </ol>
+      <p>欠品すると業務が止まるAランク品は毎週または毎月、代替しやすいCランク品は四半期ごとなど、頻度を変える方法も有効です。棚卸全体の進め方は、<a href="/blog/stocktaking-how-to/">棚卸のやり方と効率化のコツ</a>で解説しています。</p>
+
+      <h2 id="system">在庫管理アプリ・システムへ移行する目安</h2>
+      <p>Excelで管理できている間は、無理にシステム化する必要はありません。次の状態が増えてきたら、管理方法を見直すタイミングです。</p>
+      <ul>
+        <li>複数人・複数拠点が同時に在庫を更新する</li>
+        <li>現場とExcelを置いたPCが離れていて更新されない</li>
+        <li>誰がいつ数量を変えたか確認したい</li>
+        <li>発注点以下の品目を自動で見つけたい</li>
+        <li>発注依頼・発注済み・入荷済みをチームで共有したい</li>
+        <li>品目数が増え、棚卸や在庫確認に時間がかかっている</li>
+      </ul>
+      <p>Stocker Bizでは、スマホやPCから在庫を更新し、最小在庫数を下回った品目を発注担当者へ通知できます。品目ごとに購入先・型番・推奨発注数を登録し、発注依頼から入荷までの状況を共有できます。具体的な対象品目と利用場面は、<a href="/use-cases/consumables-inventory/">消耗品・備品の在庫管理を効率化する方法</a>で紹介しています。</p>
+
+      <h2 id="faq">消耗品の在庫管理に関するよくある質問</h2>
+      <h3>消耗品の在庫管理はどのように始めればよいですか？</h3>
+      <p>まず管理対象を洗い出し、品名・保管場所・現在庫・発注点・購入先・担当者を台帳にまとめます。最初から全品目を対象にせず、欠品すると業務が止まる重要品目から始めると定着しやすくなります。</p>
+      <h3>消耗品の発注点はどう決めますか？</h3>
+      <p>「1日あたりの平均使用量×入荷までの日数＋安全在庫」を基準にします。運用開始後は実際の使用量、欠品、余剰を確認し、品目ごとに調整してください。</p>
+      <h3>消耗品の在庫管理はExcelでもできますか？</h3>
+      <p>品目数と担当者が少なく、保管場所が一か所ならExcelでも始められます。複数人での更新、操作履歴、自動通知が必要になったらアプリやシステムを検討します。</p>
+      <h3>消耗品の棚卸はどのくらいの頻度で行いますか？</h3>
+      <p>欠品時の影響と使用頻度で分けます。重要品目は毎週または毎月、影響の小さい品目は四半期ごとなど、差をつけると効率的です。</p>
+
+      <h2 id="summary">まとめ</h2>
+      <p>消耗品の在庫管理では、品名・保管場所・在庫数を記録するだけでなく、発注点と担当者を決め、在庫の減少を発注につなげることが重要です。まず重要品目を絞って台帳を作り、使用時の更新と定期的な棚卸を続けます。</p>
+      <p>Excelで更新が追いつかない、発注漏れが繰り返される、複数人で状況を共有できないといった問題が出たら、在庫管理アプリやシステムを検討するタイミングです。</p>
+
+      <aside class="author-note"><strong>執筆：</strong>Stocker Biz。製造業で品質保証・品質管理・製造・設備・生産管理に10年以上携わった経験をもとに、中小企業で無理なく続けられる在庫・発注管理を解説しています。</aside>
+    </div>
+  </article>
+
+  <section class="related">
+    <div class="section-inner">
+      <div class="section-head"><p class="section-label">関連ページ</p><h2 class="section-title">あわせて読みたい</h2></div>
+      <div class="related-grid">
+        <a class="related-card" href="/use-cases/consumables-inventory/"><span class="rc-label">活用例</span><div class="rc-title">消耗品・備品の在庫管理</div><p class="rc-desc">Stocker Bizで管理できる品目と、在庫更新から発注までの流れを紹介します。</p></a>
+        <a class="related-card" href="/blog/reorder-point/"><span class="rc-label">記事</span><div class="rc-title">発注点の決め方・計算方法</div><p class="rc-desc">安全在庫を含めた発注点の計算と、運用時の調整方法を解説します。</p></a>
+        <a class="related-card" href="/blog/stocktaking-how-to/"><span class="rc-label">記事</span><div class="rc-title">棚卸のやり方</div><p class="rc-desc">棚卸の基本手順と、棚卸差異を減らすためのポイントを解説します。</p></a>
+        <a class="related-card" href="/blog/excel-inventory-limit/"><span class="rc-label">記事</span><div class="rc-title">Excel在庫管理の限界</div><p class="rc-desc">Excelで続けられる条件と、システム化を検討すべきタイミングを整理します。</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>消耗品の在庫更新から発注まで、ひとつに</h2>
+    <p>登録不要のデモで、在庫が発注点を下回ってから担当者が対応するまでの流れを確認できます。</p>
+    <div class="cta-buttons">
+      <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" class="btn-primary">登録不要でデモを試す</a>
+      <a href="/stocker-biz/contact.html?type=beta" class="btn-outline">β版に申し込む</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo"><img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" style="height:auto" alt="" aria-hidden="true"><span class="footer-logo-text">Stocker Biz</span></a>
+      <div class="footer-links">
+        <a href="/">Yahimaro Apps</a><a href="/stocker-biz/">トップ</a><a href="/blog/">記事一覧</a><a href="/features/reorder-alert/">発注漏れ防止</a><a href="/stocker-biz/terms.html">利用規約</a><a href="/stocker-biz/privacy.html">プライバシーポリシー</a><a href="/stocker-biz/contact.html">お問い合わせ</a>
+      </div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
