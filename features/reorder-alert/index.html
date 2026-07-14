@@ -206,6 +206,7 @@
     .info-table tr:last-child td { border-bottom: none; }
     .info-table td strong { color: var(--primary); }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    @media (max-width: 640px) { .table-scroll::before { content: "横にスクロールできます →"; display: block; position: sticky; left: 0; width: max-content; padding: 8px 12px; color: var(--muted); background: var(--surface); font-size: 0.72rem; font-weight: 700; } }
 
     /* Before / After 対比 */
     .ba-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }

@@ -137,6 +137,7 @@
     .toc li { font-size:.92rem; color:var(--muted); margin-bottom:7px; }
     .toc a { color:var(--muted); text-decoration:none; }
     .table-scroll { overflow-x:auto; margin:24px 0 30px; border:1px solid var(--border); border-radius:12px; }
+    @media (max-width:640px) { .table-scroll::before { content:"横にスクロールできます →"; display:block; position:sticky; left:0; width:max-content; padding:8px 12px; color:var(--muted); background:var(--surface); font-size:.72rem; font-weight:700; } }
     table { width:100%; min-width:640px; border-collapse:collapse; background:var(--surface); font-size:.9rem; }
     th,td { text-align:left; padding:13px 15px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.65; }
     thead th { background:var(--primary); color:#fff; font-weight:700; }

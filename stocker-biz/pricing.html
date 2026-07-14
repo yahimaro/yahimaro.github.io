@@ -538,6 +538,21 @@
       background: var(--surface);
     }
 
+    @media (max-width: 640px) {
+      .compare-wrap::before {
+        content: "横にスクロールできます →";
+        display: block;
+        position: sticky;
+        left: 0;
+        width: max-content;
+        padding: 8px 12px;
+        color: var(--muted);
+        background: var(--surface);
+        font-size: 0.72rem;
+        font-weight: 700;
+      }
+    }
+
     table.compare-table {
       width: 100%;
       min-width: 560px;

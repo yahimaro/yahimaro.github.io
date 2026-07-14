@@ -203,6 +203,7 @@
     .rank-b { background: var(--coming); }
     .rank-c { background: var(--muted); }
     .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    @media (max-width: 640px) { .table-scroll::before { content: "横にスクロールできます →"; display: block; position: sticky; left: 0; width: max-content; padding: 8px 12px; color: var(--muted); background: var(--surface); font-size: 0.72rem; font-weight: 700; } }
     .table-note { font-size: 0.85rem; color: var(--muted); margin-top: 14px; line-height: 1.75; }
     .formula-box { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 26px 28px; margin: 26px 0; }
     .formula-box .formula { font-size: 1.05rem; font-weight: 800; color: var(--primary); line-height: 1.8; margin-bottom: 14px; }
