@@ -42,7 +42,7 @@
     "inLanguage": "ja",
     "totalTime": "PT30M",
     "step": [
-      { "@type": "HowToStep", "position": 1, "name": "アカウントを登録する", "text": "β版への申し込み後に案内される登録ページで、会社名・氏名・メールアドレス・パスワードを入力し、確認メールのリンクからメール認証を完了します。", "url": "https://yahimaro.com/stocker-biz/guide/#step1" },
+      { "@type": "HowToStep", "position": 1, "name": "アカウントを登録する", "text": "新規登録ページで会社名・氏名・メールアドレス・パスワードと試すプランを入力し、確認メールのリンクからメール認証を完了します。", "url": "https://yahimaro.com/stocker-biz/guide/#step1" },
       { "@type": "HowToStep", "position": 2, "name": "拠点・部署・保管場所を登録する", "text": "設定 › 拠点・部署・保管場所 で、拠点 → 部署 → 保管場所 の3階層で自社の組織構造を登録します。", "url": "https://yahimaro.com/stocker-biz/guide/#step2" },
       { "@type": "HowToStep", "position": 3, "name": "カテゴリを登録する", "text": "設定 › カテゴリ管理 で、大カテゴリ・中カテゴリを登録し、品目を分類できるようにします。", "url": "https://yahimaro.com/stocker-biz/guide/#step3" },
       { "@type": "HowToStep", "position": 4, "name": "管理品目を登録する", "text": "管理品目を手動フォームまたはCSVインポートで登録します。バーコードは登録時に自動発行されます。", "url": "https://yahimaro.com/stocker-biz/guide/#step4" },
@@ -105,7 +105,7 @@
     @media (max-width: 640px) {
       .site-nav { padding: 0 20px; }
       .nav-links { gap: 16px; }
-      .nav-links li:not(:last-child) { display: none; }
+      .nav-links li:not(:nth-last-child(-n+2)) { display: none; }
     }
 
     /* ── HEADER ── */
@@ -299,6 +299,8 @@
       <li><a href="/stocker-biz/#faq">FAQ</a></li>
       <li><a href="/stocker-biz/guide/">使い方ガイド</a></li>
       <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/login">ログイン</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup">30日間無料</a></li>
     </ul>
   </nav>
 
@@ -324,7 +326,7 @@
     <nav class="toc" aria-label="目次">
       <h2>このガイドの流れ</h2>
       <ol>
-        <li><a href="#step1">アカウントを登録する（メール認証・β版利用開始）</a></li>
+        <li><a href="#step1">アカウントを登録する（メール認証・無料トライアル開始）</a></li>
         <li><a href="#step2">拠点・部署・保管場所を登録する</a></li>
         <li><a href="#step3">カテゴリを登録する</a></li>
         <li><a href="#step4">管理品目を登録する ／ CSVで一括登録</a></li>
@@ -342,7 +344,7 @@
         <h2>アカウントを登録する</h2>
       </div>
       <span class="step-tag">はじめに</span>
-      <p>β版へのお申し込み後にご案内する登録ページから、会社名・氏名・メールアドレス・パスワードを入力してアカウントを作成します。登録した方が最初の<strong>管理者</strong>になります。</p>
+      <p><a href="https://stockerbiz.yahimaro.com/signup">新規登録ページ</a>から、会社名・氏名・メールアドレス・パスワードとトライアルで試すプランを入力してアカウントを作成します。登録した方が最初の<strong>管理者</strong>になります。</p>
 
       <div class="tbl-wrap">
         <table class="tbl">
@@ -359,7 +361,7 @@
       <ol class="howto">
         <li>登録フォームに会社名・氏名・メールアドレス・パスワードを入力します。</li>
         <li>登録するとメール認証の確認メールが届きます。メール内のボタン（リンク）をクリックして認証を完了します。</li>
-        <li>認証が完了するとβ版の利用が始まり、ホーム画面（ダッシュボード）が表示されます。</li>
+        <li>認証が完了すると30日間の無料トライアルが始まり、ホーム画面（ダッシュボード）が表示されます。</li>
       </ol>
 
       <figure class="fig">
@@ -371,7 +373,7 @@
         <b>確認メールが届かない場合</b>　迷惑メールフォルダをご確認ください。それでも見つからない場合は、ドメイン <b>@yahimaro.com</b> からのメールを受信できるよう設定のうえ、<a href="/stocker-biz/contact.html">お問い合わせ</a>ください。
       </div>
 
-      <p class="muted">現在はβ版協力企業を募集しています。β版期間中は、選択したプラン相当の機能を初期費用・月額利用料ともに無料でお試しいただけます。正式版のセルフ登録開始後は30日間の無料トライアルを予定しています。</p>
+      <p class="muted">初回登録から30日間は、選択したプラン相当の機能を初期費用・月額利用料ともに無料でお試しいただけます。開始時のクレジットカード登録は不要です。</p>
     </section>
 
     <hr class="sep">
@@ -677,7 +679,7 @@
       </a>
       <a href="/stocker-biz/contact.html">
         <span class="t">お問い合わせ</span>
-        <p>導入のご相談・ご質問・β版のお申し込みはこちら。</p>
+        <p>導入のご相談・ご質問はこちら。無料トライアルは新規登録ページから始められます。</p>
       </a>
     </div>
 

@@ -54,10 +54,14 @@
     const href = link.href || "";
     const params = eventParams(link);
 
-    if (href.includes("stockerbiz.yahimaro.com/demo/start")) {
+    if (href.includes("stockerbiz.yahimaro.com/login")) {
+      sendEvent("login_click", params);
+    } else if (href.includes("stockerbiz.yahimaro.com/signup")) {
+      sendEvent("trial_signup_click", params);
+    } else if (href.includes("stockerbiz.yahimaro.com/demo/start")) {
       sendEvent("demo_start", params);
     } else if (href.includes("/stocker-biz/contact.html") || /contact\.html(?:[?#]|$)/.test(href)) {
-      sendEvent(params.inquiry_type === "beta" ? "beta_application_click" : "contact_click", params);
+      sendEvent("contact_click", params);
     } else if (href.includes("/stocker-biz/pricing.html") || /pricing\.html(?:[?#]|$)/.test(href)) {
       sendEvent("pricing_click", params);
     } else if (

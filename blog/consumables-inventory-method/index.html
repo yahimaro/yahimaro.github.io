@@ -172,7 +172,7 @@
     .footer-links { display:flex; gap:24px; flex-wrap:wrap; }
     .footer-links a { font-size:.8rem; color:rgba(255,255,255,.45); text-decoration:none; }
     .footer-copy { width:100%; font-size:.75rem; color:rgba(255,255,255,.22); }
-    @media (max-width:640px) { nav { padding:0 20px; } .nav-links li:not(:last-child) { display:none; } .related-grid { grid-template-columns:1fr; } .article-wrap { padding-top:40px; } }
+    @media (max-width:640px) { nav { padding:0 20px; } .nav-links li:not(:nth-last-child(-n+2)) { display:none; } .related-grid { grid-template-columns:1fr; } .article-wrap { padding-top:40px; } }
   </style>
   <script defer src="/js/stocker-biz-analytics.js"></script>
 </head>
@@ -187,7 +187,8 @@
       <li><a href="/stocker-biz/#plans">料金</a></li>
       <li><a href="/stocker-biz/#faq">FAQ</a></li>
       <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
-      <li><span class="nav-badge">β版募集中</span></li>
+      <li><a href="https://stockerbiz.yahimaro.com/login">ログイン</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
 
@@ -341,7 +342,7 @@
     <p>登録不要のデモで、在庫が発注点を下回ってから担当者が対応するまでの流れを確認できます。</p>
     <div class="cta-buttons">
       <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" class="btn-primary">登録不要でデモを試す</a>
-      <a href="/stocker-biz/contact.html?type=beta" class="btn-outline">β版に申し込む</a>
+      <a href="https://stockerbiz.yahimaro.com/signup" class="btn-outline">無料トライアルを始める</a>
     </div>
   </section>
 

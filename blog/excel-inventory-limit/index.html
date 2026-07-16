@@ -145,7 +145,7 @@
     @media (max-width: 640px) {
       nav { padding: 0 20px; }
       .nav-links { gap: 16px; }
-      .nav-links li:not(:last-child) { display: none; }
+      .nav-links li:not(:nth-last-child(-n+2)) { display: none; }
     }
 
     /* ── BREADCRUMB ── */
@@ -234,7 +234,8 @@
       <li><a href="/stocker-biz/#plans">料金</a></li>
       <li><a href="/stocker-biz/#faq">FAQ</a></li>
       <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
-      <li><span class="nav-badge">β版募集中</span></li>
+      <li><a href="https://stockerbiz.yahimaro.com/login">ログイン</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
 
@@ -413,7 +414,7 @@
     <p>既存の在庫リストは CSV で取り込み。スマホ更新・発注通知・操作履歴まで、ひとつにまとまります。</p>
     <div class="cta-buttons">
       <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" class="btn-primary">登録不要でデモを試す</a>
-      <a href="/stocker-biz/contact.html?type=beta" class="btn-outline">β版に申し込む</a>
+      <a href="https://stockerbiz.yahimaro.com/signup" class="btn-outline">無料トライアルを始める</a>
     </div>
   </section>
 

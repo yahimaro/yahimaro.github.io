@@ -128,7 +128,7 @@
     .nav-links a { font-size: 0.82rem; color: rgba(255,255,255,0.65); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
     .nav-links a:hover { color: #fff; }
     .nav-badge { font-size: 0.7rem; font-weight: 700; color: var(--coming); background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.35); padding: 2px 10px; border-radius: 999px; letter-spacing: 0.06em; }
-    @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { gap: 16px; } .nav-links li:not(:last-child) { display: none; } }
+    @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { gap: 16px; } .nav-links li:not(:nth-last-child(-n+2)) { display: none; } }
     .breadcrumb { background: var(--surface); border-bottom: 1px solid var(--border); }
     .breadcrumb-inner { max-width: 1080px; margin: 0 auto; padding: 12px 24px; font-size: 0.78rem; color: var(--muted); }
     .breadcrumb-inner a { color: var(--muted); text-decoration: none; }
@@ -225,7 +225,8 @@
       <li><a href="/stocker-biz/#plans">料金</a></li>
       <li><a href="/stocker-biz/#faq">FAQ</a></li>
       <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
-      <li><span class="nav-badge">β版募集中</span></li>
+      <li><a href="https://stockerbiz.yahimaro.com/login">ログイン</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
 
