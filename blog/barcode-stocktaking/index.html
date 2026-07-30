@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY0Q5ZJVQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XY0Q5ZJVQ3');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>スマホとバーコードで棚卸を効率化｜やり方・必要なもの・注意点</title>
+  <meta name="description" content="スマホとバーコードを使った棚卸のやり方を解説。必要なもの、ラベルを貼る単位、作業手順、数え漏れ・二重カウントを防ぐ方法、Excelとの違い、導入時の注意点を紹介します。">
+  <link rel="canonical" href="https://yahimaro.com/blog/barcode-stocktaking/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Stocker Biz">
+  <meta property="og:title" content="スマホとバーコードで棚卸を効率化｜やり方・必要なもの・注意点">
+  <meta property="og:description" content="バーコード棚卸に必要なもの、ラベルの貼り方、スマホで数える手順、数え漏れを防ぐ運用を解説します。">
+  <meta property="og:url" content="https://yahimaro.com/blog/barcode-stocktaking/">
+  <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="スマホとバーコードで棚卸を効率化">
+  <meta name="twitter:description" content="バーコード棚卸のやり方、必要なもの、ラベルの貼り方と注意点を解説します。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <link rel="stylesheet" href="/blog/article.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "スマホとバーコードで棚卸を効率化｜やり方・必要なもの・注意点",
+    "description": "スマホとバーコードを使った棚卸に必要なもの、ラベルの貼り方、作業手順、数え漏れを防ぐ方法を解説します。",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yahimaro.com/blog/barcode-stocktaking/" },
+    "image": "https://yahimaro.com/images/stocker-biz_icon.png",
+    "inLanguage": "ja",
+    "datePublished": "2026-07-30",
+    "dateModified": "2026-07-30",
+    "author": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/stocker-biz_icon.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
+      { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "スマホ・バーコード棚卸", "item": "https://yahimaro.com/blog/barcode-stocktaking/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "スマホだけでバーコード棚卸はできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "スマホカメラで読み取れる在庫管理アプリを使えば、専用ハンディターミナルなしで棚卸できます。ただし、品目とバーコードの登録、ラベルがない品目への貼り付け、棚卸対象と基準時点の準備は必要です。ラベルを新しく印刷する場合はプリンターも用意します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "バーコードは商品と棚のどちらに貼りますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "小さな部品や消耗品は、商品一つひとつではなく、保管する棚や箱に貼る方法が実用的です。同じ品目が複数の場所にある場合は、保管場所ごとに在庫を分け、それぞれの棚や箱に対応するラベルを貼ります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "バーコード棚卸で数え漏れを防ぐ方法は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "棚の左上から右下へ進むなど順路を固定し、保管場所順に対象を並べ、数え終わった場所を記録します。棚卸中の入出庫を止めるか基準時点を決め、入力済みの品目が分かるアプリを使うと、数え漏れと二重カウントを減らせます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Stocker BizはJANコードを棚卸に使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在はJANコードなど既存の商品バーコードには対応していません。Stocker Bizが発行するSB-形式のバーコードラベルをPDFで出力し、品目、棚、箱などに貼って使用します。iPhone・Androidのカメラで読み取れます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script defer src="/js/stocker-biz-analytics.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
+    </ul>
+  </nav>
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/stocker-biz/">Stocker Biz</a><span class="breadcrumb-sep">/</span>
+      <a href="/blog/">記事</a><span class="breadcrumb-sep">/</span>
+      <span>スマホ・バーコード棚卸</span>
+    </div>
+  </div>
+  <header class="hero">
+    <span class="hero-tag">棚卸・バーコード</span>
+    <h1>スマホとバーコードで棚卸を効率化<br>やり方・必要なもの・注意点</h1>
+    <p class="hero-sub">品目を探して紙に書き、あとから転記する棚卸を、読み取りと数量入力の流れに変える方法を解説します。</p>
+  </header>
+  <article class="article">
+    <div class="article-inner">
+      <p class="lead">バーコード棚卸は、バーコードから対象品目を特定し、実際に数えた数量をその場で記録する方法です。専用端末がなくても、スマホカメラに対応した在庫管理アプリなら小さく始められます。ただし、バーコードを導入するだけで数え漏れがなくなるわけではなく、ラベルの貼り方と作業順序が重要です。</p>
+      <div class="toc">
+        <strong>この記事の内容</strong>
+        <ol>
+          <li><a href="#mechanism">バーコード棚卸の仕組み</a></li>
+          <li><a href="#prepare">必要なものと準備</a></li>
+          <li><a href="#label">ラベルを貼る単位</a></li>
+          <li><a href="#steps">スマホ棚卸の手順</a></li>
+          <li><a href="#mistakes">失敗を防ぐ注意点</a></li>
+        </ol>
+      </div>
+
+      <h2 id="mechanism">バーコード棚卸とは</h2>
+      <p>バーコード棚卸は、品目や保管場所に付けたバーコードを読み取り、実在庫数を入力して帳簿在庫と照合する方法です。品目名や品番を一覧から探す作業を減らし、似た品目の選び間違いや紙からの転記ミスを抑えられます。</p>
+      <table class="comparison">
+        <thead><tr><th>項目</th><th>紙・Excel</th><th>スマホ・バーコード</th></tr></thead>
+        <tbody>
+          <tr><td>品目の特定</td><td>名称・品番から探す</td><td>ラベルを読み取る</td></tr>
+          <tr><td>数量の記録</td><td>紙へ記入し転記</td><td>その場で入力</td></tr>
+          <tr><td>進捗確認</td><td>用紙を回収して集計</td><td>入力状況を共有</td></tr>
+          <tr><td>履歴</td><td>ファイル・用紙で保管</td><td>操作履歴として保存</td></tr>
+        </tbody>
+      </table>
+      <p>棚卸そのものの基本手順や差異の原因は、<a href="/blog/stocktaking-how-to/">棚卸のやり方・数え方</a>で詳しく解説しています。</p>
+
+      <h2 id="prepare">スマホでバーコード棚卸を始めるために必要なもの</h2>
+      <ul>
+        <li><strong>スマートフォン：</strong>利用するアプリの対応OSとカメラ権限を確認します。</li>
+        <li><strong>在庫管理アプリ：</strong>バーコード読み取り、棚卸入力、複数人共有に対応するものを選びます。</li>
+        <li><strong>バーコードラベル：</strong>既存コードを使うか、アプリから独自ラベルを発行します。</li>
+        <li><strong>プリンター：</strong>独自ラベルを紙に印刷する場合に必要です。</li>
+        <li><strong>品目・保管場所データ：</strong>名称、品番、単位、棚・箱・倉庫を整理します。</li>
+      </ul>
+      <div class="callout">
+        <p><strong>読み取れるバーコードの種類を事前に確認してください。</strong>商品に付いているJANコードをそのまま使えるアプリもあれば、サービスが発行する独自ラベルだけに対応するアプリもあります。</p>
+      </div>
+
+      <h2 id="label">バーコードラベルを貼る単位</h2>
+      <h3>商品一つひとつではなく、棚や箱に貼る</h3>
+      <p>ボルト、手袋、コピー用紙などは、一つひとつへラベルを貼る必要はありません。同じ品目をまとめて保管する棚や箱にラベルを貼り、「この場所のこの品目」を読み取れるようにします。</p>
+      <h3>同じ品目が複数の場所にある場合</h3>
+      <p>倉庫と製造ラインなど複数の場所に同じ品目がある場合は、保管場所ごとに在庫を分けます。それぞれに対応するラベルを貼ると、「どこに何個あるか」を正確に管理できます。</p>
+      <h3>ラベルに文字情報も載せる</h3>
+      <p>バーコードだけでなく、品目名、品番、保管場所などを印字すると、スマホを使わない場面でも人が確認できます。似た部品の取り違え防止にも役立ちます。</p>
+
+      <h2 id="steps">スマホとバーコードで棚卸する手順</h2>
+      <ol>
+        <li><strong>棚卸の範囲と基準時点を決める：</strong>対象の拠点・棚・品目と、何時時点の在庫を数えるかを決めます。</li>
+        <li><strong>品目とラベルを確認する：</strong>ラベル漏れ、読み取りづらい位置、重複ラベルがないか確認します。</li>
+        <li><strong>順路を決める：</strong>棚の左上から右下など、一方向に進むルールを決めます。</li>
+        <li><strong>バーコードを読み取る：</strong>対象品目を表示し、実際の数量を数えます。</li>
+        <li><strong>実在庫数を入力する：</strong>箱とバラの単位をそろえ、その場で数量を記録します。</li>
+        <li><strong>未入力と差異を確認する：</strong>数えていない品目と、帳簿との差が大きい品目を再確認します。</li>
+      </ol>
+      <p>複数人で同時に作業する場合は、担当する棚・エリアを明確に分けます。同じ棚を二人が数えると、バーコードを使っても二重カウントが起こります。</p>
+
+      <h2 id="mistakes">バーコード棚卸でよくある失敗と対策</h2>
+      <h3>ラベルを貼っただけで運用ルールを決めない</h3>
+      <p>読み取り順序、数量単位、棚卸中の入出庫を決めていないと、入力結果は正確になりません。バーコードは品目を特定する道具であり、数え方のルールは別に必要です。</p>
+      <h3>箱と個数の単位が混在する</h3>
+      <p>「1箱＝20個」を箱数で入力する人と個数で入力する人が混在すると差異が出ます。アプリに登録する単位を統一し、箱とバラが混ざる場合は個数へ換算して入力します。</p>
+      <h3>既存商品バーコードへ対応していると思い込む</h3>
+      <p>アプリによって対応コードが異なります。Stocker Bizは、現在JANコードなど既存の商品バーコードには対応していません。Stocker Bizが発行するSB-形式のバーコードラベルをPDFで出力し、棚や箱に貼って使用します。</p>
+      <h3>普段の入出庫を記録しない</h3>
+      <p>棚卸のときだけアプリを使っても、帳簿在庫は日々ずれていきます。使用・補充・入荷も同じ仕組みで記録すると、棚卸は大規模な修正作業ではなく確認作業に近づきます。</p>
+
+      <h2>Stocker Bizでのバーコード棚卸</h2>
+      <p>Stocker Bizでは、登録した品目のバーコードラベルをPDFで一括出力できます。iPhone・Androidアプリでラベルを読み取り、対象の在庫枠を開いて棚卸数を入力します。棚卸の進捗を確認しながら作業でき、操作は履歴として保存されます。</p>
+      <p>棚卸後の在庫数が発注点以下なら、発注担当者への依頼と通知につなげられます。機能の詳細は<a href="/features/barcode-inventory/">スマホで行うバーコード在庫管理</a>をご覧ください。</p>
+    </div>
+  </article>
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2>スマホ・バーコード棚卸のよくある質問</h2>
+      <details open><summary>スマホだけでバーコード棚卸はできますか？</summary><div class="faq-a">スマホカメラで読み取れる在庫管理アプリを使えば、専用ハンディターミナルなしで棚卸できます。ただし、品目とバーコードの登録、ラベルがない品目への貼り付け、棚卸対象と基準時点の準備は必要です。ラベルを新しく印刷する場合はプリンターも用意します。</div></details>
+      <details><summary>バーコードは商品と棚のどちらに貼りますか？</summary><div class="faq-a">小さな部品や消耗品は、商品一つひとつではなく、保管する棚や箱に貼る方法が実用的です。同じ品目が複数の場所にある場合は、保管場所ごとに在庫を分け、それぞれの棚や箱に対応するラベルを貼ります。</div></details>
+      <details><summary>バーコード棚卸で数え漏れを防ぐ方法は？</summary><div class="faq-a">棚の左上から右下へ進むなど順路を固定し、保管場所順に対象を並べ、数え終わった場所を記録します。棚卸中の入出庫を止めるか基準時点を決め、入力済みの品目が分かるアプリを使うと、数え漏れと二重カウントを減らせます。</div></details>
+      <details><summary>Stocker BizはJANコードを棚卸に使えますか？</summary><div class="faq-a">現在はJANコードなど既存の商品バーコードには対応していません。Stocker Bizが発行するSB-形式のバーコードラベルをPDFで出力し、品目、棚、箱などに貼って使用します。iPhone・Androidのカメラで読み取れます。</div></details>
+    </div>
+  </section>
+  <section class="related">
+    <div class="related-inner">
+      <h2>あわせて読みたい</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/features/barcode-inventory/"><span class="rc-label">機能</span><div class="rc-title">バーコード在庫管理</div><p class="rc-desc">Stocker Bizのラベル発行とスマホ読み取り機能。</p></a>
+        <a class="related-card" href="/blog/stocktaking-how-to/"><span class="rc-label">記事</span><div class="rc-title">棚卸のやり方</div><p class="rc-desc">棚卸の基本手順、差異の原因、数え方のコツ。</p></a>
+        <a class="related-card" href="/blog/how-to-choose-inventory-app/"><span class="rc-label">記事</span><div class="rc-title">在庫管理アプリの選び方</div><p class="rc-desc">バーコード、棚卸、発注管理など7つの比較ポイント。</p></a>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <h2>スマホで棚卸の流れを試す</h2>
+    <p>Stocker Bizの登録不要デモで、在庫・発注管理の画面を確認できます。</p>
+    <div class="cta-buttons">
+      <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" class="btn-primary">登録不要でデモを試す</a>
+      <a href="/features/barcode-inventory/" class="btn-outline">機能を見る</a>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo"><img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" alt="" aria-hidden="true"><span>Stocker Biz</span></a>
+      <div class="footer-links"><a href="/">Yahimaro Apps</a><a href="/blog/">記事一覧</a><a href="/stocker-biz/">トップ</a><a href="/stocker-biz/contact.html">お問い合わせ</a></div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY0Q5ZJVQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XY0Q5ZJVQ3');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>予備品リストの作り方｜設備保全で管理する項目と選定基準</title>
+  <meta name="description" content="設備保全で使う予備品リストの作り方を解説。品名・型式・対応設備・保管場所などの管理項目、登録する部品の選定基準、Excelで始める手順、見直しのタイミングを紹介します。">
+  <link rel="canonical" href="https://yahimaro.com/blog/spare-parts-list/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Stocker Biz">
+  <meta property="og:title" content="予備品リストの作り方｜設備保全で管理する項目と選定基準">
+  <meta property="og:description" content="予備品リストに必要な管理項目、部品の選定基準、作成手順と見直し方法を解説します。">
+  <meta property="og:url" content="https://yahimaro.com/blog/spare-parts-list/">
+  <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="予備品リストの作り方｜設備保全の管理項目">
+  <meta name="twitter:description" content="設備保全に必要な予備品を洗い出し、使えるリストにまとめる手順を解説します。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <link rel="stylesheet" href="/blog/article.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "予備品リストの作り方｜設備保全で管理する項目と選定基準",
+    "description": "設備保全で使う予備品リストの管理項目、登録する部品の選定基準、作成手順、見直し方法を解説します。",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://yahimaro.com/blog/spare-parts-list/" },
+    "image": "https://yahimaro.com/images/stocker-biz_icon.png",
+    "inLanguage": "ja",
+    "datePublished": "2026-07-30",
+    "dateModified": "2026-07-30",
+    "author": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Yahimaro Apps",
+      "url": "https://yahimaro.com/",
+      "logo": { "@type": "ImageObject", "url": "https://yahimaro.com/images/stocker-biz_icon.png" }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
+      { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "予備品リストの作り方", "item": "https://yahimaro.com/blog/spare-parts-list/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "予備品リストに最低限必要な項目は何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "管理番号、品名、メーカー、型式、対応設備、保管場所、現在庫、最低在庫数、仕入先、調達リードタイムを基本項目にします。品番だけで識別しにくい場合は、仕様、図面番号、写真も加えます。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "予備品リストはExcelでも作れますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "少ない品目を一人で管理する段階ならExcelでも始められます。複数人が入出庫する、保管場所が複数ある、更新漏れが増えた場合は、履歴や権限を管理できる在庫管理システムへの移行を検討します。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どの部品を予備品リストに登録すべきですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "欠品時の設備停止影響が大きい、調達に時間がかかる、代替できない、故障実績がある部品を優先します。安価で短納期の汎用品まで最初から網羅せず、重要部品から段階的に登録すると運用を始めやすくなります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "予備品リストはどのくらいの頻度で見直しますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "少なくとも年1回を目安に確認し、設備の導入・廃止、部品の終売、仕入先や納期の変更、重大故障の発生時にはその都度見直します。棚卸と同じ時期に確認すると、現物と登録情報を一緒に更新できます。"
+        }
+      }
+    ]
+  }
+  </script>
+  <script defer src="/js/stocker-biz-analytics.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
+    </ul>
+  </nav>
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/stocker-biz/">Stocker Biz</a><span class="breadcrumb-sep">/</span>
+      <a href="/blog/">記事</a><span class="breadcrumb-sep">/</span>
+      <span>予備品リストの作り方</span>
+    </div>
+  </div>
+  <header class="hero">
+    <span class="hero-tag">製造業・設備保全</span>
+    <h1>予備品リストの作り方<br>設備保全で管理する項目と選定基準</h1>
+    <p class="hero-sub">必要な部品を、故障時に迷わず見つけられる状態へ。管理項目の決め方から部品の選定、更新ルールまで整理します。</p>
+  </header>
+  <article class="article">
+    <div class="article-inner">
+      <p class="lead">予備品リストは、倉庫にある部品を書き出しただけの一覧ではありません。「どの設備に使う部品か」「どこにあるか」「欠品すると何が止まるか」「再調達に何日かかるか」まで分かってこそ、設備トラブル時に役立ちます。最初から完璧を目指さず、停止影響の大きい部品から作り始めるのがポイントです。</p>
+      <div class="toc">
+        <strong>この記事の内容</strong>
+        <ol>
+          <li><a href="#purpose">予備品リストを作る目的</a></li>
+          <li><a href="#fields">リストに必要な管理項目</a></li>
+          <li><a href="#selection">登録する部品の選定基準</a></li>
+          <li><a href="#steps">作成する5つの手順</a></li>
+          <li><a href="#review">リストを見直すタイミング</a></li>
+        </ol>
+      </div>
+
+      <h2 id="purpose">予備品リストを作る目的</h2>
+      <p>設備が故障したとき、交換部品があるだけでは十分ではありません。部品を特定できない、保管場所が分からない、現物と帳簿の数量が違うと、復旧までの時間が延びます。予備品リストには、次の判断を早くする役割があります。</p>
+      <ul>
+        <li>故障した設備に使える部品を特定する</li>
+        <li>部品の保管場所と現在庫を確認する</li>
+        <li>在庫が足りない場合の仕入先と納期を調べる</li>
+        <li>欠品リスクの高い部品を優先して補充する</li>
+        <li>設備廃止後に不要となった在庫を見つける</li>
+      </ul>
+      <p>設備台帳が「設備そのもの」を管理するのに対し、予備品リストは交換部品と設備、保管場所、調達情報を結びつけるものです。</p>
+
+      <h2 id="fields">予備品リストに必要な管理項目</h2>
+      <p>まず、部品の識別、使用先、在庫、調達の4つに分けて項目を決めます。入力項目を増やしすぎると更新されなくなるため、利用目的のない項目は後から追加します。</p>
+      <table class="comparison">
+        <thead><tr><th>分類</th><th>管理項目</th><th>確認できること</th></tr></thead>
+        <tbody>
+          <tr><td>識別</td><td>管理番号、品名、メーカー、型式、仕様</td><td>似た部品や型式違いを区別する</td></tr>
+          <tr><td>使用先</td><td>対応設備、設備番号、使用箇所、図面番号</td><td>どの設備に使えるか判断する</td></tr>
+          <tr><td>在庫</td><td>保管場所、現在庫、最低在庫数、単位</td><td>所在と補充の必要性を確認する</td></tr>
+          <tr><td>調達</td><td>仕入先、単価、調達リードタイム、代替品</td><td>欠品時の入手方法と期間を判断する</td></tr>
+          <tr><td>保全</td><td>重要度、最終使用日、使用履歴、終売情報</td><td>保有を続ける理由を見直す</td></tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <p><strong>型式は表記を統一します。</strong>ハイフン、全角・半角、メーカー略称が混在すると検索で見つかりません。現物ラベルを確認し、メーカー表記に合わせて登録します。</p>
+      </div>
+      <p>写真は必須ではありませんが、外観が似た部品や棚の位置を伝える場合に役立ちます。管理番号を付け、現物にも同じ番号を表示すると照合しやすくなります。</p>
+
+      <h2 id="selection">リストに登録する部品の選定基準</h2>
+      <p>倉庫内のすべてを最初から登録するより、欠品時の影響が大きい部品から優先します。次の4項目で評価すると、担当者の経験だけに頼らず選定できます。</p>
+      <ul>
+        <li><strong>停止影響：</strong>無いと設備・工程・出荷がどこまで止まるか。</li>
+        <li><strong>調達期間：</strong>当日入手できるか、数週間以上かかるか。</li>
+        <li><strong>代替性：</strong>汎用品や別メーカー品で置き換えられるか。</li>
+        <li><strong>故障実績：</strong>過去の交換回数や劣化傾向があるか。</li>
+      </ul>
+      <p>「停止影響が大きい」「長納期」「代替不可」が重なる部品を最優先にします。使用頻度が低くても、入手できなければ長時間停止する専用品はリストに必要です。一方、近隣ですぐ購入できる汎用品は後から追加しても構いません。</p>
+
+      <h2 id="steps">予備品リストを作成する5つの手順</h2>
+      <ol>
+        <li><strong>対象設備を決める：</strong>重要設備や停止影響の大きい工程から着手します。</li>
+        <li><strong>候補部品を集める：</strong>取扱説明書、図面、保全履歴、現物棚から交換部品を洗い出します。</li>
+        <li><strong>重要度を評価する：</strong>停止影響、調達期間、代替性、故障実績を確認します。</li>
+        <li><strong>現物と照合する：</strong>型式、数量、保管場所を確認し、重複登録や不明品を整理します。</li>
+        <li><strong>担当と更新ルールを決める：</strong>入出庫時に誰が数量を更新し、いつ一覧を点検するかを定めます。</li>
+      </ol>
+      <h3>Excelで始める場合の注意点</h3>
+      <p>品目が少なく更新担当者が一人なら、Excelでも開始できます。1行を1品目とし、入力規則で重要度や単位の表記を統一します。複数人が同時に使う場合は、ファイルの複製や更新漏れを防ぐため、保存場所と編集権限を決めておきます。</p>
+      <h3>管理システムへ移行する目安</h3>
+      <p>保管場所が増えた、入出庫する人が複数いる、誰が更新したか追えない、棚卸差異が頻発するときは、履歴や権限を持つ在庫管理システムが適しています。Stocker Bizでは、品目と保管場所を登録し、専用のSB-形式ラベルをスマホで読み取って使用・補充・棚卸・入荷を記録できます。</p>
+
+      <h2 id="review">予備品リストを見直すタイミング</h2>
+      <p>リストは作成して終わりではありません。現物と情報がずれると、故障時に使えなくなります。少なくとも年1回を目安に、棚卸と合わせて次の点を確認します。</p>
+      <ul>
+        <li>登録数量と現物数量が一致しているか</li>
+        <li>型式、保管場所、仕入先、納期が変わっていないか</li>
+        <li>対応設備が廃止されていないか</li>
+        <li>メーカー終売や後継品の情報がないか</li>
+        <li>故障履歴を踏まえて重要度や最低在庫数を変える必要がないか</li>
+      </ul>
+      <p>設備の新設・廃止、部品の終売、重大故障があったときは定期見直しを待たずに更新します。在庫数や発注方法まで含む運用設計は、<a href="/use-cases/repair-parts/">補修部品・スペアパーツの在庫管理</a>で詳しく紹介しています。</p>
+    </div>
+  </article>
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2>予備品リストのよくある質問</h2>
+      <details open><summary>予備品リストに最低限必要な項目は何ですか？</summary><div class="faq-a">管理番号、品名、メーカー、型式、対応設備、保管場所、現在庫、最低在庫数、仕入先、調達リードタイムを基本項目にします。品番だけで識別しにくい場合は、仕様、図面番号、写真も加えます。</div></details>
+      <details><summary>予備品リストはExcelでも作れますか？</summary><div class="faq-a">少ない品目を一人で管理する段階ならExcelでも始められます。複数人が入出庫する、保管場所が複数ある、更新漏れが増えた場合は、履歴や権限を管理できる在庫管理システムへの移行を検討します。</div></details>
+      <details><summary>どの部品を予備品リストに登録すべきですか？</summary><div class="faq-a">欠品時の設備停止影響が大きい、調達に時間がかかる、代替できない、故障実績がある部品を優先します。安価で短納期の汎用品まで最初から網羅せず、重要部品から段階的に登録すると運用を始めやすくなります。</div></details>
+      <details><summary>予備品リストはどのくらいの頻度で見直しますか？</summary><div class="faq-a">少なくとも年1回を目安に確認し、設備の導入・廃止、部品の終売、仕入先や納期の変更、重大故障の発生時にはその都度見直します。棚卸と同じ時期に確認すると、現物と登録情報を一緒に更新できます。</div></details>
+    </div>
+  </section>
+  <section class="related">
+    <div class="related-inner">
+      <h2>あわせて読みたい</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/use-cases/repair-parts/"><span class="rc-label">活用例</span><div class="rc-title">補修部品・スペアパーツ管理</div><p class="rc-desc">適正在庫と発注を含む、設備保全での運用方法。</p></a>
+        <a class="related-card" href="/blog/mro-consumables-management/"><span class="rc-label">記事</span><div class="rc-title">副資材・MROとは</div><p class="rc-desc">消耗品・副資材・MRO部品の違いを整理します。</p></a>
+        <a class="related-card" href="/blog/barcode-stocktaking/"><span class="rc-label">記事</span><div class="rc-title">バーコード棚卸の始め方</div><p class="rc-desc">ラベル準備から棚卸差異の確認まで解説します。</p></a>
+      </div>
+    </div>
+  </section>
+  <section class="cta-section">
+    <h2>予備品リストを、現場で使える在庫情報へ</h2>
+    <p>部品、保管場所、在庫、発注状況をStocker Bizで共有できます。</p>
+    <div class="cta-buttons">
+      <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" class="btn-primary">登録不要でデモを試す</a>
+      <a href="/use-cases/repair-parts/" class="btn-outline">活用例を見る</a>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo"><img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" alt="" aria-hidden="true"><span>Stocker Biz</span></a>
+      <div class="footer-links"><a href="/">Yahimaro Apps</a><a href="/blog/">記事一覧</a><a href="/stocker-biz/">トップ</a><a href="/stocker-biz/contact.html">お問い合わせ</a></div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
