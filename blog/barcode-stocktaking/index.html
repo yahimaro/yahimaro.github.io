@@ -102,8 +102,10 @@
   }
   </script>
   <script defer src="/js/stocker-biz-analytics.js"></script>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
   <nav>
     <a href="/stocker-biz/" class="nav-logo">
       <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
@@ -117,6 +119,8 @@
       <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
+
+  <main id="main">
   <div class="breadcrumb">
     <div class="breadcrumb-inner">
       <a href="/stocker-biz/">Stocker Biz</a><span class="breadcrumb-sep">/</span>
@@ -145,7 +149,8 @@
 
       <h2 id="mechanism">バーコード棚卸とは</h2>
       <p>バーコード棚卸は、品目や保管場所に付けたバーコードを読み取り、実在庫数を入力して帳簿在庫と照合する方法です。品目名や品番を一覧から探す作業を減らし、似た品目の選び間違いや紙からの転記ミスを抑えられます。</p>
-      <table class="comparison">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <table class="comparison" tabindex="0" aria-label="横スクロールできる比較表">
         <thead><tr><th>項目</th><th>紙・Excel</th><th>スマホ・バーコード</th></tr></thead>
         <tbody>
           <tr><td>品目の特定</td><td>名称・品番から探す</td><td>ラベルを読み取る</td></tr>
@@ -229,6 +234,8 @@
       <a href="/features/barcode-inventory/" class="btn-outline">機能を見る</a>
     </div>
   </section>
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/stocker-biz/" class="footer-logo"><img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" alt="" aria-hidden="true"><span>Stocker Biz</span></a>

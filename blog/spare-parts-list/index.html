@@ -102,8 +102,10 @@
   }
   </script>
   <script defer src="/js/stocker-biz-analytics.js"></script>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
   <nav>
     <a href="/stocker-biz/" class="nav-logo">
       <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
@@ -117,6 +119,8 @@
       <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
+
+  <main id="main">
   <div class="breadcrumb">
     <div class="breadcrumb-inner">
       <a href="/stocker-biz/">Stocker Biz</a><span class="breadcrumb-sep">/</span>
@@ -156,7 +160,8 @@
 
       <h2 id="fields">予備品リストに必要な管理項目</h2>
       <p>まず、部品の識別、使用先、在庫、調達の4つに分けて項目を決めます。入力項目を増やしすぎると更新されなくなるため、利用目的のない項目は後から追加します。</p>
-      <table class="comparison">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <table class="comparison" tabindex="0" aria-label="横スクロールできる比較表">
         <thead><tr><th>分類</th><th>管理項目</th><th>確認できること</th></tr></thead>
         <tbody>
           <tr><td>識別</td><td>管理番号、品名、メーカー、型式、仕様</td><td>似た部品や型式違いを区別する</td></tr>
@@ -233,6 +238,8 @@
       <a href="/use-cases/repair-parts/" class="btn-outline">活用例を見る</a>
     </div>
   </section>
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/stocker-biz/" class="footer-logo"><img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" alt="" aria-hidden="true"><span>Stocker Biz</span></a>

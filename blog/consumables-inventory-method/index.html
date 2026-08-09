@@ -175,8 +175,10 @@
     @media (max-width:640px) { nav { padding:0 20px; } .nav-links li:not(:nth-last-child(-n+2)) { display:none; } .related-grid { grid-template-columns:1fr; } .article-wrap { padding-top:40px; } }
   </style>
   <script defer src="/js/stocker-biz-analytics.js"></script>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
   <nav>
     <a href="/stocker-biz/" class="nav-logo">
       <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" style="height:auto" alt="" aria-hidden="true">
@@ -191,6 +193,8 @@
       <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
+
+  <main id="main">
 
   <div class="breadcrumb">
     <div class="breadcrumb-inner">
@@ -253,7 +257,8 @@
 
       <h2 id="excel">Excel在庫管理表に必要な項目</h2>
       <p>品目数と担当者が少ないうちは、Excelでも消耗品管理を始められます。少なくとも次の項目を用意します。</p>
-      <div class="table-scroll">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="table-scroll" tabindex="0" aria-label="横スクロールできる表">
         <table>
           <thead><tr><th>項目</th><th>記入例</th><th>目的</th></tr></thead>
           <tbody>
@@ -345,6 +350,8 @@
       <a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener" class="btn-outline">無料トライアルを始める</a>
     </div>
   </section>
+
+    </main>
 
   <footer>
     <div class="footer-inner">

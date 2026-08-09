@@ -239,8 +239,10 @@
     .footer-links a:hover { color: rgba(255,255,255,0.75); }
     .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
   </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
   <!-- NAV -->
   <nav>
@@ -253,6 +255,8 @@
       <li><span class="nav-badge">サービス準備中</span></li>
     </ul>
   </nav>
+
+  <main id="main">
 
   <!-- BREADCRUMB -->
   <div class="breadcrumb">
@@ -307,7 +311,8 @@
 
       <h2 id="docs">点検基準書・手順書・チェックリストの違い</h2>
       <p>マニュアルを構成する3つの文書は、役割が異なります。混同すると内容が重複したり抜けたりするため、違いを押さえておきましょう。</p>
-      <div class="table-scroll">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="table-scroll" tabindex="0" aria-label="横スクロールできる表">
         <table class="cmp-table">
           <thead>
             <tr>
@@ -466,6 +471,8 @@
   </section>
 
   <!-- FOOTER -->
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/" class="footer-logo">

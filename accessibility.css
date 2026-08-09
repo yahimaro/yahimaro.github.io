@@ -1,0 +1,39 @@
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+  padding: 10px 16px;
+  color: #fff;
+  background: #081c35;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform .2s;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.scroll-hint {
+  display: none;
+  margin: 12px 0 6px;
+  color: #5a7080;
+  font-size: .78rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .scroll-hint {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-link {
+    transition: none;
+  }
+}

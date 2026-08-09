@@ -856,9 +856,11 @@
     }
   </style>
   <script defer src="/js/stocker-biz-analytics.js"></script>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
   <!-- NAV -->
   <nav>
@@ -876,6 +878,8 @@
       <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
+
+  <main id="main">
 
   <!-- PAGE HEAD -->
   <header class="page-head">
@@ -968,7 +972,8 @@
         <p class="section-label">プラン比較</p>
         <h2 class="section-title">プランごとの上限・機能</h2>
       </div>
-      <div class="compare-wrap">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="compare-wrap" tabindex="0" aria-label="横スクロールできる料金比較表">
         <table class="compare-table">
           <thead>
             <tr>
@@ -1148,6 +1153,8 @@
   </section>
 
   <!-- FOOTER -->
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/stocker-biz/" class="footer-logo">

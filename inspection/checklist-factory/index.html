@@ -232,8 +232,10 @@
     .footer-links a:hover { color: rgba(255,255,255,0.75); }
     .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
   </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
   <!-- NAV -->
   <nav>
@@ -246,6 +248,8 @@
       <li><span class="nav-badge">サービス準備中</span></li>
     </ul>
   </nav>
+
+  <main id="main">
 
   <!-- BREADCRUMB -->
   <div class="breadcrumb">
@@ -285,7 +289,8 @@
 
       <h2 id="machine">生産機械の点検項目例</h2>
       <p>旋盤・プレス・成形機・搬送コンベアなどの生産機械では、稼働状態と可動部・潤滑の状態を中心に確認します。</p>
-      <div class="table-scroll">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="table-scroll" tabindex="0" aria-label="横スクロールできる表">
         <table class="cmp-table">
           <thead>
             <tr>
@@ -308,7 +313,8 @@
 
       <h2 id="compressor">コンプレッサーの点検項目例</h2>
       <p>エアコンプレッサーは多くの工場で共通して使われる設備です。圧力・ドレン・オイルの状態を中心に確認します。</p>
-      <div class="table-scroll">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="table-scroll" tabindex="0" aria-label="横スクロールできる表">
         <table class="cmp-table">
           <thead>
             <tr>
@@ -331,7 +337,8 @@
 
       <h2 id="electric">電気設備の点検項目例</h2>
       <p>分電盤・制御盤・配線などの電気設備は、感電や火災につながるため、無理のない範囲で目視・においを中心に確認します。踏み込んだ点検や測定は、有資格者や専門業者による法定点検・定期点検で行います。</p>
-      <div class="table-scroll">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="table-scroll" tabindex="0" aria-label="横スクロールできる表">
         <table class="cmp-table">
           <thead>
             <tr>
@@ -442,6 +449,8 @@
   </section>
 
   <!-- FOOTER -->
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/" class="footer-logo">

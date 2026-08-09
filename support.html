@@ -109,17 +109,19 @@
     a  { color: var(--primary); }
     footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 32px; }
   </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
   <header>
     <div class="container">
-      <a href="/">← Stocker トップへ</a>
+      <a href="/stocker/">← Stocker トップへ</a>
       <h1 style="margin-top:8px;">Stocker — サポート</h1>
       <p>節約特化型 買い物・在庫管理アプリ</p>
     </div>
   </header>
 
-  <div class="container">
+  <main id="main" class="container">
 
     <div class="intro">
       Stocker に関するご質問・不具合報告はこのページをご確認ください。
@@ -136,7 +138,7 @@
 
       <div class="faq-item">
         <p class="faq-q">バーコードスキャンがうまく動かない</p>
-        <p class="faq-a">カメラへのアクセス許可が必要です。iOSの「設定」→「Stocker」→「カメラ」をオンにしてください。明るい場所でバーコードを枠内に収めてお試しください。</p>
+        <p class="faq-a">カメラへのアクセス許可が必要です。iOSは「設定」→「Stocker」→「カメラ」、Androidは「設定」→「アプリ」→「Stocker」→「権限」→「カメラ」から許可してください（機種により項目名が異なる場合があります）。明るい場所でバーコードを枠内に収めてお試しください。</p>
       </div>
 
       <div class="faq-item">
@@ -146,7 +148,7 @@
 
       <div class="faq-item">
         <p class="faq-q">サブスクリプションをキャンセルしたい</p>
-        <p class="faq-a">iOSの場合、「設定」→「Apple ID」→「サブスクリプション」から Stocker のプランをキャンセルできます。アプリ内からの直接解約はできません。</p>
+        <p class="faq-a">iOSは「設定」→「Apple ID」→「サブスクリプション」、AndroidはGoogle Playの「お支払いと定期購入」→「定期購入」から Stocker のプランをキャンセルできます。アプリ内からの直接解約はできません。</p>
       </div>
 
       <div class="faq-item">
@@ -171,13 +173,15 @@
         <li><a href="/terms">利用規約</a></li>
         <li><a href="/tokushoho">特定商取引法に基づく表記</a></li>
         <li><a href="https://apps.apple.com/jp/app/homestocker/id6762469486" target="_blank" rel="noopener">App Store — Stocker</a></li>
+        <li><a href="https://play.google.com/store/apps/details?id=com.yahimaro.stocker.app&amp;hl=ja" target="_blank" rel="noopener">Google Play — Stocker</a></li>
       </ul>
     </section>
 
-    <footer>
-      &copy; 2026 yahimaro. All rights reserved. |
+      </main>
+
+  <footer class="container">
+      &copy; 2026 Yahimaro Apps. All rights reserved. |
       <a href="/">トップへ戻る</a>
     </footer>
-  </div>
 </body>
 </html>

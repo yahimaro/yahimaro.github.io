@@ -102,8 +102,10 @@
   }
   </script>
   <script defer src="/js/stocker-biz-analytics.js"></script>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
   <nav>
     <a href="/stocker-biz/" class="nav-logo">
       <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" alt="" aria-hidden="true">
@@ -117,6 +119,8 @@
       <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
     </ul>
   </nav>
+
+  <main id="main">
   <div class="breadcrumb">
     <div class="breadcrumb-inner">
       <a href="/stocker-biz/">Stocker Biz</a><span class="breadcrumb-sep">/</span>
@@ -168,7 +172,8 @@
       <p>既存のExcelデータをCSVで取り込めるか、初期費用と月額料金はいくらか、最低利用期間や解約条件はあるかを確認します。無料期間は、実際の品目と担当者で運用を試すために使います。</p>
 
       <h2 id="compare">Excel・無料アプリ・業務向けアプリの違い</h2>
-      <table class="comparison">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <table class="comparison" tabindex="0" aria-label="横スクロールできる比較表">
         <thead><tr><th>比較項目</th><th>Excel</th><th>無料・個人向け</th><th>業務向けアプリ</th></tr></thead>
         <tbody>
           <tr><td>始めやすさ</td><td>すぐ始められる</td><td>手軽</td><td>初期設定が必要</td></tr>
@@ -222,6 +227,8 @@
       <a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener" class="btn-outline">無料トライアルを始める</a>
     </div>
   </section>
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/stocker-biz/" class="footer-logo"><img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" alt="" aria-hidden="true"><span>Stocker Biz</span></a>

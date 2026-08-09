@@ -237,8 +237,10 @@
     .footer-links a:hover { color: rgba(255,255,255,0.75); }
     .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
   </style>
+  <link rel="stylesheet" href="/accessibility.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
   <!-- NAV -->
   <nav>
@@ -251,6 +253,8 @@
       <li><span class="nav-badge">サービス準備中</span></li>
     </ul>
   </nav>
+
+  <main id="main">
 
   <!-- BREADCRUMB -->
   <div class="breadcrumb">
@@ -328,7 +332,8 @@
 
       <h2 id="example">チェックリストの項目例</h2>
       <p>チェックリストは、「点検項目・確認方法・判定基準・結果」を並べた形が基本です。イメージとして、簡単な例を挙げます（実際の項目・基準は設備に応じて設定してください）。</p>
-      <div class="table-scroll">
+      <p class="scroll-hint">横にスクロールできます →</p>
+      <div class="table-scroll" tabindex="0" aria-label="横スクロールできる表">
         <table class="cmp-table">
           <thead>
             <tr>
@@ -456,6 +461,8 @@
   </section>
 
   <!-- FOOTER -->
+    </main>
+
   <footer>
     <div class="footer-inner">
       <a href="/" class="footer-logo">

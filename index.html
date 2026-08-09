@@ -208,8 +208,9 @@
     .section-lead { margin: 22px 0 0; color: var(--muted); font-size: 1rem; }
     .arrow { transition: transform .2s; }
     a:hover .arrow { transform: translateX(4px); }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.is-visible { opacity: 1; transform: none; }
+    .reveal { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s ease; }
+    .reveal-ready .reveal { opacity: 0; transform: translateY(24px); }
+    .reveal-ready .reveal.is-visible { opacity: 1; transform: none; }
 
     /* Hero */
     .hero {
@@ -367,7 +368,7 @@
       transform: rotate(-4deg);
       animation: float-a 7s ease-in-out infinite;
     }
-    .visual-card.personal img { width: 100%; display: block; }
+    .visual-card.personal img { width: 100%; height: auto; display: block; }
     .visual-card.business {
       width: min(510px, 82%);
       right: -5%;
@@ -436,6 +437,7 @@
     .product-visual.biz { background: linear-gradient(145deg, #dcecff, #b9d8ff 55%, #c8f2ee); }
     .product-visual.stocker img {
       width: min(78%, 430px);
+      height: auto;
       position: relative;
       z-index: 1;
       border-radius: 24px;
@@ -929,7 +931,9 @@
           }
         });
       }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+      const revealElements = document.querySelectorAll('.reveal');
+      revealElements.forEach((element) => observer.observe(element));
+      document.documentElement.classList.add('reveal-ready');
     } else {
       document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
     }
