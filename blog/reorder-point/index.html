@@ -22,31 +22,31 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <title>発注点管理とは？発注点の決め方・計算方法をわかりやすく解説｜Stocker Biz</title>
-  <meta name="description" content="発注点管理とは何かを、中小企業の在庫管理担当者向けにわかりやすく解説。発注点（発注点在庫）の意味、安全在庫を含めた計算方法・決め方、発注点方式と定期発注方式の違い、発注漏れを防ぐ運用のコツまでまとめました。">
+  <title>発注点の計算方法｜決め方・安全在庫・具体例をわかりやすく解説</title>
+  <meta name="description" content="発注点の計算式は、平均使用量×調達リードタイム＋安全在庫です。具体例を使った計算方法、現場での決め方、設定後の見直し項目を解説します。">
   <link rel="canonical" href="https://yahimaro.com/blog/reorder-point/">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Stocker Biz">
-  <meta property="og:title" content="発注点管理とは？発注点の決め方・計算方法をわかりやすく解説">
-  <meta property="og:description" content="発注点の意味、安全在庫を含めた計算方法・決め方、発注点方式と定期発注方式の違い、発注漏れを防ぐ運用のコツを解説します。">
+  <meta property="og:title" content="発注点の計算方法｜決め方・安全在庫・具体例をわかりやすく解説">
+  <meta property="og:description" content="平均使用量・調達リードタイム・安全在庫を使った発注点の計算方法と、現場での決め方を解説します。">
   <meta property="og:url" content="https://yahimaro.com/blog/reorder-point/">
   <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="発注点管理とは？発注点の決め方・計算方法をわかりやすく解説">
-  <meta name="twitter:description" content="発注点の意味、計算方法・決め方、定期発注方式との違い、発注漏れを防ぐ運用のコツを解説します。">
+  <meta name="twitter:title" content="発注点の計算方法｜決め方・安全在庫・具体例をわかりやすく解説">
+  <meta name="twitter:description" content="平均使用量・調達リードタイム・安全在庫を使った発注点の計算方法と、現場での決め方を解説します。">
   <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "発注点管理とは？発注点の決め方・計算方法をわかりやすく解説",
-    "description": "発注点の意味、安全在庫を含めた計算方法・決め方、発注点方式と定期発注方式の違い、発注漏れを防ぐ運用のコツを解説します。",
+    "headline": "発注点の計算方法｜決め方・安全在庫・具体例をわかりやすく解説",
+    "description": "平均使用量・調達リードタイム・安全在庫を使った発注点の計算方法と、現場での決め方を解説します。",
     "mainEntityOfPage": "https://yahimaro.com/blog/reorder-point/",
     "inLanguage": "ja",
     "datePublished": "2026-06-25",
-    "dateModified": "2026-07-05",
+    "dateModified": "2026-09-12",
     "image": "https://yahimaro.com/images/stocker-biz_icon.png",
     "author": { "@type": "Organization", "name": "Yahimaro Apps" },
     "publisher": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" }
@@ -59,7 +59,7 @@
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
       { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
-      { "@type": "ListItem", "position": 3, "name": "発注点管理とは", "item": "https://yahimaro.com/blog/reorder-point/" }
+      { "@type": "ListItem", "position": 3, "name": "発注点の計算方法", "item": "https://yahimaro.com/blog/reorder-point/" }
     ]
   }
   </script>
@@ -202,20 +202,20 @@
       <span class="breadcrumb-sep">/</span>
       <a href="/blog/">記事</a>
       <span class="breadcrumb-sep">/</span>
-      <span>発注点管理とは</span>
+      <span>発注点の計算方法</span>
     </div>
   </div>
 
   <div class="hero">
     <span class="hero-tag">記事</span>
-    <h1>発注点管理とは？<br>発注点の決め方・計算方法をわかりやすく解説</h1>
-    <p class="hero-sub">「在庫がいくつになったら発注するか」を決める発注点管理。その意味と計算式、定期発注方式との違い、運用のコツまでをまとめました。</p>
+    <h1>発注点の計算方法<br>決め方・安全在庫・具体例をわかりやすく解説</h1>
+    <p class="hero-sub">平均使用量・調達リードタイム・安全在庫から「在庫がいくつになったら発注するか」を決める方法を、具体例で解説します。</p>
   </div>
 
   <article class="article">
     <div class="article-inner">
 
-      <p class="lead">在庫管理でよく出てくる「発注点」という言葉。発注のタイミングを感覚で決めていると、在庫切れや過剰在庫が起こりがちです。この記事では、発注点管理の基本と決め方を、中小企業の在庫・発注担当者向けにやさしく解説します。</p>
+      <p class="lead">発注点とは、在庫が一定数まで減ったときに発注するための基準です。基本の計算式は「1日あたりの平均使用量×調達リードタイム＋安全在庫」。この記事では、数値の集め方から具体的な計算、設定後の見直しまでを中小企業の在庫・発注担当者向けに解説します。</p>
 
       <h2>発注点とは</h2>
       <p>発注点（はっちゅうてん）とは、<strong>「在庫がこの数量まで減ったら発注する」という基準になる在庫数</strong>のことです。発注点在庫・発注点数量とも呼ばれます。</p>
@@ -226,7 +226,7 @@
         <p><strong>ひとことで言うと：</strong>発注点は「在庫切れになる前に発注をかけるための合図ライン」です。在庫が発注点を下回ったら発注する、と決めておけば、発注のタイミングで迷わなくなります。</p>
       </div>
 
-      <h2>発注点の計算方法</h2>
+      <h2 id="calculation">発注点の計算方法</h2>
       <p>発注点は、次の式で求めるのが基本です。</p>
 
       <div class="formula">
@@ -252,6 +252,27 @@
       </table>
 
       <p>この場合、在庫が70個まで減ったら発注する、と決めておけば、入荷を待つ5日間で50個（10個×5日）を消費しても、安全在庫の20個が手元に残る計算になります。</p>
+
+      <h3>使用実績から計算する例</h3>
+      <p>1日あたりの使用量が分からない場合は、直近1か月など一定期間の使用実績から求めます。たとえば30日間で240個使った品目なら、1日あたりの平均使用量は8個です。入荷まで7日、安全在庫を24個とすると、次の計算になります。</p>
+      <table class="calc">
+        <tr><th>30日間の使用量</th><td>240 個</td></tr>
+        <tr><th>1日あたりの平均使用量</th><td>240÷30＝8 個</td></tr>
+        <tr><th>調達リードタイム</th><td>7 日</td></tr>
+        <tr><th>安全在庫</th><td>24 個</td></tr>
+        <tr><th>発注点（8×7＋24）</th><td>80 個</td></tr>
+      </table>
+
+      <h2 id="how-to-set">発注点を決める4つの手順</h2>
+      <ol>
+        <li><strong>使用実績を集める：</strong>直近1〜3か月の出庫数や使用数を確認し、1日あたりの平均使用量を求めます。</li>
+        <li><strong>調達リードタイムを確認する：</strong>注文日から入荷日までの日数を仕入先や過去の発注履歴から確認します。</li>
+        <li><strong>安全在庫を決める：</strong>使用量の増加、納期遅延、仕入先の休業日を考慮して予備の数量を設定します。</li>
+        <li><strong>計算結果を初期値として運用する：</strong>発注点を登録し、欠品や余剰が起きていないかを見ながら調整します。</li>
+      </ol>
+      <div class="callout">
+        <p><strong>最初から完璧な数値を求める必要はありません。</strong>計算した発注点を初期値として使い、実際の使用量と納期を記録しながら修正する方が、現場に合った基準へ早く近づけられます。</p>
+      </div>
 
       <h2>安全在庫の考え方</h2>
       <p>安全在庫は、「使用量が予想より増えた」「納期が遅れた」といったブレに備えるための予備在庫です。多く持てば欠品しにくくなりますが、その分だけ在庫を抱えるコストや保管スペースが増えます。</p>
@@ -279,9 +300,20 @@
       </ul>
       <p>つまり、発注点管理を機能させるには、<strong>在庫数を正しく保つこと</strong>と、<strong>発注点を下回ったら自動で知らせる仕組み</strong>の両方が必要になります。</p>
 
+      <h3 id="review-checklist">発注点の見直しチェックリスト</h3>
+      <ul>
+        <li><strong>欠品が起きた:</strong> 平均使用量、リードタイム、安全在庫のどれが想定を超えたか確認します。</li>
+        <li><strong>在庫が余り続けている:</strong> 最近の使用量が減っていないか、発注点や安全在庫が高すぎないか確認します。</li>
+        <li><strong>納期が変わった:</strong> 仕入先や配送条件の変更に合わせて、調達リードタイムを更新します。</li>
+        <li><strong>季節や生産計画が変わる:</strong> 繁忙期・閑散期を同じ発注点で管理せず、期間ごとに見直します。</li>
+        <li><strong>帳簿と実在庫が合わない:</strong> 発注点を調整する前に、入出庫の記録方法と棚卸差異を確認します。</li>
+      </ul>
+
       <h2>発注点管理を仕組みで回すには</h2>
       <p>在庫管理システムを使えば、品目ごとに発注点（最小在庫数）を設定し、在庫が発注点を下回ったタイミングで担当者に自動で通知する、という運用ができます。在庫数はスマホやバーコードでその場で更新できるため、在庫表のズレも起きにくくなります。</p>
       <p>クラウド在庫管理システム「<a href="/stocker-biz/">Stocker Biz</a>」では、品目ごとに最小在庫数を設定でき、発注点を下回ると<a href="/features/reorder-alert/">発注依頼として通知</a>します。在庫の更新は<a href="/features/barcode-inventory/">バーコードスキャン</a>に対応し、消耗品・備品・補修部品の発注点管理を、感覚ではなく仕組みで回せます。</p>
+
+      <aside class="callout author-note"><p><strong>執筆：</strong>Yahimaro Apps（Stocker Biz運営）。製造業で品質保証・品質管理・製造・設備・生産管理に10年以上携わった経験をもとに、中小企業で無理なく続けられる在庫・発注管理を解説しています。</p></aside>
 
     </div>
   </article>

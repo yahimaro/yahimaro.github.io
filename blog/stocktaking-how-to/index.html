@@ -22,31 +22,31 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
   <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <title>棚卸のやり方とは？手順・数え方・効率化のコツをわかりやすく解説｜Stocker Biz</title>
-  <meta name="description" content="棚卸（たなおろし）のやり方を、中小企業の在庫管理担当者向けにわかりやすく解説。棚卸の意味と目的、基本の手順、在庫を早く正確に数えるコツ（数え方）、棚卸差異が起きる原因、バーコード・スマホアプリでの効率化までまとめました。">
+  <title>棚卸しを早く数える方法｜正確に進める手順と効率化のコツ</title>
+  <meta name="description" content="棚卸しを早く正確に数える方法を解説。順路・単位・役割・入出庫の止め方と、作業前・実施中・完了後に使えるチェックリストを紹介します。">
   <link rel="canonical" href="https://yahimaro.com/blog/stocktaking-how-to/">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Stocker Biz">
-  <meta property="og:title" content="棚卸のやり方とは？手順・数え方・効率化のコツをわかりやすく解説">
-  <meta property="og:description" content="棚卸の意味と目的、基本の手順、棚卸差異が起きる原因と減らすコツ、バーコードでの効率化までを解説します。">
+  <meta property="og:title" content="棚卸しを早く数える方法｜正確に進める手順と効率化のコツ">
+  <meta property="og:description" content="棚卸しを早く正確に進める数え方と、作業前・実施中・完了後に使えるチェックリストを紹介します。">
   <meta property="og:url" content="https://yahimaro.com/blog/stocktaking-how-to/">
   <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="棚卸のやり方とは？手順・数え方・効率化のコツをわかりやすく解説">
-  <meta name="twitter:description" content="棚卸の意味と目的、基本の手順、棚卸差異が起きる原因と減らすコツ、効率化の方法を解説します。">
+  <meta name="twitter:title" content="棚卸しを早く数える方法｜正確に進める手順と効率化のコツ">
+  <meta name="twitter:description" content="棚卸しを早く正確に進める数え方と、作業前・実施中・完了後に使えるチェックリストを紹介します。">
   <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "棚卸のやり方とは？手順・数え方・効率化のコツをわかりやすく解説",
-    "description": "棚卸の意味と目的、基本の手順、棚卸差異が起きる原因と減らすコツ、バーコードでの効率化までを解説します。",
+    "headline": "棚卸しを早く数える方法｜正確に進める手順と効率化のコツ",
+    "description": "棚卸しを早く正確に数える方法と、作業前・実施中・完了後に使えるチェックリストを紹介します。",
     "mainEntityOfPage": "https://yahimaro.com/blog/stocktaking-how-to/",
     "inLanguage": "ja",
     "datePublished": "2026-06-25",
-    "dateModified": "2026-07-30",
+    "dateModified": "2026-09-12",
     "image": "https://yahimaro.com/images/stocker-biz_icon.png",
     "author": { "@type": "Organization", "name": "Yahimaro Apps" },
     "publisher": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" }
@@ -59,7 +59,7 @@
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
       { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
-      { "@type": "ListItem", "position": 3, "name": "棚卸のやり方", "item": "https://yahimaro.com/blog/stocktaking-how-to/" }
+      { "@type": "ListItem", "position": 3, "name": "棚卸しを早く数える方法", "item": "https://yahimaro.com/blog/stocktaking-how-to/" }
     ]
   }
   </script>
@@ -156,6 +156,10 @@
     .steps li { position: relative; padding: 0 0 18px 52px; margin-bottom: 0; }
     .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 0; width: 34px; height: 34px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95rem; }
     .steps li strong { display: block; color: var(--primary); margin-bottom: 2px; }
+    .checklist-table { border-collapse: collapse; display: block; margin: 18px 0 28px; overflow-x: auto; width: 100%; }
+    .checklist-table th, .checklist-table td { border: 1px solid var(--border); min-width: 150px; padding: 12px; text-align: left; vertical-align: top; }
+    .checklist-table th { background: var(--primary); color: #fff; font-size: 0.88rem; }
+    .checklist-table td { color: #2a3a4a; font-size: 0.92rem; line-height: 1.7; }
     table.calc { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 20px 0; font-size: 0.95rem; }
     table.calc th, table.calc td { padding: 12px 16px; border-bottom: 1px solid var(--border); text-align: left; }
     table.calc th { background: #e8f0f8; color: var(--primary); font-weight: 700; width: 50%; }
@@ -226,20 +230,68 @@
       <span class="breadcrumb-sep">/</span>
       <a href="/blog/">記事</a>
       <span class="breadcrumb-sep">/</span>
-      <span>棚卸のやり方</span>
+      <span>棚卸しを早く数える方法</span>
     </div>
   </div>
 
   <div class="hero">
     <span class="hero-tag">記事</span>
-    <h1>棚卸のやり方とは？<br>手順・効率化のコツをわかりやすく解説</h1>
-    <p class="hero-sub">「棚卸に時間がかかる」「帳簿と実数が合わない」を解決するために。棚卸の意味と基本の手順、差異を減らすコツ、効率化の方法までをまとめました。</p>
+    <h1>棚卸しを早く数える方法<br>正確に進める手順と効率化のコツ</h1>
+    <p class="hero-sub">「棚卸に時間がかかる」「数えるたびに在庫が合わない」を減らすために、数え方の基本と作業チェックリストをまとめました。</p>
   </div>
 
   <article class="article">
     <div class="article-inner">
 
-      <p class="lead">棚卸は、在庫管理の基本でありながら、多くの現場で「時間がかかる」「数が合わない」と負担に感じられている作業です。この記事では、棚卸の意味と目的、基本の手順、棚卸差異を減らすコツ、効率化の方法を、中小企業の在庫管理担当者向けにやさしく解説します。</p>
+      <p class="lead">棚卸しを早く正確に終えるには、数え始める前の準備と、現場全体で数え方を統一することが重要です。この記事では、棚卸の基本手順に加え、数え漏れ・二重カウント・単位間違いを防ぐ方法を、中小企業の在庫管理担当者向けに解説します。</p>
+
+      <div class="callout">
+        <p><strong>棚卸しを早く数える5つのポイント：</strong>①棚を整理して数える順路を決める、②箱・個などの単位を統一する、③数える人と記録する人を分ける、④棚卸中の入出庫を止める、⑤バーコードやスマホで転記をなくす。この5点を作業前に決めておくと、数え直しと集計の手間を減らせます。</p>
+      </div>
+
+      <h2 id="workflow-checklist">棚卸作業チェックリスト</h2>
+      <p>棚卸しの速さは、当日のカウントだけでなく、作業前の準備と完了後の確認で決まります。次の項目を担当者全員で共有してから始めてください。</p>
+      <table class="checklist-table">
+        <thead>
+          <tr>
+            <th scope="col">タイミング</th>
+            <th scope="col">確認すること</th>
+            <th scope="col">目的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">作業前</th>
+            <td>対象範囲、基準時点、担当エリアを決める</td>
+            <td>担当漏れと重複作業を防ぐ</td>
+          </tr>
+          <tr>
+            <th scope="row">作業前</th>
+            <td>同じ品目をまとめ、箱・個などの単位と入り数を確認する</td>
+            <td>探す時間と単位間違いを減らす</td>
+          </tr>
+          <tr>
+            <th scope="row">実施中</th>
+            <td>棚の左上から右へなど、一方向の順路で数える</td>
+            <td>数え漏れと二重カウントを防ぐ</td>
+          </tr>
+          <tr>
+            <th scope="row">実施中</th>
+            <td>数え終わった棚に印を付け、棚卸中の入出庫を止める</td>
+            <td>進捗を明確にし、基準時点をそろえる</td>
+          </tr>
+          <tr>
+            <th scope="row">完了後</th>
+            <td>帳簿との差異が大きい品目だけを再確認する</td>
+            <td>全品目を数え直す手間を避ける</td>
+          </tr>
+          <tr>
+            <th scope="row">完了後</th>
+            <td>差異の原因を記録し、在庫数と保管場所を修正する</td>
+            <td>次回も同じ差異が起きるのを防ぐ</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2>棚卸とは</h2>
       <p>棚卸（たなおろし）とは、<strong>実際に在庫を数えて、手元にあるモノの数量と金額を確定させる作業</strong>のことです。帳簿やシステム上の在庫数（帳簿在庫）と、実際に倉庫や棚にある在庫数（実在庫）を照らし合わせ、両者を一致させることを目的に行います。</p>
@@ -284,7 +336,7 @@
       </ul>
       <p>これらの多くは、<strong>日々の在庫記録が正確であれば防げるもの</strong>です。つまり、棚卸差異の大きさは、普段の在庫管理の精度をそのまま映し出しているとも言えます。</p>
 
-      <h2>棚卸の数え方｜早く正確に数えるコツ</h2>
+      <h2 id="count-fast">棚卸の数え方｜早く正確に数えるコツ</h2>
       <p>棚卸に時間がかかる、数えるたびに数が合わない——その多くは「数え方」に原因があります。ここでは、在庫を<strong>早く・正確に数える（カウントする）ための基本のコツ</strong>を整理します。特別な道具がなくても実践できるものばかりです。</p>
 
       <h3>数える順路を決めて、一方向に進む</h3>
@@ -325,6 +377,8 @@
       <h2>棚卸を仕組みで楽にするには</h2>
       <p>在庫管理システムを使えば、日々の入出庫をスマホやバーコードでその場で記録できるため、帳簿在庫と実在庫のズレそのものが小さくなります。棚卸のときも、現物のバーコードを読み取って実数を入力すれば、帳簿との差異が自動で見え、転記や集計の手間がかかりません。</p>
       <p>クラウド在庫管理システム「<a href="/stocker-biz/">Stocker Biz</a>」は、<a href="/features/barcode-inventory/">バーコードスキャン</a>での在庫操作に対応し、棚卸もその場で数量を記録できます。日々の在庫を正確に保てるため、棚卸差異を抑えながら、<a href="/features/reorder-alert/">発注漏れの防止</a>まで一つの仕組みで回せます。</p>
+
+      <aside class="callout author-note"><p><strong>執筆：</strong>Yahimaro Apps（Stocker Biz運営）。製造業で品質保証・品質管理・製造・設備・生産管理に10年以上携わった経験をもとに、中小企業で無理なく続けられる在庫・発注管理を解説しています。</p></aside>
 
     </div>
   </article>
