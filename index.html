@@ -305,6 +305,9 @@
     }
     .hero-copy strong { color: var(--ink); }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .choice-button { min-width: 238px; }
+    .choice-copy { display: grid; gap: 2px; text-align: left; line-height: 1.2; }
+    .choice-copy small { font-size: .65rem; font-weight: 750; letter-spacing: .04em; opacity: .78; }
     .button {
       min-height: 52px;
       padding: 0 22px;
@@ -704,10 +707,10 @@
             必要な機能を、無理なく使い続けられるかたちで届けます。
           </p>
           <div class="hero-actions">
-            <a class="button orange" href="/stocker/">家庭向け Stocker <span class="arrow">→</span></a>
-            <a class="button dark" href="/stocker-biz/">法人向け Stocker Biz <span class="arrow">→</span></a>
+            <a class="button orange choice-button" href="/stocker/"><span class="choice-copy"><small>家庭・家族で使う</small><span>Stocker</span></span><span class="arrow">→</span></a>
+            <a class="button dark choice-button" href="/stocker-biz/"><span class="choice-copy"><small>店舗・チームで使う</small><span>Stocker Biz</span></span><span class="arrow">→</span></a>
           </div>
-          <p class="hero-note">どちらも iOS・Android に対応</p>
+          <p class="hero-note">家庭・家族なら Stocker ／ 店舗・チームなら Stocker Biz</p>
         </div>
 
         <div class="hero-stage" aria-label="StockerとStocker Bizの画面イメージ">
