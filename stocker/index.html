@@ -263,6 +263,12 @@
     }
     .hero-business-link { margin: 18px auto 0; color: var(--muted); font-size: .83rem; }
     .hero-business-link a { color: var(--dark); font-weight: 800; }
+    .biz-bridge { padding: 0 24px 48px; background: #fff8ed; }
+    .biz-bridge-inner { max-width: 760px; margin: 0 auto; padding: 25px 28px; border: 1px solid #cde0f3; border-radius: 16px; background: #f6fbff; }
+    .biz-bridge-kicker { margin: 0 0 5px; color: #1d6fce; font-size: .7rem; font-weight: 850; letter-spacing: .1em; }
+    .biz-bridge h2 { margin: 0; color: var(--dark); font-size: clamp(1.2rem, 2.8vw, 1.55rem); line-height: 1.45; }
+    .biz-bridge p { margin: 8px 0 16px; color: var(--muted); font-size: .9rem; line-height: 1.75; }
+    .biz-bridge a { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border-radius: 8px; color: #fff; background: #1d6fce; font-size: .86rem; font-weight: 800; text-decoration: none; }
 
     /* ── INVITE ── */
     .invite-panel {
@@ -786,7 +792,16 @@
       </a>
     </div>
     <p class="hero-note">iOS · Android 対応 · 無料ダウンロード</p>
-    <p class="hero-business-link">店舗・チームで在庫と発注を管理する方は、<a href="/stocker-biz/">Stocker Bizをご覧ください →</a></p>
+    <p class="hero-business-link">店舗・チームで在庫と発注を管理する方は、<a href="/stocker-biz/" data-biz-cta="stocker_hero_link">Stocker Bizをご覧ください →</a></p>
+  </section>
+
+  <section class="biz-bridge" aria-labelledby="biz-bridge-title">
+    <div class="biz-bridge-inner">
+      <p class="biz-bridge-kicker">FOR BUSINESS &amp; TEAM</p>
+      <h2 id="biz-bridge-title">店舗・倉庫・チームで管理するなら、Stocker Biz。</h2>
+      <p>複数人での在庫共有、バーコードでの更新、発注漏れの防止をひとつの仕組みで進められます。</p>
+      <a href="/stocker-biz/" data-biz-cta="stocker_business_card">Stocker Bizの在庫・発注管理を見る →</a>
+    </div>
   </section>
 
   <!-- v1.5.0 FEATURE BANNER -->
@@ -1211,5 +1226,6 @@
     <p>&copy; 2026 Yahimaro Apps. All rights reserved.</p>
   </footer>
 
+  <script defer src="/js/stocker-biz-analytics.js"></script>
 </body>
 </html>

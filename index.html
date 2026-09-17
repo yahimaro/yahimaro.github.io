@@ -708,7 +708,7 @@
           </p>
           <div class="hero-actions">
             <a class="button orange choice-button" href="/stocker/"><span class="choice-copy"><small>家庭・家族で使う</small><span>Stocker</span></span><span class="arrow">→</span></a>
-            <a class="button dark choice-button" href="/stocker-biz/"><span class="choice-copy"><small>店舗・チームで使う</small><span>Stocker Biz</span></span><span class="arrow">→</span></a>
+            <a class="button dark choice-button" href="/stocker-biz/" data-biz-cta="home_hero_choice"><span class="choice-copy"><small>店舗・チームで使う</small><span>Stocker Biz</span></span><span class="arrow">→</span></a>
           </div>
           <p class="hero-note">家庭・家族なら Stocker ／ 店舗・チームなら Stocker Biz</p>
         </div>
@@ -919,6 +919,7 @@
     </div>
   </footer>
 
+  <script defer src="/js/stocker-biz-analytics.js"></script>
   <script>
     const siteNav = document.getElementById('site-nav');
     const updateNav = () => siteNav.classList.toggle('is-scrolled', window.scrollY > 16);

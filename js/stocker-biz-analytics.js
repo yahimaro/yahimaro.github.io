@@ -54,6 +54,13 @@
     const href = link.href || "";
     const params = eventParams(link);
 
+    if (link.dataset.bizCta) {
+      sendEvent("biz_internal_cta_click", {
+        ...params,
+        cta_placement: link.dataset.bizCta
+      });
+    }
+
     if (href.includes("stockerbiz.yahimaro.com/login")) {
       sendEvent("login_click", params);
     } else if (href.includes("stockerbiz.yahimaro.com/signup")) {
