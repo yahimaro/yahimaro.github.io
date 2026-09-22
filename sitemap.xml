@@ -247,6 +247,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://yahimaro.com/taskmemo/support.html</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://yahimaro.com/stocker-biz/terms.html</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>yearly</changefreq>
