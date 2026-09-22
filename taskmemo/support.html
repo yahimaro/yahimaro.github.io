@@ -63,16 +63,21 @@
     dl { font-size: 14px; }
     dt { font-weight: 700; color: var(--dark); margin-top: 10px; }
     dd { margin-left: 0; margin-bottom: 4px; }
+    .en {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
     .price-note {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 12px;
+      margin-bottom: 4px;
     }
     .price-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px;
-      margin-top: 8px;
+      margin-top: 12px;
     }
     .price-card {
       background: #fff8ed;
@@ -105,70 +110,75 @@
   <a class="skip-link" href="#main">本文へ移動</a>
   <header>
     <div class="container">
-      <h1>TaskMemo — 開発を応援</h1>
+      <h1>TaskMemo — 開発を応援 / Support development</h1>
       <p>Windows・Android・iPhone向け ローカル優先メモ・TODOアプリ</p>
+      <p class="en" style="color:#fff; opacity:0.9;">A local-first memo &amp; TODO app for Windows, Android, and iPhone</p>
     </div>
   </header>
 
   <main id="main" class="container">
 
     <div class="intro">
-      TaskMemoは無料で提供しているメモ・TODOアプリです。開発の継続を応援していただける方から、100円・300円・500円・1,000円（いずれも税込）のご支援を受け付けています。
+      <p>TaskMemoは無料で提供しているメモ・TODOアプリです。開発の継続を応援していただける方から、100円・300円・500円・1,000円（いずれも税込）のご支援を受け付けています。</p>
+      <p class="en">TaskMemo is provided free of charge. If you'd like to support its continued development, you can make a one-time contribution of 100, 300, 500, or 1,000 yen (tax included).</p>
     </div>
 
     <section>
-      <h2>TaskMemoについて</h2>
+      <h2>TaskMemoについて / About TaskMemo</h2>
       <p>TaskMemoは、仕事や日々の作業で発生するメモとTODOを素早く記録・整理し、Windows・Android・iPhoneで確認できる個人向けアプリです。分類・優先度・期限の管理、複数端末間でのGoogle Drive同期に対応しています。</p>
       <p style="margin-top:8px;">利用にあたって料金は発生しません。同期機能を使う場合もGoogleアカウントでのログインのみで、追加の支払いは不要です。</p>
+      <p class="en" style="margin-top:8px;">TaskMemo helps you quickly capture and organize memos and TODOs from work and daily life, accessible on Windows, Android, and iPhone. It supports categories, priority, due dates, and syncing across devices via your own Google Drive.</p>
+      <p class="en">The app itself is free to use, including sync, with no additional payment required.</p>
     </section>
 
     <section>
-      <h2>ご支援について</h2>
+      <h2>ご支援について / Support</h2>
       <p>TaskMemoは今後も無料で提供を続けます。開発・保守の継続を応援していただける方は、以下の金額から選んでご支援いただけます。ご支援は開発者本人（Yahimaro Apps）が運営するStripeの決済ページで承ります。</p>
-      <p style="margin-top:8px;">これは完全に任意のご支援であり、機能の追加やロック解除など、支援の有無による違いは一切ありません。</p>
+      <p class="en" style="margin-top:8px;">TaskMemo will remain free. If you'd like to support its ongoing development and maintenance, you can choose one of the amounts below. Contributions are processed through Stripe, operated directly by the developer (Yahimaro Apps).</p>
 
-      <p class="price-note">価格はすべて税込みです。クレジットカード、PayPayほか、Stripeが提供する決済手段からお選びいただけます（利用可能な決済手段は決済画面でご確認ください）。</p>
+      <p class="price-note" style="margin-top:12px;">価格はすべて税込みです。クレジットカード、Apple Pay、Linkでお支払いいただけます。</p>
+      <p class="en price-note">All prices include tax. Payment is available via credit card, Apple Pay, or Link.</p>
       <div class="price-grid">
         <div class="price-card">
           <p class="amount">100円</p>
-          <p class="tax">税込</p>
-          <a class="btn" href="https://buy.stripe.com/REPLACE_ME_100" target="_blank" rel="noopener">支援する</a>
+          <p class="tax">税込 / tax included</p>
+          <a class="btn" href="https://donate.stripe.com/9B6fZh5qhdq02ipeXzaZi00" target="_blank" rel="noopener">支援する<br>Support</a>
         </div>
         <div class="price-card">
           <p class="amount">300円</p>
-          <p class="tax">税込</p>
-          <a class="btn" href="https://buy.stripe.com/REPLACE_ME_300" target="_blank" rel="noopener">支援する</a>
+          <p class="tax">税込 / tax included</p>
+          <a class="btn" href="https://donate.stripe.com/14A00j6ul3Pq2ip5mZaZi01" target="_blank" rel="noopener">支援する<br>Support</a>
         </div>
         <div class="price-card">
           <p class="amount">500円</p>
-          <p class="tax">税込</p>
-          <a class="btn" href="https://buy.stripe.com/REPLACE_ME_500" target="_blank" rel="noopener">支援する</a>
+          <p class="tax">税込 / tax included</p>
+          <a class="btn" href="https://donate.stripe.com/dRm14ndWNadOe175mZaZi02" target="_blank" rel="noopener">支援する<br>Support</a>
         </div>
         <div class="price-card">
           <p class="amount">1,000円</p>
-          <p class="tax">税込</p>
-          <a class="btn" href="https://buy.stripe.com/REPLACE_ME_1000" target="_blank" rel="noopener">支援する</a>
+          <p class="tax">税込 / tax included</p>
+          <a class="btn" href="https://donate.stripe.com/dRm7sLcSJ2Lm2ipdTvaZi03" target="_blank" rel="noopener">支援する<br>Support</a>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>提供者情報</h2>
+      <h2>提供者情報 / Provider information</h2>
       <dl>
-        <dt>アプリ名</dt>
+        <dt>アプリ名 / App name</dt>
         <dd>TaskMemo</dd>
-        <dt>提供者</dt>
-        <dd>Yahimaro Apps（個人開発）</dd>
-        <dt>お問い合わせ</dt>
+        <dt>提供者 / Provider</dt>
+        <dd>Yahimaro Apps（個人開発 / independent developer）</dd>
+        <dt>お問い合わせ / Contact</dt>
         <dd><a href="mailto:support@yahimaro.com">support@yahimaro.com</a></dd>
       </dl>
     </section>
 
     <section>
-      <h2>関連リンク</h2>
+      <h2>関連リンク / Related links</h2>
       <ul>
-        <li><a href="/taskmemo/privacy.html">プライバシーポリシー</a></li>
-        <li><a href="/taskmemo/terms.html">利用規約</a></li>
+        <li><a href="/taskmemo/privacy.html">プライバシーポリシー / Privacy Policy</a></li>
+        <li><a href="/taskmemo/terms.html">利用規約 / Terms of Service</a></li>
       </ul>
     </section>
 
