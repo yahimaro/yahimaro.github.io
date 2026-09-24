@@ -75,7 +75,12 @@
       href.includes("apps.apple.com/jp/app/id6782330516") ||
       href.includes("com.yahimaro.stockerbiz.app")
     ) {
-      sendEvent("app_store_click", params);
+      sendEvent("app_store_click", { ...params, product: "stocker_biz" });
+    } else if (
+      href.includes("apps.apple.com/jp/app/homestocker/id6762469486") ||
+      href.includes("com.yahimaro.stocker.app")
+    ) {
+      sendEvent("app_store_click", { ...params, product: "stocker" });
     }
   }
 
