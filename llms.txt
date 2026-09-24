@@ -1,0 +1,44 @@
+# Yahimaro Apps
+
+> Yahimaro Apps は、個人・家庭向けの在庫管理アプリ「Stocker」と、中小企業・店舗向けのクラウド在庫管理システム「Stocker Biz」を開発しています。バーコードでの在庫更新、発注点を下回った際の自動通知、発注状況の共有など、現場の「切らす」「発注忘れ」「二重発注」を仕組みで防ぐ機能を提供します。
+
+## Products
+
+- [Stocker](https://yahimaro.com/stocker/): 家庭向けの在庫管理・買い物リストアプリ。バーコードで商品情報を自動入力し、賞味期限や在庫を家族で共有できます。
+- [Stocker Biz](https://yahimaro.com/stocker-biz/): 中小企業・店舗向けのクラウド在庫管理・発注管理システム。複数拠点/部署の在庫を一元管理し、在庫が発注点を下回ると担当者へ自動通知します。
+- [Stocker Bizの料金](https://yahimaro.com/stocker-biz/pricing.html): プランと料金体系。
+- [Stocker Biz 導入ガイド](https://yahimaro.com/stocker-biz/guide/): 導入手順とセットアップ方法。
+
+## Guides: 在庫管理・発注管理の基礎知識
+
+- [副資材と消耗品の違いとは？対義語・分類基準を比較表で解説](https://yahimaro.com/blog/mro-consumables-management/): 副資材・消耗品・備品・直接材・MROの分類基準の違いと、工場での欠品防止策。
+- [発注ミスの原因と対策｜発注漏れ・重複発注を防ぐチェックリスト](https://yahimaro.com/blog/prevent-missed-orders/): 発注ミス・発注漏れ・二重発注が起きる原因と、仕組みで防ぐ具体策。
+- [消耗品の在庫管理のやり方](https://yahimaro.com/blog/consumables-inventory-method/): 消耗品の在庫管理を始める6ステップ。
+- [発注点とは？決め方と計算方法](https://yahimaro.com/blog/reorder-point/): 発注点・安全在庫の考え方と計算方法。
+- [棚卸のやり方](https://yahimaro.com/blog/stocktaking-how-to/): 棚卸の基本手順と、早く正確に数えるコツ。
+- [バーコード棚卸のやり方](https://yahimaro.com/blog/barcode-stocktaking/): スマホとバーコードで棚卸を行う手順。
+- [在庫管理アプリの選び方](https://yahimaro.com/blog/how-to-choose-inventory-app/): アプリ選定で比較すべき7つのポイント。
+- [Excel在庫管理の限界](https://yahimaro.com/blog/excel-inventory-limit/): Excel管理で起きる課題と、システム化を検討すべきタイミング。
+- [予備品リストの作り方](https://yahimaro.com/blog/spare-parts-list/): 設備保全用の予備品リストに必要な項目と作成手順。
+
+## Use cases
+
+- [消耗品・備品の在庫管理](https://yahimaro.com/use-cases/consumables-inventory/)
+- [総務の備品管理](https://yahimaro.com/use-cases/office-supplies/)
+- [製造業の補修部品・消耗品管理](https://yahimaro.com/use-cases/manufacturing-parts/)
+- [設備保全・予備品管理](https://yahimaro.com/use-cases/repair-parts/)
+- [飲食店の備品・消耗品管理](https://yahimaro.com/use-cases/restaurant-supplies-inventory/)
+
+## Features
+
+- [発注漏れ防止（最小在庫アラート）](https://yahimaro.com/features/reorder-alert/)
+- [バーコード在庫管理](https://yahimaro.com/features/barcode-inventory/)
+
+## Equipment inspection (開発中サービスの情報発信)
+
+- [設備点検ガイド](https://yahimaro.com/inspection/): 設備点検の基礎知識、点検の種類、デジタル化に関する記事一覧。
+
+## Optional
+
+- [法人のお問い合わせ](https://yahimaro.com/stocker-biz/contact.html)
+- [Stockerサポート](https://yahimaro.com/support)
