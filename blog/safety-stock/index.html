@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XY0Q5ZJVQ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XY0Q5ZJVQ3');
+  </script>
+  <!-- LINEヤフー広告 サイトジェネラルタグ -->
+  <script async src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+  <script>
+    window.yjDataLayer = window.yjDataLayer || [];
+    function ytag() { yjDataLayer.push(arguments); }
+    ytag({ "type": "ycl_cookie", "config": { "ycl_use_non_cookie_storage": true } });
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>安全在庫とは？計算方法と決め方をわかりやすく解説</title>
+  <meta name="description" content="安全在庫は、需要のブレや納期遅延に備える予備の在庫です。簡易的な決め方から、安全係数を使った計算式、消耗品・副資材での考え方まで、中小企業の在庫担当者向けに解説します。">
+  <link rel="canonical" href="https://yahimaro.com/blog/safety-stock/">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Stocker Biz">
+  <meta property="og:title" content="安全在庫とは？計算方法と決め方をわかりやすく解説">
+  <meta property="og:description" content="需要のブレや納期遅延に備える安全在庫の考え方と、簡易的な決め方・計算式での求め方を解説します。">
+  <meta property="og:url" content="https://yahimaro.com/blog/safety-stock/">
+  <meta property="og:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="安全在庫とは？計算方法と決め方をわかりやすく解説">
+  <meta name="twitter:description" content="需要のブレや納期遅延に備える安全在庫の考え方と、簡易的な決め方・計算式での求め方を解説します。">
+  <meta name="twitter:image" content="https://yahimaro.com/images/og-stocker-biz.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "安全在庫とは？計算方法と決め方をわかりやすく解説",
+    "description": "安全在庫は、需要のブレや納期遅延に備える予備の在庫です。簡易的な決め方から、安全係数を使った計算式、消耗品・副資材での考え方まで、中小企業の在庫担当者向けに解説します。",
+    "mainEntityOfPage": "https://yahimaro.com/blog/safety-stock/",
+    "inLanguage": "ja",
+    "datePublished": "2026-09-24",
+    "dateModified": "2026-09-24",
+    "image": "https://yahimaro.com/images/stocker-biz_icon.png",
+    "author": { "@type": "Organization", "name": "Yahimaro Apps" },
+    "publisher": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Stocker Biz", "item": "https://yahimaro.com/stocker-biz/" },
+      { "@type": "ListItem", "position": 2, "name": "記事", "item": "https://yahimaro.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "安全在庫とは", "item": "https://yahimaro.com/blog/safety-stock/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "安全在庫とは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "安全在庫とは、需要（使用量）のばらつきや納期の遅れが起きても欠品しないように、あらかじめ余分に持っておく予備の在庫のことです。発注点の計算にも組み込んで使います。" }
+      },
+      {
+        "@type": "Question",
+        "name": "安全在庫はどう計算しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "簡易的には「リードタイム数日分の使用量」を目安にします。より精度を高めたい場合は「安全在庫＝安全係数×使用量の標準偏差×√調達リードタイム」という統計的な計算式を使います。" }
+      },
+      {
+        "@type": "Question",
+        "name": "安全在庫と発注点はどう違いますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "発注点は「発注するタイミングの基準」で、安全在庫はその発注点の中に含まれる「欠品を防ぐための予備分」です。発注点＝平均使用量×リードタイム＋安全在庫、という関係になります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "安全在庫が多すぎるとどうなりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "欠品はしにくくなりますが、保管スペースや在庫コストが増え、消耗品では劣化や期限切れのリスクも高まります。欠品時の影響と保有コストのバランスで決めることが大切です。" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --primary:   #1e3a5f;
+      --accent:    #1d6fce;
+      --accent-lt: #2d84e8;
+      --surface:   #ffffff;
+      --bg:        #f0f4f9;
+      --bg-dark:   #0d1f35;
+      --border:    #c8d8eb;
+      --text:      #0f1f2e;
+      --muted:     #5a7080;
+      --green:     #16a34a;
+      --coming:    #d97706;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+    a { color: var(--accent); }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(14, 31, 53, 0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 56px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 24px; height: 24px; border-radius: 6px; flex-shrink: 0; display: block; object-fit: cover; }
+    .nav-logo-text { font-size: 1rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+    .nav-logo-text span { color: var(--accent-lt); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.82rem; color: rgba(255,255,255,0.65); text-decoration: none; font-weight: 600; letter-spacing: 0.02em; transition: color 0.15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-badge { font-size: 0.7rem; font-weight: 700; color: var(--coming); background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.35); padding: 2px 10px; border-radius: 999px; letter-spacing: 0.06em; }
+    @media (max-width: 640px) { nav { padding: 0 20px; } .nav-links { gap: 16px; } .nav-links li:not(:nth-last-child(-n+2)) { display: none; } }
+    .breadcrumb { background: var(--surface); border-bottom: 1px solid var(--border); }
+    .breadcrumb-inner { max-width: 760px; margin: 0 auto; padding: 12px 24px; font-size: 0.78rem; color: var(--muted); }
+    .breadcrumb-inner a { color: var(--muted); text-decoration: none; }
+    .breadcrumb-inner a:hover { color: var(--accent); }
+    .breadcrumb-inner span { color: var(--primary); font-weight: 600; }
+    .breadcrumb-sep { margin: 0 8px; color: var(--border); }
+    .hero { background: linear-gradient(160deg, #0b1a2e 0%, #0d2240 55%, #102d52 100%); padding: 72px 24px 64px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -120px; left: 50%; transform: translateX(-50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(29,111,206,0.18) 0%, transparent 70%); pointer-events: none; }
+    .hero-tag { display: inline-block; background: rgba(29,111,206,0.18); color: var(--accent-lt); font-size: 0.72rem; font-weight: 700; padding: 5px 14px; border-radius: 999px; margin-bottom: 22px; letter-spacing: 0.1em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(1.7rem, 4.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.25; letter-spacing: -0.03em; margin-bottom: 18px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .hero-sub { font-size: clamp(0.98rem, 2.2vw, 1.1rem); color: rgba(255,255,255,0.62); max-width: 620px; margin: 0 auto; line-height: 1.8; }
+    .article { background: var(--surface); }
+    .article-inner { max-width: 760px; margin: 0 auto; padding: 64px 24px; }
+    .article-inner h2 { font-size: clamp(1.35rem, 3vw, 1.7rem); font-weight: 900; color: var(--primary); letter-spacing: -0.02em; line-height: 1.35; margin: 48px 0 16px; }
+    .article-inner h2:first-child { margin-top: 0; }
+    .article-inner h3 { font-size: 1.08rem; font-weight: 800; color: var(--primary); margin: 28px 0 10px; }
+    .article-inner p { font-size: 1rem; color: #2a3a4a; line-height: 1.95; margin-bottom: 16px; }
+    .article-inner ul, .article-inner ol { margin: 0 0 18px 0; padding-left: 22px; }
+    .article-inner li { font-size: 1rem; color: #2a3a4a; line-height: 1.9; margin-bottom: 8px; }
+    .lead { font-size: 1.05rem !important; color: var(--muted) !important; }
+    .callout { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+    .callout p { margin-bottom: 0; }
+    .callout-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+    .formula { background: #0d2240; color: #fff; border-radius: 12px; padding: 24px 28px; margin: 24px 0; text-align: center; }
+    .formula .label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; color: var(--accent-lt); text-transform: uppercase; margin-bottom: 12px; }
+    .formula .eq { font-size: clamp(0.92rem, 2.2vw, 1.15rem); font-weight: 800; line-height: 1.7; }
+    .formula .eq span { color: var(--accent-lt); }
+    table.calc { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 20px 0; font-size: 0.95rem; }
+    table.calc th, table.calc td { padding: 12px 16px; border-bottom: 1px solid var(--border); text-align: left; }
+    table.calc th { background: #e8f0f8; color: var(--primary); font-weight: 700; }
+    table.calc tr:last-child th, table.calc tr:last-child td { border-bottom: none; }
+    .related { background: var(--bg); padding: 64px 24px; }
+    .related-inner { max-width: 760px; margin: 0 auto; }
+    .related-inner h2 { font-size: 1.4rem; font-weight: 900; color: var(--primary); margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .related-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+    .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .related-card .rc-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+    .related-card .rc-title { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-top: 6px; }
+    .related-card .rc-desc { font-size: 0.85rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+    @media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } }
+    .cta-section { background: linear-gradient(135deg, var(--primary) 0%, #0d2240 100%); padding: 72px 24px; text-align: center; }
+    .cta-section h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 900; color: #fff; letter-spacing: -0.03em; margin-bottom: 14px; }
+    .cta-section p { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #fff; text-decoration: none; border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 700; transition: background 0.2s, transform 0.2s; box-shadow: 0 8px 28px rgba(29,111,206,0.4); }
+    .btn-primary:hover { background: var(--accent-lt); transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: rgba(255,255,255,0.8); text-decoration: none; border: 1px solid rgba(255,255,255,0.25); border-radius: 10px; padding: 14px 28px; font-size: 0.95rem; font-weight: 600; transition: border-color 0.2s, color 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+    footer { background: var(--bg-dark); padding: 40px 24px; }
+    .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .footer-logo-mark { width: 22px; height: 22px; border-radius: 5px; display: block; object-fit: cover; }
+    .footer-logo-text { font-size: 0.9rem; font-weight: 800; color: rgba(255,255,255,0.7); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.75); }
+    .footer-copy { width: 100%; font-size: 0.75rem; color: rgba(255,255,255,0.22); margin-top: 4px; }
+  </style>
+  <script defer src="/js/stocker-biz-analytics.js"></script>
+  <link rel="stylesheet" href="/accessibility.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <nav>
+    <a href="/stocker-biz/" class="nav-logo">
+      <img class="nav-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" style="height:auto" alt="" aria-hidden="true">
+      <span class="nav-logo-text">Stocker <span>Biz</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/stocker-biz/#features">機能</a></li>
+      <li><a href="/stocker-biz/#plans">料金</a></li>
+      <li><a href="/stocker-biz/#faq">FAQ</a></li>
+      <li><a href="/stocker-biz/contact.html">お問い合わせ</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/login/start" target="_blank" rel="noopener">ログイン</a></li>
+      <li><a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener"><span class="nav-badge">30日間無料</span></a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+  <div class="breadcrumb">
+    <div class="breadcrumb-inner">
+      <a href="/stocker-biz/">Stocker Biz</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="/blog/">記事</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>安全在庫とは</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <span class="hero-tag">記事</span>
+    <h1>安全在庫とは<br>計算方法と決め方をわかりやすく解説</h1>
+    <p class="hero-sub">発注点だけ決めても、需要のブレや納期遅延には対応できません。欠品を防ぐための「安全在庫」の考え方と、簡易的な決め方から計算式での求め方までを解説します。</p>
+  </div>
+
+  <article class="article">
+    <div class="article-inner">
+
+      <p class="lead">安全在庫とは、需要（使用量）のばらつきや納期の遅れが起きても欠品しないように、あらかじめ余分に持っておく予備の在庫です。発注点の計算式にも組み込んで使う、在庫管理の基本用語のひとつです。この記事では、安全在庫の考え方から、簡易的な決め方、計算式を使った求め方、消耗品・副資材での扱い方までを解説します。</p>
+
+      <h2 id="what">安全在庫とは</h2>
+      <p>安全在庫とは、<strong>発注してから入荷するまでの間に、想定より多く使ってしまったり、納期が遅れたりしても欠品しないように確保しておく予備の在庫</strong>のことです。</p>
+      <p>在庫は、発注してすぐ手元に届くわけではありません。発注から入荷までの「調達リードタイム」の間も在庫は減り続けます。もし使用量がぴったり予測通りで、納期も一切ずれないなら安全在庫は不要ですが、現実には<strong>使用量は日によってばらつき、納期も仕入先の都合で前後します</strong>。そのブレを吸収するためのクッションが安全在庫です。</p>
+
+      <div class="callout">
+        <p><strong>ひとことで言うと：</strong>安全在庫は「予想が外れても欠品しないための保険」です。多く持てば安心ですが、その分だけ在庫コストや保管スペースを消費します。</p>
+      </div>
+
+      <h2 id="why">なぜ安全在庫が必要か</h2>
+      <ul>
+        <li><strong>使用量の変動：</strong>繁忙期・閑散期や、突発的な使用増で、平均使用量から外れることがあります。</li>
+        <li><strong>納期の遅れ：</strong>仕入先の休業、配送遅延、天候など、リードタイムが想定より延びることがあります。</li>
+        <li><strong>記録と実在庫のズレ：</strong>在庫表の更新が遅れていると、見た目の在庫数より実際は少ない、という状態が起こり得ます。</li>
+      </ul>
+      <p>安全在庫がゼロだと、これらのブレがそのまま欠品につながります。逆に安全在庫を厚くしすぎると、過剰在庫によるコスト増や、消耗品では劣化・期限切れのリスクも高まります。<strong>「欠品したときの影響」と「持ちすぎたときのコスト」のバランス</strong>で決めるのが基本です。</p>
+
+      <h2 id="calculation">安全在庫の計算方法</h2>
+      <p>安全在庫の求め方には、簡易的な方法と、統計的な計算式を使う方法があります。</p>
+
+      <h3>簡易的な決め方</h3>
+      <p>厳密な統計計算をしなくても、<strong>「調達リードタイムの数日分の使用量」を目安に安全在庫とする</strong>方法が、中小企業の現場では現実的です。たとえば1日の平均使用量が10個で、リードタイムが5日の品目なら、その半分〜同程度にあたる5〜10日分（50〜100個）を目安に置き、欠品や過剰在庫の状況を見ながら調整していきます。</p>
+
+      <h3>安全係数を使った計算式</h3>
+      <p>より精度を高めたい場合は、需要のばらつき（標準偏差）と、どの程度の欠品許容率にするかを表す「安全係数」を使った、次の計算式があります。</p>
+      <div class="formula">
+        <div class="label">安全在庫の計算式</div>
+        <div class="eq">安全在庫 ＝ <span>安全係数</span> × <span>使用量の標準偏差</span> × <span>√調達リードタイム</span></div>
+      </div>
+      <p>安全係数は、「欠品してもよい確率」をどこまで許容するか（サービス率）によって決まる係数です。よく使われる目安は次のとおりです。</p>
+      <table class="calc">
+        <tr><th>サービス率（欠品しない確率）</th><td>安全係数</td></tr>
+        <tr><th>90%</th><td>約1.28</td></tr>
+        <tr><th>95%</th><td>約1.65</td></tr>
+        <tr><th>99%</th><td>約2.33</td></tr>
+      </table>
+      <p>サービス率を高くする（欠品させたくない）ほど、安全係数は大きくなり、安全在庫も増えます。</p>
+
+      <h3>計算例</h3>
+      <p>1日の使用量の標準偏差が3個、調達リードタイムが4日、サービス率95%（安全係数1.65）とする場合の計算は次のとおりです。</p>
+      <table class="calc">
+        <tr><th>使用量の標準偏差</th><td>3 個</td></tr>
+        <tr><th>調達リードタイム</th><td>4 日</td></tr>
+        <tr><th>安全係数（サービス率95%）</th><td>1.65</td></tr>
+        <tr><th>安全在庫（1.65×3×√4）</th><td>約 9.9 → 10 個</td></tr>
+      </table>
+      <p>標準偏差の算出には過去の使用実績データが必要になるため、データが十分にない場合は、まず簡易的な方法で安全在庫を設定し、記録が蓄積されてから統計的な計算に切り替える、という進め方でもかまいません。</p>
+
+      <h2 id="factors">安全在庫を決める際に考慮すべきこと</h2>
+      <ul>
+        <li><strong>欠品したときの影響の大きさ：</strong>生産や業務が止まる品目ほど、安全在庫を厚めに設定します。</li>
+        <li><strong>需要の変動幅：</strong>使用量が安定している品目は少なめ、変動が大きい品目は多めにします。</li>
+        <li><strong>調達リードタイムの長さ：</strong>リードタイムが長い品目ほど、その間のブレも大きくなるため安全在庫が増えます。</li>
+        <li><strong>代替品の有無：</strong>代替できる品目があれば、安全在庫を少なめにしても対応しやすくなります。</li>
+        <li><strong>保管コストと劣化リスク：</strong>特に消耗品では、持ちすぎによる劣化・期限切れ・保管スペースの圧迫も考慮します。</li>
+      </ul>
+
+      <h2 id="signs">安全在庫が多すぎる・少なすぎるときのサイン</h2>
+      <table class="calc">
+        <tr><th>サイン</th><td>考えられる原因</td></tr>
+        <tr><th>欠品が繰り返し起きる</th><td>安全在庫が不足、または使用量・リードタイムの想定が古い</td></tr>
+        <tr><th>在庫が減らず滞留している</th><td>安全在庫を厚くしすぎ、または使用量が想定より減っている</td></tr>
+        <tr><th>棚卸のたびに廃棄が出る</th><td>消耗品で安全在庫が過剰になり、期限切れ・劣化が発生</td></tr>
+      </table>
+
+      <div class="callout">
+        <div class="callout-label">今すぐ解決したい方へ</div>
+        <p>Stocker Bizなら、品目ごとに発注点（安全在庫を含む最小在庫数）を設定でき、下回った品目を自動で担当者へ通知します。<a href="/features/reorder-alert/" data-biz-cta="safety_stock_mid_article">発注漏れ防止の仕組みを見る</a>、または<a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" data-biz-cta="safety_stock_mid_article_demo">登録不要でデモを試す</a>こともできます。</p>
+      </div>
+
+      <h2 id="reorder-point">安全在庫と発注点の関係</h2>
+      <p>安全在庫は、単独で使うというより<strong>発注点の計算に組み込んで使う</strong>のが基本です。発注点の計算式は次のとおりで、安全在庫はこの式の一部にあたります。</p>
+      <div class="formula">
+        <div class="label">発注点の計算式</div>
+        <div class="eq">発注点 ＝ <span>1日あたりの平均使用量</span> × <span>調達リードタイム</span> ＋ <span>安全在庫</span></div>
+      </div>
+      <p>つまり、<strong>発注点は「いつ発注するかの基準」、安全在庫は「その基準に含める予備分」</strong>という関係です。発注点の具体的な決め方・計算例は、<a href="/blog/reorder-point/">発注点とは？決め方と計算方法</a>で詳しく解説しています。</p>
+
+      <h2 id="consumables">消耗品・副資材での安全在庫の考え方</h2>
+      <p>消耗品・副資材・補修部品は、品目数が多く一品目あたりの金額が小さいため、<strong>すべての品目に同じ厚さの安全在庫を持たせると過剰在庫になりやすい</strong>という特徴があります。</p>
+      <p>そこで有効なのが、<a href="/blog/abc-analysis/">ABC分析</a>で品目を優先度分けし、ランクに応じて安全在庫の厚さを変える考え方です。欠品すると設備停止につながるAランク品目は安全在庫を厚めに、影響の小さいCランク品目は薄めに、とメリハリをつけることで、限られた在庫コストの中で欠品リスクを効果的に減らせます。副資材と消耗品の分類の考え方は<a href="/blog/mro-consumables-management/">副資材と消耗品の違い・MRO在庫管理</a>もあわせてご覧ください。</p>
+
+      <h2 id="system">安全在庫を仕組みで運用するには</h2>
+      <p>安全在庫を計算しても、在庫表が実数とズレていたり、発注点を下回ったことに誰も気づかなければ意味がありません。クラウド在庫管理システム「<a href="/stocker-biz/">Stocker Biz</a>」では、安全在庫を含めた発注点を品目ごとに設定でき、在庫が下回ると<a href="/features/reorder-alert/">発注依頼として自動通知</a>します。在庫の更新は<a href="/features/barcode-inventory/">バーコードスキャン</a>でその場で行えるため、安全在庫の前提となる在庫数のズレも起きにくくなります。</p>
+
+      <h2 id="faq">よくある質問</h2>
+      <h3>安全在庫とは何ですか？</h3>
+      <p>安全在庫とは、需要（使用量）のばらつきや納期の遅れが起きても欠品しないように、あらかじめ余分に持っておく予備の在庫のことです。発注点の計算にも組み込んで使います。</p>
+      <h3>安全在庫はどう計算しますか？</h3>
+      <p>簡易的には「リードタイム数日分の使用量」を目安にします。より精度を高めたい場合は「安全在庫＝安全係数×使用量の標準偏差×√調達リードタイム」という統計的な計算式を使います。</p>
+      <h3>安全在庫と発注点はどう違いますか？</h3>
+      <p>発注点は「発注するタイミングの基準」で、安全在庫はその発注点の中に含まれる「欠品を防ぐための予備分」です。発注点＝平均使用量×リードタイム＋安全在庫、という関係になります。</p>
+      <h3>安全在庫が多すぎるとどうなりますか？</h3>
+      <p>欠品はしにくくなりますが、保管スペースや在庫コストが増え、消耗品では劣化や期限切れのリスクも高まります。欠品時の影響と保有コストのバランスで決めることが大切です。</p>
+
+      <h2 id="summary">まとめ</h2>
+      <p>安全在庫は、需要のブレや納期遅延という「読みきれない変動」に備えるための予備在庫です。厳密な統計計算をしなくても、まずはリードタイム数日分を目安に設定し、欠品や過剰在庫の状況を見ながら調整していくやり方で十分に運用できます。</p>
+      <p>品目数が多い消耗品・副資材では、ABC分析でランク分けし、重要な品目から安全在庫の精度を上げていくのが現実的な進め方です。発注点と合わせて仕組み化することで、感覚に頼らない在庫管理に近づけます。</p>
+
+      <aside class="callout author-note"><p><strong>執筆：</strong>Yahimaro Apps（Stocker Biz運営）。製造業で品質保証・品質管理・製造・設備・生産管理に10年以上携わった経験をもとに、中小企業で無理なく続けられる在庫・発注管理を解説しています。</p></aside>
+
+    </div>
+  </article>
+
+  <section class="related">
+    <div class="related-inner">
+      <h2>あわせて読みたい</h2>
+      <div class="related-grid">
+        <a class="related-card" href="/blog/reorder-point/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">発注点とは？決め方・計算方法</div>
+          <p class="rc-desc">安全在庫を含めた発注点の計算方法と、現場での決め方を解説します。</p>
+        </a>
+        <a class="related-card" href="/blog/abc-analysis/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">ABC分析とは</div>
+          <p class="rc-desc">品目を重要度でA・B・Cに分け、安全在庫の厚さにメリハリをつける考え方を解説します。</p>
+        </a>
+        <a class="related-card" href="/blog/mro-consumables-management/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">副資材と消耗品の違い・MRO在庫管理</div>
+          <p class="rc-desc">分類基準の違いと、工場で欠品を防ぐ在庫管理の考え方を解説します。</p>
+        </a>
+        <a class="related-card" href="/blog/consumables-inventory-method/">
+          <span class="rc-label">記事</span>
+          <div class="rc-title">消耗品の在庫管理のやり方</div>
+          <p class="rc-desc">消耗品の在庫管理を始める6ステップを解説します。</p>
+        </a>
+        <a class="related-card" href="/features/reorder-alert/">
+          <span class="rc-label">機能</span>
+          <div class="rc-title">発注漏れ防止</div>
+          <p class="rc-desc">最小在庫数を下回ると発注依頼を通知。在庫切れを防ぎます。</p>
+        </a>
+        <a class="related-card" href="/stocker-biz/">
+          <span class="rc-label">サービス</span>
+          <div class="rc-title">Stocker Biz トップ</div>
+          <p class="rc-desc">在庫管理・発注管理をひとつにしたクラウドサービスの全体像。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>安全在庫を、仕組みで管理する</h2>
+    <p>安全在庫を含めた発注点を品目ごとに設定し、下回ったら自動で通知する Stocker Biz を試せます。</p>
+    <div class="cta-buttons">
+      <a href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener" class="btn-primary">登録不要でデモを試す</a>
+      <a href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener" class="btn-outline">無料トライアルを始める</a>
+    </div>
+  </section>
+
+    </main>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/stocker-biz/" class="footer-logo">
+        <img class="footer-logo-mark" src="/images/stocker-biz_icon.webp" width="128" height="128" decoding="async" style="height:auto" alt="" aria-hidden="true">
+        <span class="footer-logo-text">Stocker Biz</span>
+      </a>
+      <div class="footer-links">
+        <a href="/">Yahimaro Apps</a>
+        <a href="/stocker-biz/">トップ</a>
+        <a href="/features/reorder-alert/">発注漏れ防止</a>
+        <a href="/features/barcode-inventory/">バーコード在庫管理</a>
+        <a href="/stocker-biz/terms.html">利用規約</a>
+        <a href="/stocker-biz/privacy.html">プライバシーポリシー</a>
+        <a href="/stocker-biz/contact.html">お問い合わせ</a>
+      </div>
+      <p class="footer-copy">© 2026 Yahimaro Apps. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
