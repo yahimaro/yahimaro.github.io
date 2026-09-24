@@ -46,7 +46,7 @@
     "description": "製造業・工場向けに、補修部品・スペアパーツ・副資材・工具などの在庫管理を効率化する方法を解説。補修部品の在庫が合わなくなる理由、発注点を決めるべき部品、Excel・紙管理からの移行のヒントまで、現場目線でまとめました。",
     "inLanguage": "ja",
     "datePublished": "2026-06-24",
-    "dateModified": "2026-07-13",
+    "dateModified": "2026-09-24",
     "isPartOf": { "@type": "WebSite", "name": "Stocker Biz", "url": "https://yahimaro.com/stocker-biz/" },
     "author": { "@type": "Organization", "name": "Yahimaro Apps", "url": "https://yahimaro.com/" },
     "publisher": {
@@ -186,6 +186,9 @@
     .pill { background: rgba(29,111,206,0.08); border: 1px solid var(--border); color: var(--primary); font-size: 0.85rem; font-weight: 600; padding: 7px 16px; border-radius: 999px; }
     .pill-group { margin-bottom: 24px; }
     .pill-group h3 { font-size: 0.92rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px 24px; margin-bottom: 14px; }
+    .faq-item h3 { font-size: 0.98rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+    .faq-item p { font-size: 0.92rem; color: var(--muted); line-height: 1.85; }
     .related { background: var(--bg); }
     .related-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
     .related-card { display: block; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
@@ -393,7 +396,7 @@
 
       <div class="prose">
         <p>設備に使われる部品をすべて予備で抱えると、置き場も費用も膨らみ、使わないまま古くなる部品（死蔵在庫）が増えます。かといって持たなければ、故障のたびに入荷を待つことになります。そこで、<strong>「切らしたときの影響」でランクを分け、影響の大きい部品から優先して在庫を持つ</strong>のが基本的な考え方です。</p>
-        <p>また、補修部品は日々均等に減るものではなく、<strong>故障した日に一気に必要になる</strong>ため、消耗品と同じ発注点の計算式はうまく当てはまりません。海外調達品や特注品のようにリードタイムの長い部品ほど、早めに動き出せる発注点を設定しておく必要があります。</p>
+        <p>また、補修部品は日々均等に減るものではなく、<strong>故障した日に一気に必要になる</strong>ため、消耗品と同じ発注点の計算式はうまく当てはまりません。海外調達品や特注品のようにリードタイムの長い部品ほど、早めに動き出せるよう発注点を高めに設定しておく必要があります。</p>
       </div>
 
       <div class="callout" style="margin-top:32px;background:#f8fafd;border:1px solid var(--border);border-radius:12px;padding:28px;">
@@ -527,6 +530,31 @@
           <h3>発注・入荷</h3>
           <p>発注依頼を確認して発注し、届いたら入荷処理。一連の流れが履歴に残ります。</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg">
+    <div class="section-inner narrow">
+      <div class="section-head">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+
+      <div class="faq-item">
+        <h3>補修部品の在庫が「必要なときにない」のはなぜですか？</h3>
+        <p>よく使う消耗品は現場の目につきやすい一方、あまり使わない補修部品ほど在庫が曖昧になりがちで、いざ設備が止まったときに欠品しています。また、報告を受けても発注を忘れる、記録用のPCやノートが保管場所から離れていて記録し忘れる、といった人依存の運用も原因になります。発注点を決めず感覚で発注していると、無くなってから発注する状態が常態化します。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>どの部品から発注点を決めればよいですか？</h3>
+        <p>欠品すると設備やラインが止まる部品（ベアリング、Vベルト、シール、センサー類など）、入荷まで時間がかかる特注品・取り寄せ品、使用頻度が低く気づいたときには切れている部品から優先して最小在庫数を決めるのが効果的です。すべての部品に一度に手をかける必要はありません。</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Excelや紙の管理から移行するには何から始めればよいですか？</h3>
+        <p>まず「切らすと止まる部品」だけを登録して最小在庫数を設定し、次に「たまに使うのに管理が曖昧な部品」を加えるのがおすすめです。よく使う消耗品は運用に慣れてから広げれば十分です。記録する場所と部品のある場所を近づけ、スマホからその場で在庫を更新できるようにすると、書き忘れが減ります。</p>
       </div>
     </div>
   </section>

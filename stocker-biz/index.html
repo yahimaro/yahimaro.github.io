@@ -58,10 +58,10 @@
     "@type":"FAQPage",
     "mainEntity":[
       {"@type":"Question","name":"費用はかかりますか？","acceptedAnswer":{"@type":"Answer","text":"初期費用はかかりません。初回登録から30日間は、選択したプランをカード登録不要で無料体験できます。"}},
-      {"@type":"Question","name":"発注漏れをどのように防ぎますか？","acceptedAnswer":{"@type":"Answer","text":"在庫が発注点以下になると担当者へ通知し、アプリ上で発注依頼から発注対応まで管理できます。"}},
+      {"@type":"Question","name":"発注漏れをどのように防ぎますか？","acceptedAnswer":{"@type":"Answer","text":"在庫が発注点を下回ると担当者へ通知し、アプリ上で発注依頼から発注対応まで管理できます。"}},
       {"@type":"Question","name":"既存データを移行できますか？","acceptedAnswer":{"@type":"Answer","text":"Standard以上ではCSVインポートで既存の在庫リストを一括登録できます。"}},
       {"@type":"Question","name":"スマートフォンから使えますか？","acceptedAnswer":{"@type":"Answer","text":"Webブラウザに加え、iPhone・Androidアプリから在庫更新やバーコードスキャンを利用できます。"}},
-      {"@type":"Question","name":"権限を分けられますか？","acceptedAnswer":{"@type":"Answer","text":"管理者・発注処理者・一般・閲覧者の4段階のロールで、機能やデータへのアクセス範囲を制御できます。"}},
+      {"@type":"Question","name":"権限を分けられますか？","acceptedAnswer":{"@type":"Answer","text":"管理者・在庫管理者・一般・閲覧者の4段階のロールで、機能やデータへのアクセス範囲を制御できます。"}},
       {"@type":"Question","name":"解約はいつでもできますか？","acceptedAnswer":{"@type":"Answer","text":"サービス内のプラン管理画面からいつでも解約できます。最低利用期間や解約金はありません。"}}
     ]
   }
@@ -322,10 +322,10 @@
 
     <section class="section workflow" id="workflow">
       <div class="wrap">
-        <div class="workflow-head reveal"><div><p class="eyebrow">From stock to order</p><h2 class="title">在庫の減少から発注まで、<br>ひとつの流れに。</h2></div><p class="lead">在庫を更新すると、発注点以下の品目を自動で可視化。担当者への依頼から対応状況の共有まで、切れ目なくつなぎます。</p></div>
+        <div class="workflow-head reveal"><div><p class="eyebrow">From stock to order</p><h2 class="title">在庫の減少から発注まで、<br>ひとつの流れに。</h2></div><p class="lead">在庫を更新すると、発注点を下回った品目を自動で可視化。担当者への依頼から対応状況の共有まで、切れ目なくつなぎます。</p></div>
         <div class="process reveal">
           <article class="process-card"><span class="process-no">STEP 01</span><h3>現場で在庫を更新</h3><p>スマホやバーコードを使い、入庫・出庫・棚卸をその場で記録。</p></article>
-          <article class="process-card"><span class="process-no">STEP 02</span><h3>発注点以下を検知</h3><p>設定した発注点と現在庫を比較し、対応が必要な品目を可視化。</p></article>
+          <article class="process-card"><span class="process-no">STEP 02</span><h3>発注点を下回ったら検知</h3><p>設定した発注点と現在庫を比較し、対応が必要な品目を可視化。</p></article>
           <article class="process-card"><span class="process-no">STEP 03</span><h3>担当者へ発注依頼</h3><p>対象品目を選び、担当者へ依頼。通知と一覧で見落としを防止。</p></article>
           <article class="process-card"><span class="process-no">STEP 04</span><h3>対応状況を共有</h3><p>発注依頼済み・発注済みをチームで確認し、対応の重複を防止。</p></article>
         </div>
@@ -342,7 +342,7 @@
 
         <article class="feature reveal"><div class="feature-media"><img src="images/screen-csv.webp" width="1200" height="675" loading="lazy" decoding="async" style="height:auto" alt="Stocker BizのCSVインポート画面"></div><div class="feature-copy"><p class="feature-label">CSV migration</p><h3>Excelの在庫表を、<br>まとめて移行。</h3><p>既存の在庫表を専用テンプレートへ貼り付け、プレビューで確認してから一括登録。導入時の手入力を減らします。</p><ul class="feature-points"><li><span class="check">✓</span>拠点・部署・保管場所もまとめて登録</li><li><span class="check">✓</span>エラーを取り込み前に確認</li><li><span class="check">✓</span>Standard以上で入出力に対応</li></ul><p><a class="text-link" href="/features/csv-import/">CSV移行の機能を詳しく見る <span class="arrow">→</span></a></p></div></article>
 
-        <article class="feature reverse reveal"><div class="feature-media"><img src="images/screen-users.webp" width="1200" height="675" loading="lazy" decoding="async" style="height:auto" alt="Stocker Bizのユーザーと権限管理画面"></div><div class="feature-copy"><p class="feature-label">Roles & permissions</p><h3>役割に合わせて、<br>操作できる範囲を設定。</h3><p>4段階のロールと所属範囲で、メンバーごとに操作・閲覧できるデータを制御。複数拠点でも必要な情報だけを表示できます。</p><ul class="feature-points"><li><span class="check">✓</span>管理者・発注処理者・一般・閲覧者</li><li><span class="check">✓</span>拠点・部署・保管場所の3階層管理</li><li><span class="check">✓</span>操作履歴で変更を確認</li></ul><p><a class="text-link" href="/features/permissions/">権限・ユーザー管理の機能を詳しく見る <span class="arrow">→</span></a></p></div></article>
+        <article class="feature reverse reveal"><div class="feature-media"><img src="images/screen-users.webp" width="1200" height="675" loading="lazy" decoding="async" style="height:auto" alt="Stocker Bizのユーザーと権限管理画面"></div><div class="feature-copy"><p class="feature-label">Roles & permissions</p><h3>役割に合わせて、<br>操作できる範囲を設定。</h3><p>4段階のロールと所属範囲で、メンバーごとに操作・閲覧できるデータを制御。複数拠点でも必要な情報だけを表示できます。</p><ul class="feature-points"><li><span class="check">✓</span>管理者・在庫管理者・一般・閲覧者</li><li><span class="check">✓</span>拠点・部署・保管場所の3階層管理</li><li><span class="check">✓</span>操作履歴で変更を確認</li></ul><p><a class="text-link" href="/features/permissions/">権限・ユーザー管理の機能を詳しく見る <span class="arrow">→</span></a></p></div></article>
       </div>
     </section>
 
@@ -389,12 +389,12 @@
         <details><summary>既存のExcel在庫表を移行できますか？</summary><div class="answer">Standard以上ではCSVインポートで一括登録できます。専用テンプレートに貼り付け、プレビューで確認してから取り込みます。</div></details>
         <details><summary>スマートフォンからも使えますか？</summary><div class="answer">PC・スマートフォン・タブレットのWebブラウザに対応しています。iPhone・Androidアプリではバーコードスキャンによる在庫更新も可能です。</div></details>
         <details><summary>複数拠点や倉庫に対応していますか？</summary><div class="answer">拠点・部署・保管場所の3階層で管理できます。Standardは3拠点、Businessは10拠点まで設定できます。</div></details>
-        <details><summary>メンバーごとに権限を分けられますか？</summary><div class="answer">管理者・発注処理者・一般・閲覧者の4段階で、利用できる機能と閲覧できるデータの範囲を制御できます。</div></details>
+        <details><summary>メンバーごとに権限を分けられますか？</summary><div class="answer">管理者・在庫管理者・一般・閲覧者の4段階で、利用できる機能と閲覧できるデータの範囲を制御できます。</div></details>
         <details><summary>解約はいつでもできますか？</summary><div class="answer">プラン管理画面からいつでも解約できます。最低利用期間や解約金はなく、解約後も契約期間の末日まで利用できます。</div></details>
       </div></div>
     </section>
 
-    <section class="section resources" id="resources"><div class="wrap"><div class="resource-head reveal"><div><p class="eyebrow">Guides & use cases</p><h2 class="title">導入前に、もっと知る。</h2></div><a class="text-link" href="/blog/">記事一覧を見る <span class="arrow">→</span></a></div><div class="resource-grid reveal"><a class="resource" href="/features/reorder-alert/"><span class="resource-label">Feature</span><h3>発注漏れを防ぐ最小在庫アラート</h3></a><a class="resource" href="/use-cases/manufacturing-parts/"><span class="resource-label">Use case</span><h3>製造業の補修部品・消耗品管理</h3></a><a class="resource" href="/blog/excel-inventory-limit/"><span class="resource-label">Column</span><h3>Excel在庫管理の限界と脱却の目安</h3></a></div></div></section>
+    <section class="section resources" id="resources"><div class="wrap"><div class="resource-head reveal"><div><p class="eyebrow">Guides & use cases</p><h2 class="title">導入前に、もっと知る。</h2></div><a class="text-link" href="/blog/">記事一覧を見る <span class="arrow">→</span></a></div><div class="resource-grid reveal"><a class="resource" href="/features/reorder-alert/"><span class="resource-label">Feature</span><h3>発注漏れを防ぐ最小在庫数アラート</h3></a><a class="resource" href="/use-cases/manufacturing-parts/"><span class="resource-label">Use case</span><h3>製造業の補修部品・消耗品管理</h3></a><a class="resource" href="/blog/excel-inventory-limit/"><span class="resource-label">Column</span><h3>Excel在庫管理の限界と脱却の目安</h3></a></div></div></section>
 
     <section class="final"><div class="wrap final-card reveal"><div><p class="eyebrow" style="color:var(--cyan)">Try Stocker Biz</p><h2>まずは、いまの業務に<br>合うか触ってみる。</h2><p>30日間の無料トライアルで実際の運用を試せます。登録不要のデモや、Excel移行のご相談もご利用ください。</p></div><div class="final-actions"><a class="button primary" href="https://stockerbiz.yahimaro.com/signup/start" target="_blank" rel="noopener">無料トライアルを始める <span class="arrow">→</span></a><a class="button" href="https://stockerbiz.yahimaro.com/demo/start" target="_blank" rel="noopener">登録不要でデモを試す</a><a class="button" href="contact.html?type=consult">自社で使えるか相談する</a><span class="final-small">30日間無料／クレジットカード登録不要／初期費用なし</span></div></div></section>
   </main>
