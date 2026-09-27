@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <title>TaskMemo — メモとTODOをすばやく記録・整理</title>
+  <meta name="description" content="TaskMemoは、仕事や日々のメモとTODOをすばやく記録・整理できるアプリです。Windows・Android・iPhoneに対応し、Google Drive同期は任意で利用できます。">
+  <link rel="canonical" href="https://yahimaro.com/taskmemo/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TaskMemo">
+  <meta property="og:title" content="TaskMemo — メモとTODOをすばやく記録・整理">
+  <meta property="og:description" content="Windows・Android・iPhoneで使える、ローカル優先のメモ・TODOアプリ。">
+  <meta property="og:url" content="https://yahimaro.com/taskmemo/">
+  <style>
+    :root {
+      --primary: #1c9a9a;
+      --dark: #0f6e6e;
+      --bg: #fffbf6;
+      --muted: #5e6b6b;
+      --border: #d9ece9;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      background: var(--bg);
+      color: #1a1a1a;
+      line-height: 1.8;
+      padding: 0 16px 64px;
+    }
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 48px 16px;
+      margin: 0 -16px 32px;
+    }
+    header h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.3; }
+    header p { font-size: 16px; margin-top: 12px; }
+    .container { max-width: 760px; margin: 0 auto; }
+    section {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    h2 { font-size: 20px; color: var(--dark); margin-bottom: 12px; }
+    p { margin-bottom: 10px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 6px; }
+    a { color: var(--dark); }
+    .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .95; }
+    .platforms { color: var(--muted); font-size: 14px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px 20px; }
+    footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 28px; }
+    @media (max-width: 520px) {
+      header { padding: 36px 16px; }
+      section { padding: 20px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/accessibility.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <header>
+    <div class="container">
+      <p class="eyebrow">Yahimaro Apps</p>
+      <h1>メモとTODOを、<br>すばやく記録・整理。</h1>
+      <p>TaskMemoは、仕事や日々の作業で思いついたことをすぐに書き留め、あとから見返しやすく整理できるアプリです。</p>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section>
+      <h2>必要なことを、すぐ記録</h2>
+      <ul>
+        <li>メモとTODOをその場で作成・編集</li>
+        <li>分類、優先度、期限で整理</li>
+        <li>完了した項目や削除済みの項目も管理</li>
+        <li>日本語とEnglishに対応</li>
+      </ul>
+      <p class="platforms">Windows・Android・iPhoneで利用できます。</p>
+    </section>
+
+    <section>
+      <h2>データと同期</h2>
+      <p>メモ・TODOは端末内に保存します。Google Drive同期は任意で、設定から有効にした場合だけGoogleアカウントでログインします。同期を使わない場合、Googleへのログインは必要ありません。</p>
+      <p>メモ・TODOの本文を広告リクエストに含める処理は行っていません。詳しくは<a href="/taskmemo/privacy.html">プライバシーポリシー</a>をご確認ください。</p>
+    </section>
+
+    <section>
+      <h2>広告と料金</h2>
+      <p>基本機能は無料です。iOS・Android版ではバナー広告を表示し、任意の一回限りのアプリ内購入で広告を削除できます。Windows版では広告を表示しません。</p>
+      <p>広告表示や購入については<a href="/taskmemo/terms.html">利用規約</a>をご確認ください。</p>
+    </section>
+
+    <section>
+      <h2>提供者</h2>
+      <p>Yahimaro Apps（個人開発）</p>
+      <p>お問い合わせ：<a href="mailto:support@yahimaro.com">support@yahimaro.com</a></p>
+      <div class="links">
+        <a href="/taskmemo/privacy.html">プライバシーポリシー</a>
+        <a href="/taskmemo/terms.html">利用規約</a>
+        <a href="/taskmemo/support.html">開発を応援</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">&copy; 2026 Yahimaro Apps. All rights reserved.</footer>
+</body>
+</html>
